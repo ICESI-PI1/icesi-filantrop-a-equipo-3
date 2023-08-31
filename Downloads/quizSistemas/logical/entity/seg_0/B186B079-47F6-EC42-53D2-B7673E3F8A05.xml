@@ -1,0 +1,170 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B186B079-47F6-EC42-53D2-B7673E3F8A05" name="SHOP">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 14:53:07 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="quantityOfSoldTickets" id="AA189925-8B95-9072-38F4-40201E5EDF71">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 14:53:15 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="movie" id="7F64988E-F3EA-18C7-76E9-14F3F0B51913">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 14:54:43 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="purchaseDate" id="87833803-3A21-FD47-95C0-FD06A834D754">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 14:55:05 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cinema" id="5F7A2E29-35FB-D7D1-49B7-F317FBD7A156">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 14:55:53 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="movieSchedule" id="5AA967F9-4355-0D16-BE85-D5DC971B360D">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 14:56:26 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="953309D9-CB06-9A09-339E-065379BC3D0F">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 15:22:39 UTC</createdTime>
+<generatorID>D53E3D89-739E-82E4-F6D1-F32870092B07</generatorID>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<referedAttribute>9FF6680E-CDAC-F0D5-EED1-D136E3057DE8</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="phoneNumber" id="FE4A2EDF-90FE-21D6-3230-9AB3FC38E28D">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 15:22:39 UTC</createdTime>
+<generatorID>D53E3D89-739E-82E4-F6D1-F32870092B07</generatorID>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<referedAttribute>C8F68C37-F0BE-4148-F007-854F22D22EE0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id" id="FC8C0B99-ECDD-A432-F482-EEFA62C5C233">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 15:22:39 UTC</createdTime>
+<generatorID>D53E3D89-739E-82E4-F6D1-F32870092B07</generatorID>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<referedAttribute>0DF83E17-FE1B-3E8F-3C70-09364B668315</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="90AA8EFA-7B6A-3A94-A8E9-C4D05E5C08F0">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 15:22:39 UTC</createdTime>
+<generatorID>D53E3D89-739E-82E4-F6D1-F32870092B07</generatorID>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<referedAttribute>6954D1D5-84E3-F951-4406-9448283A0E07</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2EB3F780-4418-E355-DC85-3D3FB5AB8CA8" name="SHOP PK">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 14:54:37 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AA189925-8B95-9072-38F4-40201E5EDF71</attributeRef>
+<attributeRef>7F64988E-F3EA-18C7-76E9-14F3F0B51913</attributeRef>
+<attributeRef>87833803-3A21-FD47-95C0-FD06A834D754</attributeRef>
+<attributeRef>5F7A2E29-35FB-D7D1-49B7-F317FBD7A156</attributeRef>
+<attributeRef>5AA967F9-4355-0D16-BE85-D5DC971B360D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

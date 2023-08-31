@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="MOVIE_GENRE" directorySegmentName="seg_0" id="1A1A7804-CCAA-4BA4-3CC2-299F078054E0">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 15:09:53 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<sourcePk>2BDB899E-C556-0BAB-E8CE-DB61A73C819B</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>MOVIE</nameOnSource>
+<nameOnTarget>GENRE</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>85492BE7-7B9B-C257-8941-FB11E73FE6A1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3ECB91FA-1F96-6E62-8727-45FE9A19773D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

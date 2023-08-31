@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_6" directorySegmentName="seg_0" id="AC53333C-A6D1-8F71-7519-35757D453E03">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 15:19:43 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<sourcePk>506E47D8-DDD5-8DA9-113B-217EA29FD3C9</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B702F583-F1E8-5754-57CE-AB79D63EDE32</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>48CA71B9-45ED-76A9-8B97-F7D4B4FA7240</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

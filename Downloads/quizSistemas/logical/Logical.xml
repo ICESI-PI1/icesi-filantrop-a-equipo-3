@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="C5FEAC93-771F-25AD-E7E4-125177050F20" mainViewID="9AC00B4D-630C-9FE7-E1AE-133C6E8EDFF9">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 14:22:29 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>
