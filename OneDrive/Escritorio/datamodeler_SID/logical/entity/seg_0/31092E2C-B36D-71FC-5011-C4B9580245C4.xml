@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="31092E2C-B36D-71FC-5011-C4B9580245C4" name="APPOINTMENT">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:01:45 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="B6CD4016-22E1-E109-73EF-8657C1273B1D">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:01:59 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="3AE9F553-212A-D62D-C286-6802D5644115">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:03:03 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="998C6BE1-7CA2-420B-7F19-8DD3BB4D90D4">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:03:57 UTC</createdTime>
+<generatorID>6DC2B330-CADD-3C23-7FEF-24B87A83DEE0</generatorID>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<referedAttribute>C8B534DA-DA84-8D4C-8CC4-CAEB8779F2D1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="typeProcedure" id="51838B72-2B6D-9DE0-5547-05A4591B1A12">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:10:50 UTC</createdTime>
+<generatorID>039A5809-7BD7-40C9-FCA5-D3DFAB077F54</generatorID>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<referedAttribute>EFE2C9DD-1DEA-B813-BBD5-4A25FE98CD7A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="identifier" id="5E7584CB-F22D-EC72-17CC-54AF78D942CA">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:18:01 UTC</createdTime>
+<generatorID>0F112205-0B5A-2F51-AFB3-F90F018C6335</generatorID>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<referedAttribute>D4D939BE-AE89-D06B-D1A7-E9CEF95C96FB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id2" id="99766E4B-F2DF-477A-EFC4-E21343EAAD27">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:27:20 UTC</createdTime>
+<generatorID>4498AAB1-C620-6631-C836-583BFE96716D</generatorID>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<referedAttribute>229B02B6-43A0-5FF1-1C26-16A0BAFC43B9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0E6F74BD-E743-771B-BD47-90CBD3EB0B4F" name="APPOINTMENT PK">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:02:59 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B6CD4016-22E1-E109-73EF-8657C1273B1D</attributeRef>
+<attributeRef>998C6BE1-7CA2-420B-7F19-8DD3BB4D90D4</attributeRef>
+<attributeRef>99766E4B-F2DF-477A-EFC4-E21343EAAD27</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

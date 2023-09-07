@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0C398167-9391-5BF8-BC5A-E7DDD1C383B9" name="EMPLOYEE">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:18:47 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="229B02B6-43A0-5FF1-1C26-16A0BAFC43B9">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:25:53 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name=" employeeCode" id="AC905A23-7679-B68E-BC6F-6562D36A29BA">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:26:17 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name=" name" id="2C42595B-B7EE-E7A9-C41C-EA8883E5E5BE">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:26:18 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="phoneNumber" id="42B85DC7-5ADA-339E-1E89-B25F9659CA84">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:26:19 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emailAddress" id="C4962ED9-7260-0DCA-B17E-F6CC00C187F9">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:26:24 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E1DBBB2A-383F-A581-8EC3-5AC6506BE1AF" name="EMPLOYEE PK">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:26:06 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>229B02B6-43A0-5FF1-1C26-16A0BAFC43B9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

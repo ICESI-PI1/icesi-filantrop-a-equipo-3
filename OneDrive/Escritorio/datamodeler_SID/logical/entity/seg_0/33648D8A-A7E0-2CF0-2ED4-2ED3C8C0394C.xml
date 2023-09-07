@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="33648D8A-A7E0-2CF0-2ED4-2ED3C8C0394C" name="REPORT">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 12:57:02 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="description" id="8EFE52BB-4CDA-9C3F-6572-321FC60823AB">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 12:59:57 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="9C3405C2-9A33-14A6-945C-3E08BF87170A">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:00:23 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id" id="A2D9FCA0-058E-6B8E-E5AB-F356FCA79937">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:01:33 UTC</createdTime>
+<generatorID>3EABAE32-D131-8CE9-8FB2-AE77AF84E9FA</generatorID>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<referedAttribute>C8B534DA-DA84-8D4C-8CC4-CAEB8779F2D1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D7CDD4BB-33FD-2C17-3B1A-CF51877CBE79" name="REPORT PK">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:01:33 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A2D9FCA0-058E-6B8E-E5AB-F356FCA79937</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

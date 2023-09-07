@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="919740C0-DD23-C418-D601-285871528562" name="APPOINTMENT_TYPE">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:04:17 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="typeProcedure" id="EFE2C9DD-1DEA-B813-BBD5-4A25FE98CD7A">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:04:31 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="31B8B8E4-6F61-12F7-30A1-82C621D3562C" name="APPOINTMENT_TYPE PK">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-09-07 13:04:46 UTC</createdTime>
+<ownerDesignName>datamodeler_SID</ownerDesignName>
+<engineerTo>
+<item key="BF7F4B21-B45B-5274-BEFA-3CE02F865798" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EFE2C9DD-1DEA-B813-BBD5-4A25FE98CD7A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
