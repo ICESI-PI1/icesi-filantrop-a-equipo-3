@@ -5,56 +5,56 @@ Sprint on Jira: [https://integrativeproject1.atlassian.net/jira/software/project
 **User Story 1 - Student Registration:**
 Estimation:  8
 
-https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/main/img/1.png
+[US.1](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/1.png)
 
 As a member of the philanthropy office, I want to be able to enter the information of new students joining the institution, including their full name, date of birth, ID card, email address, mobile number, ICFES score, and assign them to an existing donor.
 
 **User Story 2 - Creation of Tracking for Consultations in CREA:**
 Estimation:  13
 
-https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/main/img/2.png
+[US.2](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/2.png)
 
 As a user of the philanthropy office, I need to generate reports that contain the consultation history made by a student in the CREA department. These reports should include information such as date, time, reason, and result of each consultation.
 
 **User Story 3 - Updating Student Data:**
 Estimation:  5
 
-https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/main/img/3.png
+[US.3](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/3.png)
 
 As a member of the philanthropy office, I need the ability to request and update the information of students registered in the system at any time, to keep it synchronized with the data recorded at the university.
 
 **User Story 4 - Generation of Alerts for Cancellations:**
 Estimation:  8
 
-https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/main/img/4.png
+[US.4](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/4.png)
 
 As a member of the philanthropy office, I need to receive an alert if a student cancels subjects or makes withdrawals. This will help me stay updated on changes in the students' academic situation and take action if necessary.
 
 **User Story 5 - Donor Registration:**
 Estimation: 8
 
-https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/main/img/5.png
+[US.5](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/5.png)
 
 As an administrator of the system, I want to be able to register the information of new donors, including their full name, contact information, history of previous donations, and donation preferences, to maintain an updated record of available donors.
 
 **User Story 6 - Generation of Financial Reports:**
 Estimation: 21
 
-https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/main/img/6.png
+[US.6](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/6.png)
 
 As a user of the philanthropy office, I need the ability to generate financial reports that show the current status of scholarship funds and donations received. These reports should be used for decision-making and financial planning.
 
 **User Story 7 - Management of Attached Documents:**
 Estimation: 8
 
-https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/main/img/7.png
+[US.7](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/7.png)
 
 As a member of the philanthropy office, I want to be able to attach relevant documents to student and donor records, such as donation receipts, thank you letters, or additional reports, to keep a complete and organized record of the information.
 
 **User Story 8 - Notification to Philanthropy:**
 Estimation: 5
 
-https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/main/img/8.png
+![US.8](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/8.png)
 
 As a member of the Welfare office, I want to be able to send notification alerts to the Philanthropy offices to inform them about student updates to make relevant decisions.
 
