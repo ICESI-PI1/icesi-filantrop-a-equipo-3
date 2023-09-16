@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="62CC1B0E-FFC4-7210-0CD9-11C7CAC6C611" name="REPORTE">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:21:38 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="REPORTE_CODIGO" id="745CB1B6-2395-20FD-89CC-E5FD969DC5BA">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:21:43 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="REPORTE_FECHA" id="2AF77564-3D2D-71D4-2983-FC05BB8BE0BB">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:22:17 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO_REPORTE_CODIGO" id="52A112E2-4CB7-50AC-8FA3-750C8BD031EB">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:26:43 UTC</createdTime>
+<generatorID>DF069E80-5080-8AF8-112A-DF981B9D5D1E</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<referedAttribute>232A636A-31AC-78D3-AFD7-D2650EA9761F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ESTUDIANTE_CODIGO" id="C1E09422-958D-79CF-E7CD-009574EB0934">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 14:02:15 UTC</createdTime>
+<generatorID>FBBA0367-D02D-CF97-C961-553F7255EB51</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>E370CED1-25BD-857C-8BD7-A8455568583D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MIEMBRO_FILANTROPIA_CODIGO" id="EFFD4DD8-451F-7484-C207-0DD98B725007">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 14:33:43 UTC</createdTime>
+<generatorID>02735C3B-0A0E-E93B-A882-BC58CBC8D83F</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>1B64AAB2-F5F0-6E15-0705-1D97056E32B4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3CD10EF7-1D4A-55B0-3A30-08873A0A7AEB" name="REPORTE PK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:22:39 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>745CB1B6-2395-20FD-89CC-E5FD969DC5BA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

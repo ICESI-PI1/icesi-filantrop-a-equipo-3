@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C0A742F1-9D0E-E651-94A7-F56799556E89" name="ESTUDIANTE_ALERTA">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ESTUDIANTE_ESTUDIANTE_CODIGO" id="98812214-F494-0F47-9DC4-87B51D676A63">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2626DCD5-532D-091B-F3E6-CE2D0EB803D0" referredColumn="C75A4842-CADB-7CD5-76BA-D425A2EC926A"/>
+</associations>
+</Column>
+<Column name="ALERTA_ALERTA_CODIGO" id="E1A2865E-ED40-5436-8468-FA35F9CD0ED6">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1558436F-D2EC-8DBF-CBE4-7D8F72112DE2" referredColumn="86760B0E-3E0D-AE5D-66C2-C3B71736995E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5E9DD37D-B220-78E2-4C08-871A0AE364A5" name="ESTUDIANTE_ALERTA_PK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="98812214-F494-0F47-9DC4-87B51D676A63"/>
+<colUsage columnID="E1A2865E-ED40-5436-8468-FA35F9CD0ED6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DCB84FFE-73D4-6CAF-816D-A69347B9A8E3" name="ESTUDIANTE_ALERTA_ESTUDIANTE_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>D2F19D7B-8C5C-7686-6248-F4B0AA568A82</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="98812214-F494-0F47-9DC4-87B51D676A63"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="295D4859-6339-6ADF-FD08-72AEA7084799" name="ESTUDIANTE_ALERTA_ALERTA_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>D2F19D7B-8C5C-7686-6248-F4B0AA568A82</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1A2865E-ED40-5436-8468-FA35F9CD0ED6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

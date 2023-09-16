@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="572A799A-5427-AE22-B929-8EBFAC2EBB0D">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 21:44:03 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

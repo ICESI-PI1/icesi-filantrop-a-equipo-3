@@ -1,176 +1,370 @@
-# USER STORIES
+# **USER STORIES**
 
 Sprint on Jira: [https://integrativeproject1.atlassian.net/jira/software/projects/MSDE/boards/3](https://integrativeproject1.atlassian.net/jira/software/projects/MSDE/boards/3)
 
-**User Story 1 - Student Registration:**
-Estimation:  8
+The stimation of our user stories are based in the Fibonacci series, where the greater the quantity, the greater the task.
 
-[US.1](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/1.png)
+$$$$
 
-As a member of the philanthropy office, I want to be able to enter the information of new students joining the institution, including their full name, date of birth, ID card, email address, mobile number, ICFES score, and assign them to an existing donor.
+- **User Story 1 - Student Registration:**
+  Estimation: $8$
 
-**User Story 2 - Creation of Tracking for Consultations in CREA:**
-Estimation:  13
+  As a member of the philanthropy office, I want to be able to enter the information of new students joining the institution, including their full name, date of birth, ID card, email address, mobile number, ICFES score, and assign them to an existing donor.
 
-[US.2](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/2.png)
+  ![US.1](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/1.png)
 
-As a user of the philanthropy office, I need to generate reports that contain the consultation history made by a student in the CREA department. These reports should include information such as date, time, reason, and result of each consultation.
+- **User Story 2 - Charging Data:**
+  Estimation: $5$
 
-**User Story 3 - Updating Student Data:**
-Estimation:  5
+  As a member of the philanthropy office, I want to be able to charge data in Excel format of students previously registered to make the registration faster and easier.
 
-[US.3](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/3.png)
+  ![US#]()
 
-As a member of the philanthropy office, I need the ability to request and update the information of students registered in the system at any time, to keep it synchronized with the data recorded at the university.
+- **User Story 3 - Updating Student Data:**
+  Estimation:  $5$
 
-**User Story 4 - Generation of Alerts for Cancellations:**
-Estimation:  8
+  As a member of the philanthropy office, I need the ability to request and update the information of students registered in the system at any time, to keep it synchronized with the data recorded at the university.
 
-[US.4](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/4.png)
+  ![US.3](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/3.png)
 
-As a member of the philanthropy office, I need to receive an alert if a student cancels subjects or makes withdrawals. This will help me stay updated on changes in the students' academic situation and take action if necessary.
+- **User Story 4 - Generation of Alerts:**
+  Estimation:  $8$
 
-**User Story 5 - Donor Registration:**
-Estimation: 8
+  As a member of the collaborators, I want to create an alert to a student if any relevant thing happened (like cancellation, retiring, low amount of resources, etc) in order to have important information.
 
-[US.5](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/5.png)
+  ![US.4](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/4.png)
 
-As an administrator of the system, I want to be able to register the information of new donors, including their full name, contact information, history of previous donations, and donation preferences, to maintain an updated record of available donors.
+- **User Story 5 - Donor Registration:**
+  Estimation: $8$
 
-**User Story 6 - Generation of Financial Reports:**
-Estimation: 21
+  As an administrator of the system, I want to be able to register the information of new donors, including their full name, contact information, history of previous donations, and donation preferences, to maintain an updated record of available donors.
 
-[US.6](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/6.png)
+  ![US.5](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/5.png)
 
-As a user of the philanthropy office, I need the ability to generate financial reports that show the current status of scholarship funds and donations received. These reports should be used for decision-making and financial planning.
+- **User Story 6 - Query information of a student:**
+  Estimation: $13$
 
-**User Story 7 - Management of Attached Documents:**
-Estimation: 8
+  As a member of the philanthropy office, I want to be able to search a student and query any information needed that is in the system to control the status of the student.
 
-[US.7](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/7.png)
+   ![US#]()
 
-As a member of the philanthropy office, I want to be able to attach relevant documents to student and donor records, such as donation receipts, thank you letters, or additional reports, to keep a complete and organized record of the information.
+- **User Story 7 - Management of Attached Documents:**
+  Estimation: $8$
 
-**User Story 8 - Notification to Philanthropy:**
-Estimation: 5
+  As a member of the philanthropy office, I want to be able to attach relevant documents to student and donor records, such as donation receipts, thank you letters, or additional reports, to keep a complete and organized record of the information.
 
-![US.8](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/8.png)
+  ![US.7](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/7.png)
 
-As a member of the Welfare office, I want to be able to send notification alerts to the Philanthropy offices to inform them about student updates to make relevant decisions.
+- **User Story 8 - Send alert:**
+  Estimation: $5$
 
-**Estimation**
+  As a member of the collaborators, I want to be able to send alerts to the Philanthropy office to inform them about student updates to make relevant decisions.
 
-**Prioritization**
+  ![US.8](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/8.png)
 
-In this case, we will choose to prioritize tasks based on the skills of the work team. Therefore, we have determined a score from 1 to 5, where 1 would be the task with fewer assigned resources and workers, and 5 would be the task with more assigned resources and workers.
+- **User Story 9 - Request information updating**
+  Estimation:  $8$
 
-User Story 3: We consider it requires a level 5 prioritization.
+  As a member of the philanthropy office, I want to be able to request updated information of a student o students to any of the collaborators in order to have the most updated information in my system.
 
-User Story 4: We consider it requires a level 4 prioritization.
+  ![US#]()
 
-User Story 6: We consider it requires a level 4 prioritization.
+- **User Story 10 - Generate reports**
+  Estimation:  $21$
 
-User Story 1: We consider it requires a level 3 prioritization.
+  As a member of the philanthropy office, I want to be able to generate reports of each type: Scholarship program, non-academic activities, consultations at CREA or other, that contains the information that I select of any student or students so I can see the summary and the important information of each one.
 
-User Story 2: We consider it requires a level 2 prioritization.
+  ![US#]()
 
-User Story 5: We consider it requires a level 2 prioritization.
+- **User Story 11 - Collaborator registration:**
+  Estimation:  $8$
 
-User Story 8: We consider it requires a level 2 prioritization.
+  As an administrator, I want to be able to create the credentials for each member of the collaborators so each one can access using an unique user and a password.
 
-User Story 7: We consider it requires a level 1 prioritization.
+  ![US#]()
 
-**Gherkin Scenarios**
+- **User Story 12 - Philanthropy member registration:**
+  Estimation:  $8$
 
-**User Story 1 - Student Registration:**
+  As an administrator, I want to be able to create the credentials for each member of the philanthropy so each one can access using an unique user and a password.
 
-Scenario 1:
-Given I am a member of the philanthropy office, authenticated and on the student registration window.
-When I enter the complete information of a new student
-And assign to an existing donor
-Then the system successfully registers the student
+  ![US#]()
 
-Scenario 2:
-Given I am a member of the philanthropy office, authenticated and on the student registration window.
-When I try to register a student without providing all required information
-Then the system displays an error indicating the missing fields
+- **User Story 13 - Download reports and information:**
+  Estimation:  $8$
 
-**User Story 2 - Creation of Tracking for Consultations in CREA:**
+  As a member of the office of philanthropy, I want to be able to download reports so I can have it to send it to anyone I consider.
 
-Scenario 1:
-Given I am a user of the philanthropy office, authenticated and on the consultation tracking creation window.
-When I select a student and request their CREA consultation history
-Then the system generates a report with the date, time, reason, and result of each consultation
+  ![US#]()
 
-Scenario 2:
-Given I am a user of the philanthropy office, authenticated and on the consultation tracking creation window.
-When I select a student who has not had consultations in CREA
-Then the system displays a message indicating the student has no registered consultations
+- **User Story 14 - Upload reports and information:**
+  Estimation:  $13$
 
-**User Story 3 - Updating Student Data**
+  As a member of the collaborators, I want to be able to upload reports and information that has content that concerns my department, of any student so that philanthropy office has updated and complete information on each student.
 
-Scenario 1:
-Given I am a member of the philanthropy office, authenticated and on the student window.
-When I select a student and update their information
-Then the system successfully saves the changes
+  ![US#]()
 
-Scenario 2:
-Given I am a member of the philanthropy office, authenticated and on the student window.
-When I try to update student information with invalid data
-Then the system displays an error indicating the problem
+$$$$
 
-**User Story 4 - Generation of Alerts for Cancellations**
+## **Prioritization**
 
-Scenario 1:
-Given I am a member of the philanthropy office, authenticated and on the student window.
-When a student cancels subjects or makes withdrawals
-Then I receive an alert indicating the change in the student's academic situation
+Now we're going to prioritize the user stories according to the relevance of the functionality and the resources needed on it.
 
-Scenario 2:
-Given I am a member of the philanthropy office, authenticated and on the student window.
-And I have not set up alerts in the system
-When a student cancels subjects or makes withdrawals
-Then I do not receive any alert about the change
+In this case, we will choose to prioritize tasks based on the skills of the work team. Therefore, we have determined a score from $1$ to $5$, where $1$ would be the task with fewer assigned resources and workers, and $5$ would be the task with more assigned resources and workers.
 
-**User Story 5 - Donor Registration**
+- **User Story 10:** We consider it requires a level $5$ prioritization.
 
-Scenario 1:
-Given I am a member of the philanthropy office with permissions, authenticated and on the donor registration window.
-When I enter the complete information of a new donor
-Then the system successfully registers the donor
+- **User Story 4:** We consider it requires a level $5$ prioritization.
 
-Scenario 2:
-Given I am a member of the philanthropy office with permissions, authenticated and on the donor registration window.
-When I try to register a donor without providing all required information
-Then the system displays an error indicating the missing fields
+- **User Story 6:** We consider it requires a level $5$ prioritization.
 
-**User Story 6 - Generation of Financial Reports**
+- **User Story 14:** We consider it requires a level $4$ prioritization.
 
-Scenario 1:
-Given I am a user of the philanthropy office, authenticated and on the financial reports window.
-When I request a financial report on scholarship funds and donations
-Then the system provides me with a detailed report for decision-making and financial planning
+- **User Story 9:** We consider it requires a level $4$ prioritization.
 
-**User Story 7 - Management of Attached Documents**
+- **User Story 8:** We consider it requires a level $4$ prioritization.
 
-Scenario 1:
-Given I am a member of the philanthropy office and authenticated.
-When I select a record and attach a relevant document
-Then the system saves the attached document to the selected record
+- **User Story 11:** We consider it requires a level $3$ prioritization.
 
-Scenario 2:
-Given I am a member of the philanthropy office and authenticated.
-When I try to attach an unsupported or invalid format file
-Then the system displays an error indicating the issue with the selected file
+- **User Story 12:** We consider it requires a level $3$ prioritization.
 
-**User Story 8 - Notification to Philanthropy**
+- **User Story 2:** We consider it requires a level $3$ prioritization.
 
-Scenario 1:
-Given I am a member of the Welfare office, authenticated and on the student window.
-When I send a notification alert to the Philanthropy offices
-Then the Philanthropy office receives the notification and can act according to the update
+- **User Story 5:** We consider it requires a level $3$ prioritization.
 
-Scenario 2:
-Given that I am a member of the Welfare Office, I am authenticated and in the student window,
-When I try to send a notification but a system error occurs,
-Then I receive an error message and the notification is not sent.
+- **User Story 1:** We consider it requires a level $3$ prioritization.
+
+- **User Story 13:** We consider it requires a level $2$ prioritization.
+
+- **User Story 7:** We consider it requires a level $1$ prioritization.
+
+- **User Story 3:** We consider it requires a level $1$ prioritization.
+
+
+$$$$
+
+## **Criteria Acceptation - Gherkin Scenarios**
+
+- **User Story 1 - Student Registration:**
+
+  Scenario 1:
+  Given that I am a member of the philanthropy office, authenticated and on the student registration window.
+  When I enter the complete information of a new student
+  And assign to an existing donor
+  Then the system successfully registers the student
+
+  Scenario 2:
+  Given that I am a member of the philanthropy office, authenticated and on the student registration window.
+  When I try to register a student without providing required information
+  Then the system displays an error indicating the missing fields
+
+$$$$
+
+- **User Story 2 - Charging Data:**
+
+  Scenario 1:
+  Given that I am a user of the philanthropy office, authenticated and on the student registration window.
+  When I select to upload an Excel file to charge students registrations
+  Then the system successfully registers the students
+
+  Scenario 2:
+  Given that I am a user of the philanthropy office, authenticated and on the student registration window.
+  When I select to upload a file to charge students registrations
+  Then the system displays an error indicating that the file is invalid 
+
+$$$$
+
+- **User Story 3 - Updating Student Data**
+
+  Scenario 1:
+  Given that I am a member of the philanthropy office, authenticated and on the student window.
+  When I select a student
+  And click on update their information
+  And type the new information
+  Then the system successfully saves the changes
+
+  Scenario 2:
+  Given that I am a member of the philanthropy office, authenticated and on the student window.
+  When I select a student
+  And click on update their information
+  And type the new information
+  Then the system displays an error indicating that information is invalid
+
+$$$$
+
+- **User Story 4 - Generation of Alerts**
+
+  Scenario 1:
+  Given that I am a member of the collaborators, authenticated and on the alerts window.
+  When I create a new alert typing all the required information
+  And selecting the student or students
+  Then the system succesfully create the alert
+  And displays it
+
+  Scenario 2:
+  Given that I am a member of the collaborators, authenticated and on the alerts window.
+  When I create a new alert typing the required information
+  Then the system displays an error message indicating the missing fields
+
+$$$$
+
+- **User Story 5 - Donor Registration**
+
+  Scenario 1:
+  Given that I am a member of the philanthropy office with permissions, authenticated and on the donor registration window.
+  When I enter the complete information of a new donor
+  Then the system successfully registers the donor
+
+  Scenario 2:
+  Given that I am a member of the philanthropy office with permissions, authenticated and on the donor registration window.
+  When I try to register a donor without providing all required information
+  Then the system displays an error indicating the missing fields
+
+$$$$
+
+- **User Story 6 - Query information of a student**
+
+  Scenario 1:
+  Given that I am a user of the philanthropy office, authenticated and on the query window
+  When I activate some filters
+  And I type the name or names of the students
+  Then the system provides me the filtered information of the student/students
+
+  Scenario 2:
+  Given that I am a user of the philanthropy office, authenticated and on the query window
+  When I activate some filters
+  And I type the name or names of the students
+  Then the system displays an error message saying that there isn't students registered with that name/names
+
+$$$$
+
+- **User Story 7 - Management of Attached Documents**
+
+  Scenario 1:
+  Given that I am a member of the philanthropy office and authenticated.
+  When I select a record and attach a relevant document
+  Then the system saves the attached document to the selected record
+
+  Scenario 2:
+  Given that I am a member of the philanthropy office and authenticated.
+  When I try to attach an unsupported or invalid format file
+  Then the system displays an error indicating the issue with the selected file
+
+$$$$
+
+- **User Story 8 - Send alert**
+
+  Scenario 1:
+  Given that I am a member of the collaborators, authenticated and on the alerts window.
+  When I click on see created alerts
+  And I click on one
+  And I click on send to philanthropy
+  Then the Philanthropy office receives the notification and can act according to the given information
+
+  Scenario 2:
+  Given that I am a member of the collaborators, authenticated and on the alerts window.
+  When I click on see created alerts
+  And I click on one
+  And I click on send to philanthropy
+  Then the system displays an error message saying that it couldn't be sent
+
+$$$$
+
+- **User Story 9 - Request information updating**
+
+  Scenario 1:
+  Given that I am a member of the philanthropy office, authenticated and on the reports window
+  When I click on request information updating
+  And I select the collaborators
+  And I select the student/students
+  Then the system succesfully requests each collaborator the latest information of that student/students
+
+  Scenario 1:
+  Given that I am a member of the philanthropy office, authenticated and on the reports window
+  When I click on request information updating
+  And I select the collaborators
+  And I select the student/students
+  Then the system displays an error message saying that it can't connect with the collaborators
+
+$$$$
+
+- **User Story 10 - Generate reports**
+
+  Scenario 1:
+  Given that I am a member of the philanthropy office, authenticated and on the reports window
+  When I click on generate new report
+  And select the type of report
+  And the information that I want
+  And the student/students
+  Then the system shows me the report with all the information of each student
+
+  Scenario 2:
+  Given that I am a member of the philanthropy office, authenticated and on the reports window
+  When I click on generate new report
+  And select the type of report
+  And the information that I want
+  And the student/students
+  Then the system displays an error message saying that it can't generate the report because of lack of information
+
+$$$$
+
+- **User Story 11 - Collaborator registration**
+
+  Scenario 1:
+  Given that I am a member of the philanthropy office with permissions, authenticated and on the collaborator registration window.
+  When I enter the complete information of a new collaborator
+  Then the system successfully registers the collaborator
+
+  Scenario 2:
+  Given that I am a member of the philanthropy office with permissions, authenticated and on the collaborator registration window.
+  When I try to register a collaborator without providing all required information
+  Then the system displays an error indicating the missing fields
+
+$$$$
+
+- **User Story 12 - Philanthropy member registration**
+
+  Scenario 1:
+  Given I am an administrator with permissions, authenticated and on the phylanthropy registration window.
+  When I enter the complete information of a new philanthropy member
+  Then the system successfully registers the philanthropy member
+
+  Scenario 1:
+  Given that I am an administrator with permissions, authenticated and on the phylanthropy registration window.
+  When I enter the complete information of a new philanthropy member
+  Then the system successfully registers the philanthropy member
+
+$$$$
+
+- **User Story 13 - Download reports and information**
+
+  Scenario 1:
+  Given that I am a member of the philanthropy office, authenticated and on the reports window.
+  When I click on a previously created report
+  And I click on download
+  Then the system downloads a PDF with the report and information in my machine
+
+  Scenario 2:
+  Given that I am a member of the philanthropy office, authenticated and on the reports window.
+  When I click on a previously created report
+  And I click on download
+  Then the system doesn't download a PDF with the report and information in my machine
+
+$$$$
+
+- **User Story 14 - Upload reports and information**
+
+  Scenario 1:
+  Given that I am a member of the collaborators, authenticated and on the reports window
+  When I click on update a report and information
+  And I select my file or I type
+  And I select the student/students
+  Then the system successfully creates a new report
+  And sends an automatic alert to philanthropy office
+
+  Scenario 2:
+  Given that I am a member of the collaborators, authenticated and on the reports window
+  When I click on update a report and information
+  And I select my file or I type
+  And I select the student/students
+  Then the system successfully displays an error message saying that the report couldn't be loaded
