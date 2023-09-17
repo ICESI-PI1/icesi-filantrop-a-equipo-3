@@ -34,10 +34,10 @@ $$$$
 
   ![US.4](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/4.png)
 
-- **User Story 5 - Donor Registration:**
+- **User Story 5 - See all students:**
   Estimation: $8$
 
-  As an administrator of the system, I want to be able to register the information of new donors, including their full name, contact information, history of previous donations, and donation preferences, to maintain an updated record of available donors.
+  As an user of the system, I want to be able to see listed all the students in a single page, where each student is a row, in order to see information about all of them and select one and see his particular information.
 
   ![US.5](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/5.png)
 
@@ -208,17 +208,18 @@ $$$$
 
 $$$$
 
-- **User Story 5 - Donor Registration**
+- **User Story 5 - See all students**
 
   Scenario 1:
-  Given that I am a member of the philanthropy office with permissions, authenticated and on the donor registration window.
-  When I enter the complete information of a new donor
-  Then the system successfully registers the donor
+  Given that I am a user of the application, authenticated and on the main page
+  When I click on Students
+  Then the system displays all the students in a list
+  And I can enter in one of them to see his information
 
   Scenario 2:
-  Given that I am a member of the philanthropy office with permissions, authenticated and on the donor registration window.
-  When I try to register a donor without providing all required information
-  Then the system displays an error indicating the missing fields
+  Given that I am a user of the application, authenticated and on the main page
+  When I click on Students
+  Then the system displays an error message saying that isn't possible show all the students
 
 $$$$
 
