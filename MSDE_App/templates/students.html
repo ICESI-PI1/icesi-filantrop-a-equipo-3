@@ -1,0 +1,13 @@
+{% block content %}
+    <h1>
+    Students
+</h1>
+
+{% for s in students %}
+<div>
+    <h1>{{ s.student_name }} </h1>
+    <p> {{ s.student_code }}</p>
+</div>
+
+{% endfor %}
+{% endblock %}

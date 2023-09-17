@@ -11,6 +11,9 @@ class Student(models.Model):
     student_phone_number = models.CharField(max_length=12)
     student_ICFES_score = models.IntegerField(max_length=10)
 
+    def __str__(self):
+        return self.student_name
+
 
 class TypeReport(models.Model):
     type_report_code = models.CharField(max_length=12)
@@ -25,9 +28,9 @@ class PhilanthropyMember(models.Model):
 class Report(models.Model):
     report_code = models.CharField(max_length=14)
     report_date = models.DateField(max_length=10)
-    type_report_code = models.ForeignKey(TypeReport)
-    student_code = models.ForeignKey(Student)
-    philanthropy_member = models.ForeignKey(PhilanthropyMember)
+    type_report_code = models.ForeignKey(TypeReport, on_delete=models.CASCADE)
+    student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
+    philanthropy_member = models.ForeignKey(PhilanthropyMember, on_delete=models.CASCADE)
 
 
 class Collaborator(models.Model):
@@ -45,8 +48,8 @@ class TypeCollaborator(models.Model):
 class Authenthication(models.Model):
     auth_user = models.CharField(max_length=24)
     auth_password = models.CharField(max_length=24)
-    auth_colaborador = models.ForeignKey(Collaborator)
-    philanthropy_member = models.ForeignKey(PhilanthropyMember)
+    auth_colaborador = models.ForeignKey(Collaborator, on_delete=models.CASCADE)
+    philanthropy_member = models.ForeignKey(PhilanthropyMember, on_delete=models.CASCADE)
 
 
 class Alert(models.Model):
