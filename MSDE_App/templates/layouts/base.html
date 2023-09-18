@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+
+</head>
+<body>
+    <nav class="container">
+        <ul>
+            <li>
+                <a href="/index">Home</a>
+            </li>
+            <li>
+                <a href="/students">Students</a>
+            </li>
+            <li>
+                <a href="/create_student">Create Students</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

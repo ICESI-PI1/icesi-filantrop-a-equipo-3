@@ -1,8 +1,7 @@
-
-
+{% extends 'layouts/base.html' %}
 {% block content %}
 <h1>Create a new Student</h1>
-    <form method="POST">
+        <form method="POST">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit">Save</button>
