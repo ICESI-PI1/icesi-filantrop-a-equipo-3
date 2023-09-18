@@ -8,8 +8,6 @@ The next window will be available for all the users
 - ## **Philanthropy Office:**
   Let's see the windows for the members of the Philanthropy Office
 
-  ![p1](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/1.png)
-
   ![p2](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/alert_philanthropy1.png)
 
   ![p3](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/information_philanthropy1.png)
