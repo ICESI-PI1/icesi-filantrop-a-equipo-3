@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Student
 from .forms import CreateStudent
 
@@ -34,3 +34,27 @@ def students(request):
     return render(request, 'students.html',{
         'students': students
     })
+
+
+def edit_student(request, student_code):
+  # get the student object from the database or return a 404 error
+  student = get_object_or_404(Student, student_code=student_code)
+  # create a form instance with the student data or the request data
+  if request.method == 'POST':
+    form = CreateStudent(request.POST)
+    # validate and save the form data
+    if form.is_valid():
+      form.save()
+      # redirect to a success page or display a success message
+  else:
+    form = CreateStudent()
+  # render a template with the form and the student data
+  return render(request, 'edit_student.html', {'form': form, 'student': student})
+
+
+def delete_student(request, pk):
+    student = get_object_or_404(Student, pk=pk)
+    if request.method == 'POST':
+        student.delete()
+        return redirect('edit_student', pk=pk)
+    return render(request, 'delete_student.html', {'student': student})
