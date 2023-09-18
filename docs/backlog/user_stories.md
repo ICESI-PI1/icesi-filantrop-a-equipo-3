@@ -18,7 +18,7 @@ $$$$
 
   As a member of the philanthropy office, I want to be able to charge data in Excel format of students previously registered to make the registration faster and easier.
 
-  ![US#]()
+  ![US2](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/us2.png)
 
 - **User Story 3 - Updating Student Data:**
   Estimation:  $5$
@@ -46,63 +46,63 @@ $$$$
 
   As a member of the philanthropy office, I want to be able to search a student and query any information needed that is in the system to control the status of the student.
 
-   ![US#]()
+   ![US6](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/us6.png)
 
 - **User Story 7 - Management of Attached Documents:**
   Estimation: $8$
 
   As a member of the philanthropy office, I want to be able to attach relevant documents to student and donor records, such as donation receipts, thank you letters, or additional reports, to keep a complete and organized record of the information.
 
-  ![US.7](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/7.png)
+  ![US7](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/us7.png)
 
 - **User Story 8 - Send alert:**
   Estimation: $5$
 
   As a member of the collaborators, I want to be able to send alerts to the Philanthropy office to inform them about student updates to make relevant decisions.
 
-  ![US.8](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/8.png)
+  ![US8](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/us8.png)
 
 - **User Story 9 - Request information updating**
   Estimation:  $8$
 
   As a member of the philanthropy office, I want to be able to request updated information of a student o students to any of the collaborators in order to have the most updated information in my system.
 
-  ![US#]()
+  ![US9](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/us9.png)
 
 - **User Story 10 - Generate reports**
   Estimation:  $21$
 
   As a member of the philanthropy office, I want to be able to generate reports of each type: Scholarship program, non-academic activities, consultations at CREA or other, that contains the information that I select of any student or students so I can see the summary and the important information of each one.
 
-  ![US#]()
+  ![US10](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/us10.png)
 
 - **User Story 11 - Collaborator registration:**
   Estimation:  $8$
 
   As an administrator, I want to be able to create the credentials for each member of the collaborators so each one can access using an unique user and a password.
 
-  ![US#]()
+  ![US11](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/us11.png)
 
 - **User Story 12 - Philanthropy member registration:**
   Estimation:  $8$
 
   As an administrator, I want to be able to create the credentials for each member of the philanthropy so each one can access using an unique user and a password.
 
-  ![US#]()
+  ![US12](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/us12.png)
 
 - **User Story 13 - Download reports and information:**
   Estimation:  $8$
 
   As a member of the office of philanthropy, I want to be able to download reports so I can have it to send it to anyone I consider.
 
-  ![US#]()
+  ![US13](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/us13.png)
 
 - **User Story 14 - Upload reports and information:**
   Estimation:  $13$
 
   As a member of the collaborators, I want to be able to upload reports and information that has content that concerns my department, of any student so that philanthropy office has updated and complete information on each student.
 
-  ![US#]()
+  ![US14](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/us14.png)
 
 $$$$
 
