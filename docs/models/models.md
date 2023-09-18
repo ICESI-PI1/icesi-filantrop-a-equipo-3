@@ -22,3 +22,8 @@ $$$$
 
 ## **Sequence Diagrams**
   Sequence diagrams represent the flow of the application for each user story, that is, to meet the requirement to which it refers. These diagrams are available in the artifacts folder within models, in Visual Paradigm format.
+
+## **Use Cases Diagram**
+  The use case diagram allows you to visualize the different types of roles in a system and how those roles interact with the system.
+
+  ![use_cases_diagram](https://github.com/ICESI-PI1/icesi-filantrop-a-equipo-3/blob/master/docs/img/use_cases.png)
