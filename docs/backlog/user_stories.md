@@ -369,3 +369,63 @@ $$$$
   And I select my file or I type
   And I select the student/students
   Then the system successfully displays an error message saying that the report couldn't be loaded
+
+$$$$
+
+## **MoSCoW Prioritization**
+
+### **Must Have**
+- **User Story 1 - Student Registration:** 
+  - Estimation: 8
+  - Description: The ability to register students is foundational for the primary purpose of the application.
+
+- **User Story 2 - Charging Data:** 
+  - Estimation: 5
+  - Description: Quickly uploading data via Excel is vital for operational efficiency.
+
+- **User Story 3 - Updating Student Data:** 
+  - Estimation: 5
+  - Description: Keeping student data up-to-date is crucial for proper tracking and assignment.
+
+- **User Story 4 - Generation of Alerts:** 
+  - Estimation: 8
+  - Description: Alerting about significant events for students is essential for adequate monitoring and follow-up.
+
+- **User Story 5 - Register Donors:** 
+  - Estimation: 8
+  - Description: Registering donors is crucial for maintaining the philanthropic nature of the system.
+
+- **User Story 6 - Assign Donor to Student:** 
+  - Estimation: 13
+  - Description: Being able to assign a donor to a student is key to ensure the funding and support structures.
+
+### **Should Have**
+- **User Story 7 - View All Students:** 
+  - Estimation: 8
+  - Description: Being able to see all students and access their information is a basic requirement for any administration system.
+
+- **User Story 8 - Query Specific Student Information:** 
+  - Estimation: 13
+  - Description: While it's vital to see all students, the ability to search and query specific information will speed up efficiency.
+
+### **Could Have**
+- **User Story 9 - Management of Attached Documents:** 
+  - Estimation: 8
+  - Description: Keeping a complete record of each student is beneficial, though not essential for daily operations.
+
+- **User Story 10 - Send Alerts:** 
+  - Estimation: 5
+  - Description: Sending alerts is useful for internal communication but might not be necessary for the main system functionality.
+
+- **User Story 11 - Collaborator Registration:** 
+  - Estimation: 8
+  - Description: The ability to register collaborators can be useful for internal management but is not critical for the main system purpose.
+
+### **Won't Have (at least in the first version)**
+- **User Story 12 - Download Reports and Information:** 
+  - Estimation: 8
+  - Description: While downloading reports is useful, it's not a priority compared to other functions.
+
+- **User Story 13 - Upload Reports and Information:** 
+  - Estimation: 13
+  - Description: Uploading reports is less critical than basic student and collaborator management.
