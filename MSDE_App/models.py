@@ -9,7 +9,7 @@ class Student(models.Model):
     student_id = models.CharField(max_length=10)
     student_email = models.CharField(max_length=50)
     student_phone_number = models.CharField(max_length=12)
-    student_ICFES_score = models.IntegerField(max_length=10)
+    student_ICFES_score = models.IntegerField()
 
     def __str__(self):
         return self.student_name
@@ -43,14 +43,6 @@ class Collaborator(models.Model):
 class TypeCollaborator(models.Model):
     type_collaborator_code = models.CharField(max_length=10)
     type_collaborator_name = models.CharField(max_length=24)
-
-
-class Authenthication(models.Model):
-    auth_user = models.CharField(max_length=24)
-    auth_password = models.CharField(max_length=24)
-    auth_email = models.CharField(max_length=30)
-    auth_colaborador = models.ForeignKey(Collaborator, on_delete=models.CASCADE)
-    philanthropy_member = models.ForeignKey(PhilanthropyMember, on_delete=models.CASCADE)
 
 
 class Alert(models.Model):
