@@ -7,7 +7,10 @@
 
 {% for s in students %}
 <div>
-    <h1>{{ s.student_name }} </h1>
+    <a href="{% url 'edit_student' s.student_code %}">
+        <h1>{{ s.student_name }} </h1>
+    </a>
+
     <p> {{ s.student_code }}</p>
 </div>
 
