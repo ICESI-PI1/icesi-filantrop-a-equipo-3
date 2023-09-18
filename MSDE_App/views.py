@@ -52,9 +52,9 @@ def edit_student(request, student_code):
   return render(request, 'edit_student.html', {'form': form, 'student': student})
 
 
-def delete_student(request, pk):
-    student = get_object_or_404(Student, pk=pk)
+def delete_student(request, student_code):
+    student = get_object_or_404(Student, student_code=student_code)
     if request.method == 'POST':
         student.delete()
-        return redirect('edit_student', pk=pk)
+        return redirect('students/')
     return render(request, 'delete_student.html', {'student': student})

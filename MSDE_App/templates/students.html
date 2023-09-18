@@ -7,11 +7,13 @@
 
 {% for s in students %}
 <div>
+    <p> {{ s.student_code}} with name {{ s.student_name}}</p>
     <a href="{% url 'edit_student' s.student_code %}">
-        <h1>{{ s.student_name }} </h1>
+        <p>Edit</p>
     </a>
-
-    <p> {{ s.student_code }}</p>
+    <a href="{% url 'delete_student' s.student_code %}">
+        <p>Delete</p>
+    </a>
 </div>
 
 {% endfor %}

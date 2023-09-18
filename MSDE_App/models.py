@@ -48,6 +48,7 @@ class TypeCollaborator(models.Model):
 class Authenthication(models.Model):
     auth_user = models.CharField(max_length=24)
     auth_password = models.CharField(max_length=24)
+    auth_email = models.CharField(max_length=30)
     auth_colaborador = models.ForeignKey(Collaborator, on_delete=models.CASCADE)
     philanthropy_member = models.ForeignKey(PhilanthropyMember, on_delete=models.CASCADE)
 
