@@ -14,42 +14,45 @@ def index(request):
 
 
 def create_student(request):
-    if request.method == 'GET':
-        return render(request, 'create_student.html', {
-            'form': CreateStudent()
-        })
+    if request.method == 'POST':
+        try:
+            form = CreateStudent(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('index')
+        except ValueError:
+            return render(request, 'student/create_student.html', {
+                'form': form,
+                'error': 'Please provide valid data'
+            })
     else:
-        Student.objects.create(student_name=request.POST["name"],
-                               student_id=request.POST["id"],
-                               student_code=request.POST["code"],
-                               student_email=request.POST["email"],
-                               student_birth_date=request.POST["birth_date"],
-                               student_ICFES_score=request.POST["ICFES_score"],
-                               student_phone_number=request.POST["phone_number"])
-        return redirect('index')
+        form = CreateStudent()
+    return render(request, 'student/create_student.html', {'form': form})
+
+
+def student_detail(request, student_code):
+    student = get_object_or_404(Student, student_code=student_code)
+    return render(request, 'student/student_detail.html', {
+        'student': student
+    })
 
 
 def students(request):
     students = Student.objects.all()
-    return render(request, 'students.html',{
+    return render(request, 'student/students.html', {
         'students': students
     })
 
 
 def edit_student(request, student_code):
-  # get the student object from the database or return a 404 error
-  student = get_object_or_404(Student, student_code=student_code)
-  # create a form instance with the student data or the request data
-  if request.method == 'POST':
-    form = CreateStudent(request.POST)
-    # validate and save the form data
-    if form.is_valid():
-      form.save()
-      # redirect to a success page or display a success message
-  else:
-    form = CreateStudent()
-  # render a template with the form and the student data
-  return render(request, 'edit_student.html', {'form': form, 'student': student})
+    student = get_object_or_404(Student, student_code=student_code)
+    if request.method == 'POST':
+        form = CreateStudent(request.POST, instance=student)
+        if form.is_valid():
+            form.save()
+    else:
+        form = CreateStudent(instance=student)
+    return render(request, 'student/edit_student.html', {'form': form, 'student': student})
 
 
 def delete_student(request, student_code):
@@ -57,4 +60,4 @@ def delete_student(request, student_code):
     if request.method == 'POST':
         student.delete()
         return redirect('students/')
-    return render(request, 'delete_student.html', {'student': student})
+    return render(request, 'student/delete_student.html', {'student': student})
