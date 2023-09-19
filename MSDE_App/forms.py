@@ -12,7 +12,8 @@ class CreateStudent(forms.ModelForm):
         model = Student
         fields = "__all__"
         widgets = {
-            'student_birth_date': forms.widgets.DateInput(attrs={'type': 'date'})
+            'student_birth_date': forms.widgets.DateInput(attrs={'type': 'date'}),
+
         }
 
 
