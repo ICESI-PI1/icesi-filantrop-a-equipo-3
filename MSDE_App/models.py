@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class Student(models.Model):
-    student_code = models.CharField(max_length=9)
+    student_code = models.CharField(max_length=9, unique=True)
     student_name = models.CharField(max_length=24)
     student_birth_date = models.DateField(max_length=10)
     student_id = models.CharField(max_length=10)
