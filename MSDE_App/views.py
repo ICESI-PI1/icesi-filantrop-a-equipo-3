@@ -15,7 +15,7 @@ def index(request):
 
 def create_student(request):
     if request.method == 'GET':
-        return render(request, 'create_student.html', {
+        return render(request, 'student/create_student.html', {
             'form': CreateStudent()
         })
     else:
@@ -31,7 +31,7 @@ def create_student(request):
 
 def students(request):
     students = Student.objects.all()
-    return render(request, 'students.html',{
+    return render(request, 'student/students.html', {
         'students': students
     })
 
@@ -49,7 +49,7 @@ def edit_student(request, student_code):
   else:
     form = CreateStudent()
   # render a template with the form and the student data
-  return render(request, 'edit_student.html', {'form': form, 'student': student})
+  return render(request, 'student/edit_student.html', {'form': form, 'student': student})
 
 
 def delete_student(request, student_code):
@@ -57,4 +57,4 @@ def delete_student(request, student_code):
     if request.method == 'POST':
         student.delete()
         return redirect('students/')
-    return render(request, 'delete_student.html', {'student': student})
+    return render(request, 'student/delete_student.html', {'student': student})
