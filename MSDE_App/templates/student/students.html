@@ -6,15 +6,14 @@
 </h1>
 
 {% for s in students %}
-<div>
-    <p> {{ s.student_code}} with name {{ s.student_name}}</p>
-    <a href="{% url 'edit_student' s.student_code %}">
-        <p>Edit</p>
+<li>
+    <a href="{% url 'student_detail' s.student_code %}">
+             <p> {{ s.student_code}} with name {{ s.student_name}}</p>
+
     </a>
-    <a href="{% url 'delete_student' s.student_code %}">
-        <p>Delete</p>
-    </a>
-</div>
+
+</li>
+
 
 {% endfor %}
 {% endblock %}

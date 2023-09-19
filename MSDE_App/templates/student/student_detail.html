@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+    <h1>{{ student.student_name }}</h1>
+    <a href="{% url 'edit_student' student.student_code %}">
+            <p>Edit</p>
+        </a>
+        <a href="{% url 'delete_student' student.student_code %}">
+            <p>Delete</p>
+        </a>
+{% endblock %}

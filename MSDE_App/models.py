@@ -12,7 +12,7 @@ class Student(models.Model):
     student_ICFES_score = models.IntegerField()
 
     def __str__(self):
-        return self.student_name
+        return self.student_name+"\n"+self.student_code
 
 
 class TypeReport(models.Model):
