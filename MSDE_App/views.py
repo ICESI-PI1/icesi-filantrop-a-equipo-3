@@ -41,13 +41,13 @@ def edit_student(request, student_code):
   student = get_object_or_404(Student, student_code=student_code)
   # create a form instance with the student data or the request data
   if request.method == 'POST':
-    form = CreateStudent(request.POST)
+    form = CreateStudent(request.POST, instance=student)
     # validate and save the form data
     if form.is_valid():
       form.save()
       # redirect to a success page or display a success message
   else:
-    form = CreateStudent()
+    form = CreateStudent(instance=student)
   # render a template with the form and the student data
   return render(request, 'student/edit_student.html', {'form': form, 'student': student})
 
