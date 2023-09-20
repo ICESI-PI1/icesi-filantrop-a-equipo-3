@@ -13,6 +13,12 @@ class CreateStudent(forms.ModelForm):
         fields = "__all__"
         widgets = {
             'student_birth_date': forms.widgets.DateInput(attrs={'type': 'date'}),
+            'student_code': forms.TextInput(attrs={'class': 'form-control'}),
+            'student_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'student_id': forms.TextInput(attrs={'class': 'form-control'}),
+            'student_email': forms.TextInput(attrs={'class': 'form-control'}),
+            'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
+
 
         }
 
