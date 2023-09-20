@@ -1,12 +1,28 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
 
-    <h1>{{ student.student_name }}</h1>
-    <a href="{% url 'edit_student' student.student_code %}">
-            <p>Edit</p>
-        </a>
-        <a href="{% url 'delete_student' student.student_code %}">
-            <p>Delete</p>
-        </a>
+                <h1>{{ student.student_name }}</h1>
+                <p>Email: {{ student.student_email }}</p>
+                <p>Code: {{ student.student_code }}</p>
+                <p>Id: {{ student.student_id }}</p>
+
+               <div class="d-flex mt-5">
+                    <a href="{% url 'edit_student' student.student_code %}">
+                        <button class="btn btn-primary">
+                           Edit
+                        </button>
+                    </a>
+                    <a href="{% url 'delete_student' student.student_code %}">
+                        <button class="btn btn-danger">
+                           Delete
+                        </button>
+                    </a>
+               </div>
+            </div>
+        </div>
+    </main>
 {% endblock %}
