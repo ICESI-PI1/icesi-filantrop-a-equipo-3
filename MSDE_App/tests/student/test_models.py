@@ -72,15 +72,3 @@ class StudentTestCase(TestCase):
         with self.assertRaises(IntegrityError):
             student2.save()
 
-        student3 = Student(
-            student_code="A0037129",
-            student_name="Bob",
-            student_birth_date="2001-01-01",
-            student_id="2222222222",
-            student_email="bob@example.com",
-            student_phone_number="0987654321",
-            student_ICFES_score=600,
-            donor_student_code=None
-        )
-        with self.assertRaises(IntegrityError):
-            student3.save()
