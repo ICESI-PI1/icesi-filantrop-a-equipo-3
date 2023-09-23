@@ -37,10 +37,10 @@ def student_detail(request, student_code):
     })
 
 
-def students(request):
-    students = Student.objects.all()
+def students_view(request):
+    students_list = Student.objects.all()
     return render(request, 'student/students.html', {
-        'students': students
+        'students': students_list
     })
 
 
