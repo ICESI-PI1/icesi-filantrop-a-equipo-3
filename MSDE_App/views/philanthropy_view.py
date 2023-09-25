@@ -18,3 +18,7 @@ def create_philanthropy(request):
     else:
         form = CreatePhilanthropy()
         return render(request, 'philanthropy/create_philanthropy.html', {'form': form})
+
+def philanthropy_view(request):
+    philanthropy_members = PhilanthropyMember.objects.all()
+    return render(request, 'philanthropy/philanthropy.html', {'philanthropy_members': philanthropy_members})
