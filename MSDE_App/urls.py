@@ -9,6 +9,11 @@ urlpatterns = [
     path('students/', views.students_view, name="students/"),
     path('student/<str:student_code>/edit/', views.edit_student, name='edit_student'),
     path('student/<str:student_code>/delete/', views.delete_student, name='delete_student'),
+    path('donor/create_donor/', views.create_donor, name='create_donor'),
+    path('donor/<str:donor_code>/donor_detail', views.donor_detail, name='donor_detail'),
+    path('donors/', views.donor_view, name="donors/"),
+    path('donor/<str:donor_code>/edit/', views.edit_donor, name='edit_donor'),
+    path('donor/<str:donor_code>/delete/', views.delete_donor, name='delete_donor')
 
 
 ]

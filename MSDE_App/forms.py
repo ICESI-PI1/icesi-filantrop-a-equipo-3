@@ -1,5 +1,5 @@
 from django import forms
-from .models import Student
+from .models import Student, Donor
 
 
 class DateInput(forms.DateInput):
@@ -18,6 +18,19 @@ class CreateStudent(forms.ModelForm):
             'student_id': forms.TextInput(attrs={'class': 'form-control'}),
             'student_email': forms.TextInput(attrs={'class': 'form-control'}),
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
+
+
+        }
+
+
+class CreateDonor(forms.ModelForm):
+
+    class Meta:
+        model = Donor
+        fields = "__all__"
+        widgets = {
+            'donor_code': forms.TextInput(attrs={'class': 'form-control'}),
+            'donor_name': forms.TextInput(attrs={'class': 'form-control'})
 
 
         }
