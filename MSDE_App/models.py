@@ -57,8 +57,8 @@ class TypeCollaborator(models.Model):
 
 
 class Alert(models.Model):
-    alert_code = models.CharField(max_length=20, unique=True, auto_created=True)
-    alert_date = models.DateField
+    alert_code = models.CharField(max_length=20, unique=True)
+    alert_date = models.DateField(max_length=20)
 
 
 class TypeAlert(models.Model):
