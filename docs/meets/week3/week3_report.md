@@ -1,60 +1,5 @@
 # **DAILIES REPORT - WEEK #3**
 
-## **Daily 1**
-
-Date : 25/09/2023
-
-- ### **Dylan Bermudez Cardona**
-  - **What I did?**
-    Advanced in Philanthropy Member CRUD.
-
-  - **What I'm going to do?**
-    I'm going to create the CRUD for Report.
-
-  - **Impediments**
-    Nothing.
-
-- ### **Sara Valeria Cardona Vásquez**
-  - **What I did?**
-    Begin with CRUD of Alert
-
-  - **What I'm going to do?**
-    Continue with CRUD of Alert.
-
-  - **Impediments**
-    Nothing.
-
-- ### **Juan José López López**
-  - **What I did?**
-    Integrative tests for Student.
-
-  - **What I'm going to do?**
-    I'm going to create plan tests for Student.
-
-  - **Impediments**
-    Nothing.
-
-- ### **Luis Eduardo Charria Meneses**
-  - **What I did?**
-    I finished Donor CRUD.
-
-  - **What I'm going to do?**
-    I'm going to create CRUD for Collaborator.
-
-  - **Impediments**
-    Nothing
-
-- ### **Víctor Manuel Garzón Meneses**
-  - **What I did?**
-    I finished CRUD of Type Alert.
-
-  - **What I'm going to do?**
-    I'm going to create the Authentication.
-
-  - **Impediments**
-    Nothing.
-
-$$$$
 
 ## **Daily 1**
 
@@ -70,7 +15,7 @@ Date : 25/09/2023
   - **Impediments**
     Nothing.
 
-- ### **Sara Valeria Cardona Vásquez**
+ ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
     Begin with CRUD of Alert
 
@@ -136,12 +81,13 @@ Date : 27/09/2023
   - **Impediments**
     Nothing.
 
+
 - ### **Juan José López López**
   - **What I did?**
-    .
+    . Create plan test for Student
 
   - **What I'm going to do?**
-    .
+    . Create plan for Alert
 
   - **Impediments**
     Nothing.
@@ -194,10 +140,10 @@ Date : 29/09/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    .
+    . Create plan for alert
 
   - **What I'm going to do?**
-    .
+    . Create tests for alert
 
   - **Impediments**
     Nothing.
