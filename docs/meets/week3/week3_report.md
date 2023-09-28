@@ -63,10 +63,10 @@ Date : 27/09/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
-    .
+    Finished CRUD for Philanthropy Member.
 
   - **What I'm going to do?**
-    .
+    Start CRUD for Report.
 
   - **Impediments**
     Nothing.
