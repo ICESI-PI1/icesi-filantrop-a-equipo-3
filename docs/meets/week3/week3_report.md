@@ -73,10 +73,10 @@ Date : 27/09/2023
 
 - ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
-    .
+    Continued with CRUD for Alert
 
   - **What I'm going to do?**
-    .
+    Begin with the CRUD for type Alert
 
   - **Impediments**
     Nothing.
