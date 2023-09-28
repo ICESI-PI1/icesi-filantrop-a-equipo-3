@@ -19,6 +19,7 @@ class CreateStudent(forms.ModelForm):
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
         }
 
+
 class CreatePhilanthropy(forms.ModelForm):
     class Meta:
         model = PhilanthropyMember
