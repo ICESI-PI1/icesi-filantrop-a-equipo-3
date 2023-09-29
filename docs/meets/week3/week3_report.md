@@ -104,10 +104,10 @@ Date : 27/09/2023
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
-    .
+    . Create the login screen
 
   - **What I'm going to do?**
-    .
+    . Create the authentication system
 
   - **Impediments**
     Nothing.
@@ -160,10 +160,10 @@ Date : 29/09/2023
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
-    .
+    . Create the authentication system
 
   - **What I'm going to do?**
-    .
+    . Create the test plan
 
   - **Impediments**
     Nothing.
