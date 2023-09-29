@@ -37,10 +37,10 @@ Date : 25/09/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    I finished Donor CRUD.
+    Advanced in Donor CRUD.
 
   - **What I'm going to do?**
-    I'm going to create CRUD for Collaborator.
+    I'm going to continue CRUD for Donor.
 
   - **Impediments**
     Nothing
@@ -94,10 +94,10 @@ Date : 27/09/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    .
+    Continued in Donor CRUD.
 
   - **What I'm going to do?**
-    .
+    I'm going to finish CRUD for Donor.
 
   - **Impediments**
     Nothing
@@ -206,10 +206,10 @@ Date : 30/09/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    .
+    Finished CRUD for Donor
 
   - **What I'm going to do?**
-    .
+    I'm going to create the CRUD for Collaborator
 
   - **Impediments**
     Nothing
