@@ -84,10 +84,10 @@ Date : 26/09/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    . Create plan test for Student
+    Create plan test for Student
 
   - **What I'm going to do?**
-    . Create plan for Alert
+    Create plan for Alert
 
   - **Impediments**
     Nothing.
@@ -104,10 +104,10 @@ Date : 26/09/2023
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
-    . Create the login screen
+    Create the login screen
 
   - **What I'm going to do?**
-    . Create the authentication system
+    Create the authentication system
 
   - **Impediments**
     Nothing.
@@ -120,10 +120,10 @@ Date : 27/09/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
-    .
+    Keep working on Report CRUD.
 
   - **What I'm going to do?**
-    .
+    Help in the Auth and Style.
 
   - **Impediments**
     Nothing.
@@ -140,10 +140,10 @@ Date : 27/09/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    . Create plan for alert
+    Create plan for alert
 
   - **What I'm going to do?**
-    . Create tests for alert
+    Create tests for alert
 
   - **Impediments**
     Nothing.
@@ -160,10 +160,10 @@ Date : 27/09/2023
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
-    . Create the authentication system
+    Create the authentication system
 
   - **What I'm going to do?**
-    . Create the test plan
+    Create the test plan
 
   - **Impediments**
     Nothing.
@@ -196,10 +196,10 @@ Date : 28/09/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    . Create test for alert
+    Create test for alert
 
   - **What I'm going to do?**
-    . Create test plan for donnor
+    Create test plan for donnor
 
   - **Impediments**
     Nothing.
