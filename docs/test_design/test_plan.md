@@ -96,3 +96,29 @@ preconditions: donor must be created
 |6|Correct donor code |delete donor|
 |7|Incorrect donor code |non delete|
 
+
+**Unitasry tests for TypeAlert**
+
+preconditions: typeAlert must be created
+
+- [x] TypeAlert can be created
+- [x] TypeAlert can be updated
+- [x] TypeAlert can be deleted
+
+*create*
+|case|Input|Output|
+|---|---|---|
+|1|Correct typeAlert attributes |create typeAlert|
+|2|Incorrect typeAlert attributes |error|
+
+*update*
+|case|Input|Output|
+|---|---|---|
+|3|Correct typeAlert attributes |update typeAlert|
+|4|Incorrect typeAlert attributes |error|
+
+*delete*
+|case|Input|Output|
+|---|---|---|
+|5|Correct typeAlert code |delete typeAlert|
+|6|Incorrect typeAlert code |non delete|
