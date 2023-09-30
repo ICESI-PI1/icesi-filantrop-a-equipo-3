@@ -59,7 +59,7 @@ $$$$
 
 ## **Daily 2**
 
-Date : 27/09/2023
+Date : 26/09/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
@@ -116,7 +116,7 @@ $$$$
 
 ## **Daily 3**
 
-Date : 29/09/2023
+Date : 27/09/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
@@ -172,7 +172,7 @@ $$$$
 
 ## **Daily 4**
 
-Date : 30/09/2023
+Date : 28/09/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
@@ -196,10 +196,10 @@ Date : 30/09/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    .
+    . Create test for alert
 
   - **What I'm going to do?**
-    .
+    . Create test plan for donnor
 
   - **Impediments**
     Nothing.
@@ -228,7 +228,7 @@ $$$$
 
 ## **Daily 5**
 
-Date : 01/10/2023
+Date : 29/10/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
@@ -252,10 +252,10 @@ Date : 01/10/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    .
+    .  Nothing
 
   - **What I'm going to do?**
-    .
+    . Create plan for donnor
 
   - **Impediments**
     Nothing.
