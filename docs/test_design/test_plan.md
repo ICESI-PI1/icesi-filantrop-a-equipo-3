@@ -69,3 +69,30 @@ preconditions: alert must be created
 
 
 
+**Unitary tests for Donor**
+
+preconditions: donor must be created
+
+- [x] Donor can be created
+- [x] Donor can be updated
+- [x] Donor can be deleted
+
+*create*
+|case|Input|Output|
+|---|---|---|
+|1|Correct donor attributes |create donor|
+|2|Incorrect donor attributes |error|
+|3|atributes with an existign code|error|
+
+*update*
+|case|Input|Output|
+|---|---|---|
+|4|Correct donor attributes |update donor|
+|5|Incorrect donor attributes |error|
+
+*delete*
+|case|Input|Output|
+|---|---|---|
+|6|Correct donor code |delete donor|
+|7|Incorrect donor code |non delete|
+
