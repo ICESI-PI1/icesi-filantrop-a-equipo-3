@@ -1,16 +1,19 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Student
 from .forms import CreateStudent
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 
+@login_required()
 def index(request):
     title = "Django course !!"
     return render(request, 'index.html', {
         'title': title
     })
+
+
 
 
 def create_student(request):
@@ -28,6 +31,7 @@ def create_student(request):
     else:
         form = CreateStudent()
     return render(request, 'student/create_student.html', {'form': form})
+
 
 
 def student_detail(request, student_code):
