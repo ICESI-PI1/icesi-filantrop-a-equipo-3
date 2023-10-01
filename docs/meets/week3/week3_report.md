@@ -176,10 +176,10 @@ Date : 28/09/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
-    .
+    Add partial CRUD of Report and update Style.
 
   - **What I'm going to do?**
-    .
+    Finish CRUD of Report.
 
   - **Impediments**
     Nothing.
