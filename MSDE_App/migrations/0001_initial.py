@@ -17,6 +17,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('alert_code', models.CharField(max_length=20)),
+                ('alert_description', models.CharField(max_length=50)),
+                ('alert_sender', models.CharField(max_length=20))
             ],
         ),
         migrations.CreateModel(

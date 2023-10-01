@@ -1,5 +1,6 @@
 from django import forms
 from .models import Student
+from .models import Alert
 
 
 class DateInput(forms.DateInput):
@@ -20,6 +21,19 @@ class CreateStudent(forms.ModelForm):
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
 
 
+        }
+
+class CreateAlert(forms.ModelForm):
+
+    class Meta:
+        model = Alert
+        fields = "__all__"
+        widgets = {
+            'alert_date': DateInput(),
+            'alert_code': forms.TextInput(attrs={'class': 'form-control'}),
+            'alert_description': forms.TextInput(attrs={'class': 'form-control'}),
+            'alert_sender': forms.TextInput(attrs={'class': 'form-control'}),
+            'type_alert': forms.Select(attrs={'class': 'form-control'})
         }
 
 
