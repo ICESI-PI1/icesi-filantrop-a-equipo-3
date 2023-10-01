@@ -69,3 +69,56 @@ preconditions: alert must be created
 
 
 
+**Unitary tests for Donor**
+
+preconditions: donor must be created
+
+- [x] Donor can be created
+- [x] Donor can be updated
+- [x] Donor can be deleted
+
+*create*
+|case|Input|Output|
+|---|---|---|
+|1|Correct donor attributes |create donor|
+|2|Incorrect donor attributes |error|
+|3|atributes with an existign code|error|
+
+*update*
+|case|Input|Output|
+|---|---|---|
+|4|Correct donor attributes |update donor|
+|5|Incorrect donor attributes |error|
+
+*delete*
+|case|Input|Output|
+|---|---|---|
+|6|Correct donor code |delete donor|
+|7|Incorrect donor code |non delete|
+
+
+**Unitasry tests for TypeAlert**
+
+preconditions: typeAlert must be created
+
+- [x] TypeAlert can be created
+- [x] TypeAlert can be updated
+- [x] TypeAlert can be deleted
+
+*create*
+|case|Input|Output|
+|---|---|---|
+|1|Correct typeAlert attributes |create typeAlert|
+|2|Incorrect typeAlert attributes |error|
+
+*update*
+|case|Input|Output|
+|---|---|---|
+|3|Correct typeAlert attributes |update typeAlert|
+|4|Incorrect typeAlert attributes |error|
+
+*delete*
+|case|Input|Output|
+|---|---|---|
+|5|Correct typeAlert code |delete typeAlert|
+|6|Incorrect typeAlert code |non delete|
