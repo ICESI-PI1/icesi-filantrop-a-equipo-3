@@ -1,0 +1,101 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <main class="container">
+        <div>
+            <h1>Generate reports</h1>
+        </div>
+        <article>
+            <section class="select-students">
+                <h3>Select the students:</h3>
+                <p>Select all the students that you want to generate a report. You can search by code, ID or name.</p>
+                <div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend input-group-text">
+                            <select class="form-select" id="search-by-select" aria-label="Default select">
+                                <option selected>Search by</option>
+                                <option value="1">Student Code</option>
+                                <option value="2">ID</option>
+                                <option value="3">Name</option>
+                            </select>
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal"
+                                    id="search-btn">Search
+                            </button>
+                        </div>
+                        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Student search result</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>We didn't find that student</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                                        </button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>Selected students:</p>
+                <div>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">Subheading</div>
+                                Content for list item
+                            </div>
+                            <button type="button" class="btn btn-danger rounded-pill">X</button>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">Subheading</div>
+                                Content for list item
+                            </div>
+                            <button type="button" class="btn btn-danger rounded-pill">X</button>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">Subheading</div>
+                                Content for list item
+                            </div>
+                            <button type="button" class="btn btn-danger rounded-pill">X</button>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+        </article>
+        <article>
+            <section class="select-report">
+                <h3>Select the type of report:</h3>
+                <p>Select the type of report that you want to generate. There are 3 types defined, but you select
+                    one to customize.</p>
+                <div>
+                    <select class="form-select" aria-label="Default select">
+                        <option selected>Select</option>
+                        <option value="1">Informe de becas</option>
+                        <option value="2">Informe de actividades extra</option>
+                        <option value="3">Informe de consultas en el
+                            CREA
+                        </option>
+                        <option value="4">Informe personalizado</option>
+                    </select>
+                </div>
+            </section>
+        </article>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary generate-btn">Generar</button>
+        </div>
+    </main>
+{% endblock %}
