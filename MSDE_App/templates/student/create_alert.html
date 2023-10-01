@@ -2,9 +2,9 @@
 {% block content %}
        <main class="container">
             <div class="row">
-                <div>
+                <div class="col-md-4 offset-md-4">
                      <form method="POST" class="card card-body">
-                         <h1>Create a new Student</h1>
+                         <h1>Create a new Alert</h1>
                           {{ error }}
                           {% csrf_token %}
                           {{ form.as_p }}
