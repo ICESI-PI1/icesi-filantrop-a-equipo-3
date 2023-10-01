@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <main class="container">
+        <section class="row">
+            <article>
+                <h1>
+                    Philanthropy Members
+                </h1>
+                <ul class="list-group">
+                    {% for p in philanthropy_members %}
+                        <a class="list-group-item" href="{% url 'philanthropy_detail' p.philanthropy_member_code %}">
+                            <strong> {{ p.philanthropy_member_name }}</strong>
+                            <p>Code: {{ p.philanthropy_member_email }}</p>
+                        </a>
+                    {% endfor %}
+                </ul>
+            </article>
+        </section>
+        <section>
+            <article>
+                <div class="text-center">
+                    <a class="btn btn-primary" href="/philanthropy/create_philanthropy/" role="button">Create</a>
+                </div>
+            </article>
+        </section>
+    </main>
+{% endblock %}

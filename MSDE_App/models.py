@@ -36,6 +36,7 @@ class TypeReport(models.Model):
 class PhilanthropyMember(models.Model):
     philanthropy_member_code = models.CharField(max_length=10)
     philanthropy_member_name = models.CharField(max_length=24)
+    philanthropy_member_email = models.CharField(max_length=50, default="default@gmail.com")
 
 
 class Report(models.Model):

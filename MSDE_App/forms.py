@@ -1,6 +1,6 @@
 from django import forms
-from .models import Student
-from .models import Alert
+
+from .models import *
 
 
 class DateInput(forms.DateInput):
@@ -8,7 +8,6 @@ class DateInput(forms.DateInput):
 
 
 class CreateStudent(forms.ModelForm):
-
     class Meta:
         model = Student
         fields = "__all__"
@@ -19,8 +18,6 @@ class CreateStudent(forms.ModelForm):
             'student_id': forms.TextInput(attrs={'class': 'form-control'}),
             'student_email': forms.TextInput(attrs={'class': 'form-control'}),
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
-
-
         }
 
 
@@ -35,4 +32,12 @@ class CreateAlert(forms.ModelForm):
         self.fields['alert_sender'].widget.attrs['placeholder'] = "Ingrese el emisor de la alarma"
 
 
-
+class CreatePhilanthropy(forms.ModelForm):
+    class Meta:
+        model = PhilanthropyMember
+        fields = "__all__"
+        widgets = {
+            'philanthropy_member_code' : forms.TextInput(attrs={'class': 'form-control'}),
+            'philanthropy_member_name' : forms.TextInput(attrs={'class': 'form-control'}),
+            'philanthropy_member_email' : forms.TextInput(attrs={'class': 'form-control'}),
+        }
