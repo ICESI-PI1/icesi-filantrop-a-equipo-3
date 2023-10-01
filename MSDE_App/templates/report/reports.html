@@ -18,12 +18,13 @@
                                 <option value="2">ID</option>
                                 <option value="3">Name</option>
                             </select>
-                            <input id="data-to-search" type="text" class="form-control" aria-label="Text input with dropdown button">
+                            <input id="data-to-search" type="text" class="form-control"
+                                   aria-label="Text input with dropdown button">
 
                         </div>
                         <div class="input-group-append">
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal"
-                                    id="search-btn" onclick="handleSearch">Search
+                                    id="search-btn" onclick=handleSearch()>Search
                             </button>
                         </div>
                         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -44,11 +45,14 @@
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     Close
                                                 </button>
-                                                <button id="add-student-btn" onclick ="handleAddStudent({{ result }})" type="button" class="btn btn-primary">Add</button>
+                                                <button id="add-student-btn" onclick="handleAddStudent({{ result }})"
+                                                        type="button" class="btn btn-primary">Add
+                                                </button>
                                             </div>
                                         {% endif %}
                                         {% if result == None %}
-                                            <p>We didn't find that student (maybe you didn't select a 'search by' option)</p>
+                                            <p>We didn't find that student (maybe you didn't select a 'search by'
+                                                option)</p>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     Close
@@ -64,21 +68,23 @@
                 </div>
                 <p>Selected students:</p>
                 <div>
-                {% if students %}
-                    <ul class="list-group list-group-numbered">
-                        {% for s in students %}
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                            <div class="ms-2 me-auto">
-                                <div class="fw-bold">{{ s.student_name }}</div>
-                                Con código {{ s.student_code }}
-                            </div>
-                            <button onclick="handleQuitStudent({{ s }})" type="button" class="btn btn-danger rounded-pill">X</button>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                    <p>No selected students</p>
-                {% endif %}
+                    {% if students %}
+                        <ul class="list-group list-group-numbered">
+                            {% for s in students %}
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">{{ s.student_name }}</div>
+                                        Con código {{ s.student_code }}
+                                    </div>
+                                    <button onclick="handleQuitStudent({{ s }})" type="button"
+                                            class="btn btn-danger rounded-pill">X
+                                    </button>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No selected students</p>
+                    {% endif %}
                 </div>
             </section>
         </article>
