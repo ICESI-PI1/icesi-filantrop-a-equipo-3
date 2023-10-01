@@ -59,6 +59,8 @@ class TypeCollaborator(models.Model):
 class Alert(models.Model):
     alert_code = models.CharField(max_length=20, unique=True, auto_created=True)
     alert_date = models.DateField
+    alert_description = models.TextField(default="Ingrese una descripcion")
+    alert_sender = models.CharField(max_length=100, default="Emisor alarma")
 
 
 class TypeAlert(models.Model):
