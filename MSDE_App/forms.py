@@ -29,12 +29,11 @@ class CreateAlert(forms.ModelForm):
         model = Alert
         fields = "__all__"
         widgets = {
-            'alert_date': forms.widgets.DateInput(attrs={'type': 'date'}),
+            'alert_date': DateInput(),
             'alert_code': forms.TextInput(attrs={'class': 'form-control'}),
             'alert_description': forms.TextInput(attrs={'class': 'form-control'}),
             'alert_sender': forms.TextInput(attrs={'class': 'form-control'}),
-
-
+            'type_alert': forms.Select(attrs={'class': 'form-control'})
         }
 
 
