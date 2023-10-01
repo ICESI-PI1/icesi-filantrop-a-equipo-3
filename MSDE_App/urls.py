@@ -17,5 +17,6 @@ urlpatterns = [
          views.philanthropy_edit, name='philanthropy_edit'),
     path('philanthropy/<str:philanthropy_code>/delete/',
          views.philanthropy_delete, name='delete_philanthropy'),
-    path('reports/', views.reports_view ,name='reports')
+    path('reports/', views.reports_view ,name='reports'),
+    path('reports/add_student', views.add_student ,name='reports_add_student')
 ]
