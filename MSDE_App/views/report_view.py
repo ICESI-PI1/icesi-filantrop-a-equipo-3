@@ -4,12 +4,18 @@ from MSDE_App.forms import *
 
 student_list = None
 
-def add_student(request, student_to_add):
+def add_student(request):
     if request.method == 'POST':
-        student_list.append(student_to_add)
-        return render(request, 'report/reports.html', {
-            'students':student_list
-        })
+        try:
+            data = json.loads(request.body)
+            student_to_add = data.get('student')
+
+            student_list.append(student_to_add)
+            return render(request, 'report/reports.html', {
+                'students': student_list
+            })
+        except json.JSONDecodeError as e:
+            return JsonResponse({'error': 'Error al decodificar JSON: ' + str(e)}, status=400)
 
 def reports_view(request):
     if request.method != 'POST':

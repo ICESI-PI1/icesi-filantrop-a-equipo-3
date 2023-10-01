@@ -21,8 +21,20 @@ function handleAddStudent(student) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+            student: student
+        }),
+    })
+}
+
+function handleQuitStudent(student) {
+
+}fetch('reports/add_student/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
             search_by: search_by_select,
             data: data_to_search
         }),
     })
-}

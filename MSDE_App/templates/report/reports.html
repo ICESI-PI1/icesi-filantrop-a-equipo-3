@@ -72,7 +72,7 @@
                                 <div class="fw-bold">{{ s.student_name }}</div>
                                 Con código {{ s.student_code }}
                             </div>
-                            <button type="button" class="btn btn-danger rounded-pill">X</button>
+                            <button onclick="handleQuitStudent({{ s }})" type="button" class="btn btn-danger rounded-pill">X</button>
                         </li>
                         {% endfor %}
                     </ul>
