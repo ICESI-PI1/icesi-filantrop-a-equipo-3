@@ -18,12 +18,12 @@
                                 <option value="2">ID</option>
                                 <option value="3">Name</option>
                             </select>
-                            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                            <input id="data-to-search" type="text" class="form-control" aria-label="Text input with dropdown button">
 
                         </div>
                         <div class="input-group-append">
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal"
-                                    id="search-btn">Search
+                                    id="search-btn" onclick="handleSearch">Search
                             </button>
                         </div>
                         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -36,12 +36,26 @@
                                                 aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>We didn't find that student</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
-                                        </button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        {% if result != None %}
+                                            <p>The student was found:</p>
+                                            <p>With code {{ result.student_code }}, ID {{ result.student_id }} and name
+                                                {{ result.student_name }}</p>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Add</button>
+                                            </div>
+                                        {% endif %}
+                                        {% if result == None %}
+                                            <p>We didn't find that student (maybe you didn't select a 'search by' option)</p>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-primary" disabled>Add</button>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
