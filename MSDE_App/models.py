@@ -57,9 +57,9 @@ class TypeCollaborator(models.Model):
     type_collaborator_code = models.CharField(max_length=10)
     type_collaborator_name = models.CharField(max_length=24)
 
-class TypeAlert(models.Model):
-     alert_type_code = models.CharField(max_length=12, unique=True, null=True)
 
+class TypeAlert(models.Model):
+    alert_type_code = models.CharField(max_length=12, unique=True, null=True)
 
 
 class Alert(models.Model):
@@ -68,9 +68,3 @@ class Alert(models.Model):
     alert_description = models.TextField(blank=True)
     alert_sender = models.CharField(max_length=100, blank=True)
     type_alert = models.ForeignKey(TypeAlert, to_field='alert_type_code', on_delete=models.CASCADE, null=True)
-
-
-
-
-
-
