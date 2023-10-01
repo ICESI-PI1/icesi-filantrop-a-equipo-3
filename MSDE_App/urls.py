@@ -19,6 +19,4 @@ urlpatterns = [
          views.philanthropy_edit, name='philanthropy_edit'),
     path('philanthropy/<str:philanthropy_code>/delete/',
          views.philanthropy_delete, name='delete_philanthropy')
-
-
 ]

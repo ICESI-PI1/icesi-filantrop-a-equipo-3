@@ -20,18 +20,16 @@ class CreateStudent(forms.ModelForm):
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
         }
 
-class CreateAlert(forms.ModelForm):
 
+class CreateAlert(forms.ModelForm):
     class Meta:
         model = Alert
-        fields = "__all__"
-        widgets = {
-            'alert_date': DateInput(),
-            'alert_code': forms.TextInput(attrs={'class': 'form-control'}),
-            'alert_description': forms.TextInput(attrs={'class': 'form-control'}),
-            'alert_sender': forms.TextInput(attrs={'class': 'form-control'}),
-            'type_alert': forms.Select(attrs={'class': 'form-control'})
-        }
+        exclude = ['alert_code', 'alert_date']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['alert_description'].widget.attrs['placeholder'] = "Ingrese una descripción"
+        self.fields['alert_sender'].widget.attrs['placeholder'] = "Ingrese el emisor de la alarma"
 
 
 class CreatePhilanthropy(forms.ModelForm):

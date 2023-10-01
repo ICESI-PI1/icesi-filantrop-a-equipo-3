@@ -1,4 +1,6 @@
 from django.db import models
+import uuid
+from datetime import date
 
 
 # Create your models here.
@@ -62,8 +64,8 @@ class TypeAlert(models.Model):
 
 
 class Alert(models.Model):
-    alert_code = models.CharField(max_length=20, unique=True, auto_created=True)
-    alert_date = models.DateField
-    alert_description = models.TextField(default="Ingrese una descripcion")
-    alert_sender = models.CharField(max_length=100, default="Emisor alarma")
+    alert_code = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    alert_date = models.DateField(auto_now_add=True)
+    alert_description = models.TextField(blank=True)
+    alert_sender = models.CharField(max_length=100, blank=True)
     type_alert = models.ForeignKey(TypeAlert, to_field='alert_type_code', on_delete=models.CASCADE, null=True)
