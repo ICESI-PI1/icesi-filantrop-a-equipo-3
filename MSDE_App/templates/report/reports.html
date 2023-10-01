@@ -14,9 +14,9 @@
                         <div class="input-group-prepend input-group-text">
                             <select class="form-select" id="search-by-select" aria-label="Default select">
                                 <option selected>Search by</option>
-                                <option value="1">Student Code</option>
-                                <option value="2">ID</option>
-                                <option value="3">Name</option>
+                                <option value="student-code">Student Code</option>
+                                <option value="id">ID</option>
+                                <option value="name">Name</option>
                             </select>
                             <input id="data-to-search" type="text" class="form-control"
                                    aria-label="Text input with dropdown button">
@@ -37,7 +37,16 @@
                                                 aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        {% if result != None %}
+                                        {% if result == None %}
+                                            <p>We didn't find that student (maybe you didn't select a 'search by'
+                                                option)</p>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-primary" disabled>Add</button>
+                                            </div>
+                                        {% else %}
                                             <p>The student was found:</p>
                                             <p>With code {{ result.student_code }}, ID {{ result.student_id }} and name
                                                 {{ result.student_name }}</p>
@@ -48,16 +57,6 @@
                                                 <button id="add-student-btn" onclick="handleAddStudent({{ result }})"
                                                         type="button" class="btn btn-primary">Add
                                                 </button>
-                                            </div>
-                                        {% endif %}
-                                        {% if result == None %}
-                                            <p>We didn't find that student (maybe you didn't select a 'search by'
-                                                option)</p>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                    Close
-                                                </button>
-                                                <button type="button" class="btn btn-primary" disabled>Add</button>
                                             </div>
                                         {% endif %}
                                     </div>
