@@ -8,8 +8,14 @@
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-            <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg" alt="avatar"
-              class="rounded-circle img-fluid" style="width: 150px;">
+            <style>
+              .profile-image {
+                  width: 150px;
+                  height: 150px;
+                  object-fit: cover;
+              }
+          </style>
+          <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg" alt="avatar" class="rounded-circle img-fluid profile-image">
             <h5 class="my-3">{{ student.student_name }}</h5>
             <p class="text-muted mb-1">{{ student.student_code }}</p>
             <div class="d-flex justify-content-center mb-2">
@@ -25,9 +31,9 @@
         <div class="card mb-4 mb-lg-0">
           <div class="card-body p-0">
               <div  class="d-flex justify-content-center align-items-center pt-4">
-                      <a href="{% url 'delete_student' student.student_code %}">
-                        <button type="button" class="btn btn-outline-primary ms-1">ALERT</button>
-                      </a>
+                <a href="{% url 'create_alert' student_id=student.pk %}">
+                  <button type="button" class="btn btn-primary">ALERT</button>
+                  </a>
             </div>
             <ul class="list-group list-group-flush rounded-3">
               <li class="list-group-item d-flex justify-content-between align-items-center p-3">

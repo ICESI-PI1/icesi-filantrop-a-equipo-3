@@ -10,7 +10,7 @@ urlpatterns = [
     path('students/', views.students_view, name="students/"),
     path('student/<str:student_code>/edit/', views.edit_student, name='edit_student'),
     path('student/<str:student_code>/delete/', views.delete_student, name='delete_student'),
-    path('student/<str:student_code>/create_alert/', views.create_alert, name='create_alert'),
+    path('student/<int:student_id>/create_alert/', views.create_alert, name='create_alert')
 
 
 ]

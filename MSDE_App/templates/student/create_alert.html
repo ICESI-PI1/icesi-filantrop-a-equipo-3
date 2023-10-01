@@ -1,16 +1,51 @@
 {% extends 'layouts/base.html' %}
 {% block content %}
-       <main class="container">
-            <div class="row">
-                <div class="col-md-4 offset-md-4">
-                     <form method="POST" class="card card-body">
-                         <h1>Create a new Alert</h1>
-                          {{ error }}
-                          {% csrf_token %}
-                          {{ form.as_p }}
-                          <button type="submit" class="btn btn-primary">Save</button>
+<main class="container py-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card mb-0">
+                <div class="card-body text-center">
+                    <style>
+                        .profile-image {
+                            width: 150px;
+                            height: 150px;
+                            object-fit: cover;
+                        }
+                    </style>
+                    <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg" alt="avatar" class="rounded-circle img-fluid profile-image">
+                    <h5 class="my-3">{{ student.student_name }}</h5>
+                    <p class="text-muted mb-1">{{ student.student_code }}</p>
+                </div>
+            </div>
+            <div class="card-body p-0 pt-0">
+                <div class="d-flex justify-content-center align-items-center">
+                    <form method="POST" class="card card-body">
+                        <h1>Create new Alert</h1>
+                        {{ error }}
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </form>
                 </div>
             </div>
-       </main>
+        </div>
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    Historial de Alertas
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        {% for alert in student.alerts.all %}  
+                        <li class="list-group-item">
+                            {{ alert.message }}  
+                            <span class="text-muted float-end">{{ alert.date }}</span>  
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}
