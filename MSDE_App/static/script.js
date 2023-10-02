@@ -16,6 +16,12 @@ function getCookie(name) {
 }
 
 const csrftoken = getCookie('csrftoken'); // getting the cookie to pass as csrf token
+
+function clickOnInvisible() {
+    const invisible_btn = document.getElementById("invisible-btn")
+    console.log("clicked")
+    invisible_btn.click()
+}
 /*
 const searchBtn = document.getElementById("search-btn");
 // Agrega un evento clic al botón de búsqueda
