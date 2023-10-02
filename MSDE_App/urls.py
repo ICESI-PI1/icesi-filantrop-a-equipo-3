@@ -23,5 +23,4 @@ urlpatterns = [
     path('reports/', views.reports_view, name='reports'),
     path('reports/add_student', views.add_student, name='reports_add_student'),
     path('reports/quit_student/<str:student_code>', views.quit_student, name='reports_quit_student'),
-         views.philanthropy_delete, name='delete_philanthropy')
 ]
