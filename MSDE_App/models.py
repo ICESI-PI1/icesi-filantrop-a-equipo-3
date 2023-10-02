@@ -62,7 +62,7 @@ class TypeAlert(models.Model):
 
 class Alert(models.Model):
     alert_code = models.CharField(max_length=20, unique=True, auto_created=True)
-    alert_date = models.DateField
+    alert_date = models.DateField(max_length=30)
     alert_description = models.TextField(default="Ingrese una descripcion")
     alert_sender = models.CharField(max_length=100, default="Emisor alarma")
-    type_alert = models.ForeignKey(TypeAlert, to_field='alert_type_code', on_delete=models.CASCADE, null=True)
+    type_alert = models.ForeignKey(TypeAlert, on_delete=models.CASCADE)
