@@ -232,10 +232,10 @@ Date : 29/10/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
-    .
+    Half of functions of Report and update Style.
 
   - **What I'm going to do?**
-    .
+    Finish other half of Report and make test planning.
 
   - **Impediments**
     Nothing.
