@@ -1,6 +1,6 @@
 from django import forms
-
 from .models import *
+
 
 
 class DateInput(forms.DateInput):
@@ -28,6 +28,19 @@ class CreateAlert(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['alert_description'].widget.attrs['placeholder'] = "Ingrese una descripción"
         self.fields['alert_sender'].widget.attrs['placeholder'] = "Ingrese el emisor de la alarma"
+
+class CreateDonor(forms.ModelForm):
+
+    class Meta:
+        model = Donor
+        fields = "__all__"
+        widgets = {
+            'donor_code': forms.TextInput(attrs={'class': 'form-control'}),
+            'donor_name': forms.TextInput(attrs={'class': 'form-control'})
+
+
+        }
+
 
 
 class CreatePhilanthropy(forms.ModelForm):
