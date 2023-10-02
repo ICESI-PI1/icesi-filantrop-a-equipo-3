@@ -1,16 +1,35 @@
 {% extends 'layouts/base.html' %}
 {% block content %}
-       <main class="container">
-            <div class="row">
-                <div class="col-md-4 offset-md-4">
-                     <form method="POST" class="card card-body">
-                         <h1>Create a new Student</h1>
-                          {{ error }}
-                          {% csrf_token %}
-                          {{ form.as_p }}
-                          <button type="submit" class="btn btn-primary">Save</button>
-                    </form>
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-2">
+            <form method="POST" class="card card-body" enctype="multipart/form-data">
+                <h1>Registrar Nuevo Estudiante</h1>
+                {% if form.instance.profile_picture %}
+                    <div class="text-center mb-3">
+                        <img src="{{ form.instance.profile_picture.url }}" alt="Foto de perfil de {{ form.instance.student_name }}" style="max-width: 100%; height: auto;">
+                    </div>
+                {% endif %}
+                {{ error }}
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <form method="POST" class="card card-body" enctype="multipart/form-data">
+                <h1>Importar base de datos</h1>
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <figure>
+                        <label for="databaseFile">Selecciona el archivo</label>
+                        <input type="file" class="form-control-file" id="databaseFile" name="database_file">
+                    </figure>
                 </div>
-            </div>
-       </main>
+                <button type="submit" class="btn btn-secondary">Importar</button>
+            </form>
+        </div>
+    </div>
+</main>
 {% endblock %}

@@ -1,9 +1,8 @@
 from django.db import models
 import uuid
-from datetime import date
+from datetime import datetime
 
 
-# Create your models here.
 
 
 class Donor(models.Model):
@@ -23,6 +22,7 @@ class Student(models.Model):
     student_phone_number = models.CharField(max_length=12)
     student_ICFES_score = models.IntegerField()
     donor_student_code = models.ForeignKey(Donor, on_delete=models.CASCADE)
+    profile_picture = models.ImageField(upload_to='student_pictures/', null=True, blank=True)
 
     def __str__(self):
         return self.student_name + "\n" + self.student_code
@@ -59,12 +59,33 @@ class TypeCollaborator(models.Model):
 
 
 class TypeAlert(models.Model):
-    alert_type_code = models.CharField(max_length=12, unique=True, null=True)
+    ACADEMICA = 'Academica'
+    BIENESTAR = 'Bienestar'
+    FINANCIERO = 'Financiero'
+
+    ALERT_TYPE_CHOICES = [
+        (ACADEMICA, 'Académica'),
+        (BIENESTAR, 'Bienestar'),
+        (FINANCIERO, 'Financiero'),
+    ]
+
+    alert_type = models.CharField(
+        max_length=12,
+        choices=ALERT_TYPE_CHOICES,
+        unique=True,
+        null=True
+    )
+    def __str__(self):
+        return self.alert_type + "\n"
 
 
 class Alert(models.Model):
     alert_code = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    alert_date = models.DateField(auto_now_add=True)
+    alert_date = models.DateTimeField(auto_now_add=True, null=True)
     alert_description = models.TextField(blank=True)
     alert_sender = models.CharField(max_length=100, blank=True)
-    type_alert = models.ForeignKey(TypeAlert, to_field='alert_type_code', on_delete=models.CASCADE, null=True)
+    type_alert = models.ForeignKey(TypeAlert, on_delete=models.CASCADE, null=True)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True, blank=True)
+    
+
+

@@ -15,8 +15,13 @@
                   object-fit: cover;
               }
           </style>
+          {% if student.profile_picture %}
+          <img src="{{ student.profile_picture.url }}" alt="Foto de perfil de {{ student.student_name }}" class="rounded-circle img-fluid profile-image">
+      {% else %}
           <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg" alt="avatar" class="rounded-circle img-fluid profile-image">
-            <h5 class="my-3">{{ student.student_name }}</h5>
+      {% endif %}
+
+           <h5 class="my-3">{{ student.student_name }}</h5>
             <p class="text-muted mb-1">{{ student.student_code }}</p>
             <div class="d-flex justify-content-center mb-2">
                  <a href="{% url 'edit_student' student.student_code %}">
