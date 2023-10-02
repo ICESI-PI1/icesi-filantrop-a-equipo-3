@@ -2,6 +2,10 @@
     min-height: 100vh;
 }
 
+.students-section {
+    margin-top: 3%;
+}
+
 nav ul {
     margin-top: 25%;
     text-align: center;
@@ -36,6 +40,21 @@ nav ul {
     margin-top: 25px;
 }
 
+div .text-center {
+    margin-top: 50px;
+}
+
+#search-btn {
+    margin-left: 30px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+}
+
+#search-by-select {
+    width: 100px;
+}
+
+
 .cancel-button {
     margin-top: 15px;
 }
@@ -48,6 +67,20 @@ nav ul {
 nav ul li {
     text-align: center;
     justify-content: center;
+}
+
+.select-students, .select-report {
+    margin-top: 50px;
+}
+
+.button-horizontal-container {
+    margin-top: 50px;
+}
+
+.nav-item {
+    text-align: left;
+    width: 80%;
+    margin-left: 15%;
 }
 
 .select-students {

@@ -20,12 +20,10 @@ class CreateStudent(forms.ModelForm):
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
         }
 
-
 class CreateAlert(forms.ModelForm):
     class Meta:
         model = Alert
         exclude = ['alert_code', 'alert_date']
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['alert_description'].widget.attrs['placeholder'] = "Ingrese una descripción"
