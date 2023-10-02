@@ -216,10 +216,10 @@ Date : 28/09/2023
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
-    .
+    . Nothing
 
   - **What I'm going to do?**
-    .
+    . Plan of test
 
   - **Impediments**
     Nothing.
@@ -272,10 +272,10 @@ Date : 29/10/2023
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
-    .
+    . Plan of test
 
   - **What I'm going to do?**
-    .
+    . Continue with the plan of test
 
   - **Impediments**
     Nothing.
