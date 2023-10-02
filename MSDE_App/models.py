@@ -48,7 +48,6 @@ class Collaborator(models.Model):
     collaborator_code = models.CharField(max_length=10)
     collaborator_name = models.CharField(max_length=24)
     collaborator_email = models.CharField(max_length=24)
-    collaborator_allow_alert = models.CharField(max_length=4)
 
 
 class TypeCollaborator(models.Model):

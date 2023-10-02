@@ -1,5 +1,5 @@
 from django import forms
-from .models import Student
+from .models import Student, Collaborator
 
 
 class DateInput(forms.DateInput):
@@ -18,6 +18,19 @@ class CreateStudent(forms.ModelForm):
             'student_id': forms.TextInput(attrs={'class': 'form-control'}),
             'student_email': forms.TextInput(attrs={'class': 'form-control'}),
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
+
+
+        }
+
+class CreateCollaborator(forms.ModelForm):
+
+    class Meta:
+        model = Collaborator
+        fields = "__all__"
+        widgets = {
+            'collaborator_code': forms.TextInput(attrs={'class': 'form-control'}),
+            'collaborator_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'collaborator_email': forms.TextInput(attrs={'class': 'form-control'}),
 
 
         }
