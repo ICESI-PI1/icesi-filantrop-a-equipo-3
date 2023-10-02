@@ -20,6 +20,19 @@ class CreateStudent(forms.ModelForm):
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
         }
 
+class CreateCollaborator(forms.ModelForm):
+
+    class Meta:
+        model = Collaborator
+        fields = "__all__"
+        widgets = {
+            'collaborator_code': forms.TextInput(attrs={'class': 'form-control'}),
+            'collaborator_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'collaborator_email': forms.TextInput(attrs={'class': 'form-control'}),
+
+
+        }
+
 class CreateAlert(forms.ModelForm):
     class Meta:
         model = Alert
