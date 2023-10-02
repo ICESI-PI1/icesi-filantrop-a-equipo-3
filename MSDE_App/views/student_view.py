@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Student
-from .forms import CreateStudent
+from MSDE_App.models import Student
+from MSDE_App.forms import CreateStudent
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -12,12 +12,6 @@ def index(request):
     return render(request, 'index.html', {
         'title': title
     })
-
-from MSDE_App.models import Student
-from MSDE_App.forms import CreateStudent
-
-
-
 
 
 def create_student(request):
