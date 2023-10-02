@@ -13,9 +13,6 @@ def index(request):
         'title': title
     })
 
-
-
-
 def create_student(request):
     if request.method == 'POST':
         try:
