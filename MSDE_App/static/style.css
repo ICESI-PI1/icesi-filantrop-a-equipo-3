@@ -2,6 +2,10 @@
     min-height: 100vh;
 }
 
+.students-section {
+    margin-top: 3%;
+}
+
 nav ul {
     margin-top: 25%;
     list-style: none;

@@ -5,26 +5,30 @@
         <div>
             <h1>Generate reports</h1>
         </div>
-        <article>
-            <section class="select-students">
+        <section>
+            <article class="select-students">
                 <h3>Select the students:</h3>
                 <p>Select all the students that you want to generate a report. You can search by code, ID or name.</p>
                 <div>
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend input-group-text">
-                            <select class="form-select" id="search-by-select" aria-label="Default select">
-                                <option selected>Search by</option>
-                                <option value="student-code">Student Code</option>
-                                <option value="id">ID</option>
-                                <option value="name">Name</option>
-                            </select>
-                            <input id="data-to-search" type="text" class="form-control"
-                                   aria-label="Text input with dropdown button">
-
+                        <div>
+                            <form method="GET" action="{% url 'reports' %}">
+                                <select class="form-select" name="search-by-select" aria-label="Default select">
+                                    <option selected>Search by</option>
+                                    <option value="student-code">Student Code</option>
+                                    <option value="id">ID</option>
+                                    <option value="name">Name</option>
+                                </select>
+                                <input name="data-to-search" type="text" class="form-control"
+                                       aria-label="Text input with dropdown button">
+                                <button class="btn btn-outline-primary"
+                                        id="search-btn" type="submit">Search
+                                </button>
+                            </form>
                         </div>
-                        <div class="input-group-append">
+                        <div class="input-group-prepend">
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal"
-                                    id="search-btn" onclick=handleSearch()>Search
+                                    id="search-btn" type="submit">See Student
                             </button>
                         </div>
                         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -47,17 +51,22 @@
                                                 <button type="button" class="btn btn-primary" disabled>Add</button>
                                             </div>
                                         {% else %}
-                                            <p>The student was found:</p>
-                                            <p>With code {{ result.student_code }}, ID {{ result.student_id }} and name
-                                                {{ result.student_name }}</p>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                    Close
-                                                </button>
-                                                <button id="add-student-btn" onclick="handleAddStudent({{ result }})"
-                                                        type="button" class="btn btn-primary">Add
-                                                </button>
-                                            </div>
+                                            <form method="POST" action="{% url 'reports_add_student' %}">
+                                                {% csrf_token %}
+                                                <p>The student was found:</p>
+                                                <p>With code {{ result.student_code }}, ID {{ result.student_id }} and
+                                                    name
+                                                    {{ result.student_name }}</p>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                    <button id="add-student-btn"
+                                                            type="submit" class="btn btn-primary">Add
+                                                    </button>
+                                                </div>
+                                            </form>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -65,46 +74,55 @@
                         </div>
                     </div>
                 </div>
+            </article>
+        </section>
+        <section>
+            <article class="students-section">
                 <p>Selected students:</p>
                 <div>
                     {% if students %}
                         <ul class="list-group list-group-numbered">
                             {% for s in students %}
-                                <li class="list-group-item d-flex justify-content-between align-items-start">
-                                    <div class="ms-2 me-auto">
-                                        <div class="fw-bold">{{ s.student_name }}</div>
-                                        Con código {{ s.student_code }}
-                                    </div>
-                                    <button onclick="handleQuitStudent({{ s }})" type="button"
-                                            class="btn btn-danger rounded-pill">X
-                                    </button>
-                                </li>
+                                <form method="POST" action="{% url 'reports_quit_student' s.student_code %}">
+                                    {% csrf_token %}
+                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                        <div class="ms-2 me-auto">
+                                            <div class="fw-bold">{{ s.student_name }}</div>
+                                            Con código {{ s.student_code }}
+                                        </div>
+                                        <button type="submit"
+                                                class="btn btn-danger rounded-pill">X
+                                        </button>
+                                    </li>
+                                </form>
                             {% endfor %}
                         </ul>
                     {% else %}
                         <p>No selected students</p>
                     {% endif %}
                 </div>
-            </section>
-        </article>
-        <article>
-            <section class="select-report">
-                <h3>Select the type of report:</h3>
-                <p>Select the type of report that you want to generate. There are 3 types defined, but you select
-                    one to customize.</p>
-                <div>
-                    <select class="form-select" aria-label="Default select">
-                        <option selected>Select</option>
-                        <option value="1">Informe de becas</option>
-                        <option value="2">Informe de actividades extra</option>
-                        <option value="3">Informe de consultas en el
-                            CREA
-                        </option>
-                        <option value="4">Informe personalizado</option>
-                    </select>
-                </div>
-            </section>
-        </article>
+            </article>
+        </section>
+        <section>
+            <article>
+                <section class="select-report">
+                    <h3>Select the type of report:</h3>
+                    <p>Select the type of report that you want to generate. There are 3 types defined, but you select
+                        one to customize.</p>
+                    <div>
+                        <select class="form-select" aria-label="Default select">
+                            <option selected>Select</option>
+                            <option value="1">Informe de becas</option>
+                            <option value="2">Informe de actividades extra</option>
+                            <option value="3">Informe de consultas en el
+                                CREA
+                            </option>
+                            <option value="4">Informe personalizado</option>
+                        </select>
+                    </div>
+                </section>
+            </article>
+        </section>
         <div class="text-center">
             <button type="submit" class="btn btn-primary generate-btn">Generar</button>
         </div>
