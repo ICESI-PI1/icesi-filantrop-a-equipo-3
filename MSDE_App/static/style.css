@@ -8,6 +8,8 @@
 
 nav ul {
     margin-top: 25%;
+    text-align: center;
+    align-content: center;
     list-style: none;
     padding: 0;
 }
@@ -79,4 +81,8 @@ nav ul li {
     text-align: left;
     width: 80%;
     margin-left: 15%;
+}
+
+.select-students {
+    margin-top: 20px;
 }
