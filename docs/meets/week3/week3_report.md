@@ -262,10 +262,10 @@ Date : 29/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    .
+    Advanced in Collaborator CRUD.
 
   - **What I'm going to do?**
-    .
+    I'm going to finish CRUD for Collaborator.
 
   - **Impediments**
     Nothing
