@@ -1,6 +1,24 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from .models import Student
+from .forms import CreateStudent
+from django.contrib.auth.decorators import login_required
+
+# Create your views here.
+
+
+@login_required()
+def index(request):
+    title = "Django course !!"
+    return render(request, 'index.html', {
+        'title': title
+    })
+
 from MSDE_App.models import Student
 from MSDE_App.forms import CreateStudent
+
+
+
+
 
 def create_student(request):
         if request.method == 'POST':
@@ -17,6 +35,8 @@ def create_student(request):
         else:
             form = CreateStudent()
         return render(request, 'student/create_student.html', {'form': form})
+
+
 
 def student_detail(request, student_code):
     student = get_object_or_404(Student, student_code=student_code)
@@ -47,5 +67,5 @@ def delete_student(request, student_code):
     student = get_object_or_404(Student, student_code=student_code)
     if request.method == 'POST':
         student.delete()
-        return redirect('students/')
+        return redirect('students')
     return render(request, 'student/delete_student.html', {'student': student})
