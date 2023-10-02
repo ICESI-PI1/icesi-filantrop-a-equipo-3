@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'layouts/base.html' %}
+{% block content %}
+       <main class="container">
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                     <form method="POST" class="card card-body">
+                         <h1>Create a new Donor</h1>
+                          {{ error }}
+                          {% csrf_token %}
+                          {{ form.as_p }}
+                          <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+            </div>
+       </main>
+{% endblock %}

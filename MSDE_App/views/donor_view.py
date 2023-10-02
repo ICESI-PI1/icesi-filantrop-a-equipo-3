@@ -29,8 +29,8 @@ def donor_detail(request, donor_code):
 
 def donor_view(request):
     donor_list = Donor.objects.all()
-    return render(request, 'donor/donor.html', {
-        'donor': donor_list
+    return render(request, 'donor/donors.html', {
+        'donors': donor_list
     })
 
 
