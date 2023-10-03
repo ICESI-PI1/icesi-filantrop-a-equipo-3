@@ -24,3 +24,26 @@ class AlertIntegrationTestCase(TestCase):
                                student_phone_number='3149094450',
                                donor_student_code=don)
 
+    def test_create_alert_through_view(self):
+        alert_data = {
+            'alert_code': '12',
+            'alert_date': '2020-01-01',
+            'alert_description': 'Esto es una alerta',
+            'alert_sender': 'Juan',
+            'type_alert': 1,
+        }
+
+        response = self.client.post(reverse('create_alert', args=['A00381190']), data=alert_data)
+        self.assertEqual(response.status_code, 302)
+        alert = Alert.objects.get(alert_code='12')
+        self.assertEqual(alert.alert_sender, 'Juan')
+    
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('create_alert', args=['A00381190']))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'student/create_alert.html')
+
+   
+
+
+
