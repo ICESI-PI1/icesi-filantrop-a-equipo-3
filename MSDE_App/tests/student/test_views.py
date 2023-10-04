@@ -1,8 +1,7 @@
-from django.test import TestCase, Client
+from django.test import TestCase
 from django.urls import reverse
 from MSDE_App.models import Student, Donor
-from MSDE_App.views import students_view, create_student
-from MSDE_App.forms import CreateStudent
+
 
 
 class StudentIntegrationTestCase(TestCase):
