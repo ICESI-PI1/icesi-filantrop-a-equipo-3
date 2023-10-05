@@ -2,9 +2,10 @@ from django import forms
 from .models import *
 
 
-
 class DateInput(forms.DateInput):
     input_type = 'date'
+
+
 class CreateStudent(forms.ModelForm):
     profile_picture = forms.ImageField(required=False, widget=forms.FileInput) 
     class Meta:
@@ -19,6 +20,7 @@ class CreateStudent(forms.ModelForm):
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
         }
 
+
 class CreateCollaborator(forms.ModelForm):
 
     class Meta:
@@ -31,6 +33,7 @@ class CreateCollaborator(forms.ModelForm):
 
 
         }
+
 
 class CreateAlert(forms.ModelForm):
     class Meta:
@@ -57,7 +60,6 @@ class CreateDonor(forms.ModelForm):
         }
 
 
-
 class CreatePhilanthropy(forms.ModelForm):
     class Meta:
         model = PhilanthropyMember
@@ -67,6 +69,7 @@ class CreatePhilanthropy(forms.ModelForm):
             'philanthropy_member_name' : forms.TextInput(attrs={'class': 'form-control'}),
             'philanthropy_member_email' : forms.TextInput(attrs={'class': 'form-control'}),
         }
+
 
 class AlertFilterForm(forms.Form):
     

@@ -14,6 +14,7 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-primary">Guardar</button>
+            <a class="btn btn-outline-primary cancel-button" href="/students" role="button">Cancel</a>
             </form>
         </div>
         <div class="col-md-4">
