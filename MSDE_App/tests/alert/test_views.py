@@ -5,13 +5,13 @@ from django.urls import reverse
 
 class AlertIntegrationTestCase(TestCase):
     def setUp(self):
-        TypeAlert.objects.create(alert_type_code='3')
-        type = TypeAlert.objects.get(alert_type_code='3')
-        Alert.objects.create(alert_code='3549', alert_date='2020-04-07', alert_description='Esto es una alerta',
+        TypeAlert.objects.create(alert_type='Bienestar')
+        type = TypeAlert.objects.get()
+        Alert.objects.create(alert_code='550e8400-e29b-41d4-a716-446655440000', alert_date='2020-04-07', alert_description='Esto es una alerta',
                              alert_sender='Juan', type_alert=type)
-        Alert.objects.create(alert_code='1234', alert_date='2023-04-07', alert_description='Esto es una alerta',
+        Alert.objects.create(alert_code='550e8400-e29b-41d4-a716-446655440001', alert_date='2023-04-07', alert_description='Esto es una alerta',
                              alert_sender='Pablo', type_alert=type)
-        Alert.objects.create(alert_code='6789', alert_date='2012-04-07', alert_description='Esto es una alerta',
+        Alert.objects.create(alert_code='550e8400-e29b-41d4-a716-446655440002', alert_date='2012-04-07', alert_description='Esto es una alerta',
                              alert_sender='Tutu', type_alert=type)
         Donor.objects.create(donor_code='1', donor_name='patricio')
         don = Donor.objects.get(donor_code='1')
@@ -35,7 +35,7 @@ class AlertIntegrationTestCase(TestCase):
 
         response = self.client.post(reverse('create_alert', args=['A00381190']), data=alert_data)
         self.assertEqual(response.status_code, 302)
-        alert = Alert.objects.get(alert_code='12')
+        alert = Alert.objects.get(alert_code='550e8400-e29b-41d4-a716-446655440000')
         self.assertEqual(alert.alert_sender, 'Juan')
     
     def test_view_uses_correct_template(self):
