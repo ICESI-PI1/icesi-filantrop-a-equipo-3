@@ -65,7 +65,7 @@ class StudentIntegrationTestCase(TestCase):
                                           'student_birth_date': '2020-04-07',
                                           'student_phone_number': '3149094450',
                                           'donor_student_code': '1'})
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
         student = Student.objects.get(student_code='A00381190')
         self.assertEqual(student.student_name, 'Juan Jose 2')
