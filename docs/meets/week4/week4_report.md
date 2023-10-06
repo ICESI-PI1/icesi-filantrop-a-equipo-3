@@ -29,10 +29,10 @@ Date : 02/10/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    .
+    . Improve alert test view
 
   - **What I'm going to do?**
-    .
+    . Check test coverage
 
   - **Impediments**
     Nothing.
@@ -75,7 +75,7 @@ Date : 04/10/2023
 
  ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
-    Improved the Alderts front end
+    Improved the Alerts front end
     .
 
   - **What I'm going to do?**
@@ -87,10 +87,10 @@ Date : 04/10/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    .
+    .update Test branch
 
   - **What I'm going to do?**
-    .
+    .update deploy branch
 
   - **Impediments**
     Nothing.
@@ -145,10 +145,10 @@ Date : 05/10/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    .
+    . Nothing
 
   - **What I'm going to do?**
-    .
+    . Nothig
 
   - **Impediments**
     Nothing.
@@ -203,10 +203,10 @@ Date : 06/10/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    .
+    . Nothing
 
   - **What I'm going to do?**
-    .
+    . Nothing
 
   - **Impediments**
     Nothing.
@@ -259,10 +259,10 @@ Date : 07/10/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    .
+    . fix all test that where failign due to changes in the views
 
   - **What I'm going to do?**
-    .
+    . fix deploy crf auth
 
   - **Impediments**
     Nothing.
