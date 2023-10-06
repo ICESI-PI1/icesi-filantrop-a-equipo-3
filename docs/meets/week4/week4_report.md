@@ -17,9 +17,11 @@ Date : 02/10/2023
 
  ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
+    Last modifications to Alerts
     .
 
   - **What I'm going to do?**
+     Improve the Alerts front end
     .
 
   - **Impediments**
@@ -73,9 +75,11 @@ Date : 04/10/2023
 
  ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
+    Improved the Alderts front end
     .
 
   - **What I'm going to do?**
+     Fix issues related to alert filters
     .
 
   - **Impediments**
@@ -129,9 +133,11 @@ Date : 05/10/2023
 
  ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
+    Fixed issues related to Alert filters
     .
 
   - **What I'm going to do?**
+    Implement functionality upload files 
     .
 
   - **Impediments**
@@ -185,9 +191,11 @@ Date : 06/10/2023
 
  ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
+    Implemented the funcionality upload files
     .
 
   - **What I'm going to do?**
+    Fix issues related to the new functionality
     .
 
   - **Impediments**
