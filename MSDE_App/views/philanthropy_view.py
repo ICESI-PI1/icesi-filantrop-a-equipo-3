@@ -55,4 +55,3 @@ def philanthropy_delete(request, philanthropy_code):
         return redirect('philanthropy')
     else:
         return render(request, 'philanthropy/delete_philanthropy.html', {'philanthropy': philanthropy})
-
