@@ -46,6 +46,7 @@ def students_view(request):
         'students': students_list
     })
 
+
 def edit_student(request, student_code):
     student = get_object_or_404(Student, student_code=student_code)
     

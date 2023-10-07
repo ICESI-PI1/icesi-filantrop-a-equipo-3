@@ -22,6 +22,7 @@ function clickOnInvisible() {
     console.log("clicked")
     invisible_btn.click()
 }
+
 /*
 const searchBtn = document.getElementById("search-btn");
 // Agrega un evento clic al botón de búsqueda
@@ -44,7 +45,7 @@ function handleSearch() {
 
         // Simula una solicitud AJAX, aquí debes realizar la búsqueda real en tu aplicación
         setTimeout(function () {
-            const result = { student_code: "123", student_id: "456", student_name: "John Doe" }; // Ejemplo de resultado
+            const result = {student_code: "123", student_id: "456", student_name: "John Doe"}; // Ejemplo de resultado
 
             // Actualiza el contenido del modal con el resultado
             const searchResult = document.getElementById("search-result");

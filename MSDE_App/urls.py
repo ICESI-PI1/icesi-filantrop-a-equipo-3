@@ -2,7 +2,6 @@ from django.urls import path, include
 from . import views
 from django.contrib import admin
 
-
 urlpatterns = [
     path('', views.index, name="index"),
     path('index/', views.index, name="index"),
@@ -12,7 +11,8 @@ urlpatterns = [
     path('student/<str:student_code>/edit/', views.edit_student, name='edit_student'),
     path('student/<str:student_code>/delete/', views.delete_student, name='delete_student'),
     path('collaborator/create_collaborator/', views.create_collaborator, name='create_collaborator'),
-    path('collaborator/<str:collaborator_code>/collaborator_detail', views.collaborator_detail, name='collaborator_detail'),
+    path('collaborator/<str:collaborator_code>/collaborator_detail', views.collaborator_detail,
+         name='collaborator_detail'),
     path('collaborators/', views.collaborators_view, name="collaborators/"),
     path('collaborator/<str:collaborator_code>/edit/', views.edit_collaborator, name='edit_collaborator'),
     path('collaborator/<str:collaborator_code>/delete/', views.delete_collaborator, name='delete_collaborator'),
@@ -31,6 +31,11 @@ urlpatterns = [
     path('philanthropy/<str:philanthropy_code>/delete/',
          views.philanthropy_delete, name='delete_philanthropy'),
     path('reports/', views.reports_view, name='reports'),
+    path('reports/generate', views.report_generate, name='reports_generate'),
     path('reports/add_student', views.add_student, name='reports_add_student'),
     path('reports/quit_student/<str:student_code>', views.quit_student, name='reports_quit_student'),
+    path('reports/base_reports', views.base_reports, name='base_reports'),
+    path('reports/pdf/becas', views.becas_report, name='becas_report'),
+    path('reports/pdf/extra', views.extra_report, name='extra_report'),
+    path('reports/pdf/CREA', views.crea_report, name='crea_report')
 ]
