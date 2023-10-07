@@ -1,10 +1,21 @@
 from django import forms
 
 from .models import *
+from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.models import User
 
 
 class DateInput(forms.DateInput):
     input_type = 'date'
+
+
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'user_type']
+        widgets = {
+            'user_type': forms.widgets.TextInput(attrs={'readonly': 'readonly'})
+        }
 
 
 class CreateStudent(forms.ModelForm):
@@ -21,6 +32,24 @@ class CreateStudent(forms.ModelForm):
         }
 
 
+<<<<<<< Updated upstream
+=======
+
+class CreateCollaborator(forms.ModelForm):
+
+    class Meta:
+        model = Collaborator
+        fields = "__all__"
+        widgets = {
+            'collaborator_code': forms.TextInput(attrs={'class': 'form-control'}),
+            'collaborator_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'collaborator_email': forms.TextInput(attrs={'class': 'form-control'}),
+
+
+        }
+
+
+>>>>>>> Stashed changes
 class CreateAlert(forms.ModelForm):
     class Meta:
         model = Alert
@@ -40,4 +69,6 @@ class CreatePhilanthropy(forms.ModelForm):
             'philanthropy_member_code' : forms.TextInput(attrs={'class': 'form-control'}),
             'philanthropy_member_name' : forms.TextInput(attrs={'class': 'form-control'}),
             'philanthropy_member_email' : forms.TextInput(attrs={'class': 'form-control'}),
+            'philanthropy_member_user' : forms.TextInput(attrs={'class': 'form-control'}),
+            'philanthropy_member_password' : forms.TextInput(attrs={'class': 'form-control'})
         }

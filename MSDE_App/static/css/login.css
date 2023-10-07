@@ -10,6 +10,7 @@ background: url(../imagenes/Icesi.png);
 
 }
 
+
 @media (min-width: 768px) {
 .gradient-form {
 height: 100vh !important;
@@ -21,3 +22,4 @@ border-top-right-radius: .3rem;
 border-bottom-right-radius: .3rem;
 }
 }
+

@@ -19,5 +19,15 @@ urlpatterns = [
     path('philanthropy/<str:philanthropy_code>/edit/',
          views.philanthropy_edit, name='philanthropy_edit'),
     path('philanthropy/<str:philanthropy_code>/delete/',
+<<<<<<< Updated upstream
          views.philanthropy_delete, name='delete_philanthropy')
 ]
+=======
+         views.philanthropy_delete, name='delete_philanthropy'),
+    path('reports/', views.reports_view, name='reports'),
+    path('reports/add_student', views.add_student, name='reports_add_student'),
+    path('reports/quit_student/<str:student_code>', views.quit_student, name='reports_quit_student'),
+    path('registrate/', views.registrate_user, name='registrate'),
+    path('salir/', views.salir, name='salir')
+]
+>>>>>>> Stashed changes

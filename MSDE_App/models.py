@@ -1,9 +1,18 @@
 from django.db import models
 import uuid
+<<<<<<< Updated upstream
 from datetime import date
 
 
 # Create your models here.
+=======
+from datetime import datetime
+from django.contrib.auth.models import AbstractUser
+
+
+class User(AbstractUser):
+    user_type = models.CharField(max_length=20)
+>>>>>>> Stashed changes
 
 
 class Donor(models.Model):
