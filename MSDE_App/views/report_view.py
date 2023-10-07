@@ -14,14 +14,18 @@ def download_PDF(request, who):
     if 'extra' in who:
         pdf = pdfkit.from_url(request.build_absolute_uri(reverse('extra_report')))
 
+
 def base_reports(request):
     return render(request, 'reports_base/base_reports.html')
+
 
 def becas_report(request):
     return render(request, 'reports_base/becas_report.html')
 
+
 def extra_report(request):
     return render(request, 'reports_base/actividades_extra_report.html')
+
 
 def crea_report(request):
     return render(request, 'reports_base/consultas_CREA_report.html')
@@ -54,6 +58,33 @@ def add_student(request):
         return render(request, 'report/reports.html', {
             'students': student_list
         })
+
+
+def get_crea_queries():
+    crea_queries_each_student = []
+
+    for s in student_list:
+        crea_queries_each_student.append(CreaQuery.objects.filter(student_code=s.student_code))
+
+    return crea_queries_each_student
+
+
+def get_academic_balance():
+    academic_balance_each_student = []
+
+    for s in student_list:
+        academic_balance_each_student.append(AcademicBalance.objects.filter(student_code=s.student_code))
+
+    return academic_balance_each_student
+
+
+def get_extra_academics():
+    extra_academics_each_student = []
+
+    for s in student_list:
+        extra_academics_each_student.append(ExtraAcademic.objects.filter(student_code=s.student_code))
+
+    return extra_academics_each_student
 
 
 def reports_view(request):
@@ -103,29 +134,34 @@ def report_generate(request):
 
     if report_type is None:
         return render(request, 'report/reports.html', {
-            'students': student_list
+            'students': student_list,
         })
     else:
         if report_type == "0":
             return render(request, 'report/reports.html', {
-                'students': student_list
+                'students': student_list,
             })
         elif report_type == "1":
             return render(request, 'reports_base/becas_report.html', {
-                'students': student_list
+                'students': student_list,
+                'academic_balance': get_academic_balance()
             })
         elif report_type == "2":
-            print('entro a extra')
             return render(request, 'reports_base/actividades_extra_report.html', {
-                'students': student_list
+                'students': student_list,
+                'extra_academics': get_extra_academics()
             })
         elif report_type == "3":
             return render(request, 'reports_base/consultas_CREA_report.html', {
-                'students': student_list
+                'students': student_list,
+                'crea_queries': get_crea_queries()
             })
         elif report_type == "4":
             return render(request, 'reports_base/consultas_CREA_report.html', {
-                'students': student_list
+                'students': student_list,
+                'extra_academics': get_extra_academics(),
+                'academic_balance': get_academic_balance(),
+                'crea_queries': get_crea_queries()
             })
         else:
             return render(request, 'report/reports.html', {
