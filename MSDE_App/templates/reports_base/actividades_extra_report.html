@@ -1,0 +1,24 @@
+{% extends 'reports_base/base_reports.html' %}
+{% block content %}
+    <section>
+        <div class="row">
+            <h1>Reporte de actividades extra académicas</h1>
+        </div>
+    </section>
+    <section>
+        {% for s in students %}
+            <div class="student-container">
+                <div class="student-name">{{ s.student_name }}</div>
+                <div class="student-info">
+                    <div class="info-title">Código</div>
+                    <div class="info-text">{{ s.student_code }} </div>
+                </div>
+                <div class="student-info">
+                    <div class="info-title">Donador</div>
+                    <div class="info-text">{{ s.donor_student_code }}</div>
+                </div>
+                <!-- Puedes agregar más información según sea necesario -->
+            </div>
+        {% endfor %}
+    </section>
+{% endblock %}

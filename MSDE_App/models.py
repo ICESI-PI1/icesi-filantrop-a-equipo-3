@@ -3,8 +3,6 @@ import uuid
 from datetime import datetime
 
 
-
-
 class Donor(models.Model):
     donor_code = models.CharField(max_length=12, unique=True)
     donor_name = models.CharField(max_length=20)

@@ -1,21 +1,37 @@
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
+
 from MSDE_App.models import Report
 from MSDE_App.forms import *
-import json
+import itertools
+import pdfkit
+
+config = pdfkit.configuration(wkhtmltopdf = r"C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe")
+
+
+def download_PDF(request, who):
+    if 'extra' in who:
+        pdf = pdfkit.from_url(request.build_absolute_uri(reverse('extra_report')))
+
+def base_reports(request):
+    return render(request, 'reports_base/base_reports.html')
+
+def becas_report(request):
+    return render(request, 'reports_base/becas_report.html')
+
+def extra_report(request):
+    return render(request, 'reports_base/actividades_extra_report.html')
+
+def crea_report(request):
+    return render(request, 'reports_base/consultas_CREA_report.html')
+
+
 # views.py
 from django.http import HttpResponse
 
 student_list = []
 actual_student = None
-
-
-# def jira_webhook(request, student_to_add):
-#    if request.method == 'POST':
-#        student_list.append(student_to_add)
-#        return render(request, 'report/reports.html', {
-#            'students': student_list
-#        })
 
 
 def quit_student(request, student_code):
@@ -78,3 +94,40 @@ def reports_view(request):
             'result': result,
             'students': student_list
         })
+
+
+def report_generate(request):
+    report_type = request.GET.get("report-type")
+
+    print('report type:',report_type)
+
+    if report_type is None:
+        return render(request, 'report/reports.html', {
+            'students': student_list
+        })
+    else:
+        if report_type == "0":
+            return render(request, 'report/reports.html', {
+                'students': student_list
+            })
+        elif report_type == "1":
+            return render(request, 'reports_base/becas_report.html', {
+                'students': student_list
+            })
+        elif report_type == "2":
+            print('entro a extra')
+            return render(request, 'reports_base/actividades_extra_report.html', {
+                'students': student_list
+            })
+        elif report_type == "3":
+            return render(request, 'reports_base/consultas_CREA_report.html', {
+                'students': student_list
+            })
+        elif report_type == "4":
+            return render(request, 'reports_base/consultas_CREA_report.html', {
+                'students': student_list
+            })
+        else:
+            return render(request, 'report/reports.html', {
+                'students': student_list
+            })
