@@ -33,7 +33,7 @@ class ExtraAcademic(models.Model):
 
 
 class AcademicBalance(models.Model):
-    student_code = models.OneToOneField(Student, on_delete=models.CASCADE)
+    student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
     academic_balance_career = models.CharField(max_length=50)
     academic_balance_subjects = models.CharField(max_length=50)
     academic_balance_schedule = models.CharField(max_length=50)
@@ -41,6 +41,9 @@ class AcademicBalance(models.Model):
     academic_balance_cancellations = models.CharField(max_length=50)
     academic_balance_semester_average = models.FloatField()
     academic_balance_total_average = models.FloatField()
+
+    def __str__(self):
+        return self.student_code.student_code
 
 
 class CreaQuery(models.Model):
