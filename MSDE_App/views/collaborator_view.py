@@ -3,20 +3,14 @@ from MSDE_App.models import Collaborator
 from MSDE_App.forms import CreateCollaborator
 
 def create_collaborator(request):
-        if request.method == 'POST':
-            try:
-                form = CreateCollaborator(request.POST)
-                if form.is_valid():
-                    form.save()
-                    return redirect('index')
-            except ValueError:
-                return render(request, 'collaborator/create_collaborator.html', {
-                    'form': form,
-                    'error': 'Please provide valid data'
-                })
-        else:
-            form = CreateCollaborator()
-        return render(request, 'collaborator/create_collaborator.html', {'form': form})
+    if request.method == 'POST':
+        form = CreateCollaborator(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = CreateCollaborator()
+    return render(request, 'collaborator/create_collaborator.html', {'form': form})
 
 def collaborator_detail(request, collaborator_code):
     collaborator = get_object_or_404(Collaborator, collaborator_code=collaborator_code)

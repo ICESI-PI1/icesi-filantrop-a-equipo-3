@@ -3,8 +3,6 @@ import uuid
 from datetime import datetime
 
 
-
-
 class Donor(models.Model):
     donor_code = models.CharField(max_length=12, unique=True)
     donor_name = models.CharField(max_length=20)
@@ -34,13 +32,16 @@ class TypeReport(models.Model):
 
 
 class PhilanthropyMember(models.Model):
-    philanthropy_member_code = models.CharField(max_length=10)
+    philanthropy_member_code = models.CharField(max_length=10, unique=True)
     philanthropy_member_name = models.CharField(max_length=24)
     philanthropy_member_email = models.CharField(max_length=50, default="default@gmail.com")
 
+    def __str__(self):
+        return self.philanthropy_member_code
+
 
 class Report(models.Model):
-    report_code = models.CharField(max_length=14, unique=True, auto_created=True)
+    report_code = models.CharField(max_length=14, unique=True)
     report_date = models.DateField(max_length=10)
     type_report_code = models.ForeignKey(TypeReport, on_delete=models.CASCADE)
     student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
@@ -48,9 +49,12 @@ class Report(models.Model):
 
 
 class Collaborator(models.Model):
-    collaborator_code = models.CharField(max_length=10)
+    collaborator_code = models.CharField(max_length=10, unique=True, primary_key=True)
     collaborator_name = models.CharField(max_length=24)
     collaborator_email = models.CharField(max_length=24)
+
+    def __str__(self):
+        return self.collaborator_code
 
 
 class TypeCollaborator(models.Model):
@@ -75,6 +79,7 @@ class TypeAlert(models.Model):
         unique=True,
         null=True
     )
+
     def __str__(self):
         return self.alert_type + "\n"
 
@@ -86,4 +91,3 @@ class Alert(models.Model):
     alert_sender = models.CharField(max_length=100, blank=True)
     type_alert = models.ForeignKey(TypeAlert, on_delete=models.CASCADE, null=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True, blank=True)
-

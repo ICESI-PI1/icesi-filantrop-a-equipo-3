@@ -12,14 +12,14 @@ def create_philanthropy(request):
                 form.save()
                 return redirect('index')
         except ValueError:
-            return render(request.POST, 'philanthropy/create_philanthropy.html', {
+            return render(request, 'philanthropy/create_philanthropy.html', {
                 'form': CreatePhilanthropy(request.POST),
                 'error': 'Please provide valid data'
             })
     else:
         form = CreatePhilanthropy()
-        print('entra')
-        return render(request, 'philanthropy/create_philanthropy.html', {'form': form})
+
+    return render(request, 'philanthropy/create_philanthropy.html', {'form': form})
 
 
 def philanthropy_view(request):
