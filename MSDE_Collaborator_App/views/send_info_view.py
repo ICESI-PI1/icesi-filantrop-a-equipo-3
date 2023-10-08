@@ -4,4 +4,4 @@ from MSDE_App.models import Alert, Student
 
 
 def send_info_view(request):
-    return render(request, '../../MSDE_Collaborator_App/templates/alert/alerts.html')
+    return render(request, '../../MSDE_Collaborator_App/templates/alert/create_alert.html')
