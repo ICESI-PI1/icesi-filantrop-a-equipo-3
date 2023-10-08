@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <main class="container">
+        <div>
+            <h1>Gestión de información</h1>
+        </div>
+        <section>
+            <article class="select-students">
+                <p>A continuación, selecciona la opción que se ajuste a lo que deseas realizar</p>
+                <div>
+                    <a href="/students" role="button">
+                        <button class="btn btn-primary">Estudiantes</button>
+                    </a>
+                </div>
+                <div>
+                    <a href="/students" role="button">
+                        <button class="btn btn-primary">Solicitar actualización</button>
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
+{% endblock %}
