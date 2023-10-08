@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
             name='PhilanthropyMember',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('philanthropy_member_code', models.CharField(max_length=10, unique=True)),
+                ('philanthropy_member_code', models.CharField(max_length=10)),
                 ('philanthropy_member_name', models.CharField(max_length=24)),
                 ('philanthropy_member_email', models.CharField(default='default@gmail.com', max_length=50)),
             ],
@@ -81,7 +81,7 @@ class Migration(migrations.Migration):
             name='Report',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('report_code', models.CharField(max_length=14, unique=True)),
+                ('report_code', models.CharField(auto_created=True, max_length=14, unique=True)),
                 ('report_date', models.DateField(max_length=10)),
                 ('philanthropy_member', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='MSDE_App.philanthropymember')),
                 ('student_code', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='MSDE_App.student')),

@@ -26,6 +26,29 @@ class Student(models.Model):
         return self.student_name + "\n" + self.student_code
 
 
+class ExtraAcademic(models.Model):
+    student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
+    extra_academic_name = models.CharField(max_length=100)
+    extra_academic_hours = models.IntegerField()
+
+
+class AcademicBalance(models.Model):
+    student_code = models.OneToOneField(Student, on_delete=models.CASCADE)
+    academic_balance_career = models.CharField(max_length=50)
+    academic_balance_subjects = models.CharField(max_length=50)
+    academic_balance_schedule = models.CharField(max_length=50)
+    academic_balance_additions = models.CharField(max_length=50)
+    academic_balance_cancellations = models.CharField(max_length=50)
+    academic_balance_semester_average = models.FloatField()
+    academic_balance_total_average = models.FloatField()
+
+
+class CreaQuery(models.Model):
+    student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
+    crea_query_date = models.DateField()
+    crea_query_info = models.CharField(max_length=500)
+
+
 class TypeReport(models.Model):
     type_report_code = models.CharField(max_length=12)
     type_report_name = models.CharField(max_length=16)

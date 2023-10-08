@@ -43,7 +43,7 @@ def philanthropy_edit(request, philanthropy_code):
         if form.is_valid():
             form.save()
     else:
-        form = CreateStudent(instance=philanthropy)
+        form = CreatePhilanthropy(instance=philanthropy)
     return render(request, 'philanthropy/edit_philanthropy.html', {'form': form, 'philanthropy': philanthropy})
 
 
