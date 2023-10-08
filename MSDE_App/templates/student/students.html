@@ -2,21 +2,27 @@
 
 {% block content %}
     <main class="container">
-        <div class="row">
-            <div>
+        <section class="row">
+            <article>
                 <h1>
                     Students
                 </h1>
-                <ul class="list-grouop">
+                <ul class="list-group">
                     {% for s in students %}
-                    <a class="list-group-item" href="{% url 'student_detail' s.student_code %}">
-                        <strong> {{ s.student_name }}</strong>
-                        <p>Code: {{ s.student_code }}</p>
-                    </a>
+                        <a class="list-group-item" href="{% url 'student_detail' s.student_code %}">
+                            <strong> {{ s.student_name }}</strong>
+                            <p>Code: {{ s.student_code }}</p>
+                        </a>
                     {% endfor %}
                 </ul>
-
-            </div>
-        </div>
+            </article>
+        </section>
+        <section>
+            <article>
+                <div class="text-center">
+                    <a class="btn btn-primary" href="/student/create_student/" role="button">Create</a>
+                </div>
+            </article>
+        </section>
     </main>
 {% endblock %}

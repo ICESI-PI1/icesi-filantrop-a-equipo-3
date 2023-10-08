@@ -2,6 +2,10 @@
     min-height: 100vh;
 }
 
+.students-section {
+    margin-top: 3%;
+}
+
 nav ul {
     margin-top: 25%;
     text-align: center;
@@ -36,6 +40,21 @@ nav ul {
     margin-top: 25px;
 }
 
+div .text-center {
+    margin-top: 50px;
+}
+
+#search-btn {
+    margin-left: 30px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+}
+
+#search-by-select {
+    width: 100px;
+}
+
+
 .cancel-button {
     margin-top: 15px;
 }
@@ -50,6 +69,52 @@ nav ul li {
     justify-content: center;
 }
 
+.select-students, .select-report {
+    margin-top: 50px;
+}
+
+.button-horizontal-container {
+    margin-top: 50px;
+}
+
+.nav-item {
+    text-align: left;
+    width: 80%;
+    margin-left: 15%;
+}
+
 .select-students {
     margin-top: 20px;
+}
+
+.student-container {
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Estilo para el nombre del estudiante */
+.student-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilo para la información adicional del estudiante */
+.student-info {
+    margin-top: 10px;
+}
+
+/* Estilo para el título de la información adicional */
+.info-title {
+    font-weight: bold;
+}
+
+/* Estilo para la información adicional del estudiante */
+.info-text {
+    margin-left: 10px;
+}
+
+.download-pdf-btn {
+    margin-top: 15px;
 }
