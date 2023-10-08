@@ -1,5 +1,7 @@
 from django import forms
 from .models import *
+from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.models import User
 
 
 class CreateExtraAcademic(forms.ModelForm):
@@ -41,6 +43,15 @@ class DateInput(forms.DateInput):
     input_type = 'date'
 
 
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'user_type']
+        widgets = {
+            'user_type': forms.widgets.TextInput(attrs={'readonly': 'readonly'})
+        }
+
+
 class CreateStudent(forms.ModelForm):
     profile_picture = forms.ImageField(required=False, widget=forms.FileInput)
 
@@ -57,6 +68,8 @@ class CreateStudent(forms.ModelForm):
         }
 
 
+
+
 class CreateCollaborator(forms.ModelForm):
 
     class Meta:
@@ -69,6 +82,9 @@ class CreateCollaborator(forms.ModelForm):
 
 
         }
+
+
+
 
 
 class CreateAlert(forms.ModelForm):
@@ -103,6 +119,8 @@ class CreatePhilanthropy(forms.ModelForm):
             'philanthropy_member_code' : forms.TextInput(attrs={'class': 'form-control'}),
             'philanthropy_member_name' : forms.TextInput(attrs={'class': 'form-control'}),
             'philanthropy_member_email' : forms.TextInput(attrs={'class': 'form-control'}),
+            'philanthropy_member_user' : forms.TextInput(attrs={'class': 'form-control'}),
+            'philanthropy_member_password' : forms.TextInput(attrs={'class': 'form-control'})
         }
 
 

@@ -28,8 +28,7 @@ urlpatterns = [
          views.philanthropy_detail, name='philanthropy_detail'),
     path('philanthropy/<str:philanthropy_code>/edit/',
          views.philanthropy_edit, name='philanthropy_edit'),
-    path('philanthropy/<str:philanthropy_code>/delete/',
-         views.philanthropy_delete, name='delete_philanthropy'),
+    path('philanthropy/<str:philanthropy_code>/delete/',views.philanthropy_delete, name='delete_philanthropy'),     
     path('reports/', views.reports_view, name='reports'),
     path('reports/generate', views.report_generate, name='reports_generate'),
     path('reports/add_student', views.add_student, name='reports_add_student'),
@@ -41,5 +40,8 @@ urlpatterns = [
     path('reports/pdf/CREA/<str:student_code>', views.query_student_crea, name='query_student_crea'),
     path('reports/pdf/extra/<str:student_code>', views.query_student_extra, name='query_student_extra'),
     path('reports/pdf/becas/<str:student_code>', views.query_student_becas, name='query_student_becas'),
-    path('reports/true', views.show_modal, name='show_modal')
+    path('reports/true', views.show_modal, name='show_modal'),
+    path('registrate/', views.registrate_user, name='registrate'),
+    path('salir/', views.salir, name='salir')
 ]
+
