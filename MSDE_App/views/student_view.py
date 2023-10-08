@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from MSDE_App.models import Student
 from MSDE_App.forms import CreateStudent
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 
 @login_required()
@@ -41,22 +42,48 @@ def student_detail(request, student_code):
 
 
 def students_view(request):
+    # Comenzamos con todos los estudiantes
     students_list = Student.objects.all()
+
+    # Verificamos el filtrado por nombre completo
+    search_name = request.GET.get('search_name', '')
+    if search_name:
+        students_list = students_list.filter(student_name__icontains=search_name)
+
+    # Verificamos el filtrado por inicial del nombre
+    name_initial = request.GET.get('name_initial')
+    if name_initial:
+        students_list = students_list.filter(student_name__istartswith=name_initial)
+
+    # Verificamos el filtrado por inicial del apellido
+    surname_initial = request.GET.get('surname_initial')
+    if surname_initial:
+        students_list = students_list.filter(student_surname__istartswith=surname_initial)
+
+    # Si no se aplicó ningún filtro por inicial de apellido, ordenamos por apellido
+    elif not surname_initial and not name_initial and not search_name:
+        students_list = students_list.order_by('student_surname')
+
+    # Paginación
+    paginator = Paginator(students_list, 7)
+    page_number = request.GET.get('page')
+    students = paginator.get_page(page_number)
+
     return render(request, 'student/students.html', {
-        'students': students_list
+        'students': students
     })
+
+
 
 def edit_student(request, student_code):
     student = get_object_or_404(Student, student_code=student_code)
-    
     if request.method == 'POST':
-        form = CreateStudent(request.POST, request.FILES, instance=student) 
+        form = CreateStudent(request.POST, request.FILES, instance=student)
         if form.is_valid():
             form.save()
-            return redirect('student_detail', student_code=student.student_code) 
+            return redirect('student_detail', student_code=student.student_code)
     else:
         form = CreateStudent(instance=student)
-    
     context = {'form': form, 'student': student}
     return render(request, 'student/edit_student.html', context)
 

@@ -14,6 +14,7 @@ class CreateStudent(forms.ModelForm):
             'student_birth_date': forms.widgets.DateInput(attrs={'type': 'date'}),
             'student_code': forms.TextInput(attrs={'class': 'form-control'}),
             'student_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'student_surname': forms.TextInput(attrs={'class': 'form-control'}),
             'student_id': forms.TextInput(attrs={'class': 'form-control'}),
             'student_email': forms.TextInput(attrs={'class': 'form-control'}),
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
@@ -85,3 +86,4 @@ class AlertFilterForm(forms.Form):
 
     alert_filter = forms.ChoiceField(choices=FILTER_CHOICES, label="Filtrar por")
     filter_value = forms.ChoiceField(choices=ALERT_TYPE_CHOICES, required=False, label="Valor")
+

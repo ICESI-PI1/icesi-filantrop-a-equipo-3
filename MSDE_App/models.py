@@ -16,6 +16,7 @@ class Donor(models.Model):
 class Student(models.Model):
     student_code = models.CharField(max_length=9, unique=True)
     student_name = models.CharField(max_length=24)
+    student_surname = models.CharField(max_length=24, null=True)
     student_birth_date = models.DateField(max_length=10)
     student_id = models.CharField(max_length=10)
     student_email = models.CharField(max_length=50)

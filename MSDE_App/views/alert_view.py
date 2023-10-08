@@ -13,7 +13,7 @@ def create_alert(request, student_code):
             alert.student = student  
             alert.save()  
             messages.success(request, 'Alerta guardada correctamente.')
-            return redirect('create_alert', student_id=student_id)
+            return redirect('create_alert', student_code=student_code)
         else:
             return render(request, 'student/create_alert.html', {
                 'form': form,
