@@ -3,6 +3,7 @@ from MSDE_App.forms import CustomUserCreationForm
 
 
 def registrate_user(request):
+
     refer = request.META.get('HTTP_REFERER', None)
 
     if 'philanthropy' in refer:

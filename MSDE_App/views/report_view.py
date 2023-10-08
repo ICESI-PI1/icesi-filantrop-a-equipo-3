@@ -5,9 +5,9 @@ from django.urls import reverse
 from MSDE_App.models import Report
 from MSDE_App.forms import *
 import itertools
-import pdfkit
+import  pdfkit
 
-config = pdfkit.configuration(wkhtmltopdf = r"C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe")
+#config = pdfkit.configuration(wkhtmltopdf = r"C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe")
 
 
 def download_PDF(request, who):
