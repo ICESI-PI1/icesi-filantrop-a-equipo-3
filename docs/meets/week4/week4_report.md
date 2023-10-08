@@ -249,9 +249,11 @@ Date : 07/10/2023
 
  ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
+    Fixed issues related to the new functionality
     .
 
   - **What I'm going to do?**
+    Improve the student view, add filters and profile pics
     .
 
   - **Impediments**
