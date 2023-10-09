@@ -1,6 +1,19 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
+    <script>
+        window.onload = function () {
+            seeUrl();
+        };
+
+        function seeUrl() {
+            let currentURL = window.location.href
+
+            if (currentURL.includes("search=")) {
+                document.getElementById("invisible-btn").click();
+            }
+        }
+    </script>
     <main class="container">
         <div>
             <h1>Generate reports</h1>
@@ -12,23 +25,22 @@
                 <div>
                     <div class="input-group mb-3">
                         <div>
-                            <form method="GET" action="{% url 'reports' %}">
-                                <select class="form-select" name="search-by-select" aria-label="Default select">
+                            <form method="GET" action="{% url 'reports' %}" class="d-flex">
+                                <select class="form-select me-2" name="search-by-select" aria-label="Default select">
                                     <option selected>Search by</option>
                                     <option value="student-code">Student Code</option>
                                     <option value="id">ID</option>
                                     <option value="name">Name</option>
                                 </select>
-                                <input name="data-to-search" type="text" class="form-control"
+                                <input name="data-to-search" type="text" class="form-control me-2"
                                        aria-label="Text input with dropdown button">
-                                <button class="btn btn-outline-primary"
-                                        id="search-btn" type="submit" onclick="clickOnInvisible()">Search
-                                </button>
+                                <button class="btn btn-primary" id="search-btn" type="submit">Search</button>
                             </form>
                         </div>
                         <div class="input-group-prepend">
-                            <button class="btn btn-primary"
-                                    id="invisible-btn" type="submit" data-bs-toggle="modal" data-bs-target="#searchModal">See Student
+                            <button style="display:none;"
+                                    id="invisible-btn" type="submit" data-bs-toggle="modal"
+                                    data-bs-target="#searchModal">See Student
                             </button>
                         </div>
                         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -103,28 +115,32 @@
                 </div>
             </article>
         </section>
-        <section>
-            <article>
-                <section class="select-report">
-                    <h3>Select the type of report:</h3>
-                    <p>Select the type of report that you want to generate. There are 3 types defined, but you select
-                        one to customize.</p>
-                    <div>
-                        <select class="form-select" aria-label="Default select">
-                            <option selected>Select</option>
-                            <option value="1">Informe de becas</option>
-                            <option value="2">Informe de actividades extra</option>
-                            <option value="3">Informe de consultas en el
-                                CREA
-                            </option>
-                            <option value="4">Informe personalizado</option>
-                        </select>
-                    </div>
-                </section>
-            </article>
-        </section>
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary generate-btn">Generar</button>
-        </div>
+        <form method="GET" action="{% url 'reports_generate' %}">
+            {% csrf_token %}
+            <section>
+                <article>
+                    <section class="select-report">
+                        <h3>Select the type of report:</h3>
+                        <p>Select the type of report that you want to generate. There are 3 types defined, but you
+                            select
+                            one to customize.</p>
+                        <div>
+                            <select name="report-type" class="form-select" aria-label="Default select">
+                                <option selected>Select</option>
+                                <option value="1">Informe de becas</option>
+                                <option value="2">Informe de actividades extra académicas</option>
+                                <option value="3">Informe de consultas en el
+                                    CREA
+                                </option>
+                                <option value="4">Informe personalizado</option>
+                            </select>
+                        </div>
+                    </section>
+                </article>
+            </section>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary generate-btn">Generar</button>
+            </div>
+        </form>
     </main>
 {% endblock %}
