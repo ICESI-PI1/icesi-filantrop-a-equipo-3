@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="quizSistemas" id="C2CA3A74-AFAE-24EF-3A49-ACE568CB582D" version="3.5">
-<createdBy>Sara Cardona</createdBy>
-<createdTime>2023-08-31 14:22:29 UTC</createdTime>
-<ownerDesignName>quizSistemas</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>C2CA3A74-AFAE-24EF-3A49-ACE568CB582D</designId>
-</OSDM_Design>

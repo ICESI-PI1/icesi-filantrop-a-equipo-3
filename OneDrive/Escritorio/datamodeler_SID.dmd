@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="datamodeler_SID" id="01258251-AF3A-5E0D-6D46-5790D39DA103" version="3.5">
-<createdBy>Sara Cardona</createdBy>
-<createdTime>2023-09-07 12:36:37 UTC</createdTime>
-<ownerDesignName>datamodeler_SID</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>01258251-AF3A-5E0D-6D46-5790D39DA103</designId>
-</OSDM_Design>
