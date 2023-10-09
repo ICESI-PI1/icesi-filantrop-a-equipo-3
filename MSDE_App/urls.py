@@ -1,5 +1,6 @@
 from django.urls import path, include
 from . import views
+from MSDE_Collaborator_App import views as vwc
 from django.contrib import admin
 
 urlpatterns = [
@@ -10,12 +11,6 @@ urlpatterns = [
     path('students/', views.students_view, name="students"),
     path('student/<str:student_code>/edit/', views.edit_student, name='edit_student'),
     path('student/<str:student_code>/delete/', views.delete_student, name='delete_student'),
-    path('collaborator/create_collaborator/', views.create_collaborator, name='create_collaborator'),
-    path('collaborator/<str:collaborator_code>/collaborator_detail', views.collaborator_detail,
-         name='collaborator_detail'),
-    path('collaborators/', views.collaborators_view, name="collaborators/"),
-    path('collaborator/<str:collaborator_code>/edit/', views.edit_collaborator, name='edit_collaborator'),
-    path('collaborator/<str:collaborator_code>/delete/', views.delete_collaborator, name='delete_collaborator'),
     path('donor/create_donor/', views.create_donor, name='create_donor'),
     path('donor/<str:donor_code>/donor_detail', views.donor_detail, name='donor_detail'),
     path('donors/', views.donor_view, name="donors/"),
@@ -28,8 +23,7 @@ urlpatterns = [
          views.philanthropy_detail, name='philanthropy_detail'),
     path('philanthropy/<str:philanthropy_code>/edit/',
          views.philanthropy_edit, name='philanthropy_edit'),
-    path('philanthropy/<str:philanthropy_code>/delete/',
-         views.philanthropy_delete, name='delete_philanthropy'),
+    path('philanthropy/<str:philanthropy_code>/delete/', views.philanthropy_delete, name='delete_philanthropy'),
     path('reports/', views.reports_view, name='reports'),
     path('reports/generate', views.report_generate, name='reports_generate'),
     path('reports/add_student', views.add_student, name='reports_add_student'),
@@ -42,5 +36,9 @@ urlpatterns = [
     path('reports/pdf/extra/<str:student_code>', views.query_student_extra, name='query_student_extra'),
     path('reports/pdf/becas/<str:student_code>', views.query_student_becas, name='query_student_becas'),
     path('reports/true', views.show_modal, name='show_modal'),
+    path('registrate/', views.registrate_user, name='registrate'),
+    path('salir/', views.salir, name='salir'),
+    path('alerts/', views.see_alerts, name='alerts'),
+    path('alerts/<str:alert_code>', views.alert_detail, name='alert_detail'),
     path('info_management/', views.info_management, name='info_management')
 ]

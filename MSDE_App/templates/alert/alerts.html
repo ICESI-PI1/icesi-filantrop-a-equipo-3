@@ -7,20 +7,19 @@
                 <h1>
                     Alertas
                 </h1>
-                <ul class="list-group">
-                    {% for a in alerts %}
-                        <a class="list-group-item" href="{% url 'student_detail' a.student_code %}">
-                            <strong> {{ a.student_name }}</strong>
-                            <p>Code: {{ a.student_code }}</p>
-                        </a>
-                    {% endfor %}
-                </ul>
             </article>
         </section>
         <section>
             <article>
-                <div class="text-center">
-                    <a class="btn btn-primary" href="/student/create_student/" role="button">Create</a>
+                <div class="alerts-list">
+                    <ul class="list-group">
+                        {% for a in alerts %}
+                            <a class="list-group-item" href="{% url 'alert_detail' a.alert_code %}">
+                                <strong> Estudiante: {{ a.student.student_name }}</strong>
+                                <p>Tipo de alerta: {{ a.type_alert }}</p>
+                            </a>
+                        {% endfor %}
+                    </ul>
                 </div>
             </article>
         </section>
