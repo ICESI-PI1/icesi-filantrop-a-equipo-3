@@ -68,3 +68,25 @@ class ReportIntegrationTestCase(TestCase):
         response = self.client.get(reverse('reports_generate'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'report/reports.html')
+
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('base_reports'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'reports_base/base_reports.html')
+
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('becas_report'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'reports_base/becas_report.html')
+
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('extra_report'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'reports_base/actividades_extra_report.html')
+
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('crea_report'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'reports_base/consultas_CREA_report.html')
+
+
