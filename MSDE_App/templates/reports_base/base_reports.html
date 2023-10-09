@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Agrega los enlaces a los archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/../../static/report_script.js"></script>
+    <link rel="stylesheet" href="/../../static/style.css">
+    <script>
+        function download_pdf() {
+            window.print()
+        }
+    </script>
+    <title>Reports</title>
+</head>
+<body>
+<div class="container text-center mt-3" style="width: 80%">
+    <!-- Utiliza la clase "mx-auto" para centrar el contenido -->
+    <div class="navbar d-flex justify-content-center mx-auto"
+         style="width: 100%; height:10%;background-color: #0367A6; padding: 10px; border-radius: 5px">
+        <div style="width: 40%; height: 100%;">
+            <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/logo_filantropia.png"
+                 alt="logo-filantropia" style="max-width: 50%; height: auto;">
+        </div>
+    </div>
+    <main>
+        <section class="download-pdf-btn">
+            <!-- Botón para descargar el PDF -->
+            <a class="btn btn-primary" onclick="download_pdf()"
+               role="button" style="background-color: #03A65A">Descargar PDF</a>
+            <button class="btn btn-outline-primary" id="cancelButton"
+               role="button" style="border-color: #03A65A; color:#03A65A; button:hover { background-color:#03A65A; color:#ffffff}">Cancelar</button>
+        </section>
+        <section>
+            <div class="container text-center mt-3">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </section>
+    </main>
+    <script>
+        document.getElementById("cancelButton").addEventListener("click", function () {
+            window.history.back();
+        });
+    </script>
+</div>
+</body>
+</html>
