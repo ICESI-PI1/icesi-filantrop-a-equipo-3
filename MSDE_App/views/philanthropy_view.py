@@ -10,7 +10,8 @@ def create_philanthropy(request):
         try:
             if form.is_valid():
                 form.save()
-                return redirect('index')
+                return redirect('/registrate')
+
         except ValueError:
             return render(request.POST, 'philanthropy/create_philanthropy.html', {
                 'form': CreatePhilanthropy(request.POST),
