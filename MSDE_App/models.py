@@ -1,8 +1,16 @@
 from django.db import models
 import uuid
+from datetime import date
+
+
+# Create your models here.
+
 from datetime import datetime
+from django.contrib.auth.models import AbstractUser
 
 
+class User(AbstractUser):
+    user_type = models.CharField(max_length=20)
 
 
 class Donor(models.Model):
@@ -27,6 +35,29 @@ class Student(models.Model):
 
     def __str__(self):
         return self.student_name + "\n" + self.student_code
+
+
+class ExtraAcademic(models.Model):
+    student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
+    extra_academic_name = models.CharField(max_length=100)
+    extra_academic_hours = models.IntegerField()
+
+
+class AcademicBalance(models.Model):
+    student_code = models.OneToOneField(Student, on_delete=models.CASCADE)
+    academic_balance_career = models.CharField(max_length=50)
+    academic_balance_subjects = models.CharField(max_length=50)
+    academic_balance_schedule = models.CharField(max_length=50)
+    academic_balance_additions = models.CharField(max_length=50)
+    academic_balance_cancellations = models.CharField(max_length=50)
+    academic_balance_semester_average = models.FloatField()
+    academic_balance_total_average = models.FloatField()
+
+
+class CreaQuery(models.Model):
+    student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
+    crea_query_date = models.DateField()
+    crea_query_info = models.CharField(max_length=500)
 
 
 class TypeReport(models.Model):
@@ -87,6 +118,6 @@ class Alert(models.Model):
     alert_sender = models.CharField(max_length=100, blank=True)
     type_alert = models.ForeignKey(TypeAlert, on_delete=models.CASCADE, null=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True, blank=True)
-    
+
 
 

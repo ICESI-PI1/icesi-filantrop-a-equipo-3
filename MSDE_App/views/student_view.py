@@ -63,7 +63,6 @@ def students_view(request):
     })
 
 
-
 def edit_student(request, student_code):
     student = get_object_or_404(Student, student_code=student_code)
     if request.method == 'POST':

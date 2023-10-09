@@ -6,31 +6,6 @@
     margin-top: 3%;
 }
 
-nav ul {
-    margin-top: 25%;
-    text-align: center;
-    align-content: center;
-    list-style: none;
-    padding: 0;
-}
-
-.navbar-nav .nav-item .nav-link {
-    color: #ffffff;
-    font-family: "Raleway SemiBold", sans-serif;
-    font-size: 25px;
-}
-
-.navbar-nav {
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.navbar-nav .nav-item {
-    flex-grow: 1;
-}
 
 .main {
     padding-top: 30px;
@@ -54,19 +29,8 @@ div .text-center {
     width: 100px;
 }
 
-
 .cancel-button {
     margin-top: 15px;
-}
-
-.btn-primary {
-    background-color: #00008b;
-    color: #ffffff;
-}
-
-nav ul li {
-    text-align: center;
-    justify-content: center;
 }
 
 .select-students, .select-report {
@@ -77,12 +41,64 @@ nav ul li {
     margin-top: 50px;
 }
 
-.nav-item {
-    text-align: left;
-    width: 80%;
-    margin-left: 15%;
-}
 
 .select-students {
     margin-top: 20px;
+}
+
+.student-container {
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Estilo para el nombre del estudiante */
+.student-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilo para la información adicional del estudiante */
+.student-info {
+    margin-top: 10px;
+}
+
+/* Estilo para el título de la información adicional */
+.info-title {
+    font-weight: bold;
+}
+
+/* Estilo para la información adicional del estudiante */
+.info-text {
+    margin-left: 10px;
+}
+
+.download-pdf-btn {
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background-color: #03A65A;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #FFFF;
+    border: 2px solid #03A65A;
+    color: #03A65A !important;
+}
+
+.btn-outline-primary {
+    background-color: #FFFF;
+    border: 2px solid #03A65A;
+}
+
+.btn-outline-primary:hover {
+    background-color: #03A65A;
+    color: #FFFF !important;
+}
+
+.apply-top-margin {
+    margin-top: 20%;
 }
