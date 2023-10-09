@@ -39,10 +39,10 @@ Date : 02/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    .
+    . Finished CRUD for Collaborator.
 
   - **What I'm going to do?**
-    .
+    . I'm going to improve front end of the some entities.
 
   - **Impediments**
     Nothing
@@ -145,20 +145,20 @@ Date : 05/10/2023
 
 - ### **Juan José López López**
   - **What I did?**
-    . Nothing
+    . Nothing.
 
   - **What I'm going to do?**
-    . Nothig
+    . Nothing.
 
   - **Impediments**
     Nothing.
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    .
+    . Improve home view front end.
 
   - **What I'm going to do?**
-    .
+    . I'm going to continue improving front end of home view.
 
   - **Impediments**
     Nothing
@@ -213,10 +213,10 @@ Date : 06/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    .
+    . Finished home view front end.
 
   - **What I'm going to do?**
-    .
+    . I'm going to create a view for dissemination of information.
 
   - **Impediments**
     Nothing
@@ -271,10 +271,10 @@ Date : 07/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    .
+    . Finished dissemination of information front end.
 
   - **What I'm going to do?**
-    .
+    . I'm going to help in front end of some entities.
 
   - **Impediments**
     Nothing
