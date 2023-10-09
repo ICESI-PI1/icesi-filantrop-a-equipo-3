@@ -58,7 +58,7 @@ class CreaQueryTestCase(TestCase):
 
         )
 
-    def test_philanthropy_creation(self):
+    def test_query_creation(self):
         member1 = CreaQuery.objects.get(crea_query_info='Solicitar reporte')
         self.assertIsInstance(member1, CreaQuery)
         self.assertEquals(member1.crea_query_info, 'Solicitar reporte')
@@ -73,13 +73,13 @@ class CreaQueryTestCase(TestCase):
         with self.assertRaises(IntegrityError):
             member1.save()
 
-    def test_philanthropy_deletion(self):
+    def test_query_deletion(self):
         member1 = CreaQuery.objects.get(crea_query_info='Solicitar informe')
         member1.delete()
         with self.assertRaises(member1.DoesNotExist):
             CreaQuery.objects.get(crea_query_info='Solicitar informe')
 
-    def test_philanthropy_str(self):
+    def test_query_str(self):
         member1 = CreaQuery.objects.get(crea_query_info='Solicitar informe')
         self.assertEquals(member1.__str__(), 'Solicitar informe')
 
