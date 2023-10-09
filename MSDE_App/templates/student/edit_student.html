@@ -1,0 +1,10 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <h1>Edit Student</h1>
+    <form method="post" class="card card-body">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a class="btn btn-outline-primary cancel-button" href="/student/{{ student.student_code }}/student_detail" role="button">Cancel</a>
+    </form>
+{% endblock %}

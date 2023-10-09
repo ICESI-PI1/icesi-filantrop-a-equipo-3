@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <h1>Delete Student</h1>
+    <p>Are you sure you want to delete the student "{{ student.student_name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <a href="/students"><button type="submit">Delete</button></a>
+    </form>
+
+{% endblock %}
+

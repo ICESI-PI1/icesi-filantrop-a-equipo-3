@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1558436F-D2EC-8DBF-CBE4-7D8F72112DE2" containerWithKeyObject="C0A742F1-9D0E-E651-94A7-F56799556E89" localFKIndex="295D4859-6339-6ADF-FD08-72AEA7084799" name="ESTUDIANTE_ALERTA_ALERTA_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>D2F19D7B-8C5C-7686-6248-F4B0AA568A82</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<referredTableLongName>ALERTA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6E14A1B1-5AE6-D174-C717-0094F135FE65</referredTableID>
+<keyObject>48E58E8F-ACDA-CC1F-52E0-5BDE5FCC9695</keyObject>
+<referredKeyID>48E58E8F-ACDA-CC1F-52E0-5BDE5FCC9695</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ALERTA_CODIGO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="sse-modelo-integrador" id="F738720B-FFFF-CA51-A36B-0E1F2CDD090E" version="3.5">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 21:44:02 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>F738720B-FFFF-CA51-A36B-0E1F2CDD090E</designId>
+</OSDM_Design>

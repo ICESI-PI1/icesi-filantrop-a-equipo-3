@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="REPORTE_MIEMBRO_FILANTROPIA" directorySegmentName="seg_0" id="02735C3B-0A0E-E93B-A882-BC58CBC8D83F">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 14:33:43 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<sourcePk>A04BE6F9-8EF4-417B-B652-57AF3D61BF63</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5156E3FD-1622-63F8-2EEF-486999977278</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>62CC1B0E-FFC4-7210-0CD9-11C7CAC6C611</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

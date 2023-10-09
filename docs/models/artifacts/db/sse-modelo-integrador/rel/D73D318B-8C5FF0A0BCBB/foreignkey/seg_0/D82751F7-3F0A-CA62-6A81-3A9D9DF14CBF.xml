@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D82751F7-3F0A-CA62-6A81-3A9D9DF14CBF" containerWithKeyObject="A8051825-CC07-B588-A80F-7D736E5C8619" localFKIndex="427DB891-1EF8-1466-D792-0CC5DB6CA8BE" name="AUTHENTICATION_COLABORADOR_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-08 23:43:48 UTC</createdTime>
+<generatorID>2D9BC68C-32C9-3FA3-F659-18EF0F269BD3</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<referredTableLongName>COLABORADOR</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E19FA24A-EE10-12F2-DDE9-D3075AD9DBA7</referredTableID>
+<keyObject>AFDECA19-71F4-055F-C63D-25D8E257E8D9</keyObject>
+<referredKeyID>AFDECA19-71F4-055F-C63D-25D8E257E8D9</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>COLABRADOR_CODIGO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

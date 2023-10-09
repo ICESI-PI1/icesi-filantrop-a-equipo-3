@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ESTUDIANTE_DONANTE" directorySegmentName="seg_0" id="7231501F-BEF6-9224-0701-5FD39AFE6E39">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:27:18 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<sourcePk>51F5B07C-642A-AF1C-B509-57FC15367005</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>2274CBE4-579A-8DFC-39D9-D0AC4F7795A2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2CCB4192-9B5D-3066-55B7-BDCAD38CC261</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
