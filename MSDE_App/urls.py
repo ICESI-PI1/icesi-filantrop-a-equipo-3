@@ -42,5 +42,6 @@ urlpatterns = [
     path('reports/pdf/extra/<str:student_code>', views.query_student_extra, name='query_student_extra'),
     path('reports/pdf/becas/<str:student_code>', views.query_student_becas, name='query_student_becas'),
     path('reports/true', views.show_modal, name='show_modal'),
-    path('info_management/', views.info_management, name='info_management')
+    path('info_management/', views.info_management, name='info_management'),
+    path('info_dissemination/', views.info_dissemination, name='info_dissemination')
 ]
