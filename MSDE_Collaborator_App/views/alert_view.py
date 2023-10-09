@@ -41,6 +41,5 @@ def create_alert(request, student_id):
             'student': student,
             'alerts': alerts,
             'filter_form': filter_form
-
         })
 

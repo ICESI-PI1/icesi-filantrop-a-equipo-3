@@ -7,3 +7,5 @@ from .philanthropy_view import *
 from .alert_view import *
 from .registrate_view import *
 from .logout_view import *
+from .alert_view import *
+from .info_management import *

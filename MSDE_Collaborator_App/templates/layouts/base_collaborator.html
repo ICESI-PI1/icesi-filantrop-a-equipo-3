@@ -36,7 +36,7 @@
             align-items: center;
             cursor: pointer;
             transition: background-color 0.3s;
-            margin-top:21%;
+            margin-top:40%;
             margin-bottom:25%;
             padding: 10px;
         }
@@ -77,35 +77,35 @@
             max-width: 12%;
             margin-left: auto; /* Coloca la imagen a la derecha */
         }
+
+        .enviar-img img{
+            max-width: 20%;
+        }
     </style>
 </head>
 <body>
     <!-- Sidebar -->
     <nav class="sidebar">
         <ul class="list-unstyled">
-            <!-- Opción 1 -->
-            <li class="sidebar-item">
-                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/peligro.png" alt="" class="sidebar-img">
-                <a class="sidebar-text" href="/alerts">Alertas</a>
-            </li>
             <!-- Opción 2 -->
             <li class="sidebar-item">
-                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/nota.png" alt="Opción 2" class="sidebar-img">
-                <a class="sidebar-text" href="/info_management">Gestión de info.</a>
-            </li>
-            <!-- Opción 3 -->
-            <li class="sidebar-item">
-                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/reporte%20(1).png" alt="Opción 3" class="sidebar-img">
-                <a class="sidebar-text" href="/reports">Reportes</a>
+                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/nota.png" alt="estudiantes" class="sidebar-img">
+                <a class="sidebar-text" href="/students_collaborator">Estudiantes</a>
             </li>
             <!-- Opción 4 -->
-            <li class="sidebar-item">
-                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/marketing.png" alt="Opción 4" class="sidebar-img">
-                <a class="sidebar-text">Difusión</a>
+            <li class="sidebar-item enviar-img">
+                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/enviar.png" alt="enviar-info" class="sidebar-img">
+                <a class="sidebar-text" href="/send_info_collaborator">Enviar info.</a>
             </li>
+            {% if is_superuser == 1 %}
+                <li class="sidebar-item enviar-img">
+                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/enviar.png" alt="enviar-info" class="sidebar-img">
+                <a class="sidebar-text" href="/collaborator">Colaborador</a>
+            </li>
+            {% endif %}
             <!-- Opción 5 -->
             <li class="sidebar-item">
-                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/cerrar-sesion.png" alt="Salir" class="sidebar-img">
+                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/cerrar-sesion.png" alt="salir" class="sidebar-img">
                 <a class="sidebar-text" href="{% url 'salir' %}">Salir</a>
             </li>
         </ul>
