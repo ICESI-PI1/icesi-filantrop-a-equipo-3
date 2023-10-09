@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ALERTA_TIPO_ALERTA" directorySegmentName="seg_0" id="417C48A2-490E-0AC4-8492-1F4A5AD19264">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:27:29 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<sourcePk>FDED28FB-C0D3-3EAA-CF0F-DF4777619082</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>ADDA97D1-4593-1C36-0607-483DADD77846</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D281CFED-E81F-3EBD-1E7E-60F1B27F536D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="SHOP_MOVIE" directorySegmentName="seg_0" id="E48EB8B7-A971-76EA-AC6F-72FA24170B4A">
+<createdBy>Sara Cardona</createdBy>
+<createdTime>2023-08-31 15:35:21 UTC</createdTime>
+<ownerDesignName>quizSistemas</ownerDesignName>
+<engineerTo>
+<item key="FCA78239-D2C6-4E33-FE53-842E12DDFF65" value="true"/>
+<item key="A502CEB7-759E-8E1D-2710-5F29FDFC7120" value="true"/>
+</engineerTo>
+<targetPk>2BDB899E-C556-0BAB-E8CE-DB61A73C819B</targetPk>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>B186B079-47F6-EC42-53D2-B7673E3F8A05</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>85492BE7-7B9B-C257-8941-FB11E73FE6A1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

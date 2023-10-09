@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="054A73A3-B0D3-BB76-43AE-A555A6BEBEC9" name="DONANTE">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>2274CBE4-579A-8DFC-39D9-D0AC4F7795A2</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DONANTE_CODIGO" id="0E845C49-7742-B48E-788C-DA278FE77CE6">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>2A66A581-B9A0-5A91-CA56-E48D93DFB230</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DONANTE_NOMBRE" id="416EEFA0-DD3C-8040-D3EE-6FF23013142C">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>1E447283-6E00-A0A2-74C2-71D5CD647984</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="66DC77B1-F84C-EEC2-D7AE-5B5CC7FF428D" name="DONANTE_PK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>51F5B07C-642A-AF1C-B509-57FC15367005</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0E845C49-7742-B48E-788C-DA278FE77CE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

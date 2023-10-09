@@ -1,0 +1,160 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .navbar-nav {
+            background-color: #0367A6;
+        }
+
+        .custom-navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background-color: #0367A6 ;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .navbar-nav .nav-link {
+        padding: 15px 20px;
+        font-size: 1.2em;
+        color: #FFFFFF; /* Blanco */
+         /* Eliminar subrayado */
+        border-radius: 5px;
+        transition: background-color 0.3s;
+}
+
+
+        .nav-item .nav-link{
+            color: #FFFFFF;
+        }
+        .nav-item .nav-link:hover{ 
+            color: #26343d ; 
+        }
+
+        .centered-content {
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .menu-title {
+            margin-bottom: 50px; /* Espaciado debajo del título */
+            border-bottom: 1px solid white;
+            padding-bottom: 15px;
+            padding-top: 70px;
+            text-align: center;
+        }
+        .col-auto.col-md-3.col-xl-2.px-sm-2.px-0 {
+        background-color: #4c687e; /* Azul */
+}
+    #mySidebar {
+    transition: all 0.3s; /* Añade una transición suave */
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Barra de navegación superior -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/logo_filantropia.png' %}" alt="Logo" class="logo-img d-inline-block align-top">
+            </a>
+            <button id="toggle-sidebar" class="btn btn-primary">Sidebar</button>
+        </div>
+    </nav>
+
+    <!-- Nueva Sidebar -->
+    <div class="container-fluid mt-2">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 " id="mySidebar">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <h2 class="menu-title">Menu</h2>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <!-- Opciones del menú -->
+                        <li class="nav-item">
+                            <a href="/alerts" class="nav-link align-middle px-0 m-4">
+                                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/peligro.png" alt="" width="30" height="30">
+                                Alertas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/info_management" class="nav-link align-middle px-0 m-4">
+                                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/nota.png" alt="Opción 2" width="30" height="30">
+                                Gestión de info.
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/reports" class="nav-link align-middle px-0 m-4">
+                                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/reporte%20(1).png" alt="Opción 3" width="30" height="30">
+                                Reportes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0 m-4">
+                                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/marketing.png" alt="Opción 4" width="30" height="30">
+                                Difusión
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'salir' %}" class="nav-link align-middle px-0 m-5">
+                                <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/cerrar-sesion.png" alt="Salir" width="30" height="30">
+                                Salir
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main container col-9 block">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('#toggle-sidebar').click(function() {
+                $('.navbar-nav').toggle();
+                if ($('.navbar-nav').is(':visible')) {
+                    $('.main').removeClass('col-12').addClass('col-9');
+                } else {
+                    $('.main').removeClass('col-9').addClass('col-12');
+                }
+            });
+        });
+        $(document).ready(function() {
+        $('#toggle-sidebar').click(function() {
+        $('#mySidebar').toggle();
+        if ($('#mySidebar').is(':visible')) {
+            $('.main').removeClass('col-12').addClass('col-9');
+        } else {
+            $('.main').removeClass('col-9').addClass('col-12');
+        }
+    });
+});
+    </script>
+    
+    
+</body>
+
+</html>

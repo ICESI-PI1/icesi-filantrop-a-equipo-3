@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="ADDA97D1-4593-1C36-0607-483DADD77846" name="TIPO_ALERTA">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:14:07 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="TIPO_ALERTA_CODIGO" id="03872D16-3C6D-3F6C-B786-2471A33D8CD1">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:15:34 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO_ALERTA_NOMBRE" id="ED60CB90-0C09-15B0-A60C-3B2A6DB3FE51">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:15:39 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FDED28FB-C0D3-3EAA-CF0F-DF4777619082" name="TIPO_ALERTA PK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:24:25 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>03872D16-3C6D-3F6C-B786-2471A33D8CD1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

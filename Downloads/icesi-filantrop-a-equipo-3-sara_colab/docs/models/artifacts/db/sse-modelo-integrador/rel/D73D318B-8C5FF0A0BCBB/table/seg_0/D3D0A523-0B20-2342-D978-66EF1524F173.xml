@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D3D0A523-0B20-2342-D978-66EF1524F173" name="ESTUDIANTE">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>2CCB4192-9B5D-3066-55B7-BDCAD38CC261</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ESTUDIANTE_CODIGO" id="C75A4842-CADB-7CD5-76BA-D425A2EC926A">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>E370CED1-25BD-857C-8BD7-A8455568583D</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTUDIANTE_NOMBRE" id="955BA002-8E0E-8ED6-5007-222FD2EB7294">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>DA378B10-FB87-B3F4-B35E-0E3E375024D6</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTUDIANTE_FECHA_NACIMIENTO" id="AF560F8D-C110-2672-CF85-EA136FB4B299">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>ECD15386-1E5C-C3DC-444E-3D4628C2DB22</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTUDIANTE_CEDULA" id="99C9E579-C883-1018-89D1-EF30D1464586">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>D45477E9-20B4-51F7-F24F-C2AB767A1021</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTUDIANTE_CORREO_ELECTRONICO" id="0A8276EE-E6AC-E030-164E-4287F164EB28">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>7A219970-2D52-711D-CA63-D6A2EAE65194</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTUDIANTE_NUMERO_CELULAR" id="CDA6E29D-6441-DF03-4F76-018907AFA3A8">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>2574B38E-8EC8-22AD-7A6D-A797249E8AB3</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTUDIANTE_ICFES_PUNTAJE" id="9E58EF33-5FBD-9BC8-26B5-729398B2B274">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>1F1DEA72-3633-BCDE-93B8-532D01F104CE</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DONANTE_DONANTE_CODIGO" id="CA405B0C-EF66-F00F-6DCF-B3D6A4279757">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>A6A55E19-2909-2D7E-2F5C-F2D644B687EA</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F8A13D47-4A91-C3D9-B9CC-71DFC8F954C6" referredColumn="0E845C49-7742-B48E-788C-DA278FE77CE6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43E744AC-B6D8-5E00-AAAF-EEFE616D0EF3" name="ESTUDIANTE_PK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>546E0FD2-80BA-485C-CC3D-2CD4AB28F533</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C75A4842-CADB-7CD5-76BA-D425A2EC926A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FF9588A6-C336-CA0D-33A9-BC7C6AE6BFA9" name="ESTUDIANTE_DONANTE_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>7231501F-BEF6-9224-0701-5FD39AFE6E39</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CA405B0C-EF66-F00F-6DCF-B3D6A4279757"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

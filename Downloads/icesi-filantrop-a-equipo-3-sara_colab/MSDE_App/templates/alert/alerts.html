@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <main class="container">
+        <section class="row">
+            <article>
+                <h1>
+                    Alertas
+                </h1>
+                <div class="alerts-list">
+                    <ul class="list-group">
+                    {% for a in alerts %}
+                        <a class="list-group-item" href="{% url 'alert_detail' a.alert_code %}">
+                        <strong> Estudiante: {{ a.student.student_name }}</strong>
+                        <p>Tipo de alerta: {{ a.type_alert }}</p>
+                        </a>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+    <main class="container mt-5">
+        <section>
+            <h1 class="mb-4" style="margin-top: 10%;">Miembros</h1>
+            <article class="d-flex flex-wrap justify-content-start">
+                <div class="card mx-2 mb-4" style="width: 18rem;">
+                    <img src="{% static 'img/muchosEstudiantes.jpg' %}" class="card-img-top" alt="Imagen para crear">
+                    <div class="card-body ">
+                            <a class="btn btn-primary " href="/philanthropy/create_philanthropy/" role="button">Crear nuevo miebro</a>
+                        </div>
+                </div>
+            </article>
+        </section>
+        <section class="row">
+            <ul class="list-group mb-4">
+                {% for p in philanthropy_members %}
+                    <a class="list-group-item" href="{% url 'philanthropy_detail' p.philanthropy_member_code %}">
+                        <strong> {{ p.philanthropy_member_name }}</strong>
+                        <p>Code: {{ p.philanthropy_member_email }}</p>
+                    </a>
+                {% endfor %}
+            </ul>
+        </section>
+       
+    </main>
+{% endblock %}

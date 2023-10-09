@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6E14A1B1-5AE6-D174-C717-0094F135FE65" name="ALERTA">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>D281CFED-E81F-3EBD-1E7E-60F1B27F536D</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ALERTA_CODIGO" id="86760B0E-3E0D-AE5D-66C2-C3B71736995E">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>FD657ED7-A86D-C192-11E8-67D3CC1FCB4B</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALERTA_FECHA" id="96CEB823-115D-EA68-F9AF-FF7611ECB4F0">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>9FA12177-9377-0FF4-25E8-F0F50711ECE8</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COLABORADOR_COLABRADOR_CODIGO" id="8A7E5B15-6B64-DB3B-FFAC-B60059B8DB11">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>92486010-9CD8-A761-B28B-42E63B7E4444</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E2C99F59-6F1A-7C55-4DC3-D6F44D558460" referredColumn="0B15CFCC-8E70-8335-99A6-94707A3C886D"/>
+</associations>
+</Column>
+<Column name="TIPO_ALERTA_TIPO_ALERTA_CODIGO" id="637BA071-5A6C-D78D-20AC-69DF97E77F5D">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>711E61D0-5D2C-21FC-F92F-F443F97BF50C</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5E069F3E-2A1A-D4E5-C59C-6B2EE8FFA465" referredColumn="D2F0A9C3-AF3E-8AF4-5D1E-F7473EEABFCB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="48E58E8F-ACDA-CC1F-52E0-5BDE5FCC9695" name="ALERTA_PK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>112B4963-B810-1510-F44D-04CE2C8C74D2</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="86760B0E-3E0D-AE5D-66C2-C3B71736995E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="840AE888-C082-DD8E-DCDA-4442D4E06236" name="ALERTA_TIPO_ALERTA_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>417C48A2-490E-0AC4-8492-1F4A5AD19264</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="637BA071-5A6C-D78D-20AC-69DF97E77F5D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="31317BC2-CAB7-7AB0-C1AA-2A953604C104" name="ALERTA_COLABORADOR_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>CFF87314-23FA-B2DA-71E2-3103725ACFEE</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8A7E5B15-6B64-DB3B-FFAC-B60059B8DB11"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

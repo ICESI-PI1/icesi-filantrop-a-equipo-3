@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="6CB58C89-3BF9-B545-AE57-EB9850ADDBB5" mainViewID="48E70D02-064C-9FB8-16DF-656C825F099C">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 21:44:02 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

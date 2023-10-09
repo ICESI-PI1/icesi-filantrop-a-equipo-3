@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <main class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1>
+                    Donors
+                </h1>
+                <ul class="list-group">
+                    {% for d in donors %}
+                    <a class="list-group-item" href="{% url 'donor_detail' d.donor_code %}">
+                        <strong> {{ d.donor_name }}</strong>
+                        <p>Code: {{ d.donor_code }}</p>
+                    </a>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FILANTROPIA_AUTH" directorySegmentName="seg_0" id="40FA4425-7BEA-3448-778B-6203BBB9CA52">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-08 23:34:29 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<sourcePk>A04BE6F9-8EF4-417B-B652-57AF3D61BF63</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5156E3FD-1622-63F8-2EEF-486999977278</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>11A2E1DF-D2A7-464A-052C-94BAE33432D3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
