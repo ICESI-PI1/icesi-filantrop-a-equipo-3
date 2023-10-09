@@ -44,7 +44,7 @@
                 <div class="card">
                     <div class="list-group list-group-flush">
                         {% for s in students %}
-                            <a href="{% url 'student_detail' s.student_code %}" class="list-group-item list-group-item-action d-flex align-items-center">
+                            <a href="{% url 'student_detail_collaborator' s.student_code %}" class="list-group-item list-group-item-action d-flex align-items-center">
                                 {% if s.profile_picture %}
                                     <img src="{{ s.profile_picture.url }}" alt="Foto de perfil de {{ s.student_name }}" class="student-image rounded">
                                 {% else %}
