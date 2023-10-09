@@ -64,9 +64,9 @@ def query_student_crea(request, student_code):
     crea_queries = CreaQuery.objects.filter(student_code=student_code)
 
     return render(request, 'reports_base/consultas_CREA_report.html', {
-                'students': student_list,
-                'crea_queries': crea_queries
-            })
+        'students': student_list,
+        'crea_queries': crea_queries
+    })
 
 
 def query_student_extra(request, student_code):
@@ -103,7 +103,6 @@ def reports_view(request):
         })
     else:
         if search_by == "student-code":
-            print("entro-student-code")
             try:
                 student = get_object_or_404(Student, student_code=data_to_search)
                 result = student
@@ -136,8 +135,6 @@ def reports_view(request):
 def report_generate(request):
     report_type = request.GET.get("report-type")
 
-    print('report type:',report_type)
-
     if report_type is None:
         return render(request, 'report/reports.html', {
             'students': student_list,
@@ -148,18 +145,22 @@ def report_generate(request):
                 'students': student_list,
             })
         elif report_type == "1":
+            create_report(request, "becas")
             return render(request, 'reports_base/becas_report.html', {
                 'students': student_list,
             })
         elif report_type == "2":
+            create_report(request, "extra")
             return render(request, 'reports_base/actividades_extra_report.html', {
                 'students': student_list,
             })
         elif report_type == "3":
+            create_report(request, "CREA")
             return render(request, 'reports_base/consultas_CREA_report.html', {
                 'students': student_list,
             })
         elif report_type == "4":
+            create_report(request, "personalizado")
             return render(request, 'reports_base/consultas_CREA_report.html', {
                 'students': student_list,
             })
@@ -167,3 +168,30 @@ def report_generate(request):
             return render(request, 'report/reports.html', {
                 'students': student_list
             })
+
+
+def create_report(request, which_report):
+    if "becas" in which_report:
+        for s in student_list:
+            report = Report.objects.create(report_date=datetime.today(),
+                                           type_report_code=TypeReport.objects.get(report_type='Informe de becas'),
+                                           student_code=Student.objects.get(student_code=s.student_code))
+            report.save()
+    elif "extra" in which_report:
+        for s in student_list:
+            report = Report.objects.create(report_date=datetime.today(),
+                                           type_report_code=TypeReport.objects.get(report_type='Informe de actividades extra académicas'),
+                                           student_code=Student.objects.get(student_code=s.student_code))
+            report.save()
+    elif "CREA" in which_report:
+        for s in student_list:
+            report = Report.objects.create(report_date=datetime.today(),
+                                           type_report_code=TypeReport.objects.get(report_type='Informe de consultas en el CREA'),
+                                           student_code=Student.objects.get(student_code=s.student_code))
+            report.save()
+    else:
+        for s in student_list:
+            report = Report.objects.create(report_date=datetime.today(),
+                                           type_report_code=TypeReport.objects.get(report_type='Informe personalizado'),
+                                           student_code=Student.objects.get(student_code=s.student_code))
+            report.save()

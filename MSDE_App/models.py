@@ -55,14 +55,30 @@ class CreaQuery(models.Model):
         return self.crea_query_info
 
 class TypeReport(models.Model):
-    type_report_code = models.CharField(max_length=12)
-    type_report_name = models.CharField(max_length=16)
+    BECA = 'Informe de becas'
+    CREA = 'Informe de consultas en el CREA'
+    EXTRA = 'Informe de actividades extra académicas'
+    PERSONALIZADO = 'Informe personalizado'
+
+    REPORT_TYPE_CHOICES = [
+        (BECA, 'Informe de becas'),
+        (CREA, 'Informe de consultas en el CREA'),
+        (EXTRA, 'Informe de actividades extra académicas'),
+        (PERSONALIZADO, 'Informe personalizado')
+    ]
+
+    report_type = models.CharField(
+        max_length=50,
+        choices=REPORT_TYPE_CHOICES,
+        unique=True,
+        null=True
+    )
 
 
 class PhilanthropyMember(models.Model):
     philanthropy_member_code = models.CharField(max_length=10, unique=True)
     philanthropy_member_name = models.CharField(max_length=24)
-    philanthropy_member_email = models.CharField(max_length=50, default="default@gmail.com")
+    philanthropy_member_email = models.CharField(max_length=50, default="example@gmail.com")
 
     def __str__(self):
         return self.philanthropy_member_code
@@ -73,7 +89,7 @@ class Report(models.Model):
     report_date = models.DateField(max_length=10)
     type_report_code = models.ForeignKey(TypeReport, on_delete=models.CASCADE)
     student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
-    philanthropy_member = models.ForeignKey(PhilanthropyMember, on_delete=models.CASCADE)
+    philanthropy_member = models.ForeignKey(PhilanthropyMember, on_delete=models.CASCADE, null=True)
 
 
 class Collaborator(models.Model):
