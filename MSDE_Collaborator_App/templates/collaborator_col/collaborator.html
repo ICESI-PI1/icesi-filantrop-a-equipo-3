@@ -1,0 +1,28 @@
+{% extends 'layouts/base_collaborator.html'%}
+
+{% block content %}
+    <main class="container">
+        <section class="row">
+            <article>
+                <h1 class="display-4 text-center mb-5">
+                    Colaboradores
+                </h1>
+                <ul class="list-group">
+                    {% for p in collaborator_members %}
+                        <a class="list-group-item" href="{% url 'collaborator_detail' p.collaborator_code %}">
+                            <strong> {{ p.collaborator_name }}</strong>
+                            <p>Code: {{ p.collaborator_email }}</p>
+                        </a>
+                    {% endfor %}
+                </ul>
+            </article>
+        </section>
+        <section>
+            <article>
+                <div class="text-center">
+                    <a class="btn btn-primary" href="/collaborator/create_collaborator/" role="button">Create</a>
+                </div>
+            </article>
+        </section>
+    </main>
+{% endblock %}

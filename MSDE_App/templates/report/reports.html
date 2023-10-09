@@ -1,5 +1,4 @@
 {% extends 'layouts/base.html' %}
-
 {% block content %}
     <script>
         window.onload = function () {
@@ -15,6 +14,34 @@
         }
     </script>
     <main class="container">
+        <h1 class="display-4 text-center mb-5">Generar Reportes</h1>
+        <section class="card card-body mb-4">
+            <h3 class="mb-4">Seleccionar Estudiantes</h3>
+            <p>Seleccione todos los estudiantes para los cuales desea generar un informe. Puede buscar por código, ID o nombre.</p>
+
+            <form method="GET" action="{% url 'reports' %}" class="d-flex">
+                <select class="form-select me-2" name="search-by-select" aria-label="Default select">
+                    <option selected>Buscar por</option>
+                    <option value="student-code">Código del Estudiante</option>
+                    <option value="id">ID</option>
+                    <option value="name">Nombre</option>
+                </select>
+                <input name="data-to-search" type="text" class="form-control me-2" placeholder="Introducir datos para la búsqueda">
+                <button class="btn btn-primary" id="search-btn" type="submit">Buscar</button>
+            </form>
+        </section>
+        <section class="card card-body mb-4">
+            <h3 class="mb-4">Estudiantes Seleccionados</h3>
+            {% if students %}
+                <ul class="list-group list-group-numbered">
+                    {% for s in students %}
+                        <form method="POST" action="{% url 'reports_quit_student' s.student_code %}">
+                            {% csrf_token %}
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">{{ s.student_name }}</div>
+                                    Con código {{ s.student_code }}
+
         <div>
             <h1>Generate reports</h1>
         </div>
@@ -82,65 +109,30 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
+                                <button type="submit" class="btn btn-danger rounded-pill">Eliminar</button>
+                            </li>
+                        </form>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No hay estudiantes seleccionados.</p>
+            {% endif %}
         </section>
-        <section>
-            <article class="students-section">
-                <p>Selected students:</p>
-                <div>
-                    {% if students %}
-                        <ul class="list-group list-group-numbered">
-                            {% for s in students %}
-                                <form method="POST" action="{% url 'reports_quit_student' s.student_code %}">
-                                    {% csrf_token %}
-                                    <li class="list-group-item d-flex justify-content-between align-items-start">
-                                        <div class="ms-2 me-auto">
-                                            <div class="fw-bold">{{ s.student_name }}</div>
-                                            Con código {{ s.student_code }}
-                                        </div>
-                                        <button type="submit"
-                                                class="btn btn-danger rounded-pill">X
-                                        </button>
-                                    </li>
-                                </form>
-                            {% endfor %}
-                        </ul>
-                    {% else %}
-                        <p>No selected students</p>
-                    {% endif %}
+        <section class="card card-body mb-4">
+            <h3 class="mb-4">Seleccionar Tipo de Reporte</h3>
+            <form method="GET" action="{% url 'reports_generate' %}">
+                {% csrf_token %}
+                <select name="report-type" class="form-select mb-4" aria-label="Default select">
+                    <option selected>Seleccionar</option>
+                    <option value="1">Informe de becas</option>
+                    <option value="2">Informe de actividades extra académicas</option>
+                    <option value="3">Informe de consultas en el CREA</option>
+                    <option value="4">Informe personalizado</option>
+                </select>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary generate-btn">Generar</button>
                 </div>
-            </article>
+            </form>
         </section>
-        <form method="GET" action="{% url 'reports_generate' %}">
-            {% csrf_token %}
-            <section>
-                <article>
-                    <section class="select-report">
-                        <h3>Select the type of report:</h3>
-                        <p>Select the type of report that you want to generate. There are 3 types defined, but you
-                            select
-                            one to customize.</p>
-                        <div>
-                            <select name="report-type" class="form-select" aria-label="Default select">
-                                <option selected>Select</option>
-                                <option value="1">Informe de becas</option>
-                                <option value="2">Informe de actividades extra académicas</option>
-                                <option value="3">Informe de consultas en el
-                                    CREA
-                                </option>
-                                <option value="4">Informe personalizado</option>
-                            </select>
-                        </div>
-                    </section>
-                </article>
-            </section>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary generate-btn">Generar</button>
-            </div>
-        </form>
     </main>
 {% endblock %}

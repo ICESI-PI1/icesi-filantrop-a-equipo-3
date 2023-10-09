@@ -1,0 +1,100 @@
+.block {
+    min-height: 100vh;
+}
+
+.students-section {
+    margin-top: 3%;
+}
+
+
+.main {
+    padding-top: 30px;
+}
+
+.text-center {
+    margin-top: 25px;
+}
+
+div .text-center {
+    margin-top: 50px;
+}
+
+#search-btn {
+    margin-left: 30px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+}
+
+#search-by-select {
+    width: 100px;
+}
+
+.cancel-button {
+    margin-top: 15px;
+}
+
+.select-students, .select-report {
+    margin-top: 50px;
+}
+
+.button-horizontal-container {
+    margin-top: 50px;
+}
+
+
+.select-students {
+    margin-top: 20px;
+}
+
+.student-container {
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Estilo para el nombre del estudiante */
+.student-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilo para la información adicional del estudiante */
+.student-info {
+    margin-top: 10px;
+}
+
+/* Estilo para el título de la información adicional */
+.info-title {
+    font-weight: bold;
+}
+
+/* Estilo para la información adicional del estudiante */
+.info-text {
+    margin-left: 10px;
+}
+
+.download-pdf-btn {
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background-color: #0367a6;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #FFFF;
+    border: 2px solid #03A65A;
+    color: #03A65A !important;
+}
+
+.btn-outline-primary {
+    background-color: #FFFF;
+    border: 2px solid #03A65A;
+}
+
+.btn-outline-primary:hover {
+    background-color: #03A65A;
+    color: #FFFF !important;
+}

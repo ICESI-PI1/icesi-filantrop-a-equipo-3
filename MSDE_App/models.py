@@ -1,6 +1,16 @@
 from django.db import models
 import uuid
+from datetime import date
+
+
+# Create your models here.
+
 from datetime import datetime
+from django.contrib.auth.models import AbstractUser
+
+
+class User(AbstractUser):
+    user_type = models.CharField(max_length=20)
 
 
 class Donor(models.Model):
@@ -14,6 +24,7 @@ class Donor(models.Model):
 class Student(models.Model):
     student_code = models.CharField(max_length=9, unique=True)
     student_name = models.CharField(max_length=24)
+    student_surname = models.CharField(max_length=24, null=True)
     student_birth_date = models.DateField(max_length=10)
     student_id = models.CharField(max_length=10)
     student_email = models.CharField(max_length=50)
@@ -122,6 +133,6 @@ class Alert(models.Model):
     alert_sender = models.CharField(max_length=100, blank=True)
     type_alert = models.ForeignKey(TypeAlert, on_delete=models.CASCADE, null=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True, blank=True)
-    
+
 
 
