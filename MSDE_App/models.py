@@ -51,6 +51,8 @@ class CreaQuery(models.Model):
     crea_query_date = models.DateField()
     crea_query_info = models.CharField(max_length=500)
 
+    def __str__(self):
+        return self.crea_query_info
 
 class TypeReport(models.Model):
     type_report_code = models.CharField(max_length=12)
