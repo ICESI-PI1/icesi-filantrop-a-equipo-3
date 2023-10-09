@@ -4,8 +4,8 @@ from django.contrib import admin
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('index_collaborator/', views.index, name="index"),
-    path('student_collaborator/<str:student_code>/student_detail', views.student_detail, name='student_detail'),
+    path('index_collaborator/', views.index, name="index_collaborator"),
+    path('student_collaborator/<str:student_code>/student_detail', views.student_detail, name='student_detail_collaborator'),
     path('students_collaborator/', views.students_view, name="students"),
     path('send_info_collaborator/', views.send_info, name="send_info"),
     path('student_collaborator/<int:student_id>/create_alert/', views.create_alert, name='create_alert'),
@@ -17,5 +17,6 @@ urlpatterns = [
          views.collaborator_edit, name='collaborator_edit'),
     path('collaborator/<str:collaborator_code>/delete/', views.collaborator_delete, name='delete_collaborator'),
     path('registrate_collaborator/', views.registrate_user, name='registrate_collaborator'),
-    path('info_dissemination_collaborator/', views.info_dissemination, name='info_dissemination')
+    path('info_dissemination_collaborator/', views.info_dissemination, name='info_dissemination'),
+    path('create_alert/<str:student_code>', views.create_alert, name='create_alert_collaborator')
 ]

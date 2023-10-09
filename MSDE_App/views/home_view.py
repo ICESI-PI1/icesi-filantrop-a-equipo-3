@@ -13,7 +13,6 @@ def index(request):
     is_superuser = user.is_superuser
 
     if user.user_type == 'Collaborator':
-        return redirect('/index_collaborator')
-        #return render(request, '../../MSDE_Collaborator_App/templates/index.html')
+        return render(request, '../../MSDE_Collaborator_App/templates/index_collaborator.html')
     else:
         return render(request, 'index.html')
