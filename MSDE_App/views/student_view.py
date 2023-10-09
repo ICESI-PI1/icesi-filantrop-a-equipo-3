@@ -42,33 +42,22 @@ def student_detail(request, student_code):
 
 
 def students_view(request):
-    # Comenzamos con todos los estudiantes
-    students_list = Student.objects.all()
 
-    # Verificamos el filtrado por nombre completo
+    students_list = Student.objects.all()
     search_name = request.GET.get('search_name', '')
     if search_name:
         students_list = students_list.filter(student_name__icontains=search_name)
-
-    # Verificamos el filtrado por inicial del nombre
     name_initial = request.GET.get('name_initial')
     if name_initial:
         students_list = students_list.filter(student_name__istartswith=name_initial)
-
-    # Verificamos el filtrado por inicial del apellido
     surname_initial = request.GET.get('surname_initial')
     if surname_initial:
         students_list = students_list.filter(student_surname__istartswith=surname_initial)
-
-    # Si no se aplicó ningún filtro por inicial de apellido, ordenamos por apellido
     elif not surname_initial and not name_initial and not search_name:
         students_list = students_list.order_by('student_surname')
-
-    # Paginación
-    paginator = Paginator(students_list, 7)
+    paginator = Paginator(students_list, 10)
     page_number = request.GET.get('page')
     students = paginator.get_page(page_number)
-
     return render(request, 'student/students.html', {
         'students': students
     })

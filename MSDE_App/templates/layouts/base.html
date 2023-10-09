@@ -1,11 +1,15 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Base</title>
+
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="/../../static/style.css">
-    <script rel="stylesheet" src="{% static 'script.js' %}"></script>
+
     <!-- Bootstrap 5 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
@@ -14,73 +18,92 @@
 
     <!-- Bootstrap 5 JS (incluyendo Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-
-    <!-- Bootstrap JavaScript (asegúrate de que esté antes de tu código JavaScript) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
 </head>
 
 <body>
-<!---
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-  <div class="container">
-    <a class="navbar-brand" href="/">Seguimiento estudiantes</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="nav flex-column" id="navbarNav">
-      <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="/index" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="/students" class="nav-link">Students</a>
-            </li>
-            <li class="nav-item2">
-                <a href="/student/create_student" class="nav-link">Create Students</a>
-            </li>
-           <li class="nav-item2">
-                <a href="/philanthropy" class="nav-link">Philanthropy Members</a>
-          </li>
-          <li class="nav-item2">
-                <a href="/philanthropy/create_philanthropy" class="nav-link">Create Philanthropy Member</a>
-          </li>
-      </ul>
-    </div>
-  </div>
-</nav> --->
-<div class="row h-100">
-    <div class="col-2">
-        <nav class="navbar-nav bg-primary h-100 w-100">
-            <ul class="flex-fill d-flex flex-column">
-                <li class="nav-item flex-grow-1">
-                    <a class="nav-link" href="/index"> Home </a>
-                </li>
-                <li class="nav-item flex-grow-1">
-                    <a class="nav-link" href="/students"> Students </a>
-                </li>
-                <li class="nav-item flex-grow-1">
-                    <a class="nav-link" href="/philanthropy"> Philanthropy </a>
-                </li>
-                <li class="nav-item flex-grow-1">
-                    <a class="nav-link" href="/reports"> Reports </a>
-                </li>
-                <li class="nav-item flex-grow-1">
-                    <a class="nav-link" href="/index"> Log Out </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <div class="main container col-9 block">
-        {% block content %}
-        {% endblock %}
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/logo_filantropia.png' %}" alt="Logo" class="logo-img d-inline-block align-top">
+            </a>
+            <button id="toggle-sidebar" class="btn btn-primary"> Sidebar</button>
+    </nav>
+
+    <div class="row h-100">
+        <div class="col-2">
+            <nav class="navbar-nav">
+                <ul class="flex-fill d-flex flex-column">
+                    <li class="nav-item flex-grow-1">
+                        <a class="nav-link" href="/index">Home</a>
+                    </li>
+                    <li class="nav-item flex-grow-1">
+                        <a class="nav-link" href="/students">Students</a>
+                    </li>
+                    <li class="nav-item flex-grow-1">
+                        <a class="nav-link" href="/philanthropy">Philanthropy</a>
+                    </li>
+                    <li class="nav-item flex-grow-1">
+                        <a class="nav-link" href="/reports">Reports</a>
+                    </li>
+                    <li class="nav-item flex-grow-1">
+                        <a class="nav-link" href="/index">Log Out</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main container col-9 block">
+            {% block content %}
+            {% endblock %}
+        </div>
     </div>
 </div>
+
+    <style>
+        .navbar-nav {
+    background-color: #0367A6;
+}
+        .custom-navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background-color: #404040 !important;
+        }
+        .logo-img {
+    width: 60px;
+    height: auto;
+    vertical-align: middle;
+}
+.navbar-nav .nav-link {
+    padding: 10px 15px;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.centered-content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+    </style>
+   <script>
+    $(document).ready(function() {
+        $('#toggle-sidebar').click(function() {
+            $('.navbar-nav').toggle(); 
+            if ($('.navbar-nav').is(':visible')) {
+                $('.main').removeClass('col-12 centered-content').addClass('col-9');
+            } else {
+                $('.main').removeClass('col-9').addClass('col-12 centered-content');
+            }
+        });
+    });
+</script>
+
+    
 </body>
 </html>
