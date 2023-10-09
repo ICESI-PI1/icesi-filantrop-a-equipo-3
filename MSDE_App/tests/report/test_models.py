@@ -7,10 +7,10 @@ class reportTestCase(TestCase):
 
     def setUp(self):
         TypeReport.objects.create(
-            type_report_code='1234',
-            type_report_name='Bienestar'
+            report_type='1',
+
         )
-        type_report = TypeReport.objects.get(type_report_code='1234')
+        type_report = TypeReport.objects.get(report_type='1')
         PhilanthropyMember.objects.create(
             philanthropy_member_code='A00381963',
             philanthropy_member_email='dylan.bermudez@hotmail.com',
@@ -31,7 +31,7 @@ class reportTestCase(TestCase):
         Report.objects.create(
         report_code='A00381962',
         report_date='2022-05-10',
-        type_report_code=type_report,
+        type_report_code= type_report,
         student_code=student,
         philanthropy_member=philanthropyMember
     )
@@ -46,7 +46,7 @@ class reportTestCase(TestCase):
     def test_report_relationship(self):
         report = Report.objects.get(report_code='A00381962')
         self.assertEquals(report.student_code.student_code, 'A00381968')
-        self.assertEquals(report.type_report_code.type_report_name, 'Bienestar')
+        self.assertEquals(report.type_report_code.report_type, '1')
         self.assertEquals(report.philanthropy_member.philanthropy_member_name, 'Dylan Bermudez Cardona')
         self.assertEquals(report.student_code.donor_student_code.donor_name, 'patricio')
 
