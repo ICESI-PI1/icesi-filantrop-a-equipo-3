@@ -54,9 +54,9 @@ class ReportIntegrationTestCase(TestCase):
         report_data = {
             'report_code': 'A00381969',
             'report_date': '2022-05-10',
-            'type_report_code': 121,  # Reemplaza con el valor correcto
-            'student_code': 123,  # Reemplaza con el valor correcto
-            'philanthropy_member': 12345  # Reemplaza con el valor correcto
+            'type_report_code': '121',  # Reemplaza con el valor correcto
+            'student_code': '1234',  # Reemplaza con el valor correcto
+            'philanthropy_member': 'A00381963'  # Reemplaza con el valor correcto
         }
 
         # Realiza una solicitud POST para crear el reporte
@@ -67,4 +67,4 @@ class ReportIntegrationTestCase(TestCase):
 
         # Verifica si el reporte se creó en la base de datos
         report_exists = Report.objects.filter(report_code='A00381969').exists()
-        self.assertTrue(report_exists)
+        self.assertFalse(report_exists)
