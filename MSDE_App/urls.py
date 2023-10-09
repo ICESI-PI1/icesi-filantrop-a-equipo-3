@@ -40,5 +40,6 @@ urlpatterns = [
     path('salir/', views.salir, name='salir'),
     path('alerts/', views.see_alerts, name='alerts'),
     path('alerts/<str:alert_code>', views.alert_detail, name='alert_detail'),
-    path('info_management/', views.info_management, name='info_management')
+    path('info_management/', views.info_management, name='info_management'),
+    path('info_dissemination/', views.info_dissemination, name='info_dissemination')
 ]

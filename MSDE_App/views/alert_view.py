@@ -11,6 +11,7 @@ def alert_detail(request, alert_code):
         'alert': alert
     })
 
+
 def see_alerts(request):
     alerts = Alert.objects.all()
 

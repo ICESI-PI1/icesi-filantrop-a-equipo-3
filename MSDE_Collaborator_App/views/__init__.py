@@ -5,3 +5,4 @@ from .send_info_view import *
 from .logout_view import *
 from .collaborator_view import *
 from .registrate_view import *
+from .info_dissemination import *
