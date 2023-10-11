@@ -65,10 +65,10 @@ Date : 04/10/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
-    .
+    Edit Report model
 
   - **What I'm going to do?**
-    .
+    Finishing report funcionality
 
   - **Impediments**
     Nothing.
@@ -123,10 +123,10 @@ Date : 05/10/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
-    .
+    Ended report funcionality with report type. Added three models
 
   - **What I'm going to do?**
-    .
+    Improve style and create Collaborator App
 
   - **Impediments**
     Nothing.
@@ -181,10 +181,10 @@ Date : 06/10/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
-    .
+    Created Collaborator App
 
   - **What I'm going to do?**
-    .
+    Finish Alert functionality between the two apps
 
   - **Impediments**
     Nothing.
@@ -239,10 +239,10 @@ Date : 07/10/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
-    .
+    Finished Alerts functionality
 
   - **What I'm going to do?**
-    .
+    Correct URLs between Apps
 
   - **Impediments**
     Nothing.
