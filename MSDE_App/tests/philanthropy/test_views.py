@@ -61,3 +61,31 @@ class philanthropyIntegrationTestCase(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertFalse(PhilanthropyMember.objects.filter(philanthropy_member_code='A00381962').exists())
 
+    def test_philanthropy_list_view(self):
+        response = self.client.get(reverse('philanthropy'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'philanthropy/philanthropy.html')
+
+    def test_philanthropy_detail_view(self):
+        response = self.client.get(reverse('philanthropy_detail', args=['A00381892']))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'philanthropy/philanthropy_detail.html')
+
+    def test_philanthropy_edit_view_else(self):
+        member1 = PhilanthropyMember.objects.get(philanthropy_member_code='A00381962')
+        response = self.client.get(
+            reverse('philanthropy_edit', args=[member1.philanthropy_member_code]),
+            data={
+                'philanthropy_member_code': 'A00381962',
+                'philanthropy_member_email': 'victor.garzon9043@hotmail.com',
+                'philanthropy_member_name': 'Victor Roberto'
+            }
+        )
+        self.assertTemplateUsed(response, 'philanthropy/edit_philanthropy.html')
+
+    def test_philanthropy_delete_view_else(self):
+        member1 = PhilanthropyMember.objects.get(philanthropy_member_code='A00381962')
+        response = self.client.get(reverse('delete_philanthropy', args=[member1.philanthropy_member_code]))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'philanthropy/delete_philanthropy.html')
+

@@ -70,3 +70,33 @@ class StudentIntegrationTestCase(TestCase):
         student = Student.objects.get(student_code='A00381190')
         self.assertEqual(student.student_name, 'Juan Jose 2')
         self.assertEqual(student.student_email, 'juan2@juan2.com')
+
+    def test_student_detail_view(self):
+        response = self.client.get(reverse('student_detail', args=['A00381190']))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'student/student_detail.html')
+
+    def test_student_list_view(self):
+        response = self.client.get(reverse('students'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'student/students.html')
+
+    def test_edit_student_view(self):
+        student = Student.objects.get(student_code='A00381190')
+        response = self.client.get(reverse('edit_student', args=[student.student_code]),
+                                    data={'student_code': 'A00381190',
+                                          'student_id': '1001367985',
+                                          'student_name': 'Juan Jose 2',
+                                          'student_email': 'juan2@juan2.com',
+                                          'student_ICFES_score': '421',
+                                          'student_birth_date': '2020-04-07',
+                                          'student_phone_number': '3149094450',
+                                          'donor_student_code': '1'})
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'student/edit_student.html')
+
+    def test_delete_student_view(self):
+        student = Student.objects.get(student_code='A00381190')
+        response = self.client.get(reverse('delete_student', args=[student.student_code]))
+        self.assertTemplateUsed(response, 'student/delete_student.html')
+

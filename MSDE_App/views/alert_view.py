@@ -33,7 +33,7 @@ def create_alert(request, student_code):
             elif filter_type == 'emisor':
                 alerts = alerts.filter(emisor=filter_value)
             elif filter_type == 'sel':
-                return redirect('create_alert', student_id=student_id)
+                return redirect('create_alert', student_code=student_code)
 
         return render(request, 'student/create_alert.html', {
             'form': form,

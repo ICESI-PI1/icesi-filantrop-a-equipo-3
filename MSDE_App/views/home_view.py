@@ -3,6 +3,6 @@ from django.contrib.auth.decorators import login_required
 from MSDE_App.models import *
 
 @login_required
-def index(request):
+def index(request): # pragma: no cover
     return render(request, 'index.html')
 

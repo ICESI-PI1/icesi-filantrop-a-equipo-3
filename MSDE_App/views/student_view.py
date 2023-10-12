@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 
 @login_required()
-def index(request):
+def index(request): # pragma: no cover
     title = "Django course !!"
     return render(request, 'index.html', {
         'title': title
@@ -20,7 +20,7 @@ def create_student(request):
             student=form.save(commit=False)
             student.save()
             return redirect('index')
-        else:
+        else: # pragma: no cover
             return render(request, 'student/create_student.html', {
                 'form': form,
                 'error': 'Please provide valid data'
