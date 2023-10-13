@@ -1,6 +1,16 @@
 from django.db import models
 import uuid
+from datetime import date
+
+
+# Create your models here.
+
 from datetime import datetime
+from django.contrib.auth.models import AbstractUser
+
+
+class User(AbstractUser):
+    user_type = models.CharField(max_length=20)
 
 
 class Donor(models.Model):
@@ -14,6 +24,7 @@ class Donor(models.Model):
 class Student(models.Model):
     student_code = models.CharField(max_length=9, unique=True)
     student_name = models.CharField(max_length=24)
+    student_surname = models.CharField(max_length=24, null=True)
     student_birth_date = models.DateField(max_length=10)
     student_id = models.CharField(max_length=10)
     student_email = models.CharField(max_length=50)
@@ -33,7 +44,7 @@ class ExtraAcademic(models.Model):
 
 
 class AcademicBalance(models.Model):
-    student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
+    student_code = models.OneToOneField(Student, on_delete=models.CASCADE)
     academic_balance_career = models.CharField(max_length=50)
     academic_balance_subjects = models.CharField(max_length=50)
     academic_balance_schedule = models.CharField(max_length=50)
@@ -42,17 +53,12 @@ class AcademicBalance(models.Model):
     academic_balance_semester_average = models.FloatField()
     academic_balance_total_average = models.FloatField()
 
-    def __str__(self):
-        return self.student_code.student_code
-
 
 class CreaQuery(models.Model):
     student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
     crea_query_date = models.DateField()
     crea_query_info = models.CharField(max_length=500)
 
-    def __str__(self):
-        return self.crea_query_info
 
 class TypeReport(models.Model):
     BECA = 'Informe de becas'
@@ -76,16 +82,12 @@ class TypeReport(models.Model):
 
 
 class PhilanthropyMember(models.Model):
-    philanthropy_member_code = models.CharField(max_length=10, unique=True)
+    philanthropy_member_code = models.CharField(max_length=10)
     philanthropy_member_name = models.CharField(max_length=24)
     philanthropy_member_email = models.CharField(max_length=50, default="example@gmail.com")
 
-    def __str__(self):
-        return self.philanthropy_member_code
-
 
 class Report(models.Model):
-    report_code = models.CharField(max_length=14, unique=True)
     report_date = models.DateField(max_length=10)
     type_report_code = models.ForeignKey(TypeReport, on_delete=models.CASCADE)
     student_code = models.ForeignKey(Student, on_delete=models.CASCADE)
@@ -93,12 +95,9 @@ class Report(models.Model):
 
 
 class Collaborator(models.Model):
-    collaborator_code = models.CharField(max_length=10, unique=True, primary_key=True)
+    collaborator_code = models.CharField(max_length=10)
     collaborator_name = models.CharField(max_length=24)
     collaborator_email = models.CharField(max_length=24)
-
-    def __str__(self):
-        return self.collaborator_code
 
 
 class TypeCollaborator(models.Model):
@@ -123,7 +122,6 @@ class TypeAlert(models.Model):
         unique=True,
         null=True
     )
-
     def __str__(self):
         return self.alert_type + "\n"
 
@@ -135,3 +133,4 @@ class Alert(models.Model):
     alert_sender = models.CharField(max_length=100, blank=True)
     type_alert = models.ForeignKey(TypeAlert, on_delete=models.CASCADE, null=True)
     student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True, blank=True)
+

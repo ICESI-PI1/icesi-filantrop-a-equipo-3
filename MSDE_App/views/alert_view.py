@@ -4,6 +4,22 @@ from MSDE_App.forms import CreateAlert, AlertFilterForm
 from django.contrib import messages
 
 
+def alert_detail(request, alert_code):
+    alert = Alert.objects.get(alert_code=alert_code)
+
+    return render(request, 'alert/alert_detail.html', {
+        'alert': alert
+    })
+
+
+def see_alerts(request):
+    alerts = Alert.objects.all()
+
+    return render(request, 'alert/alerts.html', {
+        'alerts': alerts
+    })
+
+
 def create_alert(request, student_code):
     student = get_object_or_404(Student, student_code=student_code)
 
@@ -33,7 +49,7 @@ def create_alert(request, student_code):
             elif filter_type == 'emisor':
                 alerts = alerts.filter(emisor=filter_value)
             elif filter_type == 'sel':
-                return redirect('create_alert', student_code=student_code)
+                return redirect('create_alert', student_id=student_code)
 
         return render(request, 'student/create_alert.html', {
             'form': form,
@@ -42,4 +58,3 @@ def create_alert(request, student_code):
             'filter_form': filter_form
 
         })
-

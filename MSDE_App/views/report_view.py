@@ -5,7 +5,7 @@ from django.urls import reverse
 from MSDE_App.models import Report
 from MSDE_App.forms import *
 import itertools
-#import pdfkit
+import  pdfkit
 
 #config = pdfkit.configuration(wkhtmltopdf = r"C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe")
 
@@ -64,9 +64,9 @@ def query_student_crea(request, student_code):
     crea_queries = CreaQuery.objects.filter(student_code=student_code)
 
     return render(request, 'reports_base/consultas_CREA_report.html', {
-        'students': student_list,
-        'crea_queries': crea_queries
-    })
+                'students': student_list,
+                'crea_queries': crea_queries
+            })
 
 
 def query_student_extra(request, student_code):

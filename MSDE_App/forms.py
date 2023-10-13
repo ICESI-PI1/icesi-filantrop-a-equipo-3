@@ -1,5 +1,7 @@
 from django import forms
 from .models import *
+from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.models import User
 
 
 class CreateExtraAcademic(forms.ModelForm):
@@ -41,6 +43,15 @@ class DateInput(forms.DateInput):
     input_type = 'date'
 
 
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'user_type']
+        widgets = {
+            'user_type': forms.widgets.TextInput(attrs={'readonly': 'readonly'})
+        }
+
+
 class CreateStudent(forms.ModelForm):
     profile_picture = forms.ImageField(required=False, widget=forms.FileInput)
 
@@ -51,10 +62,13 @@ class CreateStudent(forms.ModelForm):
             'student_birth_date': forms.widgets.DateInput(attrs={'type': 'date'}),
             'student_code': forms.TextInput(attrs={'class': 'form-control'}),
             'student_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'student_surname': forms.TextInput(attrs={'class': 'form-control'}),
             'student_id': forms.TextInput(attrs={'class': 'form-control'}),
             'student_email': forms.TextInput(attrs={'class': 'form-control'}),
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
         }
+
+
 
 
 class CreateCollaborator(forms.ModelForm):
@@ -69,6 +83,9 @@ class CreateCollaborator(forms.ModelForm):
 
 
         }
+
+
+
 
 
 class CreateAlert(forms.ModelForm):
@@ -103,6 +120,8 @@ class CreatePhilanthropy(forms.ModelForm):
             'philanthropy_member_code' : forms.TextInput(attrs={'class': 'form-control'}),
             'philanthropy_member_name' : forms.TextInput(attrs={'class': 'form-control'}),
             'philanthropy_member_email' : forms.TextInput(attrs={'class': 'form-control'}),
+            'philanthropy_member_user' : forms.TextInput(attrs={'class': 'form-control'}),
+            'philanthropy_member_password' : forms.TextInput(attrs={'class': 'form-control'})
         }
 
 
@@ -123,6 +142,4 @@ class AlertFilterForm(forms.Form):
 
     alert_filter = forms.ChoiceField(choices=FILTER_CHOICES, label="Filtrar por")
     filter_value = forms.ChoiceField(choices=ALERT_TYPE_CHOICES, required=False, label="Valor")
-
-
 

@@ -1,0 +1,35 @@
+{% extends 'layouts/base_collaborator.html'%}
+{% block content %}
+    <main class="container">
+        <div>
+            <h1 class="display-4 text-center mb-5">Difusión y Comunicación.</h1>
+        </div>
+        <section>
+            <div>
+                <div class="input-group mb-3">
+                    <div>
+                        <p>Ingrese el ID de la persona a la que quiere enviarle el mensaje:</p>
+                        <input name="id" id="id_input" type="text" class="form-control me-2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+         <div class="form-group">
+            <label for="comment">Escriba el mensaje:</label>
+            <textarea class="form-control" rows="5" id="comment"></textarea>
+         </div>
+       </section>
+        <p></p>
+       <section>
+            <div>
+                <center>
+                <button class="btn btn-primary" type="submit">Enviar</button>
+                </center>
+            </div>
+        </section>
+
+
+    </main>
+{% endblock %}
