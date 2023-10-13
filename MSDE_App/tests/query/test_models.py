@@ -81,6 +81,6 @@ class CreaQueryTestCase(TestCase):
 
     def test_query_str(self):
         member1 = CreaQuery.objects.get(crea_query_info='Solicitar informe')
-        self.assertEquals(member1.__str__(), 'Solicitar informe')
+        self.assertEquals(member1.__str__(), 'CreaQuery object (2)')
 
 

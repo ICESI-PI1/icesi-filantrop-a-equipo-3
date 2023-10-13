@@ -6,22 +6,21 @@ from django.core.paginator import Paginator
 
 
 @login_required()
-def index(request): # pragma: no cover
+def index(request):  # pragma: no cover
     title = "Django course !!"
     return render(request, 'index.html', {
         'title': title
     })
 
 
-
 def create_student(request):
     if request.method == 'POST':
-        form = CreateStudent(request.POST, request.FILES)  
+        form = CreateStudent(request.POST, request.FILES)
         if form.is_valid():
-            student=form.save(commit=False)
+            student = form.save(commit=False)
             student.save()
             return redirect('index')
-        else: # pragma: no cover
+        else:  # pragma: no cover
             return render(request, 'student/create_student.html', {
                 'form': form,
                 'error': 'Please provide valid data'
@@ -29,9 +28,6 @@ def create_student(request):
     else:
         form = CreateStudent()
     return render(request, 'student/create_student.html', {'form': form})
-
-
-
 
 
 def student_detail(request, student_code):
@@ -42,7 +38,6 @@ def student_detail(request, student_code):
 
 
 def students_view(request):
-
     students_list = Student.objects.all()
     search_name = request.GET.get('search_name', '')
     if search_name:

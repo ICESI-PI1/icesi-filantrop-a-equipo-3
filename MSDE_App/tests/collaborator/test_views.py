@@ -31,14 +31,14 @@ class CollaboratorIntegrationTestCase(TestCase):
         }
 
         response = self.client.post(reverse('create_collaborator'), data=collaborator_data)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         member1 = Collaborator.objects.get(collaborator_code='A00381962')
         self.assertEqual(member1.collaborator_name, 'Victor Manuel Garzon')
 
     def test_view_uses_correct_template(self):
         response = self.client.get(reverse('create_collaborator'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'collaborator/create_collaborator.html')
+        self.assertTemplateUsed(response, 'collaborator_col/create_collaborator.html')
 
     def test_edit_collaborator(self):
         collaborator = Collaborator.objects.get(collaborator_code='A00381962')
@@ -63,7 +63,7 @@ class CollaboratorIntegrationTestCase(TestCase):
     def test_colaborator_detail_view(self):
         response = self.client.get(reverse('collaborator_detail', args=['A00381962']))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'collaborator/collaborator_detail.html')
+        self.assertTemplateUsed(response, 'collaborator_col/collaborator_detail.html')
 
     def test_colaborator_view(self):
         response = self.client.get(reverse('collaborators/'))

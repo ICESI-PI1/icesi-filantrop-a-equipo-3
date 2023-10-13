@@ -41,7 +41,6 @@ class ReportIntegrationTestCase(TestCase):
                                donor_student_code=don)
         student = Student.objects.get(student_code='A00381968')
         Report.objects.create(
-            report_code='A00381963',
             report_date='2022-05-10',
             type_report_code=type_report,
             student_code=student,

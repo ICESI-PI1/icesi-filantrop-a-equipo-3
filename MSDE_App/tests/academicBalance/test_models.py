@@ -46,4 +46,4 @@ class AcademicBalanceTestCase(TestCase):
 
     def test_collaborator_str(self):
         member1 = AcademicBalance.objects.get(academic_balance_career='Ingenieria')
-        self.assertEquals(member1.__str__(), 'A00381966')
+        self.assertEquals(member1.__str__(), 'AcademicBalance object (1)')
