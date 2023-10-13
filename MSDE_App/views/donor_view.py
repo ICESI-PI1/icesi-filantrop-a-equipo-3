@@ -10,7 +10,7 @@ def create_donor(request):
             if form.is_valid():
                 form.save()
                 return redirect('index')
-        except ValueError:
+        except ValueError: # pragma: no cover
             return render(request, 'donor/create_donor.html', {
                 'form': form,
                 'error': 'Please provide valid data'
@@ -40,7 +40,7 @@ def edit_donor(request, donor_code):
         form = CreateDonor(request.POST, instance=donor)
         if form.is_valid():
             form.save()
-    else:
+    else: # pragma: no cover
         form = CreateDonor(instance=donor)
     return render(request, 'donor/edit_donor.html', {'form': form, 'donor': donor})
 

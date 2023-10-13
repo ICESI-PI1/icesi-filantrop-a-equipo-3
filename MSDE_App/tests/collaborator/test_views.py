@@ -55,9 +55,17 @@ class CollaboratorIntegrationTestCase(TestCase):
         self.assertEqual(collaborator.collaborator_email, 'Charria90@hotmail.com')
         self.assertEqual(collaborator.collaborator_name, 'Victor Roberto')
 
-    def test_delete_philanthropy(self):
+    def test_delete_colaborator(self):
         member1 = Collaborator.objects.get(collaborator_code='A00381962')
         response = self.client.post(reverse('delete_collaborator', args=[member1.collaborator_code]))
         self.assertEqual(response.status_code, 302)
         self.assertFalse(Collaborator.objects.filter(collaborator_code='A00381962').exists())
+    def test_colaborator_detail_view(self):
+        response = self.client.get(reverse('collaborator_detail', args=['A00381962']))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'collaborator/collaborator_detail.html')
 
+    def test_colaborator_view(self):
+        response = self.client.get(reverse('collaborators/'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'collaborator/collaborators.html')

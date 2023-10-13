@@ -49,6 +49,10 @@ class DonorIntegrationTestCase(TestCase):
         self.assertTemplateUsed(response, 'donor/donor_detail.html')
         self.assertEqual(response.context['donor'], donor)
     
+    def test_donor_list_view(self):
+        response = self.client.get(reverse('donors/'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'donor/donors.html')
 
 
     
