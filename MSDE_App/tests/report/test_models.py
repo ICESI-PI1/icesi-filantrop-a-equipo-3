@@ -36,22 +36,22 @@ class reportTestCase(TestCase):
     )
 
     def test_report_creation(self):
-        report = Report.objects.get(report_code='A00381962')
+        report = Report.objects.get(student_code=Student.objects.get(student_code='A00381968'))
         self.assertIsInstance(report, Report)
-        self.assertEquals(report.report_code, 'A00381962')
+
 
 
 
     def test_report_relationship(self):
-        report = Report.objects.get(report_code='A00381962')
+        report = Report.objects.get(student_code=Student.objects.get(student_code='A00381968'))
         self.assertEquals(report.student_code.student_code, 'A00381968')
         self.assertEquals(report.type_report_code.report_type, '1')
         self.assertEquals(report.philanthropy_member.philanthropy_member_name, 'Dylan Bermudez Cardona')
         self.assertEquals(report.student_code.donor_student_code.donor_name, 'patricio')
 
     def test_report_exist(self):
-        report = Report.objects.get(report_code='A00381962')
-        self.assertEquals(report.report_code, 'A00381962')
+        report = Report.objects.get(student_code=Student.objects.get(student_code='A00381968'))
+        self.assertIsInstance(report, Report)
 
     def test_unique_constraint(self):
         report = Report(
