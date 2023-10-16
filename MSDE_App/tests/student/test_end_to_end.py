@@ -10,7 +10,7 @@ class TestCreateStudent(LiveServerTestCase):
     def test_create_student(self):
         driver = webdriver.Chrome()
         driver.get('https://msde.azurewebsites.net/accounts/login/?next=/')
-        time.sleep(2)
+        time.sleep(3)
         username_input = driver.find_element(By.XPATH,
                                              '/html/body/section/div/div/div/div/div/div[1]/div/form/div[1]/label[2]/input')
         username_input.send_keys('juan')
@@ -19,7 +19,7 @@ class TestCreateStudent(LiveServerTestCase):
         password_input.send_keys('123')
         driver.find_element(By.XPATH, '/html/body/section/div/div/div/div/div/div[1]/div/form/div[3]/button').click()
 
-        time.sleep(1)
+        time.sleep(2)
 
         driver.find_element(By.XPATH, '//*[@id="menu"]/li[2]/a').click()
 
