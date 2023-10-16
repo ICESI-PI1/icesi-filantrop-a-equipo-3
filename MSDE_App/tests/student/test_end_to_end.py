@@ -56,8 +56,9 @@ class TestCreateStudent(LiveServerTestCase):
         select.select_by_value('1')
 
         driver.find_element(By.XPATH, '/html/body/div[2]/main/div/div[1]/form/div/button').submit()
-        #text = driver.find_element(By.XPATH, '/html/body/div[2]/main/div/div/div[1]/h1')
-        #assert 'Estudiantes' in text.text
+        driver.find_element(By.XPATH, '/html/body/section/div/div/div/div/div/div[1]/div/form/div[3]/button').click()
+
+        assert "Base" in driver.title
 
     def test_delete_student(self):
         driver = webdriver.Chrome()
