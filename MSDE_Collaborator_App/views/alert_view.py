@@ -5,8 +5,8 @@ from MSDE_App.forms import CreateAlert, AlertFilterForm
 from django.contrib import messages
 
 
-def create_alert(request, student_id):
-    student = get_object_or_404(Student, pk=student_id)
+def create_alert(request, student_code):
+    student = get_object_or_404(Student, student_code=student_code)
 
     if request.method == 'POST':
         form = CreateAlert(request.POST)
@@ -15,7 +15,7 @@ def create_alert(request, student_id):
             alert.student = student
             alert.save()
             messages.success(request, 'Alerta guardada correctamente.')
-            return redirect('create_alert', student_id=student_id)
+            return redirect('create_alert_collaborator', student_code=student_code)
         else:
             return render(request, '../../MSDE_Collaborator_App/templates/alert/create_alert.html', {
                 'form': form,
@@ -34,7 +34,7 @@ def create_alert(request, student_id):
             elif filter_type == 'emisor':
                 alerts = alerts.filter(emisor=filter_value)
             elif filter_type == 'sel':
-                return redirect('create_alert', student_id=student_id)
+                return redirect('create_alert_collaborator', student_code=student_code)
 
         return render(request, '../../MSDE_Collaborator_App/templates/alert/create_alert.html', {
             'form': form,
