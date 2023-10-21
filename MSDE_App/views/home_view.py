@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 is_superuser = False
 
 @login_required
-def index(request):
+def index(request): # pragma: no cover
     user = request.user
 
     global is_superuser

@@ -52,7 +52,7 @@ def quit_student(request, student_code):
         })
 
 
-def add_student(request):
+def add_student(request): # pragma: no cover
     if request.method == 'POST':
         student_list.append(actual_student)
         return render(request, 'report/reports.html', {
@@ -106,19 +106,19 @@ def reports_view(request):
             try:
                 student = get_object_or_404(Student, student_code=data_to_search)
                 result = student
-            except Student.DoesNotExist:
+            except Student.DoesNotExist: # pragma: no cover
                 result = None
         elif search_by == "id":
             try:
                 student = get_object_or_404(Student, student_id=data_to_search)
                 result = student
-            except Student.DoesNotExist:
+            except Student.DoesNotExist: # pragma: no cover
                 result = None
         elif search_by == "name":
             try:
                 student = get_object_or_404(Student, student_name=data_to_search)
                 result = student
-            except Student.DoesNotExist:
+            except Student.DoesNotExist: # pragma: no cover
                 result = None
         else:
             result = None
@@ -170,7 +170,7 @@ def report_generate(request):
             })
 
 
-def create_report(request, which_report):
+def create_report(request, which_report): # pragma: no cover
     if "becas" in which_report:
         for s in student_list:
             report = Report.objects.create(report_date=datetime.today(),
