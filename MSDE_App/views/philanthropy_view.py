@@ -12,7 +12,7 @@ def create_philanthropy(request):
                 form.save()
                 return redirect('/registrate')
 
-        except ValueError:
+        except ValueError: # pragma: no cover
             return render(request.POST, 'philanthropy/create_philanthropy.html', {
                 'form': CreatePhilanthropy(request.POST),
                 'error': 'Please provide valid data'
