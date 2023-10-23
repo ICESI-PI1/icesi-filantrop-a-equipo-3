@@ -3,20 +3,20 @@ from . import views
 from django.contrib import admin
 
 urlpatterns = [
-    path('', views.index, name="index"),
-    path('index_collaborator/', views.index, name="index_collaborator"),
-    path('student_collaborator/<str:student_code>/student_detail', views.student_detail, name='student_detail_collaborator'),
-    path('students_collaborator/', views.students_view, name="students"),
-    path('send_info_collaborator/', views.send_info, name="send_info"),
-    path('student_collaborator/<int:student_id>/create_alert/', views.create_alert, name='create_alert'),
-    path('collaborator/create_collaborator/', views.create_collaborator, name='create_collaborator'),
-    path('collaborator/', views.collaborator_view, name='collaborator'),
-    path('collaborator/<str:collaborator_code>/collaborator_detail',
+    path('col', views.index, name="index_col"),
+    path('col/index/', views.index, name="index_collaborator"),
+    path('col/student/<str:student_code>/student_detail', views.student_detail, name='student_detail_collaborator'),
+    path('col/students/', views.students_view, name="students_col"),
+    path('col/send_info/', views.send_info, name="send_info_col"),
+    path('col/student/<int:student_id>/create_alert/', views.create_alert, name='create_alert'),
+    path('col/collaborator/create/', views.create_collaborator, name='create_collaborator'),
+    path('col/collaborator/', views.collaborator_view, name='collaborator'),
+    path('col/collaborator/<str:collaborator_code>/detail',
          views.collaborator_detail, name='collaborator_detail'),
-    path('collaborator/<str:collaborator_code>/edit/',
+    path('col/collaborator/<str:collaborator_code>/edit/',
          views.collaborator_edit, name='collaborator_edit'),
-    path('collaborator/<str:collaborator_code>/delete/', views.collaborator_delete, name='delete_collaborator'),
-    path('registrate_collaborator/', views.registrate_user, name='registrate_collaborator'),
-    path('info_dissemination_collaborator/', views.info_dissemination, name='info_dissemination'),
-    path('create_alert/<str:student_code>', views.create_alert, name='create_alert_collaborator')
+    path('col/collaborator/<str:collaborator_code>/delete/', views.collaborator_delete, name='delete_collaborator'),
+    path('col/registrate/', views.registrate_user, name='registrate_collaborator'),
+    path('col/info_dissemination/', views.info_dissemination, name='info_dissemination'),
+    path('col/create_alert/<str:student_code>', views.create_alert, name='create_alert_collaborator')
 ]

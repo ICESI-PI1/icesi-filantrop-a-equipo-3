@@ -9,7 +9,7 @@
                 </div>
                 <div>
                     <div class="d-flex justify-content-end align-items-center mb-3">
-                        <form method="get" action="{% url 'students' %}">
+                        <form method="get" action="{% url 'students_col' %}">
                             <input type="text" name="search_name" placeholder="Buscar por nombre">
                             <button type="submit">Buscar</button>
                         </form>
@@ -28,7 +28,7 @@
                             <a href="?surname_initial={{ letter }}" class="btn_a">{{ letter }}</a>
                         {% endfor %}
                     </div>
-                    <a href="{% url 'students' %}" class="btn btn-primary">Reestablecer</a>
+                    <a href="{% url 'students_col' %}" class="btn btn-primary">Reestablecer</a>
                 </div>
                 <div class="d-flex justify-content-end align-items-center ">
                     {% for page_num in students.paginator.page_range %}
