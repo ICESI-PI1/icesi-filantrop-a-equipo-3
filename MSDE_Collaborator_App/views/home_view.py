@@ -7,12 +7,4 @@ is_superuser = False
 
 @login_required
 def index(request):
-    global is_superuser
-    is_superuser = request.user.is_superuser
-
-    print(is_superuser)
-    render_to_string('../../MSDE_Collaborator_App/templates/layouts/base_collaborator.html', {
-        'is_superuser': is_superuser
-    })
-
     return render(request, 'index_collaborator.html')
