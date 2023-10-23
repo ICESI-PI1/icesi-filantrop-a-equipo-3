@@ -53,7 +53,9 @@ def quit_student(request, student_code):
 
 
 def add_student(request):
+    print("entro a añadir estudiante")
     if request.method == 'POST':
+        print("añadio a estudinte")
         student_list.append(actual_student)
         return render(request, 'report/reports.html', {
             'students': student_list
@@ -134,6 +136,7 @@ def reports_view(request):
 
 def report_generate(request):
     report_type = request.GET.get("report-type")
+    print("lista de estudiantes: ", student_list.__str__())
 
     if report_type is None:
         return render(request, 'report/reports.html', {
@@ -180,13 +183,13 @@ def create_report(request, which_report):
     elif "extra" in which_report:
         for s in student_list:
             report = Report.objects.create(report_date=datetime.today(),
-                                           type_report_code=TypeReport.objects.get(report_type='Informe de actividades extra académicas'),
+                                           type_report_code=TypeReport.objects.get(report_type='Informe de consultas en el CREA'),
                                            student_code=Student.objects.get(student_code=s.student_code))
             report.save()
     elif "CREA" in which_report:
         for s in student_list:
             report = Report.objects.create(report_date=datetime.today(),
-                                           type_report_code=TypeReport.objects.get(report_type='Informe de consultas en el CREA'),
+                                           type_report_code=TypeReport.objects.get(report_type='Informe de actividades extra académicas'),
                                            student_code=Student.objects.get(student_code=s.student_code))
             report.save()
     else:
