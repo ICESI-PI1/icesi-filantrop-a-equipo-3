@@ -53,9 +53,7 @@ def quit_student(request, student_code):
 
 
 def add_student(request):
-    print("entro a añadir estudiante")
     if request.method == 'POST':
-        print("añadio a estudinte")
         student_list.append(actual_student)
         return render(request, 'report/reports.html', {
             'students': student_list
@@ -136,7 +134,6 @@ def reports_view(request):
 
 def report_generate(request):
     report_type = request.GET.get("report-type")
-    print("lista de estudiantes: ", student_list.__str__())
 
     if report_type is None:
         return render(request, 'report/reports.html', {
