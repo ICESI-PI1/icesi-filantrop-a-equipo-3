@@ -3,13 +3,31 @@
 {% block content %}
     <main class="container">
         <section class="row">
-            <article>
                 <h1 class="display-4 text-center mb-5">
                     Alertas
                 </h1>
+             <article>
+                <h2>
+                    No resueltas
+                </h2>
                 <div class="alerts-list">
                     <ul class="list-group">
-                    {% for a in alerts %}
+                    {% for a in no_solved_alerts %}
+                        <a class="list-group-item" href="{% url 'alert_detail' a.alert_code %}">
+                        <strong> Estudiante: {{ a.student.student_name }}</strong>
+                        <p>Tipo de alerta: {{ a.type_alert }}</p>
+                        </a>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h2>
+                    Resueltas
+                </h2>
+                <div class="alerts-list">
+                    <ul class="list-group">
+                    {% for a in solved_alerts %}
                         <a class="list-group-item" href="{% url 'alert_detail' a.alert_code %}">
                         <strong> Estudiante: {{ a.student.student_name }}</strong>
                         <p>Tipo de alerta: {{ a.type_alert }}</p>
