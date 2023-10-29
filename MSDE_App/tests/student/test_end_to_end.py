@@ -89,32 +89,30 @@ class TestCreateStudent(LiveServerTestCase):
 
         driver.find_element(By.XPATH, '//*[@id="menu"]/li[2]/a').click()
 
-        #Click en el botón de info estudiantes
+        # Click en el botón de info estudiantes
         driver.find_element(By.XPATH, '/html/body/div[2]/main/section/article/div/div[1]/div/a/button').click()
 
-        #Scroll down
+        # Scroll down
         driver.execute_script("window.scrollTo(500,document.body.scrollHeight)")
+        time.sleep(3)
 
-        #click en el estudiante para editarlo
+        # click en el estudiante para editarlo
         driver.find_element(By.XPATH, '/html/body/div[2]/main/div/div/div[6]/div/a[1]').click()
 
-        #click en el bottón de editar estudiante
+        # click en el bottón de editar estudiante
         driver.find_element(By.XPATH, '/html/body/div[2]/section/div/div/div[1]/div[1]/div/div/a[1]/button').click()
 
-        #Edición de datos
+        # Edición de datos
 
-        #Edición de dato student code
+        # Edición de dato student code
         student_code = driver.find_element(By.XPATH, '//*[@id="id_student_code"]')
         student_code.clear()
         student_code.send_keys('A00381190')
 
-        #Scroll down
+        # Scroll down
         driver.execute_script("window.scrollTo(800,document.body.scrollHeight)")
+        time.sleep(3)
 
         driver.find_element(By.XPATH, '/html/body/div[2]/form/button').submit()
-
-        time.sleep(0.5)
-
-
 
         time.sleep(1)
