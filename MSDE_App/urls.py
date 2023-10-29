@@ -41,5 +41,7 @@ urlpatterns = [
     path('fil/alerts/', views.see_alerts, name='alerts'),
     path('fil/alerts/<str:alert_code>', views.alert_detail, name='alert_detail'),
     path('fil/info_management/', views.info_management, name='info_management'),
-    path('fil/info_dissemination/', views.info_dissemination, name='info_dissemination')
+    path('fil/info_dissemination/', views.info_dissemination, name='info_dissemination'),
+    path('fil/info_dissemination/send', views.send_info, name='send_info'),
+    path('fil/info_dissemination/show', views.show_info, name='show_info')
 ]

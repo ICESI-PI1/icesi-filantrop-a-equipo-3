@@ -1,0 +1,31 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h1 class="display-4 text-center mb-5">
+        Alertas
+    </h1>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col">
+                {% if messages %}
+                    {% for m in messages %}
+                        <div class="card">
+                            <div class="list-group list-group-flush">
+                                <div>
+                                    <strong>De Colaboradores</strong>
+                                    <p class="mb-0"><strong>Fecha:</strong> {{ m.message_date }}</p>
+                                    <p>{{ m.message_content }}</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div>
+                        <p>No hay mensajes por mostrar</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

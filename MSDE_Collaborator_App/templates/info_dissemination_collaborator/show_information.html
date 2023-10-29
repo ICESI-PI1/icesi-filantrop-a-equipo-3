@@ -1,0 +1,29 @@
+{% extends 'layouts/base_collaborator.html' %}
+
+{% block content %}
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col">
+                {% if messages %}
+                    {% for m in messages %}
+                        <div class="card">
+                            <div class="list-group list-group-flush">
+
+                                <div>
+                                    <strong>De Filantropía</strong>
+                                    <p class="mb-0"><strong>Fecha:</strong> {{ m.message_date }}</p>
+                                    <p>{{ m.message_content }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                {% else %}
+                    <div>
+                        <p>No hay mensajes por mostrar</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
