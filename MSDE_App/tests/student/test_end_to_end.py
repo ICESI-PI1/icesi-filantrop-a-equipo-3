@@ -11,6 +11,7 @@ class TestCreateStudent(LiveServerTestCase):
         driver = webdriver.Chrome()
         driver.get('https://msde.azurewebsites.net/accounts/login/?next=/')
         time.sleep(3)
+        # Inicia sesión en el sitio web
         username_input = driver.find_element(By.XPATH,
                                              '/html/body/section/div/div/div/div/div/div[1]/div/form/div[1]/label[2]/input')
         username_input.send_keys('juan')
@@ -22,12 +23,14 @@ class TestCreateStudent(LiveServerTestCase):
 
         time.sleep(2)
 
+        # Realiza una serie de clics en enlaces y botones en el sitio web
         driver.find_element(By.XPATH, '//*[@id="menu"]/li[2]/a').click()
 
         driver.find_element(By.XPATH, '/html/body/div[2]/main/section/article/div/div[1]/div/a/button').click()
 
         driver.find_element(By.XPATH, '/html/body/div[2]/main/div/div/div[2]/a').click()
 
+        # Completa formularios con datos
         student_code = driver.find_element(By.XPATH, '//*[@id="id_student_code"]')
         student_code.send_keys('A00381190')
 
@@ -52,6 +55,7 @@ class TestCreateStudent(LiveServerTestCase):
         icfes = driver.find_element(By.XPATH, '//*[@id="id_student_ICFES_score"]')
         icfes.send_keys(456)
 
+        # Selecciona un valor en un menú desplegable
         donor = driver.find_element(By.XPATH, '//*[@id="id_donor_student_code"]')
         select = Select(donor)
         select.select_by_value('1')

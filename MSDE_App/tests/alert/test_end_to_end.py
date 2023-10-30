@@ -58,13 +58,12 @@ class TestEndToEnd(LiveServerTestCase):
         alert_sender.send_keys('Diana Romero')
 
         # Scroll down
-        driver.execute_script("window.scrollTo(900,document.body.scrollHeight)")
+        driver.execute_script("window.scrollTo(500,document.body.scrollHeight)")
         time.sleep(3)
 
         # Type Alert
 
         type = driver.find_element(By.XPATH, '//*[@id="id_type_alert"]')
-
         select = Select(type)
         select.select_by_index(2)
 
