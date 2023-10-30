@@ -19,7 +19,7 @@ Date : 25/10/2023
      Identify missing functionalities and keep improving the views
 
   - **What I'm going to do?**
-    
+    change the default profile pictures
 
   - **Impediments**
     Nothing.
@@ -36,10 +36,10 @@ Date : 25/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    Helped classifying solved and not solved alerts in Philanthropy.
+    Helped correcting report functionality.
 
   - **What I'm going to do?**
-    Help classifying solved and not solved alerts in Collaborator.
+    I'm going to help correctin the URLs.
 
   - **Impediments**
     Nothing.
@@ -72,10 +72,10 @@ Date : 26/10/2023
 
 - ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
-    Identified missing functionalities and improved the views
+     change the default profile pictures
 
   - **What I'm going to do?**
-    Separate the Collaborator and Philantropy member views
+     correct paths in filantrophy and student
 
   - **Impediments**
     Nothing.
@@ -92,10 +92,10 @@ Date : 26/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    Helped classifying solved and not solved alerts in Collaborator.
+    I helped in the correction of URLs.
 
   - **What I'm going to do?**
-    Investigate how to communicate using messages between apps.
+    Investigate how to manage the permissions.
 
   - **Impediments**
     Nothing
@@ -128,10 +128,10 @@ Date : 27/10/2023
 
 - ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
-    Separated the Collaborator and Philantropy member views
+    correct paths in filantrophy and student
 
   - **What I'm going to do?**
-    Continue with the separation
+    implement the functionality upload csv files to register students
 
   - **Impediments**
     Nothing.
@@ -148,13 +148,13 @@ Date : 27/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    .
+    Found a solution to manage the permissions between the 2 apps.
 
   - **What I'm going to do?**
-    .
+    I'm going to investigate how to manage messages between apps.
 
   - **Impediments**
-    No time, doing homework of Mathematics.
+    Nothing.
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
@@ -184,10 +184,10 @@ Date : 28/10/2023
 
 - ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
-    .
+    . implement the functionality upload csv files to register students
 
   - **What I'm going to do?**
-    .
+    .continue  implementing the functionality upload csv files to register students
 
   - **Impediments**
     No time, had to finish other tasks.
@@ -204,10 +204,10 @@ Date : 28/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    Helped in Messages functionality in Collaborator.
+    Nothing.
 
   - **What I'm going to do?**
-    I'm going to help investigating how to make the forms not automatically created.
+    I'm going to help in the messages functionality.
 
   - **Impediments**
     Nothing.
@@ -230,20 +230,20 @@ Date : 29/10/2023
 
 - ### **Dylan Bermudez Cardona**
   - **What I did?**
-    Finished improving style in Alerts and Messages.
+    Finished improving style in Alert
 
   - **What I'm going to do?**
-    Make all the forms more editable, because the most of them are automatically created by the 'form.as_p' in Jinja.
+    I'm going to make "Mark as solved" functionality in alerts.
 
   - **Impediments**
     Nothing.
 
 - ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
-    .
+    . continue  implementing the functionality upload csv files to register students
 
   - **What I'm going to do?**
-    .
+    .fix issues related to the functionality upload csv files to register students
 
   - **Impediments**
     Nothing.
@@ -262,17 +262,17 @@ Date : 29/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    .
+    Nothing.
 
   - **What I'm going to do?**
-    .
+    I'm going to add the messages functionality.
 
   - **Impediments**
     No time.
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
-    I'm going to continue with creation of entity of messages.
+     I'm going to continue with creation of entity of messages.
 
   - **What I'm going to do?**
     I'm going to continue with my tasks.
