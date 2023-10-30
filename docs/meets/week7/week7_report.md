@@ -36,10 +36,10 @@ Date : 25/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    Helped correcting report functionality.
+    Helped in the 'Mark as solved' functionality in Philanthropy.
 
   - **What I'm going to do?**
-    I'm going to help correctin the URLs.
+    Help in the 'Mark as solved' functionality in Collaborator.
 
   - **Impediments**
     Nothing.
@@ -72,10 +72,10 @@ Date : 26/10/2023
 
 - ### **Sara Valeria Cardona Vásquez**
   - **What I did?**
-     change the default profile pictures
+    Change the default profile pictures
 
   - **What I'm going to do?**
-     correct paths in filantrophy and student
+    Correct paths in filantrophy and student
 
   - **Impediments**
     Nothing.
@@ -92,10 +92,10 @@ Date : 26/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    I helped in the correction of URLs.
+    Helped in the 'Mark as solved' functionality in Collaborator.
 
   - **What I'm going to do?**
-    Investigate how to manage the permissions.
+    Investigate how to communicate using Messages.
 
   - **Impediments**
     Nothing
@@ -148,13 +148,13 @@ Date : 27/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    Found a solution to manage the permissions between the 2 apps.
+    .
 
   - **What I'm going to do?**
-    I'm going to investigate how to manage messages between apps.
+    .
 
   - **Impediments**
-    Nothing.
+    No time, doing mathematics homework.
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
@@ -204,10 +204,10 @@ Date : 28/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    Nothing.
+    Helped in the messages functionality.
 
   - **What I'm going to do?**
-    I'm going to help in the messages functionality.
+    I'm going to improve styling in Alerts and Messages.
 
   - **Impediments**
     Nothing.
@@ -233,7 +233,7 @@ Date : 29/10/2023
     Finished improving style in Alert
 
   - **What I'm going to do?**
-    I'm going to make "Mark as solved" functionality in alerts.
+    I'm going to change the forms to make it be manually.
 
   - **Impediments**
     Nothing.
@@ -262,10 +262,10 @@ Date : 29/10/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    Nothing.
+    Found better styling to webpages using Bootstrap.
 
   - **What I'm going to do?**
-    I'm going to add the messages functionality.
+    Help changing the forms.
 
   - **Impediments**
     No time.
