@@ -202,7 +202,7 @@ Date : 11/11/2023
 
 - ### **Luis Eduardo Charria Meneses**
   - **What I did?**
-    Helped with.
+    Helped with 'update info' functionality in collaborator.
 
   - **What I'm going to do?**
     I'm going to finish changing forms.
