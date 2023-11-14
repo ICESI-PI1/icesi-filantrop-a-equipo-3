@@ -100,7 +100,7 @@ Date : 09/11/2023
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
-    i'm going to work in task of jira
+    Nothing
 
   - **What I'm going to do?**
     i'm going to work in task of jira
@@ -156,7 +156,7 @@ Date : 10/11/2023
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
-    Nothing
+    i+m working in task of jira
 
   - **What I'm going to do?**
     i'm going to work in task of jira
@@ -268,7 +268,7 @@ Date : 12/11/2023
 
 - ### **Víctor Manuel Garzón Meneses**
   - **What I did?**
-     Nothing
+     I'm working in task of jira
 
   - **What I'm going to do?**
     I'm going to continue with my tasks.
