@@ -131,4 +131,8 @@ class Alert(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True, blank=True)
 
 
-
+class Message(models.Model):
+    message_from = models.CharField(max_length=12)
+    message_to = models.CharField(max_length=12)
+    message_content = models.CharField(max_length=3000)
+    message_date = models.DateField(auto_now_add=True, null=True)

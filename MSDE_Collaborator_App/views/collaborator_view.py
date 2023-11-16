@@ -19,7 +19,6 @@ def create_collaborator(request):
             })
     else:
         form = CreateCollaborator()
-        print('entra')
         return render(request, 'collaborator_col/create_collaborator.html', {'form': form})
 
 

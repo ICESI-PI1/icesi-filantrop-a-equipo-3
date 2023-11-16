@@ -143,3 +143,18 @@ class AlertFilterForm(forms.Form):
     alert_filter = forms.ChoiceField(choices=FILTER_CHOICES, label="Filtrar por")
     filter_value = forms.ChoiceField(choices=ALERT_TYPE_CHOICES, required=False, label="Valor")
 
+
+class CreateMessage(forms.Form):
+    class Meta:
+        FROM_TO_CHOICES = (
+            ('philanthropy', 'Filantropía'),
+            ('collaborator', 'Colaborador')
+        )
+
+        model = PhilanthropyMember
+        fields = "__all__"
+        widgets = {
+            'message_from': forms.ChoiceField(choices=FROM_TO_CHOICES, label="Mensaje desde"),
+            'message_to': forms.ChoiceField(choices=FROM_TO_CHOICES, label="Mensaje para"),
+            'message_content': forms.Textarea(attrs={'class': 'form-control'})
+        }
