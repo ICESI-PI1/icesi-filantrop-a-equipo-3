@@ -180,13 +180,13 @@ def create_report(request, which_report):
     elif "extra" in which_report:
         for s in student_list:
             report = Report.objects.create(report_date=datetime.today(),
-                                           type_report_code=TypeReport.objects.get(report_type='Informe de actividades extra académicas'),
+                                           type_report_code=TypeReport.objects.get(report_type='Informe de consultas en el CREA'),
                                            student_code=Student.objects.get(student_code=s.student_code))
             report.save()
     elif "CREA" in which_report:
         for s in student_list:
             report = Report.objects.create(report_date=datetime.today(),
-                                           type_report_code=TypeReport.objects.get(report_type='Informe de consultas en el CREA'),
+                                           type_report_code=TypeReport.objects.get(report_type='Informe de actividades extra académicas'),
                                            student_code=Student.objects.get(student_code=s.student_code))
             report.save()
     else:
