@@ -84,7 +84,7 @@
             <form method="POST" >
                 {% csrf_token %}
                 <input type="hidden" name="formulario" value="send">
-                <select name="to" class="form-select mb-4">
+                <select required name="to" class="form-select mb-4">
                     <option selected value="0">Seleccionar</option>
                     <option value="1">
                         Bienestar Universitario

@@ -80,6 +80,7 @@ def request_update(request):
             for i in range(0, len(selected_students)):
                 if selected_students[i] == student_to_delete:
                     selected_students.pop(i)
+                    break
 
             return render(request, 'request_update/request_update.html', {
                 'students': students,
