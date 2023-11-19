@@ -4,7 +4,6 @@ from MSDE_App.models import *
 from MSDE_App.models import Student
 
 selected_students = []
-students = Student.objects.all()
 
 
 # tenemos muchos forms en la misma página y los forms solo pueden ser enviados como "GET" o "POST",
@@ -13,6 +12,7 @@ students = Student.objects.all()
 # identifiquemos a partir de la request cuál se envío obteniendo este input y lo podamos resolver
 def request_update(request):
     global selected_students
+    students = Student.objects.all()
     method = request.method
 
     # get forms
@@ -105,13 +105,13 @@ def request_update(request):
                     'selected_students': selected_students
                 })
             elif message_to == "1":
-                message_to = "Bienestar Universitario"
+                message_to = "Collaborator Bienestar Universitario"
             elif message_to == "2":
-                message_to = "Registro Académico"
+                message_to = "Collaborator Registro Académico"
             elif message_to == "3":
-                message_to = "Director de Programa"
+                message_to = "Collaborator Director de Programa"
             elif message_to == "4":
-                message_to = "Apoyo Financiero"
+                message_to = "Collaborator Apoyo Financiero"
 
             msg = Message.objects.create(
                 message_to=message_to,

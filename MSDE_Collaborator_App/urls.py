@@ -17,9 +17,11 @@ urlpatterns = [
          views.collaborator_edit, name='collaborator_edit'),
     path('col/collaborator/<str:collaborator_code>/delete/', views.collaborator_delete, name='delete_collaborator'),
     path('col/registrate/', views.registrate_user, name='registrate_collaborator'),
-    path('col/info_dissemination/', views.info_dissemination, name='info_dissemination'),
+    path('col/info_dissemination/', views.info_dissemination, name='info_dissemination_col'),
     path('col/create_alert/<str:student_code>/', views.create_alert, name='create_alert_collaborator'),
-    path('col/update_info/<str:student_code>/', views.update_info, name='update_info_student') # url para actualizar info
+    path('col/update_info/<str:student_code>/', views.update_info, name='update_info_student'), # url para actualizar info
     # maneja los dos métodos del form GET y POST | GET para devolver la pagina donde sube el archivo y POST para manejar
     # el archivo que ya subió y guardarlo
+    path('col/info_dissemination/send', views.send_info, name='send_info_col'),
+    path('col/info_dissemination/show', views.show_info, name='show_info')
 ]
