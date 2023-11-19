@@ -202,3 +202,4 @@ class Message(models.Model):
     message_to = models.CharField(max_length=12)
     message_content = models.CharField(max_length=3000)
     message_date = models.DateField(auto_now_add=True, null=True)
+    status = models.BooleanField(default=False)
