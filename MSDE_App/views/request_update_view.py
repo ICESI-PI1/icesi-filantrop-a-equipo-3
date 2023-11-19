@@ -91,7 +91,7 @@ def request_update(request):
             message_to = request.POST.get('to', '')
             message_from = "philanthropy"
             content = ("Solicitud de actualización para los estudiantes:\n\n"
-                       "|  Código  |          Nombre          |    ID    |",)
+                       "|  Código  |          Nombre          |    ID    |\n",)
 
             for i in range(0, len(selected_students)):
                 content += (
@@ -126,3 +126,8 @@ def request_update(request):
                 'students': students,
                 'selected_students': selected_students
             })
+
+    return render(request, 'request_update/request_update.html', {
+        'students': students,
+        'selected_students': selected_students
+    })

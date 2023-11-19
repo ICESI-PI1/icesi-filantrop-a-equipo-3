@@ -46,7 +46,7 @@ class DateInput(forms.DateInput):
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username', 'user_type']
+        fields = ['user_type']
         widgets = {
             'user_type': forms.widgets.TextInput(attrs={'readonly': 'readonly'})
         }
