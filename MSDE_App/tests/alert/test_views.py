@@ -43,7 +43,14 @@ class AlertIntegrationTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'student/create_alert.html')
 
-   
+    def test_Alert_detail_view(self):
+        response = self.client.get(reverse('alert_detail', args=['550e8400-e29b-41d4-a716-446655440000']))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'alert/alert_detail.html')
 
-
+    def test_see_alerts_view(self):
+        response = self.client.get(reverse('alerts'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'alert/alerts.html')
+    
 
