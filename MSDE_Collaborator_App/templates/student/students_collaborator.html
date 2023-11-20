@@ -9,7 +9,7 @@
                 </div>
                 <div>
                     <div class="d-flex justify-content-end align-items-center mb-3">
-                        <form method="get" action="{% url 'students' %}">
+                        <form method="get" action="{% url 'students_col' %}">
                             <input type="text" name="search_name" placeholder="Buscar por nombre">
                             <button type="submit">Buscar</button>
                         </form>
@@ -28,7 +28,7 @@
                             <a href="?surname_initial={{ letter }}" class="btn_a">{{ letter }}</a>
                         {% endfor %}
                     </div>
-                    <a href="{% url 'students' %}" class="btn btn-primary">Reestablecer</a>
+                    <a href="{% url 'students_col' %}" class="btn btn-primary">Reestablecer</a>
                 </div>
                 <div class="d-flex justify-content-end align-items-center ">
                     {% for page_num in students.paginator.page_range %}
@@ -44,7 +44,7 @@
                 <div class="card">
                     <div class="list-group list-group-flush">
                         {% for s in students %}
-                            <a href="{% url 'student_detail' s.student_code %}" class="list-group-item list-group-item-action d-flex align-items-center">
+                            <a href="{% url 'student_detail_collaborator' s.student_code %}" class="list-group-item list-group-item-action d-flex align-items-center">
                                 {% if s.profile_picture %}
                                     <img src="{{ s.profile_picture.url }}" alt="Foto de perfil de {{ s.student_name }}" class="student-image rounded">
                                 {% else %}

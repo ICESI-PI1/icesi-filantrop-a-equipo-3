@@ -39,17 +39,21 @@ def student_detail(request, student_code):
 
 def students_view(request):
     students_list = Student.objects.all()
+
     search_name = request.GET.get('search_name', '')
     if search_name:
         students_list = students_list.filter(student_name__icontains=search_name)
+
     name_initial = request.GET.get('name_initial')
     if name_initial:
         students_list = students_list.filter(student_name__istartswith=name_initial)
+
     surname_initial = request.GET.get('surname_initial')
     if surname_initial:
         students_list = students_list.filter(student_surname__istartswith=surname_initial)
     elif not surname_initial and not name_initial and not search_name:
         students_list = students_list.order_by('student_surname')
+
     paginator = Paginator(students_list, 10)
     page_number = request.GET.get('page')
     students = paginator.get_page(page_number)

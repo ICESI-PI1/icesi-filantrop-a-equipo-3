@@ -8,4 +8,6 @@ from .registrate_view import *
 from .logout_view import *
 from .alert_view import *
 from .info_management import *
-from .info_dissemination import *
+from .request_update_view import *
+from .info_management import *
+from .info_dissemination_view import *

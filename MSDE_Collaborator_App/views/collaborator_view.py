@@ -9,9 +9,8 @@ def create_collaborator(request):
 
         try:
             if form.is_valid():
-                print('entro')
                 form.save()
-                return redirect('/registrate_collaborator')
+                return redirect('/col/registrate')
 
         except ValueError:
             return render(request.POST, 'collaborator_col/collaborator.html', {
@@ -20,7 +19,6 @@ def create_collaborator(request):
             })
     else:
         form = CreateCollaborator()
-        print('entra')
         return render(request, 'collaborator_col/create_collaborator.html', {'form': form})
 
 

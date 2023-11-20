@@ -7,17 +7,32 @@ from django.contrib import messages
 def alert_detail(request, alert_code):
     alert = Alert.objects.get(alert_code=alert_code)
 
-    return render(request, 'alert/alert_detail.html', {
-        'alert': alert
-    })
+    if request.method == "GET":
+        return render(request, 'alert/alert_detail.html', {
+            'alert': alert
+        })
+    else:
+        alert.status = True
+        alert.save()
+
+        no_solved_alerts = Alert.objects.filter(status=False)
+        solved_alerts = Alert.objects.filter(status=True)
+
+        return render(request, 'alert/alerts.html', {
+            'no_solved_alerts': no_solved_alerts,
+            'solved_alerts': solved_alerts
+        })
 
 
 def see_alerts(request):
-    alerts = Alert.objects.all()
+    no_solved_alerts = Alert.objects.filter(status=False)
+    solved_alerts = Alert.objects.filter(status=True)
 
     return render(request, 'alert/alerts.html', {
-        'alerts': alerts
+        'no_solved_alerts': no_solved_alerts,
+        'solved_alerts': solved_alerts
     })
+
 
 
 def create_alert(request, student_code):

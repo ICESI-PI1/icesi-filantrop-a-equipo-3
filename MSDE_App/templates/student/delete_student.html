@@ -4,7 +4,7 @@
     <p>Are you sure you want to delete the student "{{ student.student_name }}"?</p>
     <form method="post">
         {% csrf_token %}
-        <a href="/students"><button type="submit">Delete</button></a>
+        <a href="/fil/students"><button type="submit">Delete</button></a>
     </form>
 
 {% endblock %}

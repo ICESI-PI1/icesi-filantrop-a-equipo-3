@@ -1,0 +1,116 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <main class="container">
+        <h1 class="display-4 text-center mb-5">Solicitar actualización</h1>
+        <!---- Inicio de Seleccionar Estudiantes - USADO EN MUCHAS SECCIONES --->
+        <section>
+            <h2>Seleccionar estudiantes:</h2>
+            <div>
+                <div class="d-flex align-items-center mb-2">
+                    <form method="get" action="{% url 'request_update' %}" class="d-flex mt-3">
+                        <input type="hidden" name="formulario" value="search_student">
+                        <input type="text" name="search_name" class="form-control me-2" placeholder="Buscar por nombre">
+                        <button type="submit" class="btn btn-primary me-1">Buscar</button>
+                        <a href="{% url 'request_update' %}" class="btn btn-outline-primary">Reestablecer</a>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="list-group list-group-flush">
+                    {% for s in students %}
+                        <form method="POST" action="{% url 'request_update' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="formulario" value="select_student">
+                            <input type="hidden" name="student_code" value="{{ s.student_code }}">
+                            <div
+                                    class="list-group-item list-group-item-action d-flex align-items-center">
+                                {% if s.profile_picture %}
+                                    <img src="{{ s.profile_picture.url }}" alt="Foto de perfil de {{ s.student_name }}"
+                                         class="student-image rounded">
+                                {% else %}
+                                    <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg"
+                                         alt="avatar" class="student-image rounded">
+                                {% endif %}
+                                <div>
+                                    <strong>{{ s.student_name }}</strong>
+                                    <p class="mb-0"><strong>Código:</strong> {{ s.student_code }}</p>
+                                </div>
+                                <div style="margin-left: auto">
+                                    <button type="submit" class="btn btn-primary">Seleccionar</button>
+                                </div>
+                            </div>
+                        </form>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section class="mt-5">
+            <h2>Estudiantes selecccionados:</h2>
+            <div class="card mt-3">
+                <div class="list-group list-group-flush">
+                    {% for s in selected_students %}
+                        <form method="POST" action="{% url 'request_update' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="formulario" value="delete_student">
+                            <input type="hidden" name="student_code" value="{{ s.student_code }}">
+                            <div
+                                    class="list-group-item list-group-item-action d-flex align-items-center">
+                                {% if s.profile_picture %}
+                                    <img src="{{ s.profile_picture.url }}" alt="Foto de perfil de {{ s.student_name }}"
+                                         class="student-image rounded">
+                                {% else %}
+                                    <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg"
+                                         alt="avatar" class="student-image rounded">
+                                {% endif %}
+                                <div>
+                                    <strong>{{ s.student_name }}</strong>
+                                    <p class="mb-0"><strong>Código:</strong> {{ s.student_code }}</p>
+                                </div>
+                                <div style="margin-left: auto">
+                                    <button
+                                            class="btn btn-danger">Eliminar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!--- Fin de Seleccionar Estudiantes --->
+
+        <section class="mt-5">
+            <h2>Solicitar a:</h2>
+            <form method="POST" >
+                {% csrf_token %}
+                <input type="hidden" name="formulario" value="send">
+                <select required name="to" class="form-select mb-4">
+                    <option selected value="0">Seleccionar</option>
+                    <option value="1">
+                        Bienestar Universitario
+                    </option>
+                    <option value="2">
+                        Registro Académico
+                    </option>
+                    <option value="3">
+                        Director de Programa
+                    </option>
+                    <option value="4">
+                        Apoyo Financiero
+                    </option>
+                </select>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <style>
+        .student-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+    </style>
+{% endblock %}
