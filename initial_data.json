@@ -4,7 +4,7 @@
     "fields": {
       "username": "filantropia_admin",
       "user_type": "philanthropy",
-      "password": "123",
+      "password": "pbkdf2_sha256$600000$cMHh47gp6RURDKXZdGe1YH$/8y38GVHyZCZkvVLKWYFfUUDxaSxNAbAM+8zrKrYAVA=",
       "is_staff": true,
       "is_active": true,
       "is_superuser": true,
@@ -19,7 +19,7 @@
     "fields": {
       "username": "colaborador_admin",
       "user_type": "Collaborator",
-      "password": "123",
+      "password": "pbkdf2_sha256$600000$cMHh47gp6RURDKXZdGe1YH$/8y38GVHyZCZkvVLKWYFfUUDxaSxNAbAM+8zrKrYAVA=",
       "is_staff": true,
       "is_active": true,
       "is_superuser": true,
@@ -34,7 +34,7 @@
     "fields": {
       "username": "colaborador_registro",
       "user_type": "Collaborator Registro Académico",
-      "password": "integrador",
+      "password": "pbkdf2_sha256$600000$UaDK4EEIC4QogfM6x6MtQ4$+EtgIZBCwR36I2X9Q8fqkmg9woLurAQskPGoeZzl574=",
       "is_staff": false,
       "is_active": true,
       "is_superuser": false,
@@ -49,7 +49,7 @@
     "fields": {
       "username": "colaborador_apoyo",
       "user_type": "Collaborator Apoyo Financiero",
-      "password": "integrador",
+      "password": "pbkdf2_sha256$600000$UaDK4EEIC4QogfM6x6MtQ4$+EtgIZBCwR36I2X9Q8fqkmg9woLurAQskPGoeZzl574=",
       "is_staff": false,
       "is_active": true,
       "is_superuser": false,
@@ -64,7 +64,7 @@
     "fields": {
       "username": "colaborador_director",
       "user_type": "Collaborator Director de Programa",
-      "password": "integrador",
+      "password": "pbkdf2_sha256$600000$UaDK4EEIC4QogfM6x6MtQ4$+EtgIZBCwR36I2X9Q8fqkmg9woLurAQskPGoeZzl574=",
       "is_staff": false,
       "is_active": true,
       "is_superuser": false,
@@ -79,7 +79,7 @@
     "fields": {
       "username": "colaborador_bienestar",
       "user_type": "Collaborator Bienestar Universitario",
-      "password": "integrador",
+      "password": "pbkdf2_sha256$600000$UaDK4EEIC4QogfM6x6MtQ4$+EtgIZBCwR36I2X9Q8fqkmg9woLurAQskPGoeZzl574=",
       "is_staff": false,
       "is_active": true,
       "is_superuser": false,
