@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E19FA24A-EE10-12F2-DDE9-D3075AD9DBA7" name="COLABORADOR">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>2DEC8715-1D71-8E60-C34C-7CEEC934F536</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="COLABRADOR_CODIGO" id="0B15CFCC-8E70-8335-99A6-94707A3C886D">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>4538CC22-57D6-6F26-F2B9-4FA08D58D53E</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COLABORADOR_NOMBRE" id="4DA47781-9937-40FF-2308-CFD9B355ED2E">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>5C0B4AA4-16C7-337D-BA9B-A04F9B618E1D</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO_COLABORADOR_TIPO_COLABORADOR_CODIGO" id="9266E5D5-17AE-FAD6-AA31-E0B7561F618D">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>2DDA516D-AF31-D0EE-FAB1-AAF2500D4DF1</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="58547FE0-6504-A10D-BFDB-A536052B946B" referredColumn="A17193AA-54FB-9E62-BC04-79C373DA47DE"/>
+</associations>
+</Column>
+<Column name="COLABORADOR_CORREO_ELECTRÓNICO" id="B26D7977-B274-6D8B-BA4D-FCF8204F09CA">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>EF071940-1105-23C3-0A62-AC29520ACD03</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COLABORADOR_PERMISO_ALERTA" id="3FEBE49C-D8C8-2188-A946-A69E09E462AF">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>779AC580-C4A5-AB90-6B61-DFD67B9B2E49</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AFDECA19-71F4-055F-C63D-25D8E257E8D9" name="COLABORADOR_PK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>EB83AD26-E108-CD30-2AB7-3985B93DC143</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B15CFCC-8E70-8335-99A6-94707A3C886D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="50CF6029-B494-0C08-6455-59B59C648A5B" name="COLABORADOR_TIPO_COLABORADOR_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>7DEE99F2-413D-C761-936A-F72454F479AD</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9266E5D5-17AE-FAD6-AA31-E0B7561F618D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

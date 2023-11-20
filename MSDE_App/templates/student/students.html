@@ -1,0 +1,106 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <div class="image-banner">
+                    <h1 style="padding: 50px;">Estudiantes</h1>
+                </div>
+                <div class="d-flex justify-content-end align-items-center mb-4 "style="padding: 10px;">
+                    
+                    <a href="{% url 'create_student' %}" class="btn btn-primary">Registrar Estudiante</a>
+                </div>
+                <div>
+                    <div class="d-flex justify-content-end align-items-center mb-2">
+                        <form method="get" action="{% url 'students' %}" class="d-flex">
+                            <input type="text" name="search_name" class="form-control me-2" placeholder="Buscar por nombre">
+                            <button type="submit" class="btn btn-primary">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="justify-content-between align-items-center mb-3">
+                    <p>Nombre</p>
+                    <div class="mb-3">
+                        {% for letter in 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ' %}
+                            <a href="?name_initial={{ letter }}" class="btn_a">{{ letter }}</a>
+                        {% endfor %}
+                    </div>
+                    <p>Apellido</p>
+                    <div class="mb-4">
+                        {% for letter in 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ' %}
+                            <a href="?surname_initial={{ letter }}" class="btn_a">{{ letter }}</a>
+                        {% endfor %}
+                    </div>
+                    <a href="{% url 'students' %}" class="btn btn-primary">Reestablecer</a>
+                </div>
+                <div class="d-flex justify-content-end align-items-center ">
+                    {% for page_num in students.paginator.page_range %}
+                        {% if page_num == students.number %}
+                            <a href="?page={{ page_num }}" class="btn btn-primary mb-2"> {{ page_num }} </a>
+                        {% elif page_num == 1 and students.paginator.count <= 7 %}
+                            <a href="#" class="btn btn-secondary mb-2 disabled"> {{ page_num }} </a>
+                        {% else %}
+                            <a href="?page={{ page_num }}" class="btn btn-outline-primary mb-2"> {{ page_num }} </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="card">
+                    <div class="list-group list-group-flush">
+                        {% for s in students %}
+                            <a href="{% url 'student_detail' s.student_code %}" class="list-group-item list-group-item-action d-flex align-items-center">
+                                {% if s.profile_picture %}
+                                    <img src="{{ s.profile_picture.url }}" alt="Foto de perfil de {{ s.student_name }}" class="student-image rounded">
+                                {% else %}
+                                    <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg" alt="avatar" class="student-image rounded">
+                                {% endif %}
+                                <div>
+                                    <strong>{{ s.student_name }}</strong>
+                                    <p class="mb-0"><strong>Código:</strong> {{ s.student_code }}</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        body {
+            font-family: 'Toboggan', sans-serif; 
+        }
+
+        .student-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover; 
+            margin-right: 10px;
+        }
+
+        .list-group-item:hover {
+            background-color: #f0f0f0; 
+        }
+
+        .btn_a{
+            margin-right: 22px;
+            background-color: #f0f0f0;
+            text-decoration: none; /* Eliminar el subrayado */
+            color: gray; /* Cambiar color a gris */
+        }
+        .image-banner {
+        margin-top: 5%;
+        background-image: url('{% static "img/biblio.jpg" %}');/* Cambia 'URL_DE_TU_IMAGEN' por la ruta de tu imagen */
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        background-position: center; 
+        text-align: center; 
+        text-decoration-color: #f0f0f0;
+        padding: 40px 0;
+        color: #ffffff; 
+    }
+
+
+    </style>
+{% endblock %}

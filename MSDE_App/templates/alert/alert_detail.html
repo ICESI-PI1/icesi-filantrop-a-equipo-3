@@ -1,0 +1,108 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <section style="background-color: #eee;">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <style>
+                                .profile-image {
+                                    width: 150px;
+                                    height: 150px;
+                                    object-fit: cover;
+                                }
+                            </style>
+                            {% if student.profile_picture %}
+                                <img src="{{ alert.student.profile_picture.url }}" alt="Foto de perfil de estudiante"
+                                     class="rounded-circle img-fluid profile-image">
+                            {% else %}
+                                <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg"
+                                     alt="avatar" class="rounded-circle img-fluid profile-image">
+                            {% endif %}
+
+                            <h5 class="my-3">{{ alert.student.student_name }}</h5>
+                            <p class="text-muted mb-1">{{ alert.student.student_code }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Código de alerta</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{ alert.alert_code }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Tipo de alerta</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{ alert.type_alert }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Descripción</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{ alert.alert_description }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Fecha de creación</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{ alert.alert_date }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">ID del estudiante</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{ alert.student.student_id }}</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Email del estudiante</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">{{ alert.student.student_email }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if alert.status == False %}
+                    <form method="POST">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-center mb-2">
+                        <a href="{% url 'alerts' %}">
+                            <button type="submit" class="btn btn-primary">Marcar como solucionada</button>
+                        </a>
+                    </div>
+                </form>
+                {% endif %}
+                <div class="d-flex justify-content-center mb-2">
+                    <a href="{% url 'alerts' %}">
+                        <button type="button" class="btn btn-outline-primary">Volver</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

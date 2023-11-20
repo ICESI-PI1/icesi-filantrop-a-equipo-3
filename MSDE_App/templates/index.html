@@ -1,0 +1,94 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <style>
+        div#myDiv{
+          align-content: center;
+          width:100%;
+          height:300px;
+          background-image: url('https://media.discordapp.net/attachments/766433993243099148/1160857519212736563/image.png?ex=65362fd0&is=6523bad0&hm=604d3e0113516ec3007d10a4f53ff8bf2f10ddf7906cbbc86a4e7fde604e5c28&=&width=1132&height=441');
+          background-repeat:no-repeat;
+          background-size:cover;
+          background-position:center center;
+        }
+        .row {
+           display: flex;
+           align-items: center;
+        }
+        img {
+          border-radius: 10px;
+        }
+        .wip{
+            background-color: #CFECF7;
+        }
+    </style>
+</head>
+<body>
+    <section class="bg-light">
+        <div id="myDiv">
+        </div>
+    </section>
+    <span>
+        <p>
+        <h1 class="display-4 text-center mb-5" align="center">OFICINA DE FILANTROPÍA.</h1>
+        </p>
+    </span>
+    <section class="qs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 content" align="center">
+                    <img class="spp-img-responsive" src="https://www.icesi.edu.co/donaciones/images/becas/que_busca_filantropia_icesi_donaciones.jpg"  alt="Image" title=""   />
+                </div>
+                <div class="col-md-6 content">
+                    <h4 align="center">¿Qué busca la filantropía en Icesi?</h4>
+                    <p>
+                        La Dirección de Filantropía tiene como propósito aportar al desarrollo institucional de la Universidad ICESI y ser actor clave de trasformación social en la región del Valle del Cauca.<p>
+                        La apuesta de esta nueva Dirección es promover y fomentar activamente una cultura filantrópica en la que se conciba que todos desde nuestras diferentes posiciones y posibilidades podemos ser parte del cambio.<p>
+                        Uno de los objetivos institucionales de ICESI es contribuir a la equidad social que implique un incremento en el número de estudiantes que, a pesar de tener grandes capacidades y aptitudes en los diferentes campos de acción, no pueden acceder a la educación superior por pertenecer a los estratos socioeconómicos más vulnerables.<p>
+                        Además, la Dirección de Filantropía tiene como finalidad ser agente activo en el proceso de vinculación y obtención de aportes de filántropos, empresas, fundaciones y egresados que creen firmemente en el poder transformador de la educación de calidad.<p>
+                        A través de las sinergias que concretamos con nuestros aliados ponemos en práctica la filantropía estratégica y efectiva enfocada en el desarrollo de las personas y no en su asistencialismo
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p></p>
+    <section class="wip">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 content">
+                    <h4 align="center">¿Qué es la filantropía?</h4>
+                    <p>
+                        La filantropía es la tendencia a procurar el bien de otras personas y generar acciones que aporten al cuidado de otros, incluso a costa del interés propio. En ICESI, creemos en la solidaridad de los seres humanos y su capacidad para ayudar desinteresadamente a los demás.<p>
+                        En la Universidad ICESI, la filantropía se traduce en varias causas sociales que buscan generar un impacto positivo en nuestra comunidad. Trabajamos por ser una institución educativa más incluyente, que amplía el acceso a la educación superior para aquellos jóvenes talentosos y con ganas de estudiar, pero que no cuentan con los recursos suficientes para cubrir los costos de la matrícula.<p>
+                        Asimismo, impulsamos causas que nos permiten garantizar la permanencia de nuestros estudiantes en los diferentes programas académicos y graduar profesionales comprometidos con nuestro país y con el desarrollo de nuestra sociedad. Todo esto, de la mano de aliados estratégicos que creen, al igual que nosotros, en el poder de la filantropía como instrumento de transformación social.<p>
+                    </p>
+                </div>
+                <div class="col-md-6 content" align="center">
+                    <img class="spp-img-responsive" src="https://www.icesi.edu.co/donaciones/images/becas/beneficios_donar_donaciones_icesi_filantropia.jpg"  alt="Image" title="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <p></p>
+    <section class="bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" align="center">
+                    <img class="spp-img-responsive" src="https://www.icesi.edu.co/donaciones/images/banners/beneficiados.jpg" alt="Image" title="">
+                </div>
+                <div class="col-md-6 content">
+                    <h4 align="center">¿Quiénes son los beneficiados en Icesi con la filantropía?</h4>
+                    <p>
+                        Creemos que el talento se puede encontrar en todos los rincones de Colombia, pero las oportunidades no.<p>
+                        En este sentido, a través de nuestras causas y los generosos y valiosos aportes de nuestros aliados, apoyamos con becas de pregrado a jóvenes de escasos recursos para contribuir con la permanencia y graduación de todos los estudiantes en ICESI.<p>
+                        De igual manera, desde la Universidad ICESI y en colaboración con nuestros aliados estratégicos, aportamos al desarrollo de la región del Valle del Cauca mediante diferentes iniciativas y proyectos de impacto social liderados por diferentes facultades y centros de investigación.<p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+{% endblock %}

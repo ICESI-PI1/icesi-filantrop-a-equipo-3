@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="COLABORADOR_AUTH" directorySegmentName="seg_0" id="2D9BC68C-32C9-3FA3-F659-18EF0F269BD3">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-08 23:32:10 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<sourcePk>385FD9B5-4199-ABD3-6879-AD54938846C6</sourcePk>
+<targetPk>EB83AD26-E108-CD30-2AB7-3985B93DC143</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>11A2E1DF-D2A7-464A-052C-94BAE33432D3</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>2DEC8715-1D71-8E60-C34C-7CEEC934F536</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

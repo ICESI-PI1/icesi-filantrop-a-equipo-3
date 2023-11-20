@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="62E87057-9AC9-3135-E639-92F9D4D04776" containerWithKeyObject="9A60354E-096E-9A6F-0461-4C98931E4F44" localFKIndex="B07B43E1-5A1C-C05F-3361-6ED8F4781BB4" name="REPORTE_TIPO_REPORTE_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>DF069E80-5080-8AF8-112A-DF981B9D5D1E</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<referredTableLongName>TIPO_REPORTE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>ED2325B4-9AD4-7E40-75DB-D951FD7799E2</referredTableID>
+<keyObject>04B99FB2-9BD4-C21E-CF90-B5393DD3595D</keyObject>
+<referredKeyID>04B99FB2-9BD4-C21E-CF90-B5393DD3595D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>TIPO_REPORTE_CODIGO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

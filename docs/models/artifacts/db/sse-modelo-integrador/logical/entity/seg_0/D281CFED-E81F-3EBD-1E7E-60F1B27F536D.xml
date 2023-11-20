@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D281CFED-E81F-3EBD-1E7E-60F1B27F536D" name="ALERTA">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:07:24 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ALERTA_CODIGO" id="FD657ED7-A86D-C192-11E8-67D3CC1FCB4B">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:08:23 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ALERTA_FECHA" id="9FA12177-9377-0FF4-25E8-F0F50711ECE8">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:09:16 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COLABRADOR_CODIGO" id="92486010-9CD8-A761-B28B-42E63B7E4444">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 14:43:24 UTC</createdTime>
+<generatorID>CFF87314-23FA-B2DA-71E2-3103725ACFEE</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>4538CC22-57D6-6F26-F2B9-4FA08D58D53E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO_ALERTA_CODIGO" id="711E61D0-5D2C-21FC-F92F-F443F97BF50C">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 14:49:26 UTC</createdTime>
+<generatorID>417C48A2-490E-0AC4-8492-1F4A5AD19264</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<referedAttribute>03872D16-3C6D-3F6C-B786-2471A33D8CD1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="112B4963-B810-1510-F44D-04CE2C8C74D2" name="ALERTA PK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-08-28 22:08:40 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FD657ED7-A86D-C192-11E8-67D3CC1FCB4B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

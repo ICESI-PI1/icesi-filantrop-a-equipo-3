@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="11A2E1DF-D2A7-464A-052C-94BAE33432D3" name="AUTHENTICATION">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-08 23:02:17 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="AUTH_CONTRASENA" id="6F8BEA77-3ED2-49BB-8A1A-5C645682C05F">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-08 23:02:28 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="COLABRADOR_CODIGO" id="5AC157B7-92E0-C421-5383-9AFEC13C61E3">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-08 23:32:17 UTC</createdTime>
+<generatorID>2D9BC68C-32C9-3FA3-F659-18EF0F269BD3</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<referedAttribute>4538CC22-57D6-6F26-F2B9-4FA08D58D53E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MIEMBRO_FILANTROPIA_CODIGO" id="5E3A40D0-1831-2F94-2A30-A5C4E9645071">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-08 23:34:29 UTC</createdTime>
+<generatorID>40FA4425-7BEA-3448-778B-6203BBB9CA52</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<referedAttribute>1B64AAB2-F5F0-6E15-0705-1D97056E32B4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="AUTH_USUARIO" id="6F2E6936-50B3-5F99-FB90-58EF4A44B2A9">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-08 23:41:32 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="385FD9B5-4199-ABD3-6879-AD54938846C6" name="AUTHENTICATION PK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-08 23:31:44 UTC</createdTime>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<engineerTo>
+<item key="D73D318B-2D9E-7C2D-9D2D-8C5FF0A0BCBB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5E3A40D0-1831-2F94-2A30-A5C4E9645071</attributeRef>
+<attributeRef>5AC157B7-92E0-C421-5383-9AFEC13C61E3</attributeRef>
+<attributeRef>6F2E6936-50B3-5F99-FB90-58EF4A44B2A9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
