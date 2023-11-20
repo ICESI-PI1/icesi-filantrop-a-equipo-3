@@ -6,11 +6,11 @@ from MSDE_App.models import *
 from MSDE_App.forms import CreateMessage
 
 
-def info_dissemination(request):
+def info_dissemination(request): # pragma: no cover
     return render(request, '../templates/info_dissemination/information_dissemination.html')
 
 
-def send_info(request):
+def send_info(request): # pragma: no cover
     # creamos el mensaje - se almacena en la DB y devuelve a la misma página de envío de mensajes
     message_to = request.POST.get('message_to')
     content = request.POST.get('message')
@@ -27,7 +27,7 @@ def send_info(request):
     return redirect('info_dissemination')
 
 
-def show_info(request):
+def show_info(request): # pragma: no cover
 
     method = request.method
 

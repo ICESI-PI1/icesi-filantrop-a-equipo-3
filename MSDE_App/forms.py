@@ -97,7 +97,7 @@ class CreateAlert(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['alert_description'].widget.attrs['placeholder'] = "Ingrese una descripción"
         self.fields['alert_sender'].widget.attrs['placeholder'] = "Ingrese el emisor de la alerta"
-        
+
 
 class CreateDonor(forms.ModelForm):
 
@@ -125,8 +125,10 @@ class CreatePhilanthropy(forms.ModelForm):
         }
 
 
+
+
 class AlertFilterForm(forms.Form):
-    
+
     FILTER_CHOICES = (
         ('sel', '--- Selecciona un filtro ---'),
         ('type', 'Tipo de alerta'),

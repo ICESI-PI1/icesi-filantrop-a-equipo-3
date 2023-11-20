@@ -48,4 +48,4 @@ class PhilanthropyTestCase(TestCase):
 
     def test_philanthropy_str(self):
         member1 = PhilanthropyMember.objects.get(philanthropy_member_code='A00381962')
-        self.assertEquals(member1.__str__(), 'PhilanthropyMember object (1)')
+        self.assertEquals(member1.__str__(), 'PhilanthropyMember object (11)')

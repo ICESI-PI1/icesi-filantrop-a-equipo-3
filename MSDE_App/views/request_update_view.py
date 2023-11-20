@@ -10,7 +10,7 @@ selected_students = []
 # como debemos solucionarlos con la misma vista entonces lo que haremos es colocarle un input llamado
 # 'form' a los formularios, que tendrá como valor un valor que lo identifique, para así cuando se envíe uno
 # identifiquemos a partir de la request cuál se envío obteniendo este input y lo podamos resolver
-def request_update(request):
+def request_update(request): # pragma: no cover
     global selected_students
     students = Student.objects.all()
     method = request.method

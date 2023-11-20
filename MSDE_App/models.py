@@ -123,7 +123,7 @@ class TypeReport(models.Model):
 
 
 class PhilanthropyMember(models.Model):
-    philanthropy_member_code = models.CharField(max_length=10)
+    philanthropy_member_code = models.CharField(max_length=10, unique=True)
     philanthropy_member_name = models.CharField(max_length=24)
     philanthropy_member_email = models.CharField(max_length=50, default="example@gmail.com")
 
@@ -136,7 +136,7 @@ class Report(models.Model):
 
 
 class Collaborator(models.Model):
-    collaborator_code = models.CharField(max_length=10)
+    collaborator_code = models.CharField(max_length=10, unique=True)
     collaborator_name = models.CharField(max_length=24)
     collaborator_email = models.CharField(max_length=24)
 
@@ -156,18 +156,18 @@ class Collaborator(models.Model):
     collaborator_type = models.CharField(
         max_length=30,
         choices=COLLABORATOR_TYPE_CHOICES,
-        unique=True,
-        null=True
+        unique=False,
+        null=False
     )
 
 
 class TypeCollaborator(models.Model):
-    type_collaborator_code = models.CharField(max_length=10)
+    type_collaborator_code = models.CharField(max_length=10, unique=True)
     type_collaborator_name = models.CharField(max_length=24)
 
 
 class TypeAlert(models.Model):
-    ACADEMICA = 'Academica'
+    ACADEMICA = 'Académica'
     BIENESTAR = 'Bienestar'
     FINANCIERO = 'Financiero'
 
@@ -188,7 +188,7 @@ class TypeAlert(models.Model):
 
 
 class Alert(models.Model):
-    alert_code = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    alert_code = models.CharField(max_length=9, unique=True, primary_key=True)
     alert_date = models.DateTimeField(auto_now_add=True, null=True)
     alert_description = models.TextField(blank=True)
     alert_sender = models.CharField(max_length=100, blank=True)

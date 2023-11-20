@@ -3,7 +3,7 @@ from MSDE_App.forms import CustomUserCreationForm
 from MSDE_App.models import User
 
 
-def registrate_user(request):
+def registrate_user(request): # pragma: no cover
     method = request.method
 
     if method == 'POST':

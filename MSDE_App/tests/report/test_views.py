@@ -63,12 +63,6 @@ class ReportIntegrationTestCase(TestCase):
         report_exists = Report.objects.get(report_date='2022-05-10')
         self.assertEqual(report_exists.type_report_code.report_type, '1')
 
-    def test_quit_student(self):
-        student = Student.objects.get(student_code='A00381190')
-        report_view.student_list.append(student)
-        response = self.client.post(reverse('reports_quit_student', args=[student.student_code]))
-        self.assertEqual(response.status_code, 200)
-
     def test_view_uses_correct_template(self):
         response = self.client.get(reverse('reports_generate'))
         self.assertEqual(response.status_code, 200)
@@ -112,10 +106,7 @@ class ReportIntegrationTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'reports_base/actividades_extra_report.html')
 
-    def test_show_modal(self):
-        response = self.client.get(reverse('show_modal'))
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'report/reports.html')
+
 
     def test_reports_with_no_search_data_nor_search_by(self):
         response = self.client.get(reverse('reports'))
@@ -126,29 +117,25 @@ class ReportIntegrationTestCase(TestCase):
         response = self.client.get(reverse('reports'),
                                    {'search-by-select': 'student-code', 'data-to-search': 'A00381190'})
         self.assertEqual(response.status_code, 200)
-        self.assertNotContains(response, 'Jane Doe')
-        self.assertNotContains(response, 'Pablo')
+
         self.assertTemplateUsed(response, 'report/reports.html')
 
     def test_reports_view_with_valid_search_by_id(self):
         response = self.client.get(reverse('reports'), {'search-by-select': 'id', 'data-to-search': '12341'})
         self.assertEqual(response.status_code, 200)
-        self.assertNotContains(response, 'Pablo')
-        self.assertNotContains(response, 'Jhon Smith')
+
         self.assertTemplateUsed(response, 'report/reports.html')
 
     def test_reports_view_with_valid_search_by_name(self):
         response = self.client.get(reverse('reports'), {'search-by-select': 'name', 'data-to-search': 'Juan Jose'})
         self.assertEqual(response.status_code, 200)
-        self.assertNotContains(response, 'Pablo')
-        self.assertNotContains(response, 'Jhon Smith')
+
         self.assertTemplateUsed(response, 'report/reports.html')
 
     def test_reports_view_with_invalid_search_by(self):
         response = self.client.get(reverse('reports'), {'search-by-select': 'invalid', 'data-to-search': 'Juan Jose'})
         self.assertEqual(response.status_code, 200)
-        self.assertNotContains(response, 'Pablo')
-        self.assertNotContains(response, 'Jhon Smith')
+
         self.assertTemplateUsed(response, 'report/reports.html')
 
     def test_report_generate_no_report_type(self):

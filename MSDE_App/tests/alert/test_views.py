@@ -5,13 +5,12 @@ from django.urls import reverse
 
 class AlertIntegrationTestCase(TestCase):
     def setUp(self):
-        TypeAlert.objects.create(alert_type='Bienestar')
-        type = TypeAlert.objects.get()
-        Alert.objects.create(alert_code='550e8400-e29b-41d4-a716-446655440000', alert_date='2020-04-07', alert_description='Esto es una alerta',
+        type = TypeAlert.objects.get(alert_type='Bienestar')
+        Alert.objects.create(alert_code='1', alert_date='2020-04-07', alert_description='Esto es una alerta',
                              alert_sender='Juan', type_alert=type)
-        Alert.objects.create(alert_code='550e8400-e29b-41d4-a716-446655440001', alert_date='2023-04-07', alert_description='Esto es una alerta',
+        Alert.objects.create(alert_code='2', alert_date='2023-04-07', alert_description='Esto es una alerta',
                              alert_sender='Pablo', type_alert=type)
-        Alert.objects.create(alert_code='550e8400-e29b-41d4-a716-446655440002', alert_date='2012-04-07', alert_description='Esto es una alerta',
+        Alert.objects.create(alert_code='3', alert_date='2012-04-07', alert_description='Esto es una alerta',
                              alert_sender='Tutu', type_alert=type)
         Donor.objects.create(donor_code='1', donor_name='patricio')
         don = Donor.objects.get(donor_code='1')
@@ -35,7 +34,7 @@ class AlertIntegrationTestCase(TestCase):
 
         response = self.client.post(reverse('create_alert', args=['A00381190']), data=alert_data)
         self.assertEqual(response.status_code, 302)
-        alert = Alert.objects.get(alert_code='550e8400-e29b-41d4-a716-446655440000')
+        alert = Alert.objects.get(alert_code='1')
         self.assertEqual(alert.alert_sender, 'Juan')
     
     def test_view_uses_correct_template(self):
@@ -44,7 +43,7 @@ class AlertIntegrationTestCase(TestCase):
         self.assertTemplateUsed(response, 'student/create_alert.html')
 
     def test_Alert_detail_view(self):
-        response = self.client.get(reverse('alert_detail', args=['550e8400-e29b-41d4-a716-446655440000']))
+        response = self.client.get(reverse('alert_detail', args=['2']))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'alert/alert_detail.html')
 

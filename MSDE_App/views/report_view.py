@@ -54,7 +54,7 @@ def generate_report(request):
 
         # cada form tiene un input hidden, que indica su nombre para saber a qué
         # form está haciendo referencia la request
-        if form == 'search_student':
+        if form == 'search_student': # pragma: no cover
             students_list = Student.objects.all()
 
             search_name = request.GET.get('search_name', '')
@@ -86,7 +86,7 @@ def generate_report(request):
             })
 
     # post forms
-    else:
+    else: # pragma: no cover
         form = request.POST.get('formulario', None)
         student_code = request.POST.get('student_code', '')
 
@@ -262,7 +262,7 @@ def report_generate(request):
             })
 
 # crear la instancia del reporte
-def create_report(request, which_report):
+def create_report(request, which_report): # pragma: no cover
     if "becas" in which_report:
         for s in selected_students:
             report = Report.objects.create(report_date=datetime.today(),

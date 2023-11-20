@@ -23,7 +23,7 @@ urlpatterns = [
     # maneja los dos métodos del form GET y POST | GET para devolver la pagina donde sube el archivo y POST para manejar
     # el archivo que ya subió y guardarlo
     path('col/info_dissemination/send', views.send_info, name='send_info_col'),
-    path('col/info_dissemination/show', views.show_info, name='show_info_col')
+    path('col/info_dissemination/show', views.show_info, name='show_info_col'),
     path('col/create_alert/<str:student_code>', views.create_alert, name='create_alert_collaborator'),
     path('col/info_dissemination/send', views.send_info, name='send_info_col'),
     path('col/info_dissemination/show', views.show_info, name='show_info')

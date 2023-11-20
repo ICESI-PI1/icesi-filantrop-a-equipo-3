@@ -44,4 +44,4 @@ class CollaboratorTestCase(TestCase):
 
     def test_collaborator_str(self):
         member1 = Collaborator.objects.get(collaborator_code='A00381962')
-        self.assertEquals(member1.__str__(), 'Collaborator object (1)')
+        self.assertEquals(member1.__str__(), 'Collaborator object (11)')

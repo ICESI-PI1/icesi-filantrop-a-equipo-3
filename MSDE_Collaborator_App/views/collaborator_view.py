@@ -7,20 +7,25 @@ def create_collaborator(request):
     if request.method == 'POST':
         form = CreateCollaborator(request.POST)
 
-        try:
-            if form.is_valid():
+        if form.is_valid():
+            try:
                 form.save()
                 return redirect('/col/registrate')
+            except ValueError:
+                # If there's a specific ValueError you want to catch, specify it here
+                return render(request, 'collaborator_col/collaborator.html', {
+                    'form': form,
+                    'error': 'An error occurred while saving the collaborator. Please provide valid data.'
+                })
+        else:
+            # Form is not valid, render the form again with errors
+            return render(request, 'collaborator_col/create_collaborator.html', {'form': form})
 
-        except ValueError:
-            return render(request.POST, 'collaborator_col/collaborator.html', {
-                'form': CreateCollaborator(request.POST),
-                'error': 'Please provide valid data'
-            })
     else:
+        # Handle other HTTP methods if needed
         form = CreateCollaborator()
+        print('entra')
         return render(request, 'collaborator_col/create_collaborator.html', {'form': form})
-
 
 def collaborator_view(request):
     collaborator_members = (Collaborator.objects.all())
