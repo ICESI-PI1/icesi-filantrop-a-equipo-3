@@ -1,5 +1,6 @@
 {% extends 'layouts/base.html' %}
 {% block content %}
+
     <main class="container">
         <h1 class="display-4 text-center mb-5">Solicitar actualización</h1>
         <!---- Inicio de Seleccionar Estudiantes - USADO EN MUCHAS SECCIONES --->
@@ -49,7 +50,7 @@
             <div class="card mt-3">
                 <div class="list-group list-group-flush">
                     {% for s in selected_students %}
-                        <form method="POST" action="{% url 'request_update' %}">
+                        <form method="POST" id="send" action="{% url 'request_update' %}">
                             {% csrf_token %}
                             <input type="hidden" name="formulario" value="delete_student">
                             <input type="hidden" name="student_code" value="{{ s.student_code }}">
@@ -81,7 +82,7 @@
 
         <section class="mt-5">
             <h2>Solicitar a:</h2>
-            <form method="POST" >
+            <form method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="formulario" value="send">
                 <select required name="to" class="form-select mb-4">
@@ -100,7 +101,7 @@
                     </option>
                 </select>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary" id="toast-request-btn">Enviar</button>
                 </div>
             </form>
         </section>
