@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import ListView, DetailView
+
 from MSDE_App.models import Alert, Student
 from MSDE_App.forms import CreateAlert, AlertFilterForm
 from django.contrib import messages

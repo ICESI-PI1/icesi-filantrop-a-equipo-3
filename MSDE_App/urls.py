@@ -2,13 +2,13 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name="index"),
-    path('fil/index/', views.index, name="index"),
-    path('fil/student/create_student/', views.create_student, name='create_student'),
-    path('fil/student/<str:student_code>/student_detail', views.student_detail, name='student_detail'),
-    path('fil/students/', views.students_view, name="students"),
-    path('fil/student/<str:student_code>/edit/', views.edit_student, name='edit_student'),
-    path('fil/student/<str:student_code>/delete/', views.delete_student, name='delete_student'),
+    path('', views.IndexView.as_view(), name="index"),
+    path('fil/index/', views.IndexView.as_view(), name="index"),
+    path('fil/student/create_student/', views.CreateStudentView.as_view(), name='create_student'),
+    path('fil/student/<str:student_code>/student_detail', views.StudentDetailView.as_view(), name='student_detail'),
+    path('fil/students/', views.StudentsView.as_view(), name="students"),
+    path('fil/student/<str:student_code>/edit/', views.EditStudentView.as_view(), name='edit_student'),
+    path('fil/student/<str:student_code>/delete/', views.DeleteStudentView.as_view(), name='delete_student'),
     path('fil/donor/create_donor/', views.create_donor, name='create_donor'),
     path('fil/donor/<str:donor_code>/donor_detail', views.donor_detail, name='donor_detail'),
     path('fil/donors/', views.donor_view, name="donors"),
