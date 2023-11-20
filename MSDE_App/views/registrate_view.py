@@ -1,25 +1,28 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from MSDE_App.forms import CustomUserCreationForm
+from MSDE_App.models import User
 
 
 def registrate_user(request):
+    method = request.method
 
-    refer = request.META.get('HTTP_REFERER', None)
+    if method == 'POST':
+        username = request.POST.get('user')
+        pwd = request.POST.get('pwd')
+        user_type = request.POST.get('type')
 
-    if 'philanthropy' in refer:
-        user_type = 'Philanthropy'
-    elif 'collaborator' in refer:
-        user_type = 'Collaborator'
+        if user_type == 'Filantropía':
+            user_type = 'Philanthropy'
+        else:
+            user_type = 'Collaborator'
+
+        user = User.objects.create_user(
+            username=username,
+            password=pwd,
+            user_type=user_type
+        )
+
+        user.save()
+        return redirect('index')
     else:
-        user_type = ''
-
-    data = {
-        'form': CustomUserCreationForm(initial={'user_type': user_type})
-    }
-
-    if request.method == 'POST':
-        user_creation_form = CustomUserCreationForm(data=request.POST)
-        if user_creation_form.is_valid():
-            user_creation_form.save()
-            return redirect('index')
-    return render(request, 'registration/registrate.html', data)
+        return render(request, 'registration/registrate.html')

@@ -1,11 +1,57 @@
 # Create your models here.
+from datetime import datetime
+
+from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
 from django.db import models
 import uuid
 from django.contrib.auth.models import AbstractUser
 
 
-class User(AbstractUser):
-        user_type = models.CharField(max_length=20)
+# UserManager contiene funciones de creacion de usuarios, lo hacemos para
+# manipular el form de registro y los datos a registrar
+class UserManager(BaseUserManager):
+    def create_user(self, username, password, user_type, **extra_fields):
+        if not username:
+            raise ValueError('El username es obligatorio.')
+
+        user = self.model(username=username, user_type=user_type, **extra_fields)
+        user.set_password(password)
+        user.first_name = "a"
+        user.last_name = "a"
+        user.email = "a"
+        user.date_joined = datetime.now()
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, username, password, user_type, **extra_fields):
+        user = self.create_user(username, password, user_type, **extra_fields)
+        user.is_staff = True
+        user.is_superuser = True
+        user.first_name = "a"
+        user.last_name = "a"
+        user.email = "a"
+        user.date_joined = datetime.now()
+        user.save(using=self._db)
+        return user
+
+
+# creamos nuestra tabla User a partir de AbstractBaseUser para poder manipular de mejor manera
+# y crear nuestras propias funciones de creación
+class User(AbstractBaseUser):
+    username = models.CharField(max_length=150, unique=True, null=False)
+    user_type = models.CharField(max_length=150, null=False)
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_superuser = models.BooleanField(default=False)
+    first_name = models.CharField(max_length=150, null=True)
+    last_name = models.CharField(max_length=150, null=True)
+    email = models.CharField(max_length=150, null=True)
+    date_joined = models.DateTimeField(null=True)
+    USERNAME_FIELD = 'username'
+    objects = UserManager()
+
+#class User(AbstractUser):
+#    user_type = models.CharField(max_length=20)
 
 
 class Donor(models.Model):
@@ -94,6 +140,26 @@ class Collaborator(models.Model):
     collaborator_name = models.CharField(max_length=24)
     collaborator_email = models.CharField(max_length=24)
 
+    # adicion de tipo de colaborador
+    BIENESTAR_UNIVERSITARIO = 'Bienestar Universitario'
+    REGISTRO_ACADEMICO = 'Registro Académico'
+    DIRECTOR_PROGRAMA = 'Director de Programa'
+    APOYO_FINANCIERO = 'Apoyo Financiero'
+
+    COLLABORATOR_TYPE_CHOICES = [
+        (BIENESTAR_UNIVERSITARIO, 'Bienestar Universitario'),
+        (REGISTRO_ACADEMICO, 'Registro Académico'),
+        (DIRECTOR_PROGRAMA, 'Director de Programa'),
+        (APOYO_FINANCIERO, 'Apoyo Financiero')
+    ]
+
+    collaborator_type = models.CharField(
+        max_length=30,
+        choices=COLLABORATOR_TYPE_CHOICES,
+        unique=True,
+        null=True
+    )
+
 
 class TypeCollaborator(models.Model):
     type_collaborator_code = models.CharField(max_length=10)
@@ -136,3 +202,4 @@ class Message(models.Model):
     message_to = models.CharField(max_length=12)
     message_content = models.CharField(max_length=3000)
     message_date = models.DateField(auto_now_add=True, null=True)
+    status = models.BooleanField(default=False)

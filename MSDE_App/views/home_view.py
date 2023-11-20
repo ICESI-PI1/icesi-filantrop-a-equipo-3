@@ -10,7 +10,7 @@ def index(request):
     global is_superuser
     is_superuser = user.is_superuser
 
-    if user.user_type == 'Collaborator':
+    if 'Collaborator' in user.user_type:
         return redirect("index_col")
     else:
         return render(request, 'index.html')
