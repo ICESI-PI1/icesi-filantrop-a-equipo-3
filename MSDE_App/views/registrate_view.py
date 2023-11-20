@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views import View
+
 from MSDE_App.forms import CustomUserCreationForm
 from MSDE_App.models import User
 
 
-def registrate_user(request):
-    method = request.method
+class RegistratUserView(View):
+    def get(self, request):
+        return render(request, 'registration/registrate.html')
 
-    if method == 'POST':
+    def post(self, request):
         username = request.POST.get('user')
         pwd = request.POST.get('pwd')
         user_type = request.POST.get('type')
@@ -24,5 +27,3 @@ def registrate_user(request):
 
         user.save()
         return redirect('index')
-    else:
-        return render(request, 'registration/registrate.html')
