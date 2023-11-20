@@ -2,6 +2,7 @@ from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+from django.views import View
 
 from MSDE_App.models import Report
 from MSDE_App.forms import *
@@ -16,21 +17,21 @@ import  pdfkit
 #        pdf = pdfkit.from_url(request.build_absolute_uri(reverse('extra_report')))
 
 
-def base_reports(request):
-    return render(request, 'reports_base/base_reports.html')
+class BaseReportsView(View):
+    def get(self, request):
+        return render(request, 'reports_base/base_reports.html')
 
+class BecasReportView(View):
+    def get(self, request):
+        return render(request, 'reports_base/becas_report.html')
 
-def becas_report(request):
-    return render(request, 'reports_base/becas_report.html')
+class ExtraReportView(View):
+    def get(self, request):
+        return render(request, 'reports_base/actividades_extra_report.html')
 
-
-def extra_report(request):
-    return render(request, 'reports_base/actividades_extra_report.html')
-
-
-def crea_report(request):
-    return render(request, 'reports_base/consultas_CREA_report.html')
-
+class CreaReportView(View):
+    def get(self, request):
+        return render(request, 'reports_base/consultas_CREA_report.html')
 
 # views.py
 from django.http import HttpResponse
@@ -43,50 +44,17 @@ actual_student = None
 # como debemos solucionarlos con la misma vista entonces lo que haremos es colocarle un input llamado
 # 'form' a los formularios, que tendrá como valor un valor que lo identifique, para así cuando se envíe uno
 # identifiquemos a partir de la request cuál se envío obteniendo este input y lo podamos resolver
-def generate_report(request):
-    global selected_students
-    students = Student.objects.all()
-    method = request.method
+class GenerateReportView(View):
+    selected_students = []
 
-    # get forms
-    if method == 'GET':
-        form = request.GET.get('formulario', None)
+    def get(self, request):
+        students = Student.objects.all()
+        return render(request, 'report/reports.html', {
+            'students': students,
+            'selected_students': self.selected_students
+        })
 
-        # cada form tiene un input hidden, que indica su nombre para saber a qué
-        # form está haciendo referencia la request
-        if form == 'search_student':
-            students_list = Student.objects.all()
-
-            search_name = request.GET.get('search_name', '')
-            if search_name:
-                students_list = students_list.filter(student_name__icontains=search_name)
-
-            name_initial = request.GET.get('name_initial')
-            if name_initial:
-                students_list = students_list.filter(student_name__istartswith=name_initial)
-
-            surname_initial = request.GET.get('surname_initial')
-            if surname_initial:
-                students_list = students_list.filter(student_surname__istartswith=surname_initial)
-            elif not surname_initial and not name_initial and not search_name:
-                students_list = students_list.order_by('student_surname')
-
-            paginator = Paginator(students_list, 3)
-            page_number = request.GET.get('page')
-            students_paginator = paginator.get_page(page_number)
-
-            return render(request, 'report/reports.html', {
-                'students': students_paginator,
-                'selected_students': selected_students
-            })
-        else:
-            return render(request, 'report/reports.html', {
-                'students': students,
-                'selected_students': selected_students
-            })
-
-    # post forms
-    else:
+    def post(self, request):
         form = request.POST.get('formulario', None)
         student_code = request.POST.get('student_code', '')
 
@@ -94,36 +62,27 @@ def generate_report(request):
             student_to_add = Student.objects.get(student_code=student_code)
             flag = True
 
-            for i in range(0, len(selected_students)):
-                if selected_students[i] == student_to_add:
+            for i in range(0, len(self.selected_students)):
+                if self.selected_students[i] == student_to_add:
                     flag = False
                     break
 
             if flag:
-                selected_students.append(student_to_add)
+                self.selected_students.append(student_to_add)
 
-            return render(request, 'report/reports.html', {
-                'students': students,
-                'selected_students': selected_students
-            })
-
-        if form == 'delete_student':
+        elif form == 'delete_student':
             student_to_delete = Student.objects.get(student_code=student_code)
 
-            for i in range(0, len(selected_students)):
-                if selected_students[i] == student_to_delete:
-                    selected_students.pop(i)
+            for i in range(0, len(self.selected_students)):
+                if self.selected_students[i] == student_to_delete:
+                    self.selected_students.pop(i)
                     break
 
-            return render(request, 'report/reports.html', {
-                'students': students,
-                'selected_students': selected_students
-            })
-
-    return render(request, 'report/reports.html', {
-        'students': students,
-        'selected_students': selected_students
-    })
+        students = Student.objects.all()
+        return render(request, 'report/reports.html', {
+            'students': students,
+            'selected_students': self.selected_students
+        })
 
 
 #def quit_student(request, student_code):
@@ -148,32 +107,32 @@ def generate_report(request):
 #        })
 
 
-def query_student_crea(request, student_code):
-    crea_queries = CreaQuery.objects.filter(student_code=student_code)
+class QueryStudentCreaView(View):
+    def get(self, request, student_code):
+        crea_queries = CreaQuery.objects.filter(student_code=student_code)
 
-    return render(request, 'reports_base/consultas_CREA_report.html', {
-                'students': selected_students,
-                'crea_queries': crea_queries
-            })
+        return render(request, 'reports_base/consultas_CREA_report.html', {
+            'students': GenerateReportView.selected_students,
+            'crea_queries': crea_queries
+        })
 
+class QueryStudentExtraView(View):
+    def get(self, request, student_code):
+        crea_queries = ExtraAcademic.objects.filter(student_code=student_code)
 
-def query_student_extra(request, student_code):
-    crea_queries = ExtraAcademic.objects.filter(student_code=student_code)
+        return render(request, 'reports_base/actividades_extra_report.html', {
+            'students': GenerateReportView.selected_students,
+            'extra': crea_queries
+        })
 
-    return render(request, 'reports_base/actividades_extra_report.html', {
-        'students': selected_students,
-        'extra': crea_queries
-    })
+class QueryStudentBecasView(View):
+    def get(self, request, student_code):
+        crea_queries = AcademicBalance.objects.filter(student_code=student_code)
 
-
-def query_student_becas(request, student_code):
-    crea_queries = AcademicBalance.objects.filter(student_code=student_code)
-
-    return render(request, 'reports_base/becas_report.html', {
-        'students': selected_students,
-        'academic_balance': crea_queries
-    })
-
+        return render(request, 'reports_base/becas_report.html', {
+            'students': GenerateReportView.selected_students,
+            'academic_balance': crea_queries
+        })
 
 #def show_modal(request):
 #    return render(request, 'report/reports.html', {
@@ -220,70 +179,75 @@ def query_student_becas(request, student_code):
  #       })
 
 # generar el reporte: crear la instancia y el PDF para que pueda ser descargado
-def report_generate(request):
-    report_type = request.GET.get("report-type")
-    students = Student.objects.all()
+class ReportGenerateView(View):
+    def get(self, request):
+        report_type = request.GET.get("report-type")
+        students = Student.objects.all()
 
-    if report_type is None:
-        return render(request, 'report/reports.html', {
-            'students': students,
-            'selected_students': selected_students
-        })
-    else:
-        if report_type == "0":
-            print('render de reports.html ?? ?!!!!')
+        if report_type is None:
             return render(request, 'report/reports.html', {
                 'students': students,
-                'selected_students': selected_students
-            })
-        elif report_type == "1":
-            create_report(request, "becas")
-            return render(request, 'reports_base/becas_report.html', {
-                'students': selected_students,
-            })
-        elif report_type == "2":
-            create_report(request, "extra")
-            return render(request, 'reports_base/actividades_extra_report.html', {
-                'students': selected_students,
-            })
-        elif report_type == "3":
-            create_report(request, "CREA")
-            return render(request, 'reports_base/consultas_CREA_report.html', {
-                'students': selected_students,
-            })
-        elif report_type == "4":
-            create_report(request, "personalizado")
-            return render(request, 'reports_base/consultas_CREA_report.html', {
-                'students': selected_students,
+                'selected_students': GenerateReportView.selected_students
             })
         else:
-            return render(request, 'report/reports.html', {
-                'students': selected_students
-            })
+            if report_type == "0":
+                return render(request, 'report/reports.html', {
+                    'students': students,
+                    'selected_students': GenerateReportView.selected_students
+                })
+            elif report_type == "1":
+                self.create_report(request, "becas")
+                return render(request, 'reports_base/becas_report.html', {
+                    'students': GenerateReportView.selected_students,
+                })
+            elif report_type == "2":
+                self.create_report(request, "extra")
+                return render(request, 'reports_base/actividades_extra_report.html', {
+                    'students': GenerateReportView.selected_students,
+                })
+            elif report_type == "3":
+                self.create_report(request, "CREA")
+                return render(request, 'reports_base/consultas_CREA_report.html', {
+                    'students': GenerateReportView.selected_students,
+                })
+            elif report_type == "4":
+                self.create_report(request, "personalizado")
+                return render(request, 'reports_base/consultas_CREA_report.html', {
+                    'students': GenerateReportView.selected_students,
+                })
+            else:
+                return render(request, 'report/reports.html', {
+                    'students': GenerateReportView.selected_students
+                })
 
-# crear la instancia del reporte
-def create_report(request, which_report):
-    if "becas" in which_report:
-        for s in selected_students:
-            report = Report.objects.create(report_date=datetime.today(),
-                                           type_report_code=TypeReport.objects.get(report_type='Informe de becas'),
-                                           student_code=Student.objects.get(student_code=s.student_code))
-            report.save()
-    elif "extra" in which_report:
-        for s in selected_students:
-            report = Report.objects.create(report_date=datetime.today(),
-                                           type_report_code=TypeReport.objects.get(report_type='Informe de consultas en el CREA'),
-                                           student_code=Student.objects.get(student_code=s.student_code))
-            report.save()
-    elif "CREA" in which_report:
-        for s in selected_students:
-            report = Report.objects.create(report_date=datetime.today(),
-                                           type_report_code=TypeReport.objects.get(report_type='Informe de actividades extra académicas'),
-                                           student_code=Student.objects.get(student_code=s.student_code))
-            report.save()
-    else:
-        for s in selected_students:
-            report = Report.objects.create(report_date=datetime.today(),
-                                           type_report_code=TypeReport.objects.get(report_type='Informe personalizado'),
-                                           student_code=Student.objects.get(student_code=s.student_code))
-            report.save()
+    # crear la instancia del reporte
+
+    def create_report(self, request, which_report):
+        if "becas" in which_report:
+            for s in GenerateReportView.selected_students:
+                report = Report.objects.create(report_date=datetime.today(),
+                                               type_report_code=TypeReport.objects.get(report_type='Informe de becas'),
+                                               student_code=Student.objects.get(student_code=s.student_code))
+                report.save()
+        elif "extra" in which_report:
+            for s in GenerateReportView.selected_students:
+                report = Report.objects.create(report_date=datetime.today(),
+                                               type_report_code=TypeReport.objects.get(
+                                                   report_type='Informe de consultas en el CREA'),
+                                               student_code=Student.objects.get(student_code=s.student_code))
+                report.save()
+        elif "CREA" in which_report:
+            for s in GenerateReportView.selected_students:
+                report = Report.objects.create(report_date=datetime.today(),
+                                               type_report_code=TypeReport.objects.get(
+                                                   report_type='Informe de actividades extra académicas'),
+                                               student_code=Student.objects.get(student_code=s.student_code))
+                report.save()
+        else:
+            for s in GenerateReportView.selected_students:
+                report = Report.objects.create(report_date=datetime.today(),
+                                               type_report_code=TypeReport.objects.get(
+                                                   report_type='Informe personalizado'),
+                                               student_code=Student.objects.get(student_code=s.student_code))
+                report.save()
+

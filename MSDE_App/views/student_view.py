@@ -26,7 +26,7 @@ class CreateStudentView(CreateView):
     model = Student
     form_class = CreateStudent
     template_name = 'student/create_student.html'
-    success_url = '/index'  # Asegúrate de ajustar esto a la URL correcta
+    success_url = '/fil/students'  # Asegúrate de ajustar esto a la URL correcta
 
     def form_invalid(self, form):
         return render(self.request, 'student/create_student.html', {
