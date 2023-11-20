@@ -3,39 +3,70 @@
 {% block content %}
     <main class="container">
         <section class="row">
-                <h1 class="display-4 text-center mb-5">
-                    Alertas
-                </h1>
-             <article>
+            <h1 class="display-4 text-center mb-5">
+                Alertas
+            </h1>
+            <article>
                 <h2>
                     Pendientes
                 </h2>
                 <div class="alerts-list">
                     <ul class="list-group">
-                    {% for a in no_solved_alerts %}
-                        <a class="list-group-item" href="{% url 'alert_detail' a.alert_code %}">
-                        <strong> Estudiante: {{ a.student.student_name }}</strong>
-                        <p>Tipo de alerta: {{ a.type_alert }}</p>
-                        </a>
-                    {% endfor %}
+                        {% for a in no_solved_alerts %}
+                            <a class="list-group-item list-group-item-action d-flex align-items-center"
+                               href="{% url 'alert_detail' a.alert_code %}">
+                                {% if s.profile_picture %}
+                                    <img src="{{ a.student.profile_picture.url }}"
+                                         alt="Foto de perfil de {{ s.student_name }}"
+                                         class="student-image rounded">
+                                {% else %}
+                                    <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg"
+                                         alt="avatar" class="student-image rounded">
+                                {% endif %}
+                                <div>
+                                    <strong>
+                                        Estudiante: {{ a.student.student_name }} {{ a.student.student_surname }}</strong>
+                                    <p class="mb-0">Tipo de alerta: {{ a.type_alert }}</p>
+                                </div>
+                            </a>
+                        {% endfor %}
                     </ul>
                 </div>
             </article>
-            <article>
+            <article class="mt-5">
                 <h2>
                     Resueltas
                 </h2>
                 <div class="alerts-list">
                     <ul class="list-group">
-                    {% for a in solved_alerts %}
-                        <a class="list-group-item" href="{% url 'alert_detail' a.alert_code %}">
-                        <strong> Estudiante: {{ a.student.student_name }}</strong>
-                        <p>Tipo de alerta: {{ a.type_alert }}</p>
-                        </a>
-                    {% endfor %}
+                        {% for a in solved_alerts %}
+                            <a class="list-group-item list-group-item-action d-flex align-items-center"
+                               href="{% url 'alert_detail' a.alert_code %}">
+                                {% if s.profile_picture %}
+                                    <img src="{{ a.student.profile_picture.url }}"
+                                         alt="Foto de perfil de {{ s.student_name }}"
+                                         class="student-image rounded">
+                                {% else %}
+                                    <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg"
+                                         alt="avatar" class="student-image rounded">
+                                {% endif %}
+                                <div>
+                                    <strong> Estudiante: {{ a.student.student_name }}</strong>
+                                    <p class="mb-0">Tipo de alerta: {{ a.type_alert }}</p>
+                                </div>
+                            </a>
+                        {% endfor %}
                     </ul>
                 </div>
             </article>
         </section>
     </main>
+    <style>
+        .student-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+    </style>
 {% endblock %}
