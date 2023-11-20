@@ -43,4 +43,5 @@ urlpatterns = [
     path('fil/info_dissemination/send', views.send_info, name='send_info'),
     path('fil/info_dissemination/show', views.show_info, name='show_info'),
     path('fil/request_update/', views.request_update, name='request_update')
+    path('fil/info_dissemination/show', views.show_info, name='show_info')
 ]

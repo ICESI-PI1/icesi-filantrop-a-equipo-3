@@ -1,6 +1,9 @@
 from django.db.models import Case, Value, When, CharField
 from django.shortcuts import render, redirect, get_object_or_404
 from MSDE_App.models import *
+from django.shortcuts import render, redirect, get_object_or_404
+from MSDE_App.models import *
+from MSDE_App.forms import CreateMessage
 
 
 def info_dissemination(request):
@@ -25,6 +28,7 @@ def send_info(request):
 
 
 def show_info(request):
+
     method = request.method
 
     if method == "GET":
@@ -73,3 +77,12 @@ def show_info(request):
             'messages_no_solved': messages.filter(status=False),
             'messages_solved': messages.filter(status=True)
         })
+
+    # ordenamos los mensajes de filantropia, ya que esta es la view de filantropia, donde el
+    # primero es el más reciente
+    messages = Message.objects.filter(message_to='philanthropy').order_by('-message_date')
+
+    return render(request, '../templates/info_dissemination/show_information.html', {
+        'messages': messages
+    })
+

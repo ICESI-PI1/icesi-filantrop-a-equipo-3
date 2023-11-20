@@ -7,6 +7,7 @@
         </div>
         <div class="row">
             <div class="col">
+
                 <h2>Mensajes no vistos</h2>
                 {% if messages_no_solved %}
                     {% for m in messages_no_solved %}
@@ -39,11 +40,17 @@
                 <h2>Mensajes vistos</h2>
                 {% if messages_solved %}
                     {% for m in messages_solved %}
+
+                {% if messages %}
+                    {% for m in messages %}
+
                         <div class="card mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">De Filantropía</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Fecha: {{ m.message_date }}</h6>
+
                                 <p class="card-text">{{ m.message_content|linebreaks }}</p>
+                                <p class="card-text">{{ m.message_content }}</p>
                             </div>
                         </div>
                     {% endfor %}
@@ -55,4 +62,7 @@
             </div>
         </div>
     </main>
+
 {% endblock %}
+{% endblock %}
+

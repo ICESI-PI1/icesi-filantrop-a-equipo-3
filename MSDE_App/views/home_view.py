@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from MSDE_Collaborator_App import *
-from django.template.loader import render_to_string
 
 is_superuser = False
 
