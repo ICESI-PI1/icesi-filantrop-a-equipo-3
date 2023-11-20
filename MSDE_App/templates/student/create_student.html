@@ -14,8 +14,8 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                    <a class="btn btn-outline-primary cancel-button" href="/fil/students" role="button">Cancelar</a>
+                    <button type="submit" class="btn btn-primary button-with-shadow">Guardar</button>
+                    <a class="btn btn-outline-primary cancel-button button-with-shadow" href="/fil/students" role="button">Cancelar</a>
                 </div>
             </form>
         </div>
@@ -29,7 +29,7 @@
                         <input type="file" class="form-control-file" id="databaseFile" name="database_file">
                     </figure>
                 </div>
-                <button type="submit" class="btn btn-primary">Importar</button>
+                <button type="submit" class="btn btn-primary button-with-shadow">Importar</button>
             </form>
         </div>
     </div>

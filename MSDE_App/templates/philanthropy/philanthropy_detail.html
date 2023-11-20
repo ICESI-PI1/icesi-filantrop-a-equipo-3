@@ -14,10 +14,10 @@
                             <p class="text-muted mb-1">{{ philanthropy.philanthropy_member_code }}</p>
                             <div class="d-flex justify-content-center mb-2">
                                 <a href="{% url 'philanthropy_edit' philanthropy.philanthropy_member_code %}">
-                                    <button type="button" class="btn btn-primary">EDIT</button>
+                                    <button type="button" class="btn btn-primary button-with-shadow">Editar</button>
                                 </a>
                                 <a href="{% url 'delete_philanthropy' philanthropy.philanthropy_member_code %}">
-                                    <button type="button" class="btn btn-outline-primary ms-1">DELETE</button>
+                                    <button type="button" class="btn btn-outline-primary ms-1 button-with-shadow">Eliminar</button>
                                 </a>
                             </div>
                         </div>

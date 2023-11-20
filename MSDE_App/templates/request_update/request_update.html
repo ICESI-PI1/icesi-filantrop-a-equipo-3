@@ -11,7 +11,7 @@
                     <form method="get" action="{% url 'request_update' %}" class="d-flex mt-3">
                         <input type="hidden" name="formulario" value="search_student">
                         <input type="text" name="search_name" class="form-control me-2" placeholder="Buscar por nombre">
-                        <button type="submit" class="btn btn-primary me-1">Buscar</button>
+                        <button type="submit" class="btn btn-primary me-1 button-with-shadow">Buscar</button>
                         <a href="{% url 'request_update' %}" class="btn btn-outline-primary">Reestablecer</a>
                     </form>
                 </div>
@@ -37,7 +37,7 @@
                                     <p class="mb-0"><strong>Código:</strong> {{ s.student_code }}</p>
                                 </div>
                                 <div style="margin-left: auto">
-                                    <button type="submit" class="btn btn-primary">Seleccionar</button>
+                                    <button type="submit" class="btn btn-primary button-with-shadow">Seleccionar</button>
                                 </div>
                             </div>
                         </form>
@@ -69,7 +69,7 @@
                                 </div>
                                 <div style="margin-left: auto">
                                     <button
-                                            class="btn btn-danger">Eliminar
+                                            class="btn btn-danger button-with-shadow">Eliminar
                                     </button>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                     </option>
                 </select>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary" id="toast-request-btn">Enviar</button>
+                    <button type="submit" class="btn btn-primary button-with-shadow" id="toast-request-btn">Enviar</button>
                 </div>
             </form>
         </section>

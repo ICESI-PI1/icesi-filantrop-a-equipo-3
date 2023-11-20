@@ -4,7 +4,7 @@
     <p>Are you sure you want to delete the member "{{ philanthropy.philanthropy_member_name }}"?</p>
     <form method="POST">
         {% csrf_token %}
-        <a href="/fil/philanthropy"><button type="submit">Delete</button></a>
+        <a href="/fil/philanthropy"><button class="button-with-shadow" type="submit">Delete</button></a>
     </form>
 
 {% endblock %}
