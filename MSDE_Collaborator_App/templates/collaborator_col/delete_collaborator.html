@@ -5,7 +5,7 @@
     <p>Are you sure you want to delete the member "{{ collaborator.collaborator_name }}"?</p>
     <form method="POST">
         {% csrf_token %}
-        <a href="/col/collaborator"><button type="submit">Delete</button></a>
+        <a href="/col/collaborator"><button class="button-with-shadow" type="submit">Delete</button></a>
     </form>
 
 {% endblock %}

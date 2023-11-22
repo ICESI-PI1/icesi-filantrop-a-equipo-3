@@ -4,7 +4,7 @@
     <p>Are you sure you want to delete the donor "{{ donor.donor_name }}"?</p>
     <form method="post">
         {% csrf_token %}
-        <a href="/fil/index"><button type="submit">Delete</button></a>
+        <a href="/fil/index"><button type="submit"class="button-with-shadow">Delete</button></a>
     </form>
 
 {% endblock %}
