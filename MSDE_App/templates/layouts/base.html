@@ -49,18 +49,11 @@
         }
 
         .menu-title {
-            margin-bottom: 50px;
+            margin-bottom: 40%;
             border-bottom: 1px solid white;
             padding-bottom: 15px;
             padding-top: 70px;
             text-align: center;
-        }
-
-        .col-auto.col-md-3.col-xl-2.px-sm-2.px-0 {
-            background-color: #4c687e;
-            position: fixed; /* Cambiado a fixed */
-            top: 0; /* Ancla el sidebar en la parte superior */
-            height: 100%;
         }
 
         #mySidebar {
@@ -97,6 +90,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
+            margin: 0;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -105,6 +99,41 @@
 
         p {
             font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar2 {
+            width: 250px; /* Ancho del navbar */
+            height: 100vh; /* Altura del 100% del viewport */
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.3); /* Fondo transparente */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar2 a {
+            width: calc(100%); /* Ocupa todo el ancho disponible */
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s;
+            box-sizing: border-box;
+            display: block; /* Hace que los elementos a sean bloques para ocupar todo el ancho disponible */
+            font-size: 1.3em; /* Ajusta el tamaño de la letra */
+        }
+
+        .navbar2 a:hover {
+            background-color: rgba(0, 0, 0, 0.5); /* Color de fondo al hacer hover */
+        }
+
+        .navbar2 a:last-child {
+            margin-top: 45%; /* Empuja el elemento 'Salir' hacia abajo */
+
+            border-top: 1px solid white; /* Añade una línea inferior al último elemento */
         }
     </style>
 
@@ -115,55 +144,37 @@
 <!-- Barra de navegación superior -->
 <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container-fluid ">
+
+        <button id="toggle-sidebar" class="btn btn-primary">Ocultar Menú</button>
         <a class="navbar-brand" href="/fil/index">
             <img src="{% static 'img/logo_filantropia.png' %}" alt="Logo" class="logo-img d-inline-block align-top">
         </a>
-        <button id="toggle-sidebar" class="btn btn-primary">Sidebar</button>
     </div>
 </nav>
 
 <!-- Nueva Sidebar -->
-<div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 " id="mySidebar">
-    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-        <h2 class="menu-title">Menu</h2>
-        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-            <!-- Opciones del menú -->
-            <li class="nav-item">
-                <a href="/fil/alerts" class="nav-link align-middle px-0 m-4">
-                    <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/peligro.png" alt=""
-                         width="35" height="35">
-                    Alertas
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/fil/info_management" class="nav-link align-middle px-0 m-4">
-                    <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/nota.png" alt="Opción 2"
-                         width="35" height="35">
-                    Gestión de info.
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/fil/reports" class="nav-link align-middle px-0 m-4">
-                    <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/reporte%20(1).png"
-                         alt="Opción 3" width="35" height="35">
-                    Reportes
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/fil/info_dissemination" class="nav-link align-middle px-0 m-4">
-                    <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/marketing.png"
-                         alt="Opción 4" width="35" height="35">
-                    Difusión
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{% url 'salir' %}" class="nav-link align-middle px-0 m-5">
-                    <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/cerrar-sesion.png"
-                         alt="Salir" width="35" height="35">
-                    Salir
-                </a>
-            </li>
-        </ul>
+<div class="navbar2" style="background-color: #4c687e;
+            /* position: fixed; /* Cambiado a fixed */
+            top: 0; /* Ancla el sidebar en la parte superior */
+            height: 100%;" id="mySidebar">
+    <div class="align-items-center w-100 text-white ">
+        <h2 class="menu-title">Menú</h2>
+        <!-- Opciones del menú -->
+        <a href="/fil/alerts">
+            Alertas
+        </a>
+        <a href="/fil/info_management">
+            Gestión de info.
+        </a>
+        <a href="/fil/reports">
+            Reportes
+        </a>
+        <a href="/fil/info_dissemination">
+            Difusión
+        </a>
+        <a href="{% url 'salir' %}">
+            Salir
+        </a>
     </div>
 </div>
 
@@ -201,8 +212,10 @@
             $('#mySidebar').toggle(); // Toggle para mostrar u ocultar el sidebar
             if ($('#mySidebar').is(':visible')) {
                 $('.main-container').css('padding-left', '250px');
+                $(this).text('Ocultar Menú'); // Cambia el texto del botón a 'Ocultar Menú'
             } else {
                 $('.main-container').css('padding-left', '0');
+                $(this).text('Mostrar Menú'); // Cambia el texto del botón a 'Mostrar Menú'
             }
         });
     });
