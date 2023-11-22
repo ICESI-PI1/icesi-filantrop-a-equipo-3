@@ -4,8 +4,11 @@ from MSDE_App.models import Alert, Student
 from MSDE_App.forms import CreateAlert, AlertFilterForm
 from django.contrib import messages
 
+counter = 1
 
 def create_alert(request, student_code):
+    global counter
+    counter = counter + 1
     student = get_object_or_404(Student, student_code=student_code)
 
     if request.method == 'POST':
@@ -13,6 +16,7 @@ def create_alert(request, student_code):
         if form.is_valid():
             alert = form.save(commit=False)
             alert.student = student
+            alert.alert_code = '000{}'.format(counter)
             alert.save()
             messages.success(request, 'Alerta guardada correctamente.')
             return redirect('create_alert_collaborator', student_code=student_code)

@@ -72,20 +72,19 @@ class CreateCollaborator(forms.ModelForm):
             'collaborator_code': forms.TextInput(attrs={'class': 'form-control'}),
             'collaborator_name': forms.TextInput(attrs={'class': 'form-control'}),
             'collaborator_email': forms.TextInput(attrs={'class': 'form-control'}),
-
-
         }
 
 
 class CreateAlert(forms.ModelForm):
     class Meta:
         model = Alert
-        exclude = ['alert_code', 'alert_date', 'student']
+        exclude = ['alert_date', 'student']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['alert_description'].widget.attrs['placeholder'] = "Ingrese una descripción"
         self.fields['alert_sender'].widget.attrs['placeholder'] = "Ingrese el emisor de la alerta"
+        self.fields['alert_code'].widget.attrs['placeholder'] = "Código alerta"
         
 
 class CreateDonor(forms.ModelForm):
