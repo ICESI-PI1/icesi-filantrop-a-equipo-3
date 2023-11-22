@@ -5,12 +5,18 @@
     <h2>Importar Estudiantes</h2>
     <div class="row">
         <div class="col-md-6">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data" action="{% url 'import_students' %}">
                 {% csrf_token %}
-                <!-- {{ form.as_p }} -->
-                <input type="file" name="csv_file" accept=".csv" id="csv-file" required>
+                <input type="file" name="csv_file" accept=".csv, .xlsx" id="csv-file" required>
                 <button type="submit">Upload CSV</button>
             </form>
+            {% if messages %}
+                {% for message in messages %}
+                    <div style="color: {% if message.tags == 'success' %}green{% else %}red{% endif %};">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
         </div>
         <div class="col-md-6">
             <div class="card">
