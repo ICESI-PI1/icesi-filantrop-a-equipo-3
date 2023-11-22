@@ -18,6 +18,7 @@
             <div class="row text-center mt-5">
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
+                    <input type="text" name="upload" value="{{ info_type }}" readonly>
                     <input type="file" name="csv_file" accept=".csv, .xlsx" id="csv-file" required>
                     <button style="margin-left: 20px; color: white; border-radius: 5px"
                             class="btn-primary button-with-shadow" type="submit">Subir

@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from MSDE_App.models import Student, ExtraAcademic, CreaQuery, AcademicBalance
 
+#info_to_upload = ''
 
 # vista para resolver update_info (segun una URL definida)
 # si el método es get, quiere decir que desea ir a la página para
@@ -13,13 +14,16 @@ from MSDE_App.models import Student, ExtraAcademic, CreaQuery, AcademicBalance
 # si es POST quiere decir que ya subió el archivo
 def update_info(request, student_code):
     student = get_object_or_404(Student, student_code=student_code)
-    info_to_upload = request.GET.get("info-type-select")
+    #global info_to_upload
+    #info_to_upload = request.GET.get("info-type-select")
 
     if request.method == 'GET':
         return render(request, '../../MSDE_Collaborator_App/templates/update_info/update_info_student.html',
                       {'student': student,
                        'info_type': request.GET.get("info-type-select")})
     else:
+        upload = request.POST.get('upload')
+
         if request.method == 'POST':
             file = request.FILES.get('csv_file')
             if file:
@@ -44,12 +48,18 @@ def update_info(request, student_code):
                         messages.error(request, 'Formato de archivo no soportado.')
                         return redirect('update_info_student', student_code=student_code)
                     print(f"llega")
+                    print(upload)
+
+                    if df is None:
+                        print('es none ??')
+                    else:
+                        print('no es none')
 
                     # cada metodo sube el excel de la manera que sea necesaria
                     # dependiendo del tipo
-                    if 'extra' in info_to_upload:
+                    if 'extra' in upload:
                         extra_upload(request, df, student_code)
-                    elif 'balance' in info_to_upload:
+                    elif 'balance' in upload:
                         balance_upload(request, df, student_code)
                     else:
                         crea_upload(request, df, student_code)
@@ -68,6 +78,8 @@ def balance_upload(request, df, student_code):
     expected_columns = ['academic_balance_career', 'academic_balance_subjects', 'academic_balance_schedule',
                         'academic_balance_additions', 'academic_balance_cancellations', 'academic_balance_semester_average',
                         'academic_balance_total_average', 'student_code']
+
+    print(df)
 
     if not all(column in df.columns for column in expected_columns):
         print(df.columns)
@@ -89,7 +101,7 @@ def balance_upload(request, df, student_code):
                 'academic_balance_cancellations': row.get('academic_balance_cancellations'),
                 'academic_balance_semester_average': row.get('academic_balance_semester_average'),
                 'academic_balance_total_average': row.get('academic_balance_total_average'),
-                'student_code_id': student,
+                'student_code_id': student.student_code,
             }
         )
 
@@ -114,7 +126,7 @@ def extra_upload(request, df,student_code):
             defaults={
                 'extra_academic_name': row['extra_academic_name'],
                 'extra_academic_hours': row.get('extra_academic_hours'),
-                'student_code_id': student,
+                'student_code_id': student.student_code,
             }
         )
 
@@ -141,7 +153,7 @@ def crea_upload(request, df,student_code):
                                                      errors='coerce').date() if pd.notnull(
                     row['crea_query_date']) else None,
                 'crea_query_info': row['crea_query_info'],
-                'student_code_id': student,
+                'student_code_id': student.student_code,
             }
         )
 
