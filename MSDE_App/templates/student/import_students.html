@@ -1,0 +1,32 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Importar Estudiantes</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                {% csrf_token %}
+                <!-- {{ form.as_p }} -->
+                <input type="file" name="csv_file" accept=".csv" id="csv-file" required>
+                <button type="submit">Upload CSV</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Requisitos del archivo CSV
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">El archivo debe tener extensión .csv</li>
+                    <li class="list-group-item">Debe tener encabezado (fila 1) con los siguientes campos: nombre, apellido, email, número de documento y carrera</li>
+                    <li class="list-group-item">Todos los campos son obligatorios</li>
+                    <li class="list-group-item">No se permiten caracteres especiales en el número de documento</li>
+                    <li class="list-group-item">Las carreras disponibles son Ingeniería en Informática, Licenciatura en Matemáticas, y Licenciatura en Física</li>
+                    <li class="list-group-item">No se permite carga masiva de más de 50 estudiantes por archivo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
