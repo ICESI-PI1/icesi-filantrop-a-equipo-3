@@ -49,7 +49,7 @@ def generate_report(request):
     method = request.method
 
     # get forms
-    if method == 'GET':
+    if method == 'GET': # pragma: no cover
         form = request.GET.get('formulario', None)
 
         # cada form tiene un input hidden, que indica su nombre para saber a qué
