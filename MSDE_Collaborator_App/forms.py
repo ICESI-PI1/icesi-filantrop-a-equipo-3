@@ -1,5 +1,11 @@
 from django import forms
+
+from MSDE_App.models import ExtraAcademic, CreaQuery, Collaborator, PhilanthropyMember, Donor, AcademicBalance
 from .models import *
+
+
+class CSVUploadForm(forms.Form):
+    csv_file = forms.FileField(label='Selecciona el archivo Excel')
 
 
 class CreateExtraAcademic(forms.ModelForm):

@@ -15,6 +15,22 @@
                     actualizar la información del estudiante con nombre: {{ student.student_name }}
                 </p>
             </div>
+            <div class="row text-center mt-5">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="csv_file" accept=".csv, .xlsx" id="csv-file" required>
+                    <button style="margin-left: 20px; color: white; border-radius: 5px"
+                            class="btn-primary button-with-shadow" type="submit">Subir
+                    </button>
+                </form>
+                {% if messages %}
+                    {% for message in messages %}
+                        <div style="color: {% if message.tags == 'success' %}green{% else %}red{% endif %};">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
         </div>
     </section>
 {% endblock %}

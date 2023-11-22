@@ -17,6 +17,21 @@
   {
     "model": "MSDE_App.User",
     "fields": {
+      "username": "filantropia",
+      "user_type": "philanthropy",
+      "password": "pbkdf2_sha256$600000$UaDK4EEIC4QogfM6x6MtQ4$+EtgIZBCwR36I2X9Q8fqkmg9woLurAQskPGoeZzl574=",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "correo@example.com",
+      "date_joined": "2023-11-19T08:30:00+00:00"
+    }
+  },
+  {
+    "model": "MSDE_App.User",
+    "fields": {
       "username": "colaborador_admin",
       "user_type": "Collaborator",
       "password": "pbkdf2_sha256$600000$cMHh47gp6RURDKXZdGe1YH$/8y38GVHyZCZkvVLKWYFfUUDxaSxNAbAM+8zrKrYAVA=",
