@@ -3,6 +3,9 @@ from .models import *
 from django.contrib.auth.forms import UserCreationForm
 # from django.contrib.auth.models import User
 
+class CSVUploadForm(forms.Form):
+    csv_file = forms.FileField(label='Selecciona el archivo CSV')
+
 
 class CreateExtraAcademic(forms.ModelForm):
     class Meta:
