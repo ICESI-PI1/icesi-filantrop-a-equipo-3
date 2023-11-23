@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <main class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1>
+                    Collaborators
+                </h1>
+                <ul class="list-grouop">
+                    {% for c in collaborators %}
+                    <a class="list-group-item" href="{% url 'collaborator_detail' c.collaborator_code %}">
+                        <strong> {{ c.collaborator_name }}</strong>
+                        <p>Code: {{ c.collaborator_code }}</p>
+                        <p>Email: {{ c.collaborator_email }}</p>
+                    </a>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<main class="container" style="margin-top: 80px;">
+    <div class="row">
+        <!-- Sección de registro de nuevo estudiante (sin cambios) -->
+        <div class="col-md-6">
+            <form method="POST" class="card card-body" enctype="multipart/form-data">
+                <h1>Registrar Nuevo Estudiante</h1>
+                {% if form.instance.profile_picture %}
+                    <div class="text-center mb-3">
+                        <img src="{{ form.instance.profile_picture.url }}" alt="Foto de perfil de {{ form.instance.student_name }}" style="max-width: 100%; height: auto;">
+                    </div>
+                {% endif %}
+                {{ error }}
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary button-with-shadow">Guardar</button>
+                    <a class="btn btn-outline-primary cancel-button button-with-shadow" href="/fil/students" role="button">Cancelar</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Sección modificada para importar base de datos -->
+        <div class="col-md-6">
+            <div class="card card-body">
+                <h1>Importar base de datos</h1>
+                <a href="/fil/students/import_students" class="btn btn-primary">Ir a Importar Estudiantes</a>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

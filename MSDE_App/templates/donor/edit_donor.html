@@ -1,0 +1,10 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <h1>Edit Donor</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary button-with-shadow">Save Changes</button>
+    </form>
+    <a href="{% url 'edit_donor' donor.donor_code %}">Cancel</a>
+{% endblock %}

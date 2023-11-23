@@ -1,0 +1,110 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <div class="container" style="margin-top: 80px;">
+        <section class="h-100 h-custom">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="card rounded-3">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="mb-4 pb-2  px-md-2 text-center">Registro de Usuario</h3>
+
+                                <form method="POST" class="px-md-2">
+                                    {% csrf_token %}
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="user">Usuario</label>
+                                        <input type="text" name="user" id="user" required class="form-control"/>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="mb-4">
+
+                                            <div class="form-outline datepicker">
+                                                <label for="pwd" class="form-label">Contraseña</label>
+                                                <input type="password" name="pwd" class="form-control" id="pwd" required
+                                                       onchange="equalPwd()"/>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mb-4">
+
+                                            <div class="form-outline datepicker">
+                                                <label for="confirm_pwd" class="form-label">Confirmar contraseña</label>
+                                                <input type="password" name="confirm_pwd" class="form-control" id="confirm_pwd"
+                                                       required onchange="equalPwd()"/>
+                                            </div>
+                                            <!-- Mensaje de error -->
+                                            <div id="error-message"
+                                                 class="error-message error-message mt-2 text-danger"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-4 ">
+                                        <div>
+                                            <div class="form-outline">
+                                                <label class="form-label" for="type">Tipo de usuario</label>
+                                                <input value="Filantropía" name="type" readonly type="text" id="type"
+                                                       class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button type="submit" id="register_btn" class="btn btn-success btn-lg mb-1 button-with-shadow">
+                                            Registrar
+                                        </button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <style>
+        /* Estilo para el mensaje de error */
+        .error-message {
+            color: red;
+        }
+
+        /* Estilo para el borde rojo del input con error */
+        .error-input {
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        function equalPwd() {
+            let pwd = document.getElementById("pwd")
+            let confirmPwd = document.getElementById("confirm_pwd")
+            let registerBtn = document.getElementById("register_btn")
+            let errorDiv = document.getElementById('error-message')
+
+            if (pwd.value !== confirmPwd.value) {
+                errorDiv.innerHTML = 'Las contraseñas deben ser iguales';
+                pwd.classList.add('error-input');
+                confirmPwd.classList.add('error-input');
+                registerBtn.disabled = true;
+
+            } else if (pwd.value === confirmPwd.value) {
+                if (pwd.value.length < 8) {
+                    errorDiv.innerHTML = 'La contraseña debe contener al menos 8 caracteres';
+                    pwd.classList.add('error-input');
+                    confirmPwd.classList.add('error-input');
+                    registerBtn.disabled = true;
+                } else {
+                    errorDiv.innerHTML = '';
+                    pwd.classList.remove('error-input');
+                    confirmPwd.classList.remove('error-input');
+                    registerBtn.disabled = false;
+                }
+            }
+        }
+    </script>
+
+{% endblock %}
+
+

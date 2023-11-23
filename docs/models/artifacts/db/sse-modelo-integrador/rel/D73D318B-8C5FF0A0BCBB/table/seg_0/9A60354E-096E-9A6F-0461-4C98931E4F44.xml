@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9A60354E-096E-9A6F-0461-4C98931E4F44" name="REPORTE">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>62CC1B0E-FFC4-7210-0CD9-11C7CAC6C611</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="REPORTE_CODIGO" id="C0C5F070-81E8-2B73-B0A5-B099605F8A8D">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>745CB1B6-2395-20FD-89CC-E5FD969DC5BA</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REPORTE_FECHA" id="BFDFDACA-8D52-1E81-405A-FD52D326207B">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>2AF77564-3D2D-71D4-2983-FC05BB8BE0BB</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO_REPORTE_TIPO_REPORTE_CODIGO" id="4E7C1B60-BC04-1825-B0E1-7EF01CA4F717">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>52A112E2-4CB7-50AC-8FA3-750C8BD031EB</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62E87057-9AC9-3135-E639-92F9D4D04776" referredColumn="3CD7DAB5-0A36-6BB5-68AB-2EEB4095F64B"/>
+</associations>
+</Column>
+<Column name="ESTUDIANTE_ESTUDIANTE_CODIGO" id="088FAD5F-F369-818B-E379-C1EACA041CCD">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>C1E09422-958D-79CF-E7CD-009574EB0934</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="63393543-7BBB-F0A6-7FCC-A96A00F9A058" referredColumn="C75A4842-CADB-7CD5-76BA-D425A2EC926A"/>
+</associations>
+</Column>
+<Column name="MIEMBRO_FILANTROPIA_MIEMBRO_FILANTROPIA_CODIGO" id="59CA220C-2364-2C34-000B-E680F3486334">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>EFFD4DD8-451F-7484-C207-0DD98B725007</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8E33EFC8-921F-9F10-6890-B2AB2570DCEA" referredColumn="AA6C0CCE-03FB-DF89-4E04-D0A24E005AAA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="127B104A-5F3B-0961-70CB-9EDE906EE0E3" name="REPORTE_PK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>3CD10EF7-1D4A-55B0-3A30-08873A0A7AEB</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0C5F070-81E8-2B73-B0A5-B099605F8A8D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7803FFFE-3A32-BC73-0953-457316FD57D3" name="REPORTE_ESTUDIANTE_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>FBBA0367-D02D-CF97-C961-553F7255EB51</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="088FAD5F-F369-818B-E379-C1EACA041CCD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="07EC7320-2EB2-ADA0-C5AE-B7C71963FEA6" name="REPORTE_MIEMBRO_FILANTROPIA_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>02735C3B-0A0E-E93B-A882-BC58CBC8D83F</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59CA220C-2364-2C34-000B-E680F3486334"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B07B43E1-5A1C-C05F-3361-6ED8F4781BB4" name="REPORTE_TIPO_REPORTE_FK">
+<createdBy>Dylan</createdBy>
+<createdTime>2023-09-03 15:04:20 UTC</createdTime>
+<generatorID>DF069E80-5080-8AF8-112A-DF981B9D5D1E</generatorID>
+<ownerDesignName>sse-modelo-integrador</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4E7C1B60-BC04-1825-B0E1-7EF01CA4F717"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

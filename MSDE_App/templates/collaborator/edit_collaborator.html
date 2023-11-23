@@ -1,0 +1,10 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <h1>Edit Collaborator</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="/fil/index"><button type="submit" class="btn btn-primary button-with-shadow">Save Changes</button></a>
+    </form>
+    <a href="{% url 'edit_collaborator' collaborator.collaborator_code %}">Cancel</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+        <main class="container mt-5" style="margin-top: 70px!important;">
+            <div class="row">
+                <div>
+                     <form method="POST" class="card card-body">
+                         <h1>New Philanthropy Member</h1>
+                          {{ error }}
+                          {% csrf_token %}
+                          {{ form.as_p }}
+                          <button type="submit" class="btn btn-primary button-with-shadow">Save</button>
+                         <a class="btn btn-outline-primary cancel-button button-with-shadow" href="/fil/philanthropy" role="button">Cancel</a>
+                    </form>
+                </div>
+            </div>
+       </main>
+{% endblock %}

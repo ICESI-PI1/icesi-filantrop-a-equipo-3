@@ -1,0 +1,227 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+    <style>
+        .custom-navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background-color: #0367A6;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .navbar-nav .nav-link {
+            padding: 15px 20px;
+            font-size: 1.4em;
+            color: #FFFFFF;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item .nav-link {
+            color: #FFFFFF;
+        }
+
+        .nav-item .nav-link:hover {
+            color: #26343d;
+        }
+
+        .centered-content {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .menu-title {
+
+            margin-bottom: 40%;
+            border-bottom: 1px solid white;
+            padding-bottom: 15px;
+            padding-top: 70px;
+            text-align: center;
+        }
+
+        #mySidebar {
+            transition: all 0.3s;
+        }
+
+        input {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-with-shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-item {
+            font-size: 20px;
+        }
+
+        #menu {
+            margin-top: -15px;
+            padding-top: 10px;
+        }
+
+        .main-container {
+            /* Añade padding-left para ajustar el margen izquierdo */
+            padding-left: 250px;
+            padding-top: 20px;
+        }
+
+        .main-content {
+            z-index: 1;
+            position: relative;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar2 {
+            width: 250px; /* Ancho del navbar */
+            height: 100vh; /* Altura del 100% del viewport */
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.3); /* Fondo transparente */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar2 a {
+            width: calc(100%); /* Ocupa todo el ancho disponible */
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s;
+            box-sizing: border-box;
+            display: block; /* Hace que los elementos a sean bloques para ocupar todo el ancho disponible */
+            font-size: 1.3em; /* Ajusta el tamaño de la letra */
+        }
+
+        .navbar2 a:hover {
+            background-color: rgba(0, 0, 0, 0.5); /* Color de fondo al hacer hover */
+        }
+
+        .navbar2 a:last-child {
+            margin-top: 45%; /* Empuja el elemento 'Salir' hacia abajo */
+
+            border-top: 1px solid white; /* Añade una línea inferior al último elemento */
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- Barra de navegación superior -->
+<nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid ">
+
+
+        <button id="toggle-sidebar" class="btn btn-primary">Ocultar Menú</button>
+        <a class="navbar-brand" href="/fil/index">
+            <img src="{% static 'img/logo_filantropia.png' %}" alt="Logo" class="logo-img d-inline-block align-top">
+        </a>
+    </div>
+</nav>
+<div class="navbar2" style="background-color: #4c687e;
+            /* position: fixed; /* Cambiado a fixed */
+            top: 0; /* Ancla el sidebar en la parte superior */
+            height: 100%;" id="mySidebar">
+    <div class="align-items-center w-100 text-white ">
+        <h2 class="menu-title">Menú</h2>
+        <!-- Opciones del menú -->
+        <a href="/fil/alerts">
+            Alertas
+        </a>
+        <a href="/fil/info_management">
+            Gestión de info.
+        </a>
+        <a href="/fil/reports">
+            Reportes
+        </a>
+        <a href="/fil/info_dissemination">
+            Difusión
+        </a>
+        <a href="{% url 'salir' %}">
+            Salir
+        </a>
+    </div>
+</div>
+
+<!-- Contenido principal -->
+<div class="main-container" style="margin: 5% 5%; ">
+    <style>
+        .btn-primary {
+            background-color: #0367A6;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #004267;
+        }
+
+        .btn-outline-primary {
+            background-color: #FFFF;
+            border: 2px solid #0367a6;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #0367a6;
+            color: #FFFF !important;
+        }
+    </style>
+    {% block content %}
+    {% endblock %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#toggle-sidebar').click(function () {
+            $('#mySidebar').toggle(); // Toggle para mostrar u ocultar el sidebar
+            if ($('#mySidebar').is(':visible')) {
+                $('.main-container').css('padding-left', '250px');
+                $(this).text('Ocultar Menú'); // Cambia el texto del botón a 'Ocultar Menú'
+            } else {
+                $('.main-container').css('padding-left', '0');
+                $(this).text('Mostrar Menú'); // Cambia el texto del botón a 'Mostrar Menú'
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

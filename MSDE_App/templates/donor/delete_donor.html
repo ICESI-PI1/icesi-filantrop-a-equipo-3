@@ -1,0 +1,10 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <h1>Delete Donor</h1>
+    <p>Are you sure you want to delete the donor "{{ donor.donor_name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <a href="/fil/index"><button type="submit"class="button-with-shadow">Delete</button></a>
+    </form>
+
+{% endblock %}

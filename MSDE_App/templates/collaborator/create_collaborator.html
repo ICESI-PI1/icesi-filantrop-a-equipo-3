@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+       <main class="container">
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                     <form method="POST" class="card card-body">
+                         <h1>Create a new Collaborator</h1>
+                          {{ error }}
+                          {% csrf_token %}
+                          {{ form.as_p }}
+                          <button type="submit" class="btn btn-primary button-with-shadow">Save</button>
+                    </form>
+                </div>
+            </div>
+       </main>
+{% endblock %}
