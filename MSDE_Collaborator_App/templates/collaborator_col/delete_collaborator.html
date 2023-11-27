@@ -1,0 +1,11 @@
+{% extends 'layouts/base_collaborator.html'%}
+
+{% block content %}
+    <h1>Delete collaborator Member</h1>
+    <p>Are you sure you want to delete the member "{{ collaborator.collaborator_name }}"?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <a href="/col/collaborator"><button type="submit">Delete</button></a>
+    </form>
+
+{% endblock %}

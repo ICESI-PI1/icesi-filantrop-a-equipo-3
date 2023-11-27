@@ -1,49 +1,191 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Base</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .custom-navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background-color: #0367A6;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .navbar-nav .nav-link {
+            padding: 15px 20px;
+            font-size: 1.4em;
+            color: #FFFFFF;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item .nav-link {
+            color: #FFFFFF;
+        }
+
+        .nav-item .nav-link:hover {
+            color: #26343d;
+        }
+
+        .centered-content {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .menu-title {
+            margin-bottom: 50px;
+            border-bottom: 1px solid white;
+            padding-bottom: 15px;
+            padding-top: 70px;
+            text-align: center;
+        }
+
+        .col-auto.col-md-3.col-xl-2.px-sm-2.px-0 {
+            background-color: #4c687e;
+            position: fixed; /* Cambiado a fixed */
+            top: 0; /* Ancla el sidebar en la parte superior */
+            height: 100%;
+        }
+
+        #mySidebar {
+            transition: all 0.3s;
+        }
+
+        .nav-item {
+            font-size: 20px;
+        }
+
+        #menu {
+            margin-top: -15px;
+            padding-top: 10px;
+        }
+
+        .main-container {
+            /* Añade padding-left para ajustar el margen izquierdo */
+            padding-left: 250px;
+            padding-top: 20px;
+        }
+
+        .main-content {
+            z-index: 1;
+            position: relative;
+        }
+    </style>
 
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-  <div class="container">
-    <a class="navbar-brand" href="/">Seguimiento estudiantes</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="/index" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="/students" class="nav-link">Students</a>
-            </li>
-            <li class="nav-item2">
-                <a href="/student/create_student" class="nav-link">Create Students</a>
-            </li>
-      </ul>
+
+<!-- Barra de navegación superior -->
+<nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid ">
+        <a class="navbar-brand" href="/fil/index">
+            <img src="{% static 'img/logo_filantropia.png' %}" alt="Logo" class="logo-img d-inline-block align-top">
+        </a>
+        <button id="toggle-sidebar" class="btn btn-primary">Sidebar</button>
     </div>
-  </div>
 </nav>
 
-
-
-
-    <nav class="container">
-        <ul>
-
+<!-- Nueva Sidebar -->
+<div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 " id="mySidebar">
+    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <h2 class="menu-title">Menu</h2>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <!-- Opciones del menú -->
+            <li class="nav-item">
+                <a href="/fil/alerts" class="nav-link align-middle px-0 m-4">
+                    <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/peligro.png" alt=""
+                         width="35" height="35">
+                    Alertas
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/fil/info_management" class="nav-link align-middle px-0 m-4">
+                    <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/nota.png" alt="Opción 2"
+                         width="35" height="35">
+                    Gestión de info.
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/fil/reports" class="nav-link align-middle px-0 m-4">
+                    <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/reporte%20(1).png"
+                         alt="Opción 3" width="35" height="35">
+                    Reportes
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/fil/info_dissemination" class="nav-link align-middle px-0 m-4">
+                    <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/marketing.png"
+                         alt="Opción 4" width="35" height="35">
+                    Difusión
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'salir' %}" class="nav-link align-middle px-0 m-5">
+                    <img src="https://raw.githubusercontent.com/dylanMPP/resources/main/cerrar-sesion.png"
+                         alt="Salir" width="35" height="35">
+                    Salir
+                </a>
+            </li>
         </ul>
-    </nav>
+    </div>
+</div>
 
+<!-- Contenido principal -->
+<div class="main-container" style="margin: 5% 5%; ">
+    <style>
+        .btn-primary {
+            background-color: #0367A6;
+            border: none;
+        }
 
+        .btn-primary:hover {
+            background-color: #004267;
+        }
 
-    <main class="container">
-        {% block content %}
-        {% endblock %}
-    </main>
+        .btn-outline-primary {
+            background-color: #FFFF;
+            border: 2px solid #0367a6;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #0367a6;
+            color: #FFFF !important;
+        }
+    </style>
+    {% block content %}
+    {% endblock %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+     $(document).ready(function () {
+        $('#toggle-sidebar').click(function () {
+            $('#mySidebar').toggle(); // Toggle para mostrar u ocultar el sidebar
+            if ($('#mySidebar').is(':visible')) {
+                $('.main-container').css('padding-left', '250px');
+            } else {
+                $('.main-container').css('padding-left', '0');
+            }
+        });
+    });
+</script>
+
 </body>
+
 </html>

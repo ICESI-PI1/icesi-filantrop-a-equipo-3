@@ -1,0 +1,71 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <main class="container mt-5">
+        <div>
+            <h1 class="display-4 text-center mb-5">Mensajes recibidos</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Mensajes no vistos</h2>
+                {% if messages_no_solved %}
+                    {% for m in messages_no_solved %}
+                        <div class="card mb-3 d-flex">
+                            <div class="card-body">
+                                <form method="POST" action="{% url 'show_info' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="formulario" value="delete_student">
+                                    <input type="hidden" name="msg_id" value="{{ m.id }}">
+                                    <h5 class="card-title">
+                                        De {{ m.message_from_updated }}
+                                    </h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        Fecha: {{ m.message_date }}
+                                    </h6>
+                                    <p class="card-text">
+                                        {{ m.message_content }}
+                                    </p>
+                                    <div style="margin-left: auto">
+                                        <button
+                                                class="btn btn-primary">Visto
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div>
+                        <p>No hay mensajes por mostrar</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <h2>Mensajes vistos</h2>
+                {% if messages_solved %}
+                    {% for m in messages_solved %}
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    De Colaborador
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    Fecha: {{ m.message_date }}
+                                </h6>
+                                <p class="card-text">
+                                    {{ m.message_content }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div>
+                        <p>No hay mensajes por mostrar</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
