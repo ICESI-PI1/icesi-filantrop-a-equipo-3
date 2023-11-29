@@ -1,11 +1,16 @@
 {% extends 'layouts/base.html' %}
 {% block content %}
-    <h1>Delete Student</h1>
-    <p>Are you sure you want to delete the student "{{ student.student_name }}"?</p>
+    <h1>Eliminar Estudiante</h1>
+    <p>Estás seguro de eliminar a "{{ student.student_name }} {{ student.student_surname }}"?</p>
     <form method="post">
         {% csrf_token %}
-        <a href="/fil/students"><button type="submit" class="button-with-shadow">Delete</button></a>
+        <a href="/fil/students"><button type="submit" class="btn-primary button-with-shadow">Sí, eliminar</button></a>
     </form>
-
+    <style>
+        .button-with-shadow {
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
 {% endblock %}
 

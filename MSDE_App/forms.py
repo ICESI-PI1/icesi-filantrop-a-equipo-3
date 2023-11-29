@@ -77,7 +77,10 @@ class CreateStudent(forms.ModelForm):
             'student_surname': 'Apellido del estudiante',
             'student_id': 'ID del estudiante',
             'student_email': 'Email del estudiante',
-            'student_phone_number': 'Número de teléfono del estudiante'
+            'student_phone_number': 'Número de teléfono del estudiante',
+            'student_ICFES_score': 'Puntaje ICFES',
+            'donor_student_code': 'Código de donante',
+            'profile_picture': 'Foto del estudiante'
         }
 
 

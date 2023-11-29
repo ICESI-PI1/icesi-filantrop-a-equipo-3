@@ -91,13 +91,11 @@ def request_update(request):
         if form == 'send':
             message_to = request.POST.get('to', '')
             message_from = "philanthropy"
-            content = ("Solicitud de actualización para los estudiantes: ",)
+            content = "Solicitud de actualización para los estudiantes: "
 
             for i in range(0, len(selected_students)):
-                content += (
-                    "|    ESTUDIANTE #{}",i+1, "   [Código: ", str(selected_students[i].student_code[0]), "]  [Nombre: ",
-                    str(selected_students[i].student_name[0]), "]  [ID: ",
-                    str(selected_students[i].student_id[0]), "]    |")
+                print('código estudiante: ',str(selected_students[i].student_code))
+                content += f" |    ESTUDIANTE #{i+1} con Código: {str(selected_students[i].student_code)}, Nombre: {str(selected_students[i].student_name)}, ID {str(selected_students[i].student_id)} |"
 
             if message_to == "0":
                 return render(request, 'request_update/request_update.html', {

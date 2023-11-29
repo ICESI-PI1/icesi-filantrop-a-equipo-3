@@ -18,7 +18,7 @@
                 {% for p in philanthropy_members %}
                     <a class="list-group-item" href="{% url 'philanthropy_detail' p.philanthropy_member_code %}">
                         <strong> {{ p.philanthropy_member_name }}</strong>
-                        <p>Code: {{ p.philanthropy_member_email }}</p>
+                        <p>Código: {{ p.philanthropy_member_code }}</p>
                     </a>
                 {% endfor %}
             </ul>

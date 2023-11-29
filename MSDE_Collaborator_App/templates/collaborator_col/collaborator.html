@@ -21,7 +21,7 @@
                     {% for p in collaborator_members %}
                         <a class="list-group-item" href="{% url 'collaborator_detail' p.collaborator_code %}">
                             <strong> {{ p.collaborator_name }} </strong>
-                            <p>Code: {{ p.collaborator_email }}</p>
+                            <p>Código: {{ p.collaborator_code }}</p>
                         </a>
                     {% endfor %}
                 </ul>
