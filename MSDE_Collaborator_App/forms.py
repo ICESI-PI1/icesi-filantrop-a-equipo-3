@@ -7,7 +7,6 @@ from .models import *
 class CSVUploadForm(forms.Form):
     csv_file = forms.FileField(label='Selecciona el archivo Excel')
 
-
 class CreateExtraAcademic(forms.ModelForm):
     class Meta:
         model = ExtraAcademic
