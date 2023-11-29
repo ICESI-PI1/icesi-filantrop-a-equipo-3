@@ -25,8 +25,8 @@
                             <input type="hidden" name="formulario" value="search_student">
                             <input type="text" name="search_name" class="form-control me-2"
                                    placeholder="Buscar por nombre">
-                            <button type="submit" class="btn btn-primary me-1">Buscar</button>
-                            <a href="{% url 'reports' %}" class="btn btn-outline-primary">Reestablecer</a>
+                            <button type="submit" class="btn btn-primary me-1 button-with-shadow">Buscar</button>
+                            <a href="{% url 'reports' %}" class="btn btn-outline-primary button-with-shadow">Reestablecer</a>
                         </form>
                     </div>
                 </div>
@@ -44,15 +44,16 @@
                                              alt="Foto de perfil de {{ s.student_name }}"
                                              class="student-image rounded">
                                     {% else %}
-                                        <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg"
+                                        <img src="https://img.freepik.com/fotos-premium/icono-usuario-simbolo-persona-avatar-humano-3d-render_473931-217.jpg?w=740"
                                              alt="avatar" class="student-image rounded">
                                     {% endif %}
                                     <div>
-                                        <strong>{{ s.student_name }}</strong>
+                                        <strong>{{ s.student_name }} {{ s.student_surname }}</strong>
                                         <p class="mb-0"><strong>Código:</strong> {{ s.student_code }}</p>
                                     </div>
                                     <div style="margin-left: auto">
-                                        <button type="submit" class="btn btn-primary">Seleccionar</button>
+                                        <button type="submit" class="btn btn-primary button-with-shadow">Seleccionar
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -61,7 +62,7 @@
                 </div>
             </section>
             <section class="mt-5">
-                <h2>Estudiantes selecccionados:</h2>
+                <h2>Estudiantes seleccionados:</h2>
                 <div class="card mt-3">
                     <div class="list-group list-group-flush">
                         {% for s in selected_students %}
@@ -76,16 +77,16 @@
                                              alt="Foto de perfil de {{ s.student_name }}"
                                              class="student-image rounded">
                                     {% else %}
-                                        <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg"
+                                        <img src="https://img.freepik.com/fotos-premium/icono-usuario-simbolo-persona-avatar-humano-3d-render_473931-217.jpg?w=740"
                                              alt="avatar" class="student-image rounded">
                                     {% endif %}
                                     <div>
-                                        <strong>{{ s.student_name }}</strong>
+                                        <strong>{{ s.student_name }} {{ s.student_surname }}</strong>
                                         <p class="mb-0"><strong>Código:</strong> {{ s.student_code }}</p>
                                     </div>
                                     <div style="margin-left: auto">
                                         <button
-                                                class="btn btn-danger">Eliminar
+                                                class="btn btn-danger button-with-shadow">Eliminar
                                         </button>
                                     </div>
                                 </div>
@@ -95,85 +96,7 @@
                 </div>
             </section>
             <!--- Fin de Seleccionar Estudiantes --->
-            <!----
-            <h3 class="mb-4">Seleccionar Estudiantes</h3>
-            <p>Seleccione todos los estudiantes para los cuales desea generar un informe. Puede buscar por código, ID o
-                nombre.</p>
 
-            <form method="GET" action="{% url 'reports' %}" class="d-flex">
-                <select class="form-select me-2" name="search-by-select" aria-label="Default select">
-                    <option selected>Buscar por</option>
-                    <option value="student-code">Código del Estudiante</option>
-                    <option value="id">ID</option>
-                    <option value="name">Nombre</option>
-                </select>
-                <input name="data-to-search" type="text" class="form-control me-2"
-                       placeholder="Introducir datos para la búsqueda">
-                <button class="btn btn-primary" id="search-btn" type="submit">Buscar</button>
-            </form>
-            <button style="display:none;"
-                    id="invisible-btn" type="submit" data-bs-toggle="modal"
-                    data-bs-target="#searchModal">Buscar
-            </button>
-            <div class="modal fade" id="searchModal" tabindex="-1"
-                 aria-labelledby="exampleModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                Student search result</h1>
-                            <button type="button" class="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            {% if result == None %}
-                                <p>We didn't find that student (maybe you didn't
-                                    select a 'search by'
-                                    option)</p>
-                                <div class="modal-footer">
-                                    <button type="button"
-                                            class="btn btn-secondary"
-                                            data-bs-dismiss="modal">
-                                        Close
-                                    </button>
-                                    <button type="button"
-                                            class="btn btn-primary" disabled>Add
-                                    </button>
-                                </div>
-                            {% else %}
-                                <form method="POST"
-                                      action="{% url 'reports_add_student' %}">
-                                    {% csrf_token %}
-                                    <p>The student was found:</p>
-                                    <p>With code {{ result.student_code }},
-                                        ID {{ result.student_id }} and
-                                        name
-                                        {{ result.student_name }}</p>
-                                    <div class="modal-footer">
-                                        <button type="button"
-                                                class="btn btn-secondary"
-                                                data-bs-dismiss="modal">
-                                            Close
-                                        </button>
-                                        <button id="add-student-btn"
-                                                type="submit"
-                                                class="btn btn-primary">Add
-                                        </button>
-                                    </div>
-                                </form>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="card card-body mb-4">
-            <h3 class="mb-4">Estudiantes Seleccionados</h3>
-
-        </section>
-        ----->
         </section>
         <section class="card card-body mb-4">
             <h3 class="mb-4">Seleccionar Tipo de Reporte</h3>
@@ -184,10 +107,9 @@
                     <option value="1">Informe de becas</option>
                     <option value="2">Informe de actividades extra académicas</option>
                     <option value="3">Informe de consultas en el CREA</option>
-                    <option value="4">Informe personalizado</option>
                 </select>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary generate-btn">Generar</button>
+                    <button type="submit" class="btn btn-primary generate-btn button-with-shadow">Generar</button>
                 </div>
             </form>
         </section>

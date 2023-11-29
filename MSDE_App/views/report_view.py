@@ -76,7 +76,7 @@ def generate_report(request):
             students_paginator = paginator.get_page(page_number)
 
             return render(request, 'report/reports.html', {
-                'students': students_paginator,
+                'students': students_list,
                 'selected_students': selected_students
             })
         else:
@@ -231,25 +231,42 @@ def report_generate(request):
         })
     else:
         if report_type == "0":
-            print('render de reports.html ?? ?!!!!')
             return render(request, 'report/reports.html', {
                 'students': students,
                 'selected_students': selected_students
             })
         elif report_type == "1":
             create_report(request, "becas")
+
+            becas = []
+
+            for s in selected_students:
+                becas.append(BecasReports(student=s, becas=AcademicBalance.objects.filter(student_code=s.id)))
+
             return render(request, 'reports_base/becas_report.html', {
-                'students': selected_students,
+                'students': becas,
             })
         elif report_type == "2":
             create_report(request, "extra")
+
+            extra = []
+
+            for s in selected_students:
+                extra.append(ExtraReports(student=s, extra=ExtraAcademic.objects.filter(student_code=s.id)))
+
             return render(request, 'reports_base/actividades_extra_report.html', {
-                'students': selected_students,
+                'students': extra,
             })
         elif report_type == "3":
             create_report(request, "CREA")
+
+            crea = []
+
+            for s in selected_students:
+                crea.append(QueryReports(student=s, queries=CreaQuery.objects.filter(student_code=s.id)))
+
             return render(request, 'reports_base/consultas_CREA_report.html', {
-                'students': selected_students,
+                'students': crea,
             })
         elif report_type == "4":
             create_report(request, "personalizado")
@@ -287,3 +304,24 @@ def create_report(request, which_report):
                                            type_report_code=TypeReport.objects.get(report_type='Informe personalizado'),
                                            student_code=Student.objects.get(student_code=s.student_code))
             report.save()
+
+
+class BecasReports:
+    def __init__(self, student, becas):
+        # Atributos de instancia
+        self.student = student
+        self.becas = becas
+
+
+class QueryReports:
+    def __init__(self, student, queries):
+        # Atributos de instancia
+        self.student = student
+        self.queries = queries
+
+
+class ExtraReports:
+    def __init__(self, student, extra):
+        # Atributos de instancia
+        self.student = student
+        self.extra = extra

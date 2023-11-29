@@ -2,6 +2,7 @@
 {% block content %}
 <main class="container" style="margin-top: 80px;">
     <div class="row">
+        <!-- Sección de registro de nuevo estudiante (sin cambios) -->
         <div class="col-md-6">
             <form method="POST" class="card card-body" enctype="multipart/form-data">
                 <h1>Registrar Nuevo Estudiante</h1>
@@ -14,23 +15,18 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                    <a class="btn btn-outline-primary cancel-button" href="/fil/students" role="button">Cancelar</a>
+                    <button type="submit" class="btn btn-primary button-with-shadow">Guardar</button>
+                    <a class="btn btn-outline-primary cancel-button button-with-shadow" href="/fil/students" role="button">Cancelar</a>
                 </div>
             </form>
         </div>
+
+        <!-- Sección modificada para importar base de datos -->
         <div class="col-md-6">
-            <form method="POST" class="card card-body" enctype="multipart/form-data">
+            <div class="card card-body">
                 <h1>Importar base de datos</h1>
-                {% csrf_token %}
-                <div class="form-group">
-                    <figure>
-                        <label for="databaseFile">Selecciona el archivo</label>
-                        <input type="file" class="form-control-file" id="databaseFile" name="database_file">
-                    </figure>
-                </div>
-                <button type="submit" class="btn btn-primary">Importar</button>
-            </form>
+                <a href="/fil/students/import_students" class="btn btn-primary">Ir a Importar Estudiantes</a>
+            </div>
         </div>
     </div>
 </main>

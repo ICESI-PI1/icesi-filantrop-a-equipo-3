@@ -11,3 +11,4 @@ from .info_management import *
 from .request_update_view import *
 from .info_management import *
 from .info_dissemination_view import *
+from .import_students_view import *
