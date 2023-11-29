@@ -19,7 +19,8 @@
                 </div>
 
                 <!---- Form y Div para ejecutar la consulta de la lista que necesito del estudiante --->
-                <form style="display: none" method="POST" action="{% url 'query_student_extra' s.student.student_code %}">
+                <form style="display: none" method="POST"
+                      action="{% url 'query_student_extra' s.student.student_code %}">
                     {% csrf_token %}
                     <button type="submit" id="invisible-btn">click</button>
                 </form>
@@ -46,7 +47,7 @@
     <script>
         let that_div = document.getElementById("that-div")
 
-        function iHaveListener(){
+        function iHaveListener() {
 
         }
 
@@ -59,4 +60,33 @@
 
         that_div.removeAttribute("onclick");
     </script>
+    <style>
+        .student-container {
+            border: 1px solid #ccc;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Estilo para el nombre del estudiante */
+        .student-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Estilo para la información adicional del estudiante */
+        .student-info {
+            margin-top: 10px;
+        }
+
+        /* Estilo para el título de la información adicional */
+        .info-title {
+            font-weight: bold;
+        }
+
+        /* Estilo para la información adicional del estudiante */
+        .info-text {
+            margin-left: 10px;
+        }
+    </style>
 {% endblock %}
