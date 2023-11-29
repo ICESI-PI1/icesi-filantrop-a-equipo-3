@@ -123,8 +123,6 @@ class CreateDonor(forms.ModelForm):
         widgets = {
             'donor_code': forms.TextInput(attrs={'class': 'form-control'}),
             'donor_name': forms.TextInput(attrs={'class': 'form-control'})
-
-
         }
 
 
@@ -165,7 +163,6 @@ class AlertFilterForm(forms.Form):
 
     alert_filter = forms.ChoiceField(choices=FILTER_CHOICES, label="Filtrar por")
     filter_value = forms.ChoiceField(choices=ALERT_TYPE_CHOICES, required=False, label="Valor")
-
 
 class CSVUploadForm(forms.Form):
     csv_file = forms.FileField(label='Selecciona el archivo Excel')

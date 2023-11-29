@@ -56,6 +56,12 @@
             text-align: center;
         }
 
+        .col-auto.col-md-3.col-xl-2.px-sm-2.px-0 {
+            background-color: #4c687e;
+            position: fixed; /* Cambiado a fixed */
+            top: 0; /* Ancla el sidebar en la parte superior */
+            height: 100%;
+        }
         #mySidebar {
             transition: all 0.3s;
         }
@@ -144,7 +150,6 @@
 <!-- Barra de navegación superior -->
 <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container-fluid ">
-
         <button id="toggle-sidebar" class="btn btn-primary">Ocultar Menú</button>
         <a class="navbar-brand" href="/fil/index">
             <img src="{% static 'img/logo_filantropia.png' %}" alt="Logo" class="logo-img d-inline-block align-top">
@@ -221,5 +226,4 @@
 </script>
 
 </body>
-
 </html>
