@@ -76,7 +76,7 @@ def generate_report(request):
             students_paginator = paginator.get_page(page_number)
 
             return render(request, 'report/reports.html', {
-                'students': students_paginator,
+                'students': students_list,
                 'selected_students': selected_students
             })
         else:

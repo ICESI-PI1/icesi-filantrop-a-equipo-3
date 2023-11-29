@@ -43,7 +43,7 @@ def request_update(request):
             students_paginator = paginator.get_page(page_number)
 
             return render(request, 'request_update/request_update.html', {
-                'students': students_paginator,
+                'students': students_list,
                 'selected_students': selected_students
             })
         else:
@@ -95,7 +95,7 @@ def request_update(request):
 
             for i in range(0, len(selected_students)):
                 print('código estudiante: ',str(selected_students[i].student_code))
-                content += f" |    ESTUDIANTE #{i+1} con Código: {str(selected_students[i].student_code)}, Nombre: {str(selected_students[i].student_name)}, ID {str(selected_students[i].student_id)} |"
+                content += f" |    ESTUDIANTE #{i+1} con Código: {str(selected_students[i].student_code)}, Nombre: {str(selected_students[i].student_name)}, ID: {str(selected_students[i].student_id)} |"
 
             if message_to == "0":
                 return render(request, 'request_update/request_update.html', {

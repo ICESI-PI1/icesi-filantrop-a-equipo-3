@@ -116,10 +116,12 @@ def extra_upload(request, df,student_code):
         return redirect('update_info_student', student_code=student_code)
 
     for _, row in df.iterrows():
+        print('entra a guardar')
         student = Student.objects.get(student_code=row['student_code'])
+        print('estudiante con codigo: ',student.student_code)
         extra = ExtraAcademic.objects.create(
             extra_academic_name=row['extra_academic_name'],
-            extra_academic_hours=row.get['extra_academic_hours'],
+            extra_academic_hours=row.get('extra_academic_hours'),
             student_code=student
         )
 
