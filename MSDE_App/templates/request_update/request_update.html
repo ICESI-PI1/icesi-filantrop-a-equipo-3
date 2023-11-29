@@ -1,5 +1,6 @@
 {% extends 'layouts/base.html' %}
 {% block content %}
+
     <main class="container">
         <h1 class="display-4 text-center mb-5">Solicitar actualización</h1>
         <!---- Inicio de Seleccionar Estudiantes - USADO EN MUCHAS SECCIONES --->
@@ -10,7 +11,7 @@
                     <form method="get" action="{% url 'request_update' %}" class="d-flex mt-3">
                         <input type="hidden" name="formulario" value="search_student">
                         <input type="text" name="search_name" class="form-control me-2" placeholder="Buscar por nombre">
-                        <button type="submit" class="btn btn-primary me-1">Buscar</button>
+                        <button type="submit" class="btn btn-primary me-1 button-with-shadow">Buscar</button>
                         <a href="{% url 'request_update' %}" class="btn btn-outline-primary">Reestablecer</a>
                     </form>
                 </div>
@@ -28,15 +29,15 @@
                                     <img src="{{ s.profile_picture.url }}" alt="Foto de perfil de {{ s.student_name }}"
                                          class="student-image rounded">
                                 {% else %}
-                                    <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg"
+                                    <img src="https://img.freepik.com/fotos-premium/icono-usuario-simbolo-persona-avatar-humano-3d-render_473931-217.jpg?w=740"
                                          alt="avatar" class="student-image rounded">
                                 {% endif %}
                                 <div>
-                                    <strong>{{ s.student_name }}</strong>
+                                    <strong>{{ s.student_name }} {{ s.student_surname }}</strong>
                                     <p class="mb-0"><strong>Código:</strong> {{ s.student_code }}</p>
                                 </div>
                                 <div style="margin-left: auto">
-                                    <button type="submit" class="btn btn-primary">Seleccionar</button>
+                                    <button type="submit" class="btn btn-primary button-with-shadow">Seleccionar</button>
                                 </div>
                             </div>
                         </form>
@@ -49,7 +50,7 @@
             <div class="card mt-3">
                 <div class="list-group list-group-flush">
                     {% for s in selected_students %}
-                        <form method="POST" action="{% url 'request_update' %}">
+                        <form method="POST" id="send" action="{% url 'request_update' %}">
                             {% csrf_token %}
                             <input type="hidden" name="formulario" value="delete_student">
                             <input type="hidden" name="student_code" value="{{ s.student_code }}">
@@ -59,16 +60,16 @@
                                     <img src="{{ s.profile_picture.url }}" alt="Foto de perfil de {{ s.student_name }}"
                                          class="student-image rounded">
                                 {% else %}
-                                    <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg"
+                                    <img src="https://img.freepik.com/fotos-premium/icono-usuario-simbolo-persona-avatar-humano-3d-render_473931-217.jpg?w=740"
                                          alt="avatar" class="student-image rounded">
                                 {% endif %}
                                 <div>
-                                    <strong>{{ s.student_name }}</strong>
+                                    <strong>{{ s.student_name }} {{ s.student_surname }}</strong>
                                     <p class="mb-0"><strong>Código:</strong> {{ s.student_code }}</p>
                                 </div>
                                 <div style="margin-left: auto">
                                     <button
-                                            class="btn btn-danger">Eliminar
+                                            class="btn btn-danger button-with-shadow">Eliminar
                                     </button>
                                 </div>
                             </div>
@@ -81,7 +82,7 @@
 
         <section class="mt-5">
             <h2>Solicitar a:</h2>
-            <form method="POST" >
+            <form method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="formulario" value="send">
                 <select required name="to" class="form-select mb-4">
@@ -100,7 +101,7 @@
                     </option>
                 </select>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary button-with-shadow" id="toast-request-btn">Enviar</button>
                 </div>
             </form>
         </section>

@@ -14,10 +14,10 @@
             <p class="text-muted mb-1">{{ collaborator.collaborator_code }}</p>
             <div class="d-flex justify-content-center mb-2">
                  <a href="{% url 'edit_collaborator' collaborator.collaborator_code %}">
-                         <button type="button" class="btn btn-primary">EDIT</button>
+                         <button type="button" class="btn btn-primary button-with-shadow">EDIT</button>
                  </a>
                  <a href="{% url 'delete_collaborator' collaborator.collaborator_code %}">
-                        <button type="button" class="btn btn-outline-primary ms-1">DELETE</button>
+                        <button type="button" class="btn btn-outline-primary ms-1 button-with-shadow">DELETE</button>
                  </a>
             </div>
           </div>

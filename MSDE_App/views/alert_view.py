@@ -27,6 +27,7 @@ def alert_detail(request, alert_code):
 def see_alerts(request):
     no_solved_alerts = Alert.objects.filter(status=False)
     solved_alerts = Alert.objects.filter(status=True)
+    print(no_solved_alerts)
 
     return render(request, 'alert/alerts.html', {
         'no_solved_alerts': no_solved_alerts,

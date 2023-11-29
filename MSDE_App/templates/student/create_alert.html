@@ -29,7 +29,7 @@
                 {% else %}
                     <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg" alt="avatar" class="rounded-circle img-fluid profile-image">
                 {% endif %}
-                    <h5 class="my-3">{{ student.student_name }}</h5>
+                    <h5 class="my-3">{{ student.student_name }} {{ student.student_surname }}</h5>
                     <p class="text-muted mb-1">{{ student.student_code }}</p>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                         {{ error }}
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary button-with-shadow">Save</button>
                     </form>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                             {{ filter_form.filter_value }}
                         </div>
                         <div class="col-md-12 mt-2">
-                            <button type="submit" class="btn btn-primary">Filtrar</button>
+                            <button type="submit" class="btn btn-primary button-with-shadow">Filtrar</button>
                         </div>
                     </form>
                     

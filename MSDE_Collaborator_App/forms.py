@@ -1,5 +1,11 @@
 from django import forms
+
+from MSDE_App.models import ExtraAcademic, CreaQuery, Collaborator, PhilanthropyMember, Donor, AcademicBalance
 from .models import *
+
+
+class CSVUploadForm(forms.Form):
+    csv_file = forms.FileField(label='Selecciona el archivo Excel')
 
 
 class CreateExtraAcademic(forms.ModelForm):
@@ -66,20 +72,24 @@ class CreateCollaborator(forms.ModelForm):
             'collaborator_code': forms.TextInput(attrs={'class': 'form-control'}),
             'collaborator_name': forms.TextInput(attrs={'class': 'form-control'}),
             'collaborator_email': forms.TextInput(attrs={'class': 'form-control'}),
-
-
+        }
+        labels = {
+            'collaborator_code': 'Código del Colaborador',
+            'collaborator_name': 'Nombre del Colaborador',
+            'collaborator_email': 'Correo Electrónico del Colaborador',
         }
 
 
 class CreateAlert(forms.ModelForm):
     class Meta:
         model = Alert
-        exclude = ['alert_code', 'alert_date', 'student']
+        exclude = ['alert_date', 'student']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['alert_description'].widget.attrs['placeholder'] = "Ingrese una descripción"
         self.fields['alert_sender'].widget.attrs['placeholder'] = "Ingrese el emisor de la alerta"
+        self.fields['alert_code'].widget.attrs['placeholder'] = "Código alerta"
         
 
 class CreateDonor(forms.ModelForm):

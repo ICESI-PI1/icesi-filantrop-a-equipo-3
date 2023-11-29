@@ -1,21 +1,15 @@
-{% extends 'layouts/base_collaborator.html'%}
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+{% extends 'layouts/base_collaborator.html' %}
+{% load static %}
 {% block content %}
     <main class="container mt-5">
         <div class="row">
             <div class="col">
-                <div class="display-4 text-center mb-5">
-                    <h1>Estudiantes</h1>
+                <div class="image-banner">
+                    <h1 style="padding: 50px;">Estudiantes</h1>
                 </div>
-                <div>
-                    <div class="d-flex justify-content-end align-items-center mb-3">
-                        <form method="get" action="{% url 'students_col' %}">
-                            <input type="text" name="search_name" placeholder="Buscar por nombre">
-                            <button type="submit">Buscar</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="justify-content-between align-items-center mb-3">
+                <div class="justify-content-between align-items-center mb-3 mt-3">
                     <p>Nombre</p>
                     <div class="mb-3">
                         {% for letter in 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ' %}
@@ -28,7 +22,7 @@
                             <a href="?surname_initial={{ letter }}" class="btn_a">{{ letter }}</a>
                         {% endfor %}
                     </div>
-                    <a href="{% url 'students_col' %}" class="btn btn-primary">Reestablecer</a>
+                    <a href="{% url 'students_col' %}" class="btn btn-primary button-with-shadow">Reestablecer</a>
                 </div>
                 <div class="d-flex justify-content-end align-items-center ">
                     {% for page_num in students.paginator.page_range %}
@@ -44,14 +38,17 @@
                 <div class="card">
                     <div class="list-group list-group-flush">
                         {% for s in students %}
-                            <a href="{% url 'student_detail_collaborator' s.student_code %}" class="list-group-item list-group-item-action d-flex align-items-center">
+                            <a href="{% url 'student_detail_collaborator' s.student_code %}"
+                               class="list-group-item list-group-item-action d-flex align-items-center">
                                 {% if s.profile_picture %}
-                                    <img src="{{ s.profile_picture.url }}" alt="Foto de perfil de {{ s.student_name }}" class="student-image rounded">
+                                    <img src="{{ s.profile_picture.url }}" alt="Foto de perfil de {{ s.student_name }}"
+                                         class="student-image rounded">
                                 {% else %}
-                                    <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg" alt="avatar" class="student-image rounded">
+                                    <img src="https://img.freepik.com/fotos-premium/icono-usuario-simbolo-persona-avatar-humano-3d-render_473931-217.jpg?w=740"
+                                         alt="avatar" class="student-image rounded">
                                 {% endif %}
                                 <div>
-                                    <strong>{{ s.student_name }}</strong>
+                                    <strong>{{ s.student_name }} {{ s.student_surname }}</strong>
                                     <p class="mb-0"><strong>Código:</strong> {{ s.student_code }}</p>
                                 </div>
                             </a>
@@ -74,11 +71,42 @@
             background-color: #f0f0f0;
         }
 
-        .btn_a{
+        .btn_a {
             margin-right: 22px;
             background-color: #f0f0f0;
             text-decoration: none; /* Eliminar el subrayado */
             color: gray; /* Cambiar color a gris */
+        }
+
+
+        .student-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .list-group-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn_a {
+            margin-right: 22px;
+            background-color: #f0f0f0;
+            text-decoration: none; /* Eliminar el subrayado */
+            color: gray; /* Cambiar color a gris */
+        }
+
+        .image-banner {
+            margin-top: 5%;
+            background-image: url('{% static "img/biblio.jpg" %}'); /* Cambia 'URL_DE_TU_IMAGEN' por la ruta de tu imagen */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            text-align: center;
+            text-decoration-color: #f0f0f0;
+            padding: 40px 0;
+            color: #ffffff;
         }
 
     </style>
