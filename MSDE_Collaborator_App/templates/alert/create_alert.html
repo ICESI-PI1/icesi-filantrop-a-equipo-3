@@ -26,10 +26,10 @@
                                  alt="Foto de perfil de {{ student.student_name }}"
                                  class="rounded-circle img-fluid profile-image">
                         {% else %}
-                            <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg" alt="avatar"
+                            <img src="https://img.freepik.com/fotos-premium/icono-usuario-simbolo-persona-avatar-humano-3d-render_473931-217.jpg?w=740" alt="avatar"
                                  class="rounded-circle img-fluid profile-image">
                         {% endif %}
-                        <h5 class="my-3">{{ student.student_name }}</h5>
+                        <h5 class="my-3">{{ student.student_name }} {{ student.student_surname }}</h5>
                         <p class="text-muted mb-1">{{ student.student_code }}</p>
                     </div>
                 </div>
@@ -37,10 +37,17 @@
                     <div class="d-flex justify-content-center align-items-center">
                         <form method="POST" class="card card-body">
                             <h3>Crear Alerta</h3>
-                            {{ error }}
                             {% csrf_token %}
-                            {{ form.as_p }}
-                            <button type="submit" class="btn btn-primary button-with-shadow">Save</button>
+                            <input name="create-alert" hidden="hidden">
+                            <label for="desc">Descripción de la alerta:</label>
+                            <input id="desc" name="desc" type="text" class="input-group-text">
+                            <label for="alerttype" class=" mt-2">Tipo de alerta:</label>
+                            <select class="input-group-text" id="alerttype" name="alerttype">
+                                <option value="Académica">Académica</option>
+                                <option value="Bienestar">Bienestar</option>
+                                <option value="Financiero">Financiero</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary button-with-shadow mt-4">Guardar</button>
                         </form>
                     </div>
                 </div>
@@ -53,26 +60,6 @@
                             Historial de Alertas
                         </div>
                         <div class="card-body">
-
-                            <form method="get" class="row">
-                                <div class="col-md-2">
-                                    {{ filter_form.alert_filter.label_tag }}
-                                </div>
-                                <div class="col-md-4">
-                                    {{ filter_form.alert_filter }}
-                                </div>
-                                <div class="col-md-2" id="valueLabel" style="display:none;">
-                                    {{ filter_form.filter_value.label_tag }}
-                                </div>
-                                <div class="col-md-4" id="valueField" style="display:none;">
-                                    {{ filter_form.filter_value }}
-                                </div>
-                                <div class="col-md-12 mt-2">
-                                    <button type="submit" class="btn btn-primary button-with-shadow">Filtrar</button>
-                                </div>
-                            </form>
-
-
                             <ul class="list-group  alert-list-container">
                                 <style>
                                     .alert-list-container {

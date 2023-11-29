@@ -95,7 +95,7 @@ def request_update(request):
 
             for i in range(0, len(selected_students)):
                 content += (
-                    "|    ESTUDIANTE #",i+1, "   [Código: ", str(selected_students[i].student_code[0]), "]  [Nombre: ",
+                    "|    ESTUDIANTE #{}",i+1, "   [Código: ", str(selected_students[i].student_code[0]), "]  [Nombre: ",
                     str(selected_students[i].student_name[0]), "]  [ID: ",
                     str(selected_students[i].student_id[0]), "]    |")
 

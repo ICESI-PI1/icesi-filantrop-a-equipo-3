@@ -8,18 +8,18 @@
     <section>
         {% for s in students %}
             <div class="student-container">
-                <div class="student-name">{{ s.student_name }}</div>
+                <div class="student-name">{{ s.student.student_name }} {{ s.student.student_surname }}</div>
                 <div class="student-info">
                     <div class="info-title">Código</div>
-                    <div class="info-text">{{ s.student_code }} </div>
+                    <div class="info-text">{{ s.student.student_code }} </div>
                 </div>
                 <div class="student-info">
                     <div class="info-title">Donador</div>
-                    <div class="info-text">{{ s.donor_student_code }}</div>
+                    <div class="info-text">{{ s.student.donor_student_code }}</div>
                 </div>
 
                 <!---- Form y Div para ejecutar la consulta de la lista que necesito del estudiante --->
-                <form style="display: none" method="POST" action="{% url 'query_student_becas' s.student_code %}">
+                <form style="display: none" method="POST" action="{% url 'query_student_becas' s.student.student_code %}">
                     {% csrf_token %}
                     <button type="submit" id="invisible-btn">click</button>
                 </form>
@@ -31,8 +31,8 @@
                         Balance Académico:
                     </div>
 
-                     {% if extra_academics %}
-                        {% for b in academic_balance %}
+                     {% if s.becas %}
+                        {% for b in s.becas %}
                             <div class="info-text">
                                 {{ b.academic_balance_career }} | {{ b.academic_balance_subjects }} |
                                 {{ b.academic_balance_schedule }} | {{ b.academic_balance_additions }} |

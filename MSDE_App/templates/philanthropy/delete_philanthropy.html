@@ -1,10 +1,15 @@
 {% extends 'layouts/base.html' %}
 {% block content %}
-    <h1>Delete Philanthropy Member</h1>
-    <p>Are you sure you want to delete the member "{{ philanthropy.philanthropy_member_name }}"?</p>
+    <h1>Eliminar Miembro de Filantropía </h1>
+    <p>Estás seguro de eliminar a "{{ philanthropy.philanthropy_member_name }}"?</p>
     <form method="POST">
         {% csrf_token %}
-        <a href="/fil/philanthropy"><button class="button-with-shadow" type="submit">Delete</button></a>
+        <a href="/fil/philanthropy"><button class="btn-primary button-with-shadow" type="submit">Sí, eliminar</button></a>
     </form>
-
+     <style>
+        .button-with-shadow {
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
 {% endblock %}

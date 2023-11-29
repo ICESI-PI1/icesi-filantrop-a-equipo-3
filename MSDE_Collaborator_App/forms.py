@@ -73,6 +73,11 @@ class CreateCollaborator(forms.ModelForm):
             'collaborator_name': forms.TextInput(attrs={'class': 'form-control'}),
             'collaborator_email': forms.TextInput(attrs={'class': 'form-control'}),
         }
+        labels = {
+            'collaborator_code': 'Código del Colaborador',
+            'collaborator_name': 'Nombre del Colaborador',
+            'collaborator_email': 'Correo Electrónico del Colaborador',
+        }
 
 
 class CreateAlert(forms.ModelForm):

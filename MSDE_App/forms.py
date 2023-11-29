@@ -70,6 +70,15 @@ class CreateStudent(forms.ModelForm):
             'student_email': forms.TextInput(attrs={'class': 'form-control'}),
             'student_phone_number': forms.TextInput(attrs={'class': 'form-control'})
         }
+        labels = {
+            'student_birth_date': 'Nacimiento del estudiante',
+            'student_code': 'Código del estudiante',
+            'student_name': 'Nombre del estudiante',
+            'student_surname': 'Apellido del estudiante',
+            'student_id': 'ID del estudiante',
+            'student_email': 'Email del estudiante',
+            'student_phone_number': 'Número de teléfono del estudiante'
+        }
 
 
 
@@ -83,12 +92,13 @@ class CreateCollaborator(forms.ModelForm):
             'collaborator_code': forms.TextInput(attrs={'class': 'form-control'}),
             'collaborator_name': forms.TextInput(attrs={'class': 'form-control'}),
             'collaborator_email': forms.TextInput(attrs={'class': 'form-control'}),
-
-
         }
-
-
-
+        labels = {
+            'collaborator_code': 'Código del Colaborador',
+            'collaborator_name': 'Nombre del Colaborador',
+            'collaborator_email': 'Correo Electrónico del Colaborador',
+            'collaborator_type': 'Tipo de colaborador'
+        }
 
 
 class CreateAlert(forms.ModelForm):
@@ -125,6 +135,13 @@ class CreatePhilanthropy(forms.ModelForm):
             'philanthropy_member_email' : forms.TextInput(attrs={'class': 'form-control'}),
             'philanthropy_member_user' : forms.TextInput(attrs={'class': 'form-control'}),
             'philanthropy_member_password' : forms.TextInput(attrs={'class': 'form-control'})
+        }
+        labels = {
+            'philanthropy_member_code': 'Código del Miembro de Filantropía',
+            'philanthropy_member_name': 'Nombre del Miembro de Filantropía',
+            'philanthropy_member_email': 'Correo Electrónico del Miembro de Filantropía',
+            'philanthropy_member_user': 'Usuario del Miembro de Filantropía',
+            'philanthropy_member_password': 'Contraseña del Miembro de Filantropía'
         }
 
 

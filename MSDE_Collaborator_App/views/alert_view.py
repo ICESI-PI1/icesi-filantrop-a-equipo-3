@@ -1,6 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-from MSDE_App.models import Alert, Student
+from django.utils.datetime_safe import datetime
+
+from MSDE_App.models import Alert, Student, TypeAlert
 from MSDE_App.forms import CreateAlert, AlertFilterForm
 from django.contrib import messages
 
@@ -13,18 +15,21 @@ def create_alert(request, student_code):
 
     if request.method == 'POST':
         form = CreateAlert(request.POST)
-        if form.is_valid():
-            alert = form.save(commit=False)
-            alert.student = student
-            alert.alert_code = '000{}'.format(counter)
-            alert.save()
-            messages.success(request, 'Alerta guardada correctamente.')
-            return redirect('create_alert_collaborator', student_code=student_code)
-        else:
-            return render(request, '../../MSDE_Collaborator_App/templates/alert/create_alert.html', {
-                'form': form,
-                'error': 'Please provide valid data'
-            })
+        print('tipo alerta form: ',request.POST.get('alerttype'))
+        typeAlert = TypeAlert.objects.filter(alert_type=request.POST.get('alerttype'))
+
+        alert = Alert.objects.create(
+            alert_code='000{}'.format(counter),
+            alert_date=datetime.now(),
+            alert_sender='Colaborador',
+            alert_description=request.POST.get('desc'),
+            type_alert=typeAlert[0],
+            student=student
+        )
+
+        alert.save()
+
+        return redirect('create_alert_collaborator', student_code=student_code)
     else:
         form = CreateAlert()
         alerts = Alert.objects.filter(student=student).order_by('-alert_date')

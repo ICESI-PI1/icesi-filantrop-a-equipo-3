@@ -86,24 +86,23 @@ def balance_upload(request, df, student_code):
         messages.error(request, 'Faltan columnas esperadas en el archivo.')
         return redirect('update_info_student', student_code=student_code)
 
-    df = df.rename(columns=lambda x: x.strip())
-    df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
-    df.dropna(subset=expected_columns, inplace=True)
+    #df = df.rename(columns=lambda x: x.strip())
+    #df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
+    #df.dropna(subset=expected_columns, inplace=True)
 
     for _, row in df.iterrows():
-        student, _ = Student.objects.get_or_create(student_code=row['student_code'])
-        AcademicBalance.objects.update_or_create(
-            defaults={
-                'academic_balance_career': row['academic_balance_career'],
-                'academic_balance_subjects': row.get('academic_balance_subjects'),
-                'academic_balance_schedule': row.get('academic_balance_schedule'),
-                'academic_balance_additions': row.get('academic_balance_additions'),
-                'academic_balance_cancellations': row.get('academic_balance_cancellations'),
-                'academic_balance_semester_average': row.get('academic_balance_semester_average'),
-                'academic_balance_total_average': row.get('academic_balance_total_average'),
-                'student_code_id': student.student_code,
-            }
+        student = Student.objects.get(student_code=row['student_code'])
+        academicBalance = AcademicBalance.objects.create(
+                academic_balance_career=row['academic_balance_career'],
+                academic_balance_subjects=row.get('academic_balance_subjects'),
+                academic_balance_schedule=row.get('academic_balance_schedule'),
+                academic_balance_additions=row.get('academic_balance_additions'),
+                academic_balance_cancellations=row.get('academic_balance_cancellations'),
+                academic_balance_semester_average=row.get('academic_balance_semester_average'),
+                academic_balance_total_average=row.get('academic_balance_total_average'),
+                student_code=student
         )
+        academicBalance.save()
 
     messages.success(request, "Se ha cargado correctamente el balance académico.")
 
@@ -116,19 +115,15 @@ def extra_upload(request, df,student_code):
         messages.error(request, 'Faltan columnas esperadas en el archivo.')
         return redirect('update_info_student', student_code=student_code)
 
-    df = df.rename(columns=lambda x: x.strip())
-    df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
-    df.dropna(subset=expected_columns, inplace=True)
-
     for _, row in df.iterrows():
-        student, _ = Student.objects.get_or_create(student_code=row['student_code'])
-        CreaQuery.objects.update_or_create(
-            defaults={
-                'extra_academic_name': row['extra_academic_name'],
-                'extra_academic_hours': row.get('extra_academic_hours'),
-                'student_code_id': student.student_code,
-            }
+        student = Student.objects.get(student_code=row['student_code'])
+        extra = ExtraAcademic.objects.create(
+            extra_academic_name=row['extra_academic_name'],
+            extra_academic_hours=row.get['extra_academic_hours'],
+            student_code=student
         )
+
+        extra.save()
 
     messages.success(request, "Se ha cargado correctamente el informe extra-académico.")
 
@@ -141,20 +136,16 @@ def crea_upload(request, df,student_code):
         messages.error(request, 'Faltan columnas esperadas en el archivo.')
         return redirect('update_info_student', student_code=student_code)
 
-    df = df.rename(columns=lambda x: x.strip())
-    df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
-    df.dropna(subset=expected_columns, inplace=True)
-
     for _, row in df.iterrows():
-        student, _ = Student.objects.get_or_create(student_code=row['student_code'])
-        CreaQuery.objects.update_or_create(
-            defaults={
-                'crea_query_date': pd.to_datetime(row['crea_query_date'],
+        student = Student.objects.get(student_code=row['student_code'])
+        crea = CreaQuery.objects.create(
+            crea_query_date=pd.to_datetime(row['crea_query_date'],
                                                      errors='coerce').date() if pd.notnull(
                     row['crea_query_date']) else None,
-                'crea_query_info': row['crea_query_info'],
-                'student_code_id': student.student_code,
-            }
+            crea_query_info=row['crea_query_info'],
+            student_code=student
         )
+
+        crea.save()
 
     messages.success(request, "Se ha cargado correctamente el informe de consultas en el CREA.")

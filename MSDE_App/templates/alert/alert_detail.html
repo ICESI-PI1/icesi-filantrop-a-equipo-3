@@ -18,11 +18,11 @@
                                 <img src="{{ alert.student.profile_picture.url }}" alt="Foto de perfil de estudiante"
                                      class="rounded-circle img-fluid profile-image">
                             {% else %}
-                                <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg"
+                                <img src="https://img.freepik.com/fotos-premium/icono-usuario-simbolo-persona-avatar-humano-3d-render_473931-217.jpg?w=740"
                                      alt="avatar" class="rounded-circle img-fluid profile-image">
                             {% endif %}
 
-                            <h5 class="my-3">{{ alert.student.student_name }}</h5>
+                            <h5 class="my-3">{{ alert.student.student_name }} {{ alert.student.student_surname }}</h5>
                             <p class="text-muted mb-1">{{ alert.student.student_code }}</p>
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from MSDE_App.models import Alert, Student
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from MSDE_App.models import Student, ExtraAcademic, CreaQuery, AcademicBalance
 
 
 def student_detail(request, student_code):
@@ -14,5 +15,5 @@ def students_view(request):
     students_list = Student.objects.all()
 
     return render(request, 'student/students_collaborator.html', {
-        'students': students_list
-    })
+            'students': students_list
+        })

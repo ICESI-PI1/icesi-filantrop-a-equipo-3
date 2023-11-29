@@ -1,12 +1,12 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-    <h1>Edit Philanthropy Member</h1>
+    <h1>Editar Miembro de Filantropía</h1>
     <form method="POST" class="card card-body">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary button-with-shadow">Save Changes</button>
-    <a class="btn btn-outline-primary cancel-button button-with-shadow"
-       href="/fil/philanthropy/{{ philanthropy.philanthropy_member_code }}/philanthropy_detail" role="button">Cancel</a>
+        <button type="submit" class="btn btn-primary button-with-shadow mt-2">Guardar Cambios</button>
+    <a class="btn btn-outline-primary cancel-button button-with-shadow mt-2"
+       href="/fil/philanthropy/{{ philanthropy.philanthropy_member_code }}/philanthropy_detail" role="button">Cancelar</a>
     </form>
 {% endblock %}

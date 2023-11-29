@@ -194,7 +194,7 @@
     "model": "MSDE_App.Student",
     "pk": 1,
     "fields": {
-      "student_code": "001",
+      "student_code": "A00381111",
       "student_name": "Mariana",
       "student_surname": "Bueno",
       "student_birth_date": "2004-04-11",
@@ -209,7 +209,7 @@
     "model": "MSDE_App.Student",
     "pk": 2,
     "fields": {
-      "student_code": "002",
+      "student_code": "A00382222",
       "student_name": "Dylan",
       "student_surname": "Bermudez",
       "student_birth_date": "2004-01-05",
@@ -224,7 +224,7 @@
     "model": "MSDE_App.Student",
     "pk": 3,
     "fields": {
-      "student_code": "003",
+      "student_code": "A00383333",
       "student_name": "Santiago",
       "student_surname": "Escobar",
       "student_birth_date": "2004-02-17",
@@ -239,7 +239,7 @@
     "model": "MSDE_App.Student",
     "pk": 4,
     "fields": {
-      "student_code": "004",
+      "student_code": "A00384444",
       "student_name": "Juan José",
       "student_surname": "López",
       "student_birth_date": "2003-12-24",
@@ -254,7 +254,7 @@
     "model": "MSDE_App.Student",
     "pk": 5,
     "fields": {
-      "student_code": "005",
+      "student_code": "A00385555",
       "student_name": "Sara Valeria",
       "student_surname": "Cardona",
       "student_birth_date": "2004-08-30",
@@ -269,7 +269,7 @@
     "model": "MSDE_App.Student",
     "pk": 6,
     "fields": {
-      "student_code": "006",
+      "student_code": "A00386666",
       "student_name": "Carlos",
       "student_surname": "Gómez",
       "student_birth_date": "2003-01-22",
@@ -284,7 +284,7 @@
     "model": "MSDE_App.Student",
     "pk": 7,
     "fields": {
-      "student_code": "007",
+      "student_code": "A00387777",
       "student_name": "Eduardo",
       "student_surname": "Potes",
       "student_birth_date": "2000-10-20",
@@ -299,7 +299,7 @@
     "model": "MSDE_App.Student",
     "pk": 8,
     "fields": {
-      "student_code": "008",
+      "student_code": "A00388888",
       "student_name": "Luisa",
       "student_surname": "Pino",
       "student_birth_date": "1999-11-09",
@@ -314,7 +314,7 @@
     "model": "MSDE_App.Student",
     "pk": 9,
     "fields": {
-      "student_code": "009",
+      "student_code": "A00389999",
       "student_name": "Ricardo",
       "student_surname": "Urbina",
       "student_birth_date": "2005-07-29",
@@ -329,7 +329,7 @@
     "model": "MSDE_App.Student",
     "pk": 10,
     "fields": {
-      "student_code": "010",
+      "student_code": "A00381010",
       "student_name": "Diego",
       "student_surname": "Mueses",
       "student_birth_date": "2004-05-07",
