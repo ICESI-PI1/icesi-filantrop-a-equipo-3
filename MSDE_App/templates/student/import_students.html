@@ -1,4 +1,5 @@
 {% extends 'layouts/base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container">
@@ -8,7 +9,7 @@
             <form method="post" enctype="multipart/form-data" action="{% url 'import_students' %}">
                 {% csrf_token %}
                 <input type="file" name="csv_file" accept=".csv, .xlsx" id="csv-file" required>
-                <button type="submit">Upload CSV</button>
+                <button type="submit">Cargar archivo</button>
             </form>
             {% if messages %}
                 {% for message in messages %}
@@ -24,13 +25,27 @@
                     Requisitos del archivo CSV
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">El archivo debe tener extensión .csv</li>
-                    <li class="list-group-item">Debe tener encabezado (fila 1) con los siguientes campos: nombre, apellido, email, número de documento y carrera</li>
+                    <li class="list-group-item">El archivo debe tener extensión .xlsx o .csv</li>
+                    <li class="list-group-item">Debe tener encabezado con los siguientes campos: student_code, student_name, student_surname, student_birth_date, student_id, student_email, student_phone_number, student_ICFES_score, donor_student_code
+                    </li>
                     <li class="list-group-item">Todos los campos son obligatorios</li>
                     <li class="list-group-item">No se permiten caracteres especiales en el número de documento</li>
-                    <li class="list-group-item">Las carreras disponibles son Ingeniería en Informática, Licenciatura en Matemáticas, y Licenciatura en Física</li>
-                    <li class="list-group-item">No se permite carga masiva de más de 50 estudiantes por archivo</li>
+                    <li class="list-group-item">Si tiene dudas respecto al formato consulte el archivo de ejemplo </li>
                 </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Archivo de Ejemplo para Importar Estudiantes
+                </div>
+                <div class="card-body">
+                    <img src="{% static 'excel_format/Example_img.png' %}" alt="Vista previa del archivo de ejemplo" class="img-fluid mb-3">
+                    <p>Aquí puedes descargar un archivo de ejemplo para ver el formato requerido:</p>
+                    <a href="{% static 'excel_format/Ejemplo_formato.xlsx' %}" download class="btn btn-primary">Descargar Archivo de Ejemplo</a>
+                </div>
             </div>
         </div>
     </div>

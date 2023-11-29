@@ -1,7 +1,6 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
-from MSDE_Collaborator_App import views as vwc
-from django.contrib import admin
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('', views.index, name="index"),
@@ -13,7 +12,7 @@ urlpatterns = [
     path('fil/student/<str:student_code>/delete/', views.delete_student, name='delete_student'),
     path('fil/donor/create_donor/', views.create_donor, name='create_donor'),
     path('fil/donor/<str:donor_code>/donor_detail', views.donor_detail, name='donor_detail'),
-    path('fil/donors/', views.donor_view, name="donors/"),
+    path('fil/donors/', views.donor_view, name="donors"),
     path('fil/donor/<str:donor_code>/edit/', views.edit_donor, name='edit_donor'),
     path('fil/donor/<str:donor_code>/delete/', views.delete_donor, name='delete_donor'),
     path('fil/student/<str:student_code>/create_alert/', views.create_alert, name='create_alert'),
@@ -24,10 +23,10 @@ urlpatterns = [
     path('fil/philanthropy/<str:philanthropy_code>/edit/',
          views.philanthropy_edit, name='philanthropy_edit'),
     path('fil/philanthropy/<str:philanthropy_code>/delete/', views.philanthropy_delete, name='delete_philanthropy'),
-    path('fil/reports/', views.reports_view, name='reports'),
+    path('fil/reports/', views.generate_report, name='reports'),
     path('fil/reports/generate', views.report_generate, name='reports_generate'),
-    path('fil/reports/add_student', views.add_student, name='reports_add_student'),
-    path('fil/reports/quit_student/<str:student_code>', views.quit_student, name='reports_quit_student'),
+    #path('fil/reports/add_student', views.add_student, name='reports_add_student'),
+    #path('fil/reports/quit_student/<str:student_code>', views.quit_student, name='reports_quit_student'),
     path('fil/reports/base_reports', views.base_reports, name='base_reports'),
     path('fil/reports/pdf/becas', views.becas_report, name='becas_report'),
     path('fil/reports/pdf/extra', views.extra_report, name='extra_report'),
@@ -35,7 +34,7 @@ urlpatterns = [
     path('fil/reports/pdf/CREA/<str:student_code>', views.query_student_crea, name='query_student_crea'),
     path('fil/reports/pdf/extra/<str:student_code>', views.query_student_extra, name='query_student_extra'),
     path('fil/reports/pdf/becas/<str:student_code>', views.query_student_becas, name='query_student_becas'),
-    path('fil/reports/true', views.show_modal, name='show_modal'),
+    #path('fil/reports/true', views.show_modal, name='show_modal'),
     path('fil/registrate/', views.registrate_user, name='registrate'),
     path('fil/salir/', views.salir, name='salir'),
     path('fil/alerts/', views.see_alerts, name='alerts'),
@@ -43,5 +42,7 @@ urlpatterns = [
     path('fil/info_management/', views.info_management, name='info_management'),
     path('fil/info_dissemination/', views.info_dissemination, name='info_dissemination'),
     path('fil/info_dissemination/send', views.send_info, name='send_info'),
-    path('fil/info_dissemination/show', views.show_info, name='show_info')
+    path('fil/info_dissemination/show', views.show_info, name='show_info'),
+    path('fil/request_update/', views.request_update, name='request_update'),
+    path('fil/students/import_students/', views.import_students, name='import_students')
 ]

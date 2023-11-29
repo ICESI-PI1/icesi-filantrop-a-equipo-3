@@ -1,0 +1,819 @@
+[
+  {
+    "model": "MSDE_App.User",
+    "fields": {
+      "username": "filantropia_admin",
+      "user_type": "philanthropy",
+      "password": "pbkdf2_sha256$600000$cMHh47gp6RURDKXZdGe1YH$/8y38GVHyZCZkvVLKWYFfUUDxaSxNAbAM+8zrKrYAVA=",
+      "is_staff": true,
+      "is_active": true,
+      "is_superuser": true,
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "correo@example.com",
+      "date_joined": "2023-11-19T08:30:00+00:00"
+    }
+  },
+  {
+    "model": "MSDE_App.User",
+    "fields": {
+      "username": "filantropia",
+      "user_type": "philanthropy",
+      "password": "pbkdf2_sha256$600000$UaDK4EEIC4QogfM6x6MtQ4$+EtgIZBCwR36I2X9Q8fqkmg9woLurAQskPGoeZzl574=",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "correo@example.com",
+      "date_joined": "2023-11-19T08:30:00+00:00"
+    }
+  },
+  {
+    "model": "MSDE_App.User",
+    "fields": {
+      "username": "colaborador_admin",
+      "user_type": "Collaborator",
+      "password": "pbkdf2_sha256$600000$cMHh47gp6RURDKXZdGe1YH$/8y38GVHyZCZkvVLKWYFfUUDxaSxNAbAM+8zrKrYAVA=",
+      "is_staff": true,
+      "is_active": true,
+      "is_superuser": true,
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "correo@example.com",
+      "date_joined": "2023-11-19T08:30:00+00:00"
+    }
+  },
+  {
+    "model": "MSDE_App.User",
+    "fields": {
+      "username": "colaborador_registro",
+      "user_type": "Collaborator Registro Académico",
+      "password": "pbkdf2_sha256$600000$UaDK4EEIC4QogfM6x6MtQ4$+EtgIZBCwR36I2X9Q8fqkmg9woLurAQskPGoeZzl574=",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "correo@example.com",
+      "date_joined": "2023-11-19T08:30:00+00:00"
+    }
+  },
+  {
+    "model": "MSDE_App.User",
+    "fields": {
+      "username": "colaborador_apoyo",
+      "user_type": "Collaborator Apoyo Financiero",
+      "password": "pbkdf2_sha256$600000$UaDK4EEIC4QogfM6x6MtQ4$+EtgIZBCwR36I2X9Q8fqkmg9woLurAQskPGoeZzl574=",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "correo@example.com",
+      "date_joined": "2023-11-19T08:30:00+00:00"
+    }
+  },
+  {
+    "model": "MSDE_App.User",
+    "fields": {
+      "username": "colaborador_director",
+      "user_type": "Collaborator Director de Programa",
+      "password": "pbkdf2_sha256$600000$UaDK4EEIC4QogfM6x6MtQ4$+EtgIZBCwR36I2X9Q8fqkmg9woLurAQskPGoeZzl574=",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "correo@example.com",
+      "date_joined": "2023-11-19T08:30:00+00:00"
+    }
+  },
+  {
+    "model": "MSDE_App.User",
+    "fields": {
+      "username": "colaborador_bienestar",
+      "user_type": "Collaborator Bienestar Universitario",
+      "password": "pbkdf2_sha256$600000$UaDK4EEIC4QogfM6x6MtQ4$+EtgIZBCwR36I2X9Q8fqkmg9woLurAQskPGoeZzl574=",
+      "is_staff": false,
+      "is_active": true,
+      "is_superuser": false,
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "correo@example.com",
+      "date_joined": "2023-11-19T08:30:00+00:00"
+    }
+  },
+
+
+
+  {
+    "model": "MSDE_App.Donor",
+    "pk": 1,
+    "fields": {
+      "donor_code": "001",
+      "donor_name": "Donador 1"
+    }
+  },
+  {
+    "model": "MSDE_App.Donor",
+    "pk": 2,
+    "fields": {
+      "donor_code": "002",
+      "donor_name": "Donador 2"
+    }
+  },
+  {
+    "model": "MSDE_App.Donor",
+    "pk": 3,
+    "fields": {
+      "donor_code": "003",
+      "donor_name": "Donador 3"
+    }
+  },
+  {
+    "model": "MSDE_App.Donor",
+    "pk": 4,
+    "fields": {
+      "donor_code": "004",
+      "donor_name": "Donador 4"
+    }
+  },
+  {
+    "model": "MSDE_App.Donor",
+    "pk": 5,
+    "fields": {
+      "donor_code": "005",
+      "donor_name": "Donador 5"
+    }
+  },
+  {
+    "model": "MSDE_App.Donor",
+    "pk": 6,
+    "fields": {
+      "donor_code": "006",
+      "donor_name": "Donador 6"
+    }
+  },
+  {
+    "model": "MSDE_App.Donor",
+    "pk": 7,
+    "fields": {
+      "donor_code": "007",
+      "donor_name": "Donador 7"
+    }
+  },
+  {
+    "model": "MSDE_App.Donor",
+    "pk": 8,
+    "fields": {
+      "donor_code": "008",
+      "donor_name": "Donador 8"
+    }
+  },
+  {
+    "model": "MSDE_App.Donor",
+    "pk": 9,
+    "fields": {
+      "donor_code": "009",
+      "donor_name": "Donador 9"
+    }
+  },
+  {
+    "model": "MSDE_App.Donor",
+    "pk": 10,
+    "fields": {
+      "donor_code": "010",
+      "donor_name": "Donador 10"
+    }
+  },
+
+
+
+  {
+    "model": "MSDE_App.Student",
+    "pk": 1,
+    "fields": {
+      "student_code": "A00381111",
+      "student_name": "Mariana",
+      "student_surname": "Bueno",
+      "student_birth_date": "2004-04-11",
+      "student_id": "1111",
+      "student_email": "prueba@gmail.com",
+      "student_phone_number": "000000001",
+      "student_ICFES_score": "400",
+      "donor_student_code": "009"
+    }
+  },
+  {
+    "model": "MSDE_App.Student",
+    "pk": 2,
+    "fields": {
+      "student_code": "A00382222",
+      "student_name": "Dylan",
+      "student_surname": "Bermudez",
+      "student_birth_date": "2004-01-05",
+      "student_id": "2222",
+      "student_email": "prueba@gmail.com",
+      "student_phone_number": "000000002",
+      "student_ICFES_score": "362",
+      "donor_student_code": "004"
+    }
+  },
+  {
+    "model": "MSDE_App.Student",
+    "pk": 3,
+    "fields": {
+      "student_code": "A00383333",
+      "student_name": "Santiago",
+      "student_surname": "Escobar",
+      "student_birth_date": "2004-02-17",
+      "student_id": "3333",
+      "student_email": "prueba@gmail.com",
+      "student_phone_number": "000000003",
+      "student_ICFES_score": "402",
+      "donor_student_code": "001"
+    }
+  },
+  {
+    "model": "MSDE_App.Student",
+    "pk": 4,
+    "fields": {
+      "student_code": "A00384444",
+      "student_name": "Juan José",
+      "student_surname": "López",
+      "student_birth_date": "2003-12-24",
+      "student_id": "4444",
+      "student_email": "prueba@gmail.com",
+      "student_phone_number": "000000004",
+      "student_ICFES_score": "498",
+      "donor_student_code": "009"
+    }
+  },
+  {
+    "model": "MSDE_App.Student",
+    "pk": 5,
+    "fields": {
+      "student_code": "A00385555",
+      "student_name": "Sara Valeria",
+      "student_surname": "Cardona",
+      "student_birth_date": "2004-08-30",
+      "student_id": "5555",
+      "student_email": "prueba@gmail.com",
+      "student_phone_number": "000000005",
+      "student_ICFES_score": "350",
+      "donor_student_code": "005"
+    }
+  },
+  {
+    "model": "MSDE_App.Student",
+    "pk": 6,
+    "fields": {
+      "student_code": "A00386666",
+      "student_name": "Carlos",
+      "student_surname": "Gómez",
+      "student_birth_date": "2003-01-22",
+      "student_id": "6666",
+      "student_email": "prueba@gmail.com",
+      "student_phone_number": "000000006",
+      "student_ICFES_score": "300",
+      "donor_student_code": "003"
+    }
+  },
+  {
+    "model": "MSDE_App.Student",
+    "pk": 7,
+    "fields": {
+      "student_code": "A00387777",
+      "student_name": "Eduardo",
+      "student_surname": "Potes",
+      "student_birth_date": "2000-10-20",
+      "student_id": "7777",
+      "student_email": "prueba@gmail.com",
+      "student_phone_number": "000000007",
+      "student_ICFES_score": "201",
+      "donor_student_code": "010"
+    }
+  },
+  {
+    "model": "MSDE_App.Student",
+    "pk": 8,
+    "fields": {
+      "student_code": "A00388888",
+      "student_name": "Luisa",
+      "student_surname": "Pino",
+      "student_birth_date": "1999-11-09",
+      "student_id": "8888",
+      "student_email": "prueba@gmail.com",
+      "student_phone_number": "000000008",
+      "student_ICFES_score": "400",
+      "donor_student_code": "007"
+    }
+  },
+  {
+    "model": "MSDE_App.Student",
+    "pk": 9,
+    "fields": {
+      "student_code": "A00389999",
+      "student_name": "Ricardo",
+      "student_surname": "Urbina",
+      "student_birth_date": "2005-07-29",
+      "student_id": "9999",
+      "student_email": "prueba@gmail.com",
+      "student_phone_number": "000000009",
+      "student_ICFES_score": "192",
+      "donor_student_code": "002"
+    }
+  },
+  {
+    "model": "MSDE_App.Student",
+    "pk": 10,
+    "fields": {
+      "student_code": "A00381010",
+      "student_name": "Diego",
+      "student_surname": "Mueses",
+      "student_birth_date": "2004-05-07",
+      "student_id": "1010",
+      "student_email": "prueba@gmail.com",
+      "student_phone_number": "000000010",
+      "student_ICFES_score": "419",
+      "donor_student_code": "005"
+    }
+  },
+
+
+
+  {
+    "model": "MSDE_App.PhilanthropyMember",
+    "pk": 1,
+    "fields": {
+      "philanthropy_member_code": "001",
+      "philanthropy_member_name": "Arturo Vidal",
+      "philanthropy_member_email": "pruebaphil@gmail.com"
+    }
+  },
+  {
+    "model": "MSDE_App.PhilanthropyMember",
+    "pk": 2,
+    "fields": {
+      "philanthropy_member_code": "002",
+      "philanthropy_member_name": "Ana Rocío",
+      "philanthropy_member_email": "pruebaphil@gmail.com"
+    }
+  },
+  {
+    "model": "MSDE_App.PhilanthropyMember",
+    "pk": 3,
+    "fields": {
+      "philanthropy_member_code": "003",
+      "philanthropy_member_name": "Yoan Ruiz",
+      "philanthropy_member_email": "pruebaphil@gmail.com"
+    }
+  },
+  {
+    "model": "MSDE_App.PhilanthropyMember",
+    "pk": 4,
+    "fields": {
+      "philanthropy_member_code": "004",
+      "philanthropy_member_name": "Paula Montes",
+      "philanthropy_member_email": "pruebaphil@gmail.com"
+    }
+  },
+  {
+    "model": "MSDE_App.PhilanthropyMember",
+    "pk": 5,
+    "fields": {
+      "philanthropy_member_code": "005",
+      "philanthropy_member_name": "René Descartes",
+      "philanthropy_member_email": "pruebaphil@gmail.com"
+    }
+  },
+  {
+    "model": "MSDE_App.PhilanthropyMember",
+    "pk": 6,
+    "fields": {
+      "philanthropy_member_code": "006",
+      "philanthropy_member_name": "Jamie Vardy",
+      "philanthropy_member_email": "pruebaphil@gmail.com"
+    }
+  },
+  {
+    "model": "MSDE_App.PhilanthropyMember",
+    "pk": 7,
+    "fields": {
+      "philanthropy_member_code": "007",
+      "philanthropy_member_name": "Lionel Messi",
+      "philanthropy_member_email": "pruebaphil@gmail.com"
+    }
+  },
+  {
+    "model": "MSDE_App.PhilanthropyMember",
+    "pk": 8,
+    "fields": {
+      "philanthropy_member_code": "008",
+      "philanthropy_member_name": "Miguel Baggio",
+      "philanthropy_member_email": "pruebaphil@gmail.com"
+    }
+  },
+  {
+    "model": "MSDE_App.PhilanthropyMember",
+    "pk": 9,
+    "fields": {
+      "philanthropy_member_code": "009",
+      "philanthropy_member_name": "Radamel Calderón",
+      "philanthropy_member_email": "pruebaphil@gmail.com"
+    }
+  },
+  {
+    "model": "MSDE_App.PhilanthropyMember",
+    "pk": 10,
+    "fields": {
+      "philanthropy_member_code": "010",
+      "philanthropy_member_name": "Natalia Jiménez",
+      "philanthropy_member_email": "pruebaphil@gmail.com"
+    }
+  },
+
+
+
+  {
+    "model": "MSDE_App.Collaborator",
+    "pk": 1,
+    "fields": {
+      "collaborator_code": "001",
+      "collaborator_name": "Leonardo Bustamante",
+      "collaborator_email": "collaborador@gmail.com",
+      "collaborator_type": "Bienestar Universitario"
+    }
+  },
+  {
+    "model": "MSDE_App.Collaborator",
+    "pk": 2,
+    "fields": {
+      "collaborator_code": "002",
+      "collaborator_name": "Emily Zuluaga",
+      "collaborator_email": "collaborador@gmail.com",
+      "collaborator_type": "Registro Académico"
+    }
+  },
+  {
+    "model": "MSDE_App.Collaborator",
+    "pk": 3,
+    "fields": {
+      "collaborator_code": "003",
+      "collaborator_name": "Luisa Guarín",
+      "collaborator_email": "collaborador@gmail.com",
+      "collaborator_type": "Apoyo Financiero"
+    }
+  },
+  {
+    "model": "MSDE_App.Collaborator",
+    "pk": 4,
+    "fields": {
+      "collaborator_code": "004",
+      "collaborator_name": "María Becerra",
+      "collaborator_email": "collaborador@gmail.com",
+      "collaborator_type": "Bienestar Universitario"
+    }
+  },
+  {
+    "model": "MSDE_App.Collaborator",
+    "pk": 5,
+    "fields": {
+      "collaborator_code": "005",
+      "collaborator_name": "Ederson Ortíz",
+      "collaborator_email": "collaborador@gmail.com",
+      "collaborator_type": "Director de Programa"
+    }
+  },
+  {
+    "model": "MSDE_App.Collaborator",
+    "pk": 6,
+    "fields": {
+      "collaborator_code": "006",
+      "collaborator_name": "Juan Cuadrado",
+      "collaborator_email": "collaborador@gmail.com",
+      "collaborator_type": "Bienestar Universitario"
+    }
+  },
+  {
+    "model": "MSDE_App.Collaborator",
+    "pk": 7,
+    "fields": {
+      "collaborator_code": "007",
+      "collaborator_name": "Abel Aguilar",
+      "collaborator_email": "collaborador@gmail.com",
+      "collaborator_type": "Director de Programa"
+    }
+  },
+  {
+    "model": "MSDE_App.Collaborator",
+    "pk": 8,
+    "fields": {
+      "collaborator_code": "008",
+      "collaborator_name": "Faryd Mondragón",
+      "collaborator_email": "collaborador@gmail.com",
+      "collaborator_type": "Registro Académico"
+    }
+  },
+  {
+    "model": "MSDE_App.Collaborator",
+    "pk": 9,
+    "fields": {
+      "collaborator_code": "009",
+      "collaborator_name": "Hugo Rodallega",
+      "collaborator_email": "collaborador@gmail.com",
+      "collaborator_type": "Apoyo Financiero"
+    }
+  },
+  {
+    "model": "MSDE_App.Collaborator",
+    "pk": 10,
+    "fields": {
+      "collaborator_code": "010",
+      "collaborator_name": "Sofía Marín",
+      "collaborator_email": "collaborador@gmail.com",
+      "collaborator_type": "Registro Académico"
+    }
+  },
+
+
+
+  {
+    "model": "MSDE_App.TypeReport",
+    "pk": 1,
+    "fields": {
+      "report_type": "Informe de becas"
+    }
+  },
+  {
+    "model": "MSDE_App.TypeReport",
+    "pk": 2,
+    "fields": {
+      "report_type": "Informe de consultas en el CREA"
+    }
+  },
+  {
+    "model": "MSDE_App.TypeReport",
+    "pk": 3,
+    "fields": {
+      "report_type": "Informe de actividades extra académicas"
+    }
+  },
+  {
+    "model": "MSDE_App.TypeReport",
+    "pk": 4,
+    "fields": {
+      "report_type": "Informe personalizado"
+    }
+  },
+
+
+
+  {
+    "model": "MSDE_App.TypeAlert",
+    "pk": 1,
+    "fields": {
+      "alert_type": "Académica"
+    }
+  },
+  {
+    "model": "MSDE_App.TypeAlert",
+    "pk": 2,
+    "fields": {
+      "alert_type": "Bienestar"
+    }
+  },
+  {
+    "model": "MSDE_App.TypeAlert",
+    "pk": 3,
+    "fields": {
+      "alert_type": "Financiero"
+    }
+  },
+
+
+
+  {
+    "model": "MSDE_App.Alert",
+    "fields": {
+      "alert_code": "001",
+      "alert_date": "2022-08-21T08:30:00+00:00",
+      "alert_description": "Bajo rendimiento, el promedio del estudiante es crítico.",
+      "alert_sender": "Leonardo Bustamante",
+      "type_alert": 1,
+      "student": 2
+    }
+  },
+  {
+    "model": "MSDE_App.Alert",
+    "pk": 2,
+    "fields": {
+      "alert_code": "002",
+      "alert_date": "2023-10-21T08:30:00+00:00",
+      "alert_description": "El donante decidió no brindarle más ayuda el próximo semestre.",
+      "alert_sender": "Sofía Marín",
+      "type_alert": 3,
+      "student": 9
+    }
+  },
+  {
+    "model": "MSDE_App.Alert",
+    "pk": 3,
+    "fields": {
+      "alert_code": "003",
+      "alert_date": "2022-01-11T08:30:00+00:00",
+      "alert_description": "Los recursos se están agotando.",
+      "alert_sender": "Faryd Mondragón",
+      "type_alert": 3,
+      "student": 6
+    }
+  },
+  {
+    "model": "MSDE_App.Alert",
+    "pk": 4,
+    "fields": {
+      "alert_code": "004",
+      "alert_date": "2023-11-29T08:30:00+00:00",
+      "alert_description": "Bajo rendimiento, el promedio del estudiante es crítico.",
+      "alert_sender": "Juan Cuadrado",
+      "type_alert": 1,
+      "student": 2
+    }
+  },
+  {
+    "model": "MSDE_App.Alert",
+    "pk": 5,
+    "fields": {
+      "alert_code": "005",
+      "alert_date": "2021-09-30T08:30:00+00:00",
+      "alert_description": "Bajo rendimiento, el promedio del estudiante es crítico.",
+      "alert_sender": "Abel Aguilar",
+      "type_alert": 1,
+      "student": 4
+    }
+  },
+  {
+    "model": "MSDE_App.Alert",
+    "pk": 6,
+    "fields": {
+      "alert_code": "006",
+      "alert_date": "2023-05-03T08:30:00+00:00",
+      "alert_description": "La psicóloga dice que tiene problemas.",
+      "alert_sender": "Emily Zuluaga",
+      "type_alert": 2,
+      "student": 5
+    }
+  },
+  {
+    "model": "MSDE_App.Alert",
+    "pk": 7,
+    "fields": {
+      "alert_code": "007",
+      "alert_date": "2022-12-02T08:30:00+00:00",
+      "alert_description": "No ha participado ni una sola vez en una actividad extra académica.",
+      "alert_sender": "María Becerra",
+      "type_alert": 2,
+      "student": 8
+    }
+  },
+  {
+    "model": "MSDE_App.Alert",
+    "pk": 8,
+    "fields": {
+      "alert_code": "008",
+      "alert_date": "2021-01-01T08:30:00+00:00",
+      "alert_description": "No quedan recursos para almuerzo.",
+      "alert_sender": "Abel Aguilar",
+      "type_alert": 3,
+      "student": 1
+    }
+  },
+  {
+    "model": "MSDE_App.Alert",
+    "pk": 9,
+    "fields": {
+      "alert_code": "009",
+      "alert_date": "2023-04-18T08:30:00+00:00",
+      "alert_description": "Bajo rendimiento, el promedio del estudiante es crítico.",
+      "alert_sender": "Leonardo Bustamante",
+      "type_alert": 1,
+      "student": 7
+    }
+  },
+  {
+    "model": "MSDE_App.Alert",
+    "pk": 10,
+    "fields": {
+      "alert_code": "010",
+      "alert_date": "2023-03-09T08:30:00+00:00",
+      "alert_description": "Peleó con otros compañeros durante la clase de 2pm a 4pm.",
+      "alert_sender": "Juan Cuadrado",
+      "type_alert": 2,
+      "student": 9
+    }
+  },
+
+
+
+  {
+    "model": "MSDE_App.Message",
+    "pk": 1,
+    "fields": {
+      "message_from": "Collaborator Registro Académico",
+      "message_to": "philanthropy",
+      "message_content": "Mensaje 1 de Registro a Filantropía",
+      "message_date": "2021-01-29"
+    }
+  },
+  {
+    "model": "MSDE_App.Message",
+    "pk": 2,
+    "fields": {
+      "message_from": "Collaborator Bienestar Universitario",
+      "message_to": "philanthropy",
+      "message_content": "Mensaje 2 de BU a Filantropía",
+      "message_date": "2023-11-12"
+    }
+  },
+  {
+    "model": "MSDE_App.Message",
+    "pk": 3,
+    "fields": {
+      "message_from": "philanthropy",
+      "message_to": "Collaborator Registro Académico",
+      "message_content": "Mensaje 3 de Filantropia a Registro",
+      "message_date": "2023-01-11"
+    }
+  },
+  {
+    "model": "MSDE_App.Message",
+    "pk": 4,
+    "fields": {
+      "message_from": "Collaborator Director de Programa",
+      "message_to": "philanthropy",
+      "message_content": "Mensaje 4 de Director a Filantropía",
+      "message_date": "2022-10-19"
+    }
+  },
+  {
+    "model": "MSDE_App.Message",
+    "pk": 5,
+    "fields": {
+      "message_from": "Collaborator Apoyo Financiero",
+      "message_to": "philanthropy",
+      "message_content": "Mensaje 5 de Apoyo a Filantropía",
+      "message_date": "2023-05-16"
+    }
+  },
+  {
+    "model": "MSDE_App.Message",
+    "pk": 6,
+    "fields": {
+      "message_from": "philanthropy",
+      "message_to": "Collaborator",
+      "message_content": "Solicitud de actualización para los estudiantes: ...",
+      "message_date": "2023-02-27"
+    }
+  },
+  {
+    "model": "MSDE_App.Message",
+    "pk": 7,
+    "fields": {
+      "message_from": "philanthropy",
+      "message_to": "Collaborator Apoyo Financiero",
+      "message_content": "Mensaje 7 de Filantropía a Apoyo",
+      "message_date": "2022-12-24"
+    }
+  },
+  {
+    "model": "MSDE_App.Message",
+    "pk": 8,
+    "fields": {
+      "message_from": "philanthropy",
+      "message_to": "Collaborator Director de Programa",
+      "message_content": "Mensaje 8 de Filantropía a Director",
+      "message_date": "2023-07-19"
+    }
+  },
+  {
+    "model": "MSDE_App.Message",
+    "pk": 9,
+    "fields": {
+      "message_from": "philanthropy",
+      "message_to": "Collaborator Registro Académico",
+      "message_content": "Solicitud de actualización para los estudiantes: ...",
+      "message_date": "2022-08-30"
+    }
+  },
+  {
+    "model": "MSDE_App.Message",
+    "pk": 10,
+    "fields": {
+      "message_from": "Collaborator Director de Programa",
+      "message_to": "philanthropy",
+      "message_content": "Mensaje 10 de Director a Filantropía",
+      "message_date": "2021-11-09"
+    }
+  }
+]

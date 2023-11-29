@@ -29,10 +29,13 @@
     <main>
         <section class="download-pdf-btn">
             <!-- Botón para descargar el PDF -->
-            <a class="btn btn-primary" onclick="download_pdf()"
+            <a class="btn btn-primary button-with-shadow" onclick="download_pdf()"
                role="button" style="background-color: #03A65A">Descargar PDF</a>
-            <button class="btn btn-outline-primary" id="cancelButton"
-               role="button" style="border-color: #03A65A; color:#03A65A; button:hover { background-color:#03A65A; color:#ffffff}">Cancelar</button>
+            <button class="btn btn-outline-primary button-with-shadow" id="cancelButton"
+                    role="button"
+                    style="border-color: #03A65A; color:#03A65A; button:hover { background-color:#03A65A; color:#ffffff}">
+                Cancelar
+            </button>
         </section>
         <section>
             <div class="container text-center mt-3">
@@ -43,7 +46,16 @@
     </main>
     <script>
         document.getElementById("cancelButton").addEventListener("click", function () {
-            window.history.back();
+            // window.history.back();
+            // Obtén la URL actual
+            var urlActual = window.location.href;
+
+            // Encuentra la posición de 'generate' en la URL
+            var posicionGenerate = urlActual.indexOf('generate');
+
+            // Extrae la parte de la URL desde el inicio hasta el slash antes de 'generate'
+            var nuevaURL = urlActual.substring(0, urlActual.lastIndexOf('/', posicionGenerate));
+            window.location.href = nuevaURL;
         });
     </script>
 </div>

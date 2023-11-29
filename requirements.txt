@@ -6,3 +6,4 @@ whitenoise
 Pillow==10.0.1
 pdfkit
 psycopg2-binary
+pandas

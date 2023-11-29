@@ -12,14 +12,6 @@
                     
                     <a href="{% url 'create_student' %}" class="btn btn-primary">Registrar Estudiante</a>
                 </div>
-                <div>
-                    <div class="d-flex justify-content-end align-items-center mb-2">
-                        <form method="get" action="{% url 'students' %}" class="d-flex">
-                            <input type="text" name="search_name" class="form-control me-2" placeholder="Buscar por nombre">
-                            <button type="submit" class="btn btn-primary">Buscar</button>
-                        </form>
-                    </div>
-                </div>
                 <div class="justify-content-between align-items-center mb-3">
                     <p>Nombre</p>
                     <div class="mb-3">
@@ -53,10 +45,10 @@
                                 {% if s.profile_picture %}
                                     <img src="{{ s.profile_picture.url }}" alt="Foto de perfil de {{ s.student_name }}" class="student-image rounded">
                                 {% else %}
-                                    <img src="https://motionbgs.com/media/78/astronaut-in-the-ocean.1920x1080.jpg" alt="avatar" class="student-image rounded">
+                                    <img src="https://img.freepik.com/fotos-premium/icono-usuario-simbolo-persona-avatar-humano-3d-render_473931-217.jpg?w=740" alt="avatar" class="student-image rounded">
                                 {% endif %}
                                 <div>
-                                    <strong>{{ s.student_name }}</strong>
+                                    <strong>{{ s.student_name }} {{ s.student_surname }}</strong>
                                     <p class="mb-0"><strong>Código:</strong> {{ s.student_code }}</p>
                                 </div>
                             </a>
@@ -68,9 +60,6 @@
     </main>
 
     <style>
-        body {
-            font-family: 'Toboggan', sans-serif; 
-        }
 
         .student-image {
             width: 60px;
